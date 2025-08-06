@@ -214,7 +214,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
-      <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 px-6"
+      <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl px-6"
            style={{ boxShadow: '0 0 15px 5px #E8DBF4, 0 0 15px 5px #E9F9D9, 0 0 15px 5px #DEE7FA, 0 0 15px 5px #FCDADC' }}>
         <div className="flex-shrink-0">
           <Logo />
@@ -239,13 +239,13 @@ export default function Header() {
             <NavigationMenuList>
                <NavigationMenuItem>
                   <Link href="/" legacyBehavior passHref>
-                      <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700")}>
+                      <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-transparent")}>
                         <a>Home</a>
                       </NavigationMenuLink>
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 data-[state=open]:bg-transparent">Courses</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
                       {courseLinks.map((course) => (
@@ -263,7 +263,7 @@ export default function Header() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
                <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-gray-700 data-[state=open]:bg-transparent">Pages</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700">Pages</NavigationMenuTrigger>
                  <NavigationMenuContent>
                   <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
                     <div>
@@ -308,7 +308,7 @@ export default function Header() {
               </NavigationMenuItem>
               {user && (
                 <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-gray-700 data-[state=open]:bg-transparent">My Account</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700">My Account</NavigationMenuTrigger>
                 <NavigationMenuContent>
                    <ul className="grid w-auto gap-3 p-4 bg-white">
                     {accountLinks.map((component) => (
@@ -455,3 +455,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
+
+    
