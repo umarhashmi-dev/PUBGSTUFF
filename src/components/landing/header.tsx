@@ -238,12 +238,12 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
                <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
-                      <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-transparent")}>
-                        <a>Home</a>
-                      </NavigationMenuLink>
-                  </Link>
-              </NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-transparent hover:text-gray-700 focus:text-gray-700")}>
+                      Home
+                    </Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
               <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
