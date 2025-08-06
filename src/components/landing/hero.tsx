@@ -1,85 +1,91 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-import { Download } from "lucide-react";
+import Header from "./header";
 
 export default function Hero() {
   return (
-    <section className="relative bg-background">
-      <div className="absolute bottom-0 right-0 hidden lg:block overflow-hidden lg:inset-y-0">
-        <Image
-          width={1000}
-          height={1000}
-          className="w-auto h-full"
-          src="https://d33wubrfki0l68.cloudfront.net/1e0fc04f38f5896d10ff66824a62e466839567f8/699b5/images/hero/3/background-pattern.png"
-          alt=""
-        />
-      </div>
-      <div className="relative container">
-        <div className="grid lg:grid-cols-2 gap-12 items-center py-12 md:py-24 lg:py-32">
-          <div className="text-center lg:text-left">
-            <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
-              Get meaningful feedbacks on your code
-            </h1>
-            <div className="mt-8 lg:mt-12 flex items-center justify-center lg:justify-start">
-              <div className="flex justify-center flex-shrink-0 -space-x-4 overflow-hidden">
-                <Image
-                  className="inline-block rounded-full w-14 h-14 ring-2 ring-background"
-                  data-ai-hint="man portrait"
-                  src="https://d33wubrfki0l68.cloudfront.net/3bfa6da479d6b9188c58f2d9a8d33350290ee2ef/301f1/images/hero/3/avatar-male.png"
-                  alt=""
-                  width={56}
-                  height={56}
-                />
-                <Image
-                  className="inline-block rounded-full w-14 h-14 ring-2 ring-background"
-                  data-ai-hint="woman portrait"
-                  src="https://d33wubrfki0l68.cloudfront.net/b52fa09a115db3a80ceb2d52c275fadbf84cf8fc/7fd8a/images/hero/3/avatar-female-1.png"
-                  alt=""
-                  width={56}
-                  height={56}
-                />
-                <Image
-                  className="inline-block rounded-full w-14 h-14 ring-2 ring-background"
-                  data-ai-hint="person portrait"
-                  src="https://d33wubrfki0l68.cloudfront.net/8a2efb13f103a5ae2909e244380d73087a9c2fc4/31ed6/images/hero/3/avatar-female-2.png"
-                  alt=""
-                  width={56}
-                  height={56}
-                />
-              </div>
-              <p className="mt-4 text-lg text-muted-foreground lg:mt-0 lg:ml-4">
-                Join with{" "}
-                <span className="font-bold text-foreground">
-                  4600+ Developers
-                </span>{" "}
-                and start getting feedbacks right now
+    <div className="bg-gray-50">
+      <Header />
+      <section className="relative py-12 sm:py-16 lg:pb-40">
+        <div className="absolute bottom-0 right-0 overflow-hidden">
+          <Image
+            className="w-full h-auto origin-bottom-right transform scale-150 lg:w-auto lg:mx-auto lg:object-cover lg:scale-75"
+            src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/background-pattern.png"
+            alt=""
+            width={1000}
+            height={1000}
+          />
+        </div>
+
+        <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-y-4 lg:items-center lg:grid-cols-2 xl:grid-cols-2">
+            <div className="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
+              <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">
+                An editor that helps you write clean codes.
+              </h1>
+              <p className="mt-2 text-lg text-gray-600 sm:mt-6 font-inter">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vehicula
+                massa in enim luctus. Rutrum arcu.
               </p>
-            </div>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg">
-                <Link href="#get-feedback">Get feedback</Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/download-ios">
-                  <Download className="mr-2" />
-                  Download iOS App
+
+              <Button asChild size="lg" className="mt-8 sm:mt-10">
+                <Link
+                  href="#"
+                >
+                  Try our free editor
                 </Link>
               </Button>
+
+              <div className="mt-8 sm:mt-16">
+                <div className="flex items-center justify-center lg:justify-start">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+
+                <blockquote className="mt-6">
+                  <p className="text-lg font-bold text-gray-900 font-pj">
+                    Best code editor in market!
+                  </p>
+                  <p className="mt-3 text-base leading-7 text-gray-600 font-inter">
+                    Consectetur adipiscing elit. Vehicula massa in enim luctus.
+                    Rutrum arcu, aliquam nulla tincidunt gravida. Cursus
+                    convallis dolor semper pretium ornare.
+                  </p>
+                </blockquote>
+
+                <div className="flex items-center justify-center mt-3 lg:justify-start">
+                  <Image
+                    className="flex-shrink-0 object-cover w-6 h-6 overflow-hidden rounded-full"
+                    src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/avatar-female.png"
+                    alt=""
+                    width={24}
+                    height={24}
+                    data-ai-hint="woman portrait"
+                  />
+                  <p className="ml-2 text-base font-bold text-gray-900 font-pj">
+                    Denny Jones
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="xl:col-span-1">
+              <Image
+                className="w-full mx-auto"
+                src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/1/illustration.png"
+                alt="Illustration"
+                width={800}
+                height={600}
+                data-ai-hint="editor illustration"
+              />
             </div>
           </div>
-          <div className="relative h-full w-full">
-            <Image
-              src="https://d33wubrfki0l68.cloudfront.net/29c501c64b21014b3f2e225abe02fe31fd8f3a5c/f866d/images/hero/3/illustration.png"
-              alt="Hero Image"
-              width={800}
-              height={600}
-              className="rounded-xl"
-              data-ai-hint="code feedback illustration"
-            />
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }

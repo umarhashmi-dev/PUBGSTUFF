@@ -12,7 +12,6 @@ export default function Home() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-gray-50">
       <div className="flex-1">
-        <Header />
         <main>
           <Hero />
           <div className="bg-background">

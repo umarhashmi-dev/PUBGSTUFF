@@ -1,76 +1,79 @@
-"use client";
-
+"use client"
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Logo } from "@/components/logo";
+import Image from "next/image";
 
 const navLinks = [
   { href: "#features", label: "Features" },
   { href: "#pricing", label: "Pricing" },
-  { href: "#automation", label: "Automation" },
+  { href: "#support", label: "Support" },
 ];
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center">
-        <Logo />
-        <nav className="hidden md:flex items-center gap-6 ml-auto text-base font-medium">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-primary"
-            >
-              {link.label}
+    <header className="relative z-10 py-4 md:py-6">
+      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-between">
+          <div className="flex-shrink-0">
+            <Link href="/" title="Textify AI" className="flex rounded outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
+              <Image className="w-auto h-8" width={116} height={32} src="https://cdn.rareblocks.xyz/collection/clarity/images/logo.svg" alt="Textify AI" />
             </Link>
-          ))}
-        </nav>
-        <div className="hidden md:flex items-center gap-4 ml-10">
-          <div className="w-px h-5 bg-border/40"></div>
-          <Link href="/login" className="text-base font-medium text-foreground transition-colors hover:text-primary">
-            Login
-          </Link>
-          <Button asChild>
-            <Link href="/register">Create free account</Link>
-          </Button>
-        </div>
-        <div className="flex items-center md:hidden ml-auto">
-          <button
-            className="ml-4"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="container flex flex-col gap-4 py-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-lg font-medium transition-colors hover:text-primary"
-                onClick={() => setIsMenuOpen(false)}
-              >
+          </div>
+
+          <div className="flex md:hidden">
+            <button type="button" className="text-gray-900" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
+              {!expanded ? (
+                <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              ) : (
+                <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </button>
+          </div>
+
+          <div className="hidden md:flex md:items-center md:justify-center md:space-x-10 md:absolute md:inset-y-0 md:left-1/2 md:-translate-x-1/2 lg:space-x-16">
+            {navLinks.map(link => (
+              <Link key={link.href} href={link.href} title={link.label} className="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
                 {link.label}
               </Link>
             ))}
-             <Link href="/login" className="text-lg font-medium text-foreground transition-colors hover:text-primary" onClick={() => setIsMenuOpen(false)}>
-              Login
-            </Link>
+          </div>
+
+          <div className="hidden md:flex">
             <Button asChild>
-              <Link href="/register" onClick={() => setIsMenuOpen(false)}>Create free account</Link>
+              <Link href="/register">Try for free</Link>
             </Button>
           </div>
         </div>
-      )}
+        {expanded && (
+          <nav>
+            <div className="px-1 py-8">
+              <div className="grid gap-y-7">
+                {navLinks.map(link => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setExpanded(false)}
+                    title={link.label}
+                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <Button asChild>
+                  <Link href="/register">Try for free</Link>
+                </Button>
+              </div>
+            </div>
+          </nav>
+        )}
+      </div>
     </header>
   );
 }

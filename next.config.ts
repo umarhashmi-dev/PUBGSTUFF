@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
         hostname: 'd33wubrfki0l68.cloudfront.net',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.rareblocks.xyz',
+        port: '',
+        pathname: '/**',
       }
     ],
   },
