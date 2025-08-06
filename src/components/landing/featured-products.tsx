@@ -37,7 +37,7 @@ const products = [
 
 export default function FeaturedProducts() {
   return (
-    <section id="featured-products" className="py-20 md:py-28 bg-secondary">
+    <section id="featured-products" className="py-20 md:py-28">
       <div className="container">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
@@ -61,11 +61,11 @@ export default function FeaturedProducts() {
                   data-ai-hint={product.aiHint}
                 />
               </div>
-              <CardContent className="p-4">
+              <CardContent className="p-4 bg-background">
                 <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
                 <p className="font-bold text-lg text-primary mt-1">{product.price}</p>
               </CardContent>
-              <CardFooter className="p-4 pt-0">
+              <CardFooter className="p-4 pt-0 bg-background">
                 <Button asChild variant="outline" className="w-full">
                   <Link href={`/products/${product.id}`}>
                     View Product
@@ -77,7 +77,7 @@ export default function FeaturedProducts() {
           ))}
         </div>
         <div className="mt-16 text-center">
-          <Button asChild size="lg" variant="ghost">
+          <Button asChild size="lg">
             <Link href="/products">
               View All Products
               <ArrowRight className="ml-2" />
