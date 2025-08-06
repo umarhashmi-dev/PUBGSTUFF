@@ -63,6 +63,25 @@ const policyLinks = [
     },
 ]
 
+const courseLinks = [
+    { title: "Premiere", href: "/courses/premiere" },
+    { title: "Premiere Pro", href: "/courses/premiere-pro" },
+    { title: "After Effects", href: "/courses/after-effects" },
+    { title: "AI Coding", href: "/courses/ai-coding" },
+    { title: "TikTok", href: "/courses/tiktok" },
+    { title: "Deepseek", href: "/courses/deepseek" },
+    { title: "Web Development", href: "/courses/web-development" },
+    { title: "HTML", href: "/courses/html" },
+    { title: "CSS", href: "/courses/css" },
+    { title: "JavaScript", href: "/courses/javascript" },
+    { title: "Web Animations", href: "/courses/web-animations" },
+    { title: "Gen AI", href: "/courses/gen-ai" },
+    { title: "AI Money", href: "/courses/ai-money" },
+    { title: "Online Business", href: "/courses/online-business" },
+    { title: "Shopify", href: "/courses/shopify" },
+    { title: "Dropshipping", href: "/courses/dropshipping" },
+]
+
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -99,11 +118,18 @@ export default function Header() {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/courses" passHref>
-                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                      Courses
-                    </NavigationMenuLink>
-                  </Link>
+                    <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                            {courseLinks.map((course) => (
+                                <ListItem
+                                    key={course.title}
+                                    title={course.title}
+                                    href={course.href}
+                                />
+                            ))}
+                        </ul>
+                    </NavigationMenuContent>
                 </NavigationMenuItem>
                  <NavigationMenuItem>
                   <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
@@ -244,5 +270,3 @@ const ListItem = React.forwardRef<
   )
 })
 ListItem.displayName = "ListItem"
-
-    
