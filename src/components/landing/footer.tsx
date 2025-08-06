@@ -7,13 +7,13 @@ import Link from "next/link";
 const quickLinks = [
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
-  { href: "/account", label: "My account" },
+  { href: "/my-account", label: "My account" },
 ];
 
 const policyLinks = [
-  { href: "#", label: "Disclaimer" },
-  { href: "#", label: "Privacy Policy" },
-  { href: "#", label: "Terms of Service" },
+  { href: "/policies/disclaimer", label: "Disclaimer" },
+  { href: "/policies/privacy-policy", label: "Privacy Policy" },
+  { href: "/policies/terms-of-use", label: "Terms of Service" },
 ];
 
 export default function Footer() {
