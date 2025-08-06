@@ -100,17 +100,10 @@ export default {
             height: '0',
           },
         },
-        'navbar-glow': {
-          '0%, 100%': { 'box-shadow': '0 0 15px 5px #E8DBF4' },
-          '25%': { 'box-shadow': '0 0 15px 5px #E9F9D9' },
-          '50%': { 'box-shadow': '0 0 15px 5px #DEE7FA' },
-          '75%': { 'box-shadow': '0 0 15px 5px #FCDADC' },
-        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'navbar-glow': 'navbar-glow 8s ease-in-out infinite',
       },
     },
   },
