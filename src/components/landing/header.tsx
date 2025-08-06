@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "../logo";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School } from 'lucide-react';
+import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School, PencilRuler, Paintbrush, Plane, Video, Tv2, Cable, Repeat, Lightbulb, BrainCircuit, BarChart, Settings, Users, GitBranch, Waypoints, Workflow, Layers, Component, Box, Package, ShoppingBag, Truck, HeartHandshake, FileText, Shield, FileQuestion, Info, LifeBuoy } from 'lucide-react';
 
 const accountLinks = [
   {
@@ -209,7 +209,7 @@ export default function Header() {
             <NavigationMenu>
               <NavigationMenuList>
                  <NavigationMenuItem>
-                  <Link href="/" passHref>
+                  <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Home
                     </NavigationMenuLink>
@@ -278,7 +278,7 @@ export default function Header() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>My Account</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                     <ul className="grid w-[300px] gap-3 p-4 md:w-[300px]">
+                     <ul className="w-[300px] gap-3 p-4 flex flex-col">
                       {accountLinks.map((component) => (
                         <ListItem
                           key={component.title}
@@ -374,7 +374,11 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="flex items-center gap-2">
-            {icon && <div className="text-accent-foreground/80">{icon}</div>}
+            {icon && (
+                <div className="p-2 bg-primary/5 border border-primary/10 rounded-lg shadow-inner backdrop-blur-sm">
+                    {icon}
+                </div>
+            )}
             <div className="text-sm font-medium leading-none">{title}</div>
           </div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
