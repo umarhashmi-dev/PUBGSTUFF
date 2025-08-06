@@ -20,24 +20,24 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-secondary">
+    <section id="how-it-works" className="py-20 md:py-28 bg-white">
       <div className="container">
         <div className="text-center">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             How It Works
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-lg text-gray-600">
             A simple, three-step process to get your digital goods.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center text-center">
-              <div className="p-4 bg-primary/10 rounded-full mb-6">
+              <div className="p-4 bg-gray-100 rounded-full mb-6">
                 {step.icon}
               </div>
-              <h3 className="text-xl font-bold font-headline mb-2">{step.title}</h3>
-              <p className="text-muted-foreground">{step.description}</p>
+              <h3 className="text-xl font-bold font-headline mb-2 text-gray-900">{step.title}</h3>
+              <p className="text-gray-600">{step.description}</p>
             </div>
           ))}
         </div>
