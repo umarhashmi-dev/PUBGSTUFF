@@ -125,7 +125,7 @@ export default function Header() {
             <NavigationMenu>
               <NavigationMenuList>
                  <NavigationMenuItem>
-                  <Link href="/" passHref>
+                  <Link href="/">
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Home
                     </NavigationMenuLink>
@@ -142,7 +142,9 @@ export default function Header() {
                                     href={course.href}
                                 >
                                   <div className="flex items-center gap-2">
-                                    {course.icon}
+                                     <div className="p-2 bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-md">
+                                        {course.icon}
+                                     </div>
                                     <span>{course.title}</span>
                                   </div>
                                 </ListItem>
