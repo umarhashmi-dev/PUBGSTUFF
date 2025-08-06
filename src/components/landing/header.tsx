@@ -125,7 +125,7 @@ export default function Header() {
             <NavigationMenu>
               <NavigationMenuList>
                  <NavigationMenuItem>
-                  <Link href="/">
+                  <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Home
                     </NavigationMenuLink>
@@ -134,7 +134,7 @@ export default function Header() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-3">
+                        <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-4">
                             {courseLinks.map((course) => (
                                 <ListItem
                                     key={course.title}
