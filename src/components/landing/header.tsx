@@ -23,6 +23,11 @@ const accountLinks = [
     href: "/my-account/downloads",
     description: "Access your downloadable products.",
   },
+  {
+    title: "Account Details",
+    href: "/my-account/account-details",
+    description: "Update your account information.",
+  }
 ];
 
 const pageLinks = [
@@ -213,9 +218,9 @@ export default function Header() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2">
+                      <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2">
                         {courseLinks.map((course) => (
-                          <ListItem
+                           <ListItem
                             key={course.title}
                             title={course.title}
                             href={course.href}
@@ -273,7 +278,7 @@ export default function Header() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>My Account</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                     <ul className="grid w-[300px] gap-3 p-4 md:w-[300px]">
                       {accountLinks.map((component) => (
                         <ListItem
                           key={component.title}
