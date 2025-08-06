@@ -68,78 +68,85 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-white px-4 text-black">
-      <div className="w-full max-w-sm space-y-6">
-        <div className="text-center">
-          <Logo />
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight">
-            Sign in to your account
-          </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
-            Or{" "}
-            <Link href="/signup" className="font-medium text-black hover:underline">
-              create a new account
-            </Link>
-          </p>
-        </div>
-
-        <div className="space-y-6">
-          <div className="grid grid-cols-2 gap-3">
-            <Button variant="outline" onClick={() => handleSocialSignIn('github')} className="w-full inline-flex items-center justify-center gap-2 text-black bg-white hover:bg-gray-100 border-gray-300">
-              <GitHubIcon className="w-5 h-5 text-black" />
-              GitHub
-            </Button>
-            <Button variant="outline" onClick={() => handleSocialSignIn('google')} className="w-full inline-flex items-center justify-center gap-2 text-black bg-white hover:bg-gray-100 border-gray-300">
-              <GoogleIcon className="w-5 h-5" />
-              Google
-            </Button>
+      <div
+        className="w-full max-w-sm rounded-2xl p-1"
+        style={{
+          boxShadow: '0 0 20px #E8DBF4, 0 0 20px #E9F9D9, 0 0 20px #DEE7FA, 0 0 20px #FCDADC'
+        }}
+      >
+        <div className="w-full space-y-6 rounded-xl border border-gray-200 bg-white p-8">
+          <div className="text-center">
+            <Logo />
+            <h2 className="mt-6 text-center text-3xl font-bold tracking-tight">
+              Sign in to your account
+            </h2>
+            <p className="mt-2 text-center text-sm text-gray-600">
+              Or{" "}
+              <Link href="/signup" className="font-medium text-black hover:underline">
+                create a new account
+              </Link>
+            </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full border-t border-gray-300" />
+          <div className="space-y-6">
+            <div className="grid grid-cols-2 gap-3">
+              <Button variant="outline" onClick={() => handleSocialSignIn('github')} className="w-full inline-flex items-center justify-center gap-2 text-black bg-white hover:bg-gray-100 border-gray-300">
+                <GitHubIcon className="w-5 h-5 text-black" />
+                GitHub
+              </Button>
+              <Button variant="outline" onClick={() => handleSocialSignIn('google')} className="w-full inline-flex items-center justify-center gap-2 text-black bg-white hover:bg-gray-100 border-gray-300">
+                <GoogleIcon className="w-5 h-5" />
+                Google
+              </Button>
             </div>
-            <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-white px-2 text-gray-500">
-                Or continue with
-              </span>
-            </div>
-          </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
-            <div>
-              <Label htmlFor="email">Email address</Label>
-              <Input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                placeholder="you@example.com"
-                className="mt-1 bg-white border-gray-300 text-black placeholder:text-gray-400 focus:ring-black"
-              />
-            </div>
-            <div>
-              <div className="flex justify-between">
-                <Label htmlFor="password">Password</Label>
-                <Link href="#" className="text-sm font-medium text-black hover:underline">
-                    Forgot your password?
-                </Link>
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <span className="w-full border-t border-gray-300" />
               </div>
-              <Input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                placeholder="••••••••"
-                className="mt-1 bg-white border-gray-300 text-black placeholder:text-gray-400 focus:ring-black"
-              />
+              <div className="relative flex justify-center text-xs uppercase">
+                <span className="bg-white px-2 text-gray-500">
+                  Or continue with
+                </span>
+              </div>
             </div>
-            {error && <p className="text-red-500 text-sm">{error}</p>}
-            <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800">
-              Sign in
-            </Button>
-          </form>
+
+            <form onSubmit={handleLogin} className="space-y-6">
+              <div>
+                <Label htmlFor="email">Email address</Label>
+                <Input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  placeholder="you@example.com"
+                  className="mt-1 bg-white border-gray-300 text-black placeholder:text-gray-400 focus:ring-black"
+                />
+              </div>
+              <div>
+                <div className="flex justify-between">
+                  <Label htmlFor="password">Password</Label>
+                  <Link href="#" className="text-sm font-medium text-black hover:underline">
+                      Forgot your password?
+                  </Link>
+                </div>
+                <Input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  placeholder="••••••••"
+                  className="mt-1 bg-white border-gray-300 text-black placeholder:text-gray-400 focus:ring-black"
+                />
+              </div>
+              {error && <p className="text-red-500 text-sm">{error}</p>}
+              <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800">
+                Sign in
+              </Button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
