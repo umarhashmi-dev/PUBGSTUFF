@@ -239,13 +239,13 @@ export default function Header() {
             <NavigationMenuList>
                <NavigationMenuItem>
                   <Link href="/" legacyBehavior passHref>
-                      <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100")}>
+                      <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700")}>
                         <a>Home</a>
                       </NavigationMenuLink>
                   </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100">Courses</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 data-[state=open]:bg-transparent">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
                       {courseLinks.map((course) => (
@@ -263,7 +263,7 @@ export default function Header() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
                <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100">Pages</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 data-[state=open]:bg-transparent">Pages</NavigationMenuTrigger>
                  <NavigationMenuContent>
                   <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
                     <div>
@@ -308,7 +308,7 @@ export default function Header() {
               </NavigationMenuItem>
               {user && (
                 <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100">My Account</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 data-[state=open]:bg-transparent">My Account</NavigationMenuTrigger>
                 <NavigationMenuContent>
                    <ul className="grid w-auto gap-3 p-4 bg-white">
                     {accountLinks.map((component) => (
@@ -457,4 +457,6 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem"
 
     
+    
+
     
