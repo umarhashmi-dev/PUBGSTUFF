@@ -184,7 +184,7 @@ export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <header className="relative z-10 py-4 md:py-6">
+    <header className="relative z-50 py-4 md:py-6">
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between">
           <div className="flex-shrink-0">
