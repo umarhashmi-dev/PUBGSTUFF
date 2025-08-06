@@ -184,8 +184,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
-      <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl px-6"
-           style={{ boxShadow: '0 0 15px 5px #E8DBF4, 0 0 15px 5px #E9F9D9, 0 0 15px 5px #DEE7FA, 0 0 15px 5px #FCDADC' }}>
+      <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl px-6 border">
         
         <div className="flex items-center">
             <Logo />
@@ -196,13 +195,13 @@ export default function Header() {
             <NavigationMenuList>
                <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent data-[state=open]:bg-transparent")}>
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 focus:bg-gray-100")}>
                       Home
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">Courses</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100 focus:bg-gray-100">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
                       {courseLinks.map((course) => (
@@ -220,7 +219,7 @@ export default function Header() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">Pages</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100 focus:bg-gray-100">Pages</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
                       <div className="relative">
@@ -288,7 +287,7 @@ export default function Header() {
               <NavigationMenuList>
                 {user && (
                   <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">My Account</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100 focus:bg-gray-100">My Account</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid w-auto gap-3 p-4 bg-white">
                       {accountLinks.map((component) => (
@@ -317,10 +316,10 @@ export default function Header() {
           </NavigationMenu>
           {!authLoading && !user && (
             <>
-              <Button asChild variant="ghost" className="text-gray-700 hover:bg-transparent hover:text-gray-700">
+              <Button asChild variant="ghost" className="text-gray-700 hover:bg-gray-100">
                 <Link href="/login">Login</Link>
               </Button>
-              <Button asChild className="bg-gray-900 text-white hover:bg-gray-800 rounded-lg">
+              <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-lg">
                 <Link href="/signup">Sign up</Link>
               </Button>
             </>
@@ -335,7 +334,7 @@ export default function Header() {
 
       </div>
       {expanded && (
-        <nav className="bg-white/80 backdrop-blur-sm rounded-2xl mt-2 p-4">
+        <nav className="bg-white/80 backdrop-blur-sm rounded-2xl mt-2 p-4 border">
           <div className="grid gap-y-2">
             <Link
                 href="/"
@@ -379,14 +378,14 @@ export default function Header() {
                 >
                   My Account
                 </Link>
-                <Button onClick={() => { handleLogout(); setExpanded(false); }} className="bg-gray-900 text-white hover:bg-gray-800 w-full mt-2">Logout</Button>
+                <Button onClick={() => { handleLogout(); setExpanded(false); }} className="bg-black text-white hover:bg-gray-800 w-full mt-2">Logout</Button>
               </>
             ) : (
               <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
-                 <Button asChild variant="ghost" className="w-full text-gray-700">
+                 <Button asChild variant="ghost" className="w-full text-gray-700 hover:bg-gray-100">
                     <Link href="/login" onClick={() => setExpanded(false)}>Login</Link>
                  </Button>
-                 <Button asChild className="w-full bg-gray-900 text-white hover:bg-gray-800">
+                 <Button asChild className="w-full bg-black text-white hover:bg-gray-800">
                   <Link href="/signup" onClick={() => setExpanded(false)}>Sign up</Link>
                 </Button>
               </div>
