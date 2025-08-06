@@ -8,13 +8,11 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { cn } from "@/lib/utils";
 import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School, PencilRuler, Paintbrush, Plane, Video, Tv2, Cable, Repeat, Lightbulb, BrainCircuit, BarChart, Settings, Users, GitBranch, Waypoints, Workflow, Layers, Component, Box, Package, ShoppingBag, Truck, HeartHandshake, FileText, Shield, FileQuestion, Info, LifeBuoy, LogOut } from 'lucide-react';
 import { useAuth } from "@/hooks/use-auth";
-import { auth, db } from "@/lib/firebase";
-import { signOut } from "firebase/auth";
+import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
-import { doc, getDoc } from "firebase/firestore";
 
 const accountLinks = [
   {
@@ -169,10 +167,17 @@ export default function Header() {
   React.useEffect(() => {
     const fetchHeaderImage = async () => {
       try {
-        const docRef = doc(db, "settings", "header");
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          setHeaderImageUrl(docSnap.data().imageUrl);
+        const { data, error } = await supabase
+          .from('settings')
+          .select('value')
+          .eq('key', 'headerImageUrl')
+          .single();
+
+        if (error) {
+          console.error("Error fetching header image:", error);
+          setHeaderImageUrl(null);
+        } else if (data) {
+          setHeaderImageUrl(data.value);
         } else {
           setHeaderImageUrl(null);
         }
@@ -188,7 +193,7 @@ export default function Header() {
 
   const handleLogout = async () => {
     try {
-      await signOut(auth);
+      await supabase.auth.signOut();
       toast({
         title: "Success!",
         description: "You have successfully logged out.",
@@ -265,7 +270,7 @@ export default function Header() {
                               href="/my-account"
                           >
                             {headerImageUrl ? (
-                              <Image src={headerImageUrl} alt="Buy Accounts" fill className="object-cover rounded-md" data-ai-hint="gaming character" />
+                              <Image src={headerImageUrl} alt="Dynamic Header Image" layout="fill" className="object-cover rounded-md" data-ai-hint="gaming character" />
                             ) : (
                               <div className="w-full h-full bg-gray-200 animate-pulse rounded-md flex items-center justify-center">
                                 <span className="text-xs text-gray-500">No Image</span>
@@ -343,7 +348,7 @@ export default function Header() {
           )}
           {!loading && user && (
              <Avatar>
-                <AvatarImage src={user.photoURL ?? ""} alt={user.displayName ?? ""} />
+                <AvatarImage src={user.user_metadata.avatar_url ?? ""} alt={user.user_metadata.full_name ?? ""} />
                 <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
               </Avatar>
           )}
@@ -448,5 +453,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
-
-    

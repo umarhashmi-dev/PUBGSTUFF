@@ -5,13 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { auth } from "@/lib/firebase";
-import {
-  createUserWithEmailAndPassword,
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
+import { supabase } from "@/lib/supabase";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -35,14 +29,34 @@ export default function SignupPage() {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
+    const { error } = await supabase.auth.signUp({
+      email,
+      password,
+    });
+    if (error) {
+      setError(error.message);
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      });
+    } else {
       toast({
         title: "Success!",
-        description: "Your account has been created.",
+        description: "Your account has been created. Please check your email to verify your account.",
       });
       router.push("/my-account");
-    } catch (error: any) {
+    }
+  };
+
+  const handleSocialSignIn = async (provider: 'google' | 'github') => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider,
+      options: {
+        redirectTo: `${window.location.origin}/my-account`
+      }
+    });
+     if (error) {
       setError(error.message);
       toast({
         title: "Error",
@@ -51,44 +65,6 @@ export default function SignupPage() {
       });
     }
   };
-
-  const handleGoogleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-       toast({
-        title: "Success!",
-        description: "You have successfully signed in with Google.",
-      });
-      router.push("/my-account");
-    } catch (error: any) {
-      setError(error.message);
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-  };
-
-  const handleGithubSignIn = async () => {
-    const provider = new GithubAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-      toast({
-        title: "Success!",
-        description: "You have successfully signed in with Github.",
-      });
-      router.push("/my-account");
-    } catch (error: any) {
-      setError(error.message);
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-  }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 px-4">
@@ -108,11 +84,11 @@ export default function SignupPage() {
 
         <div className="rounded-lg border bg-white p-8 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
-            <Button variant="outline" onClick={handleGithubSignIn} className="w-full inline-flex items-center justify-center gap-2 bg-[#24292F] text-white hover:bg-[#24292F]/90">
+            <Button variant="outline" onClick={() => handleSocialSignIn('github')} className="w-full inline-flex items-center justify-center gap-2 bg-[#24292F] text-white hover:bg-[#24292F]/90">
               <GitHubIcon className="w-5 h-5" />
               GitHub
             </Button>
-            <Button variant="outline" onClick={handleGoogleSignIn} className="w-full inline-flex items-center justify-center gap-2 bg-white text-gray-700 hover:bg-gray-100 border-gray-300">
+            <Button variant="outline" onClick={() => handleSocialSignIn('google')} className="w-full inline-flex items-center justify-center gap-2 bg-white text-gray-700 hover:bg-gray-100 border-gray-300">
               <GoogleIcon className="w-5 h-5" />
               Google
             </Button>
@@ -164,5 +140,3 @@ export default function SignupPage() {
     </div>
   );
 }
-
-    
