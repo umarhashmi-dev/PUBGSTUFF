@@ -77,24 +77,103 @@ const policyLinks = [
 ]
 
 const courseLinks = [
-    { title: "CSS", href: "/courses/css", icon: <Palette /> },
-    { title: "HTML", href: "/courses/html", icon: <Code /> },
-    { title: "Gen AI", href: "/courses/gen-ai", icon: <Bot /> },
-    { title: "TikTok", href: "/courses/tiktok", icon: <Film /> },
-    { title: "Shopify", href: "/courses/shopify", icon: <ShoppingCart /> },
-    { title: "AI Money", href: "/courses/ai-money", icon: <DollarSign /> },
-    { title: "AI Coding", href: "/courses/ai-coding", icon: <Bot /> },
-    { title: "Deepseek", href: "/courses/deepseek", icon: <Search /> },
-    { title: "JavaScript", href: "/courses/javascript", icon: <Code /> },
-    { title: "After Effects", href: "/courses/after-effects", icon: <Film /> },
-    { title: "Premiere Pro", href: "/courses/premiere-pro", icon: <Tv /> },
-    { title: "Dropshipping", href: "/courses/dropshipping", icon: <ShoppingCart /> },
-    { title: "Online Business", href: "/courses/online-business", icon: <Briefcase /> },
-    { title: "Web Animations", href: "/courses/web-animations", icon: <Wind /> },
-    { title: "Web Development", href: "/courses/web-development", icon: <LayoutTemplate /> },
-    { title: "Premiere", href: "/courses/premiere", icon: <School /> },
-]
-
+  {
+    title: 'CSS',
+    href: '/courses/css',
+    icon: <Palette className="h-5 w-5" />,
+    description: 'Master the art of styling web pages.',
+  },
+  {
+    title: 'HTML',
+    href: '/courses/html',
+    icon: <Code className="h-5 w-5" />,
+    description: 'Learn the fundamental structure of the web.',
+  },
+  {
+    title: 'Gen AI',
+    href: '/courses/gen-ai',
+    icon: <Bot className="h-5 w-5" />,
+    description: 'Explore the world of generative AI.',
+  },
+  {
+    title: 'TikTok',
+    href: '/courses/tiktok',
+    icon: <Film className="h-5 w-5" />,
+    description: 'Create engaging short-form video content.',
+  },
+  {
+    title: 'Shopify',
+    href: '/courses/shopify',
+    icon: <ShoppingCart className="h-5 w-5" />,
+    description: 'Build your own e-commerce empire.',
+  },
+  {
+    title: 'AI Money',
+    href: '/courses/ai-money',
+    icon: <DollarSign className="h-5 w-5" />,
+    description: 'Monetize your AI skills and projects.',
+  },
+  {
+    title: 'AI Coding',
+    href: '/courses/ai-coding',
+    icon: <Bot className="h-5 w-5" />,
+    description: 'Leverage AI to accelerate your coding.',
+  },
+  {
+    title: 'Deepseek',
+    href: '/courses/deepseek',
+    icon: <Search className="h-5 w-5" />,
+    description: 'Advanced search and data analysis.',
+  },
+  {
+    title: 'JavaScript',
+    href: '/courses/javascript',
+    icon: <Code className="h-5 w-5" />,
+    description: 'Bring interactivity to your websites.',
+  },
+  {
+    title: 'After Effects',
+    href: '/courses/after-effects',
+    icon: <Film className="h-5 w-5" />,
+    description: 'Create stunning motion graphics.',
+  },
+  {
+    title: 'Premiere Pro',
+    href: '/courses/premiere-pro',
+    icon: <Tv className="h-5 w-5" />,
+    description: 'Professional video editing mastery.',
+  },
+  {
+    title: 'Dropshipping',
+    href: '/courses/dropshipping',
+    icon: <ShoppingCart className="h-5 w-5" />,
+    description: 'Launch an online store without inventory.',
+  },
+  {
+    title: 'Online Business',
+    href: '/courses/online-business',
+    icon: <Briefcase className="h-5 w-5" />,
+    description: 'Start and grow your digital business.',
+  },
+  {
+    title: 'Web Animations',
+    href: '/courses/web-animations',
+    icon: <Wind className="h-5 w-5" />,
+    description: 'Animate your web creations.',
+  },
+  {
+    title: 'Web Development',
+    href: '/courses/web-development',
+    icon: <LayoutTemplate className="h-5 w-5" />,
+    description: 'Become a full-stack web developer.',
+  },
+  {
+    title: 'Premiere',
+    href: '/courses/premiere',
+    icon: <School className="h-5 w-5" />,
+    description: 'Beginner-friendly video editing.',
+  },
+];
 
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
@@ -134,22 +213,18 @@ export default function Header() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-4">
-                            {courseLinks.map((course) => (
-                                <ListItem
-                                    key={course.title}
-                                    title={course.title}
-                                    href={course.href}
-                                >
-                                  <div className="flex items-center gap-2">
-                                     <div className="p-2 bg-foreground/5 backdrop-blur-sm border border-foreground/10 rounded-md">
-                                        {course.icon}
-                                     </div>
-                                    <span>{course.title}</span>
-                                  </div>
-                                </ListItem>
-                            ))}
-                        </ul>
+                      <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2">
+                        {courseLinks.map((course) => (
+                          <ListItem
+                            key={course.title}
+                            title={course.title}
+                            href={course.href}
+                            icon={course.icon}
+                          >
+                            {course.description}
+                          </ListItem>
+                        ))}
+                      </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                  <NavigationMenuItem>
@@ -280,12 +355,12 @@ export default function Header() {
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  React.ComponentPropsWithoutRef<"a"> & { icon?: React.ReactNode }
+>(({ className, title, children, icon, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <Link
+        <a
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
@@ -293,13 +368,16 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
+          <div className="flex items-center gap-2">
+            {icon && <div className="text-accent-foreground/80">{icon}</div>}
+            <div className="text-sm font-medium leading-none">{title}</div>
+          </div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </Link>
+        </a>
       </NavigationMenuLink>
     </li>
-  )
-})
+  );
+});
 ListItem.displayName = "ListItem"
