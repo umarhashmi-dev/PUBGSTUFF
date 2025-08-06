@@ -3,11 +3,12 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Logo } from "../logo";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#support", label: "Support" },
+  { href: "#featured-products", label: "Featured Products" },
+  { href: "#how-it-works", label: "How It Works" },
+  { href: "#testimonials", label: "Testimonials" },
 ];
 
 export default function Header() {
@@ -18,9 +19,7 @@ export default function Header() {
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between">
           <div className="flex-shrink-0">
-            <Link href="/" title="Textify AI" className="flex rounded outline-none focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
-              <Image className="w-auto h-8" width={116} height={32} src="https://cdn.rareblocks.xyz/collection/clarity/images/logo.svg" alt="Textify AI" />
-            </Link>
+            <Logo />
           </div>
 
           <div className="flex md:hidden">
@@ -47,7 +46,7 @@ export default function Header() {
 
           <div className="hidden md:flex">
             <Button asChild>
-              <Link href="/register">Try for free</Link>
+              <Link href="/products">Get Started</Link>
             </Button>
           </div>
         </div>
@@ -67,7 +66,7 @@ export default function Header() {
                   </Link>
                 ))}
                 <Button asChild>
-                  <Link href="/register">Try for free</Link>
+                  <Link href="/products">Get Started</Link>
                 </Button>
               </div>
             </div>

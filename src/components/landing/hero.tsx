@@ -22,18 +22,17 @@ export default function Hero() {
           <div className="grid grid-cols-1 gap-y-4 lg:items-center lg:grid-cols-2 xl:grid-cols-2">
             <div className="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
               <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">
-                An editor that helps you write clean codes.
+                Your One-Stop Shop for Digital Gaming Products.
               </h1>
               <p className="mt-2 text-lg text-gray-600 sm:mt-6 font-inter">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vehicula
-                massa in enim luctus. Rutrum arcu.
+                Instantly access a massive collection of game skins, currency, and other digital goods. Level up your gaming experience today.
               </p>
 
               <Button asChild size="lg" className="mt-8 sm:mt-10">
                 <Link
-                  href="#"
+                  href="/products"
                 >
-                  Try our free editor
+                  Browse Products
                 </Link>
               </Button>
 
@@ -48,12 +47,10 @@ export default function Hero() {
 
                 <blockquote className="mt-6">
                   <p className="text-lg font-bold text-gray-900 font-pj">
-                    Best code editor in market!
+                    Best prices for in-game items!
                   </p>
                   <p className="mt-3 text-base leading-7 text-gray-600 font-inter">
-                    Consectetur adipiscing elit. Vehicula massa in enim luctus.
-                    Rutrum arcu, aliquam nulla tincidunt gravida. Cursus
-                    convallis dolor semper pretium ornare.
+                   I always find the best deals on the skins and items I want. Delivery is instant and secure. Highly recommended!
                   </p>
                 </blockquote>
 
@@ -67,7 +64,7 @@ export default function Hero() {
                     data-ai-hint="woman portrait"
                   />
                   <p className="ml-2 text-base font-bold text-gray-900 font-pj">
-                    Denny Jones
+                    Sarah L.
                   </p>
                 </div>
               </div>
@@ -80,7 +77,7 @@ export default function Hero() {
                 alt="Illustration"
                 width={800}
                 height={600}
-                data-ai-hint="editor illustration"
+                data-ai-hint="gaming items abstract"
               />
             </div>
           </div>
