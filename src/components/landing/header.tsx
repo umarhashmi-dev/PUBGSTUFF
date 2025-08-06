@@ -214,7 +214,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
-      <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 px-6">
+      <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 px-6 animate-navbar-glow">
         <div className="flex-shrink-0">
           <Logo />
         </div>
@@ -454,3 +454,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
+
+    
