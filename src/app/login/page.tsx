@@ -91,28 +91,28 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 px-4">
       <div className="w-full max-w-md space-y-8">
         <div className="text-center">
           <Logo />
-          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-foreground">
+          <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
             Sign in to your account
           </h2>
-          <p className="mt-2 text-center text-sm text-muted-foreground">
+          <p className="mt-2 text-center text-sm text-gray-600">
             Or{" "}
-            <Link href="/signup" className="font-medium text-primary hover:underline">
+            <Link href="/signup" className="font-medium text-black hover:underline">
               create a new account
             </Link>
           </p>
         </div>
 
-        <div className="rounded-lg border bg-card p-8 shadow-sm">
+        <div className="rounded-lg border bg-white p-8 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-6">
             <Button variant="outline" onClick={handleGithubSignIn} className="w-full inline-flex items-center justify-center gap-2 bg-[#24292F] text-white hover:bg-[#24292F]/90">
               <GitHubIcon className="w-5 h-5" />
               GitHub
             </Button>
-            <Button variant="outline" onClick={handleGoogleSignIn} className="w-full inline-flex items-center justify-center gap-2 bg-white text-gray-700 hover:bg-gray-100">
+            <Button variant="outline" onClick={handleGoogleSignIn} className="w-full inline-flex items-center justify-center gap-2 bg-white text-gray-700 hover:bg-gray-100 border-gray-300">
               <GoogleIcon className="w-5 h-5" />
               Google
             </Button>
@@ -123,7 +123,7 @@ export default function LoginPage() {
               <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-card px-2 text-muted-foreground">
+              <span className="bg-white px-2 text-gray-500">
                 Or continue with
               </span>
             </div>
@@ -131,7 +131,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
-              <Label htmlFor="email">Email address</Label>
+              <Label htmlFor="email" className="text-gray-900">Email address</Label>
               <Input
                 type="email"
                 id="email"
@@ -139,13 +139,13 @@ export default function LoginPage() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 placeholder="you@example.com"
-                className="mt-1"
+                className="mt-1 bg-white text-black"
               />
             </div>
             <div>
               <div className="flex justify-between">
                 <Label htmlFor="password">Password</Label>
-                <Link href="#" className="text-sm font-medium text-primary hover:underline">
+                <Link href="#" className="text-sm font-medium text-black hover:underline">
                     Forgot your password?
                 </Link>
               </div>
@@ -156,11 +156,11 @@ export default function LoginPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 placeholder="••••••••"
-                className="mt-1"
+                className="mt-1 bg-white text-black"
               />
             </div>
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <Button type="submit" className="w-full">
+            <Button type="submit" className="w-full bg-black text-white hover:bg-gray-800">
               Sign in
             </Button>
           </form>
@@ -169,3 +169,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+    
