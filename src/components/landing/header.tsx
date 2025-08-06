@@ -212,9 +212,9 @@ export default function Header() {
 
 
   return (
-    <header className="py-4 md:py-6">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between">
+        <div className="relative flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Logo />
           </div>
@@ -307,7 +307,7 @@ export default function Header() {
                   <NavigationMenuItem>
                   <NavigationMenuTrigger>My Account</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                     <ul className="grid w-auto gap-3 p-4">
                       {accountLinks.map((component) => (
                         <ListItem
                           key={component.title}
@@ -458,3 +458,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
+
+    

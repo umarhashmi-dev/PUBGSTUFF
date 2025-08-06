@@ -6,7 +6,6 @@ import Header from "./header";
 export default function Hero() {
   return (
     <div className="bg-gray-50">
-      <Header />
       <section className="relative py-12 sm:py-16 lg:pb-40">
         <div className="absolute bottom-0 right-0 overflow-hidden">
           <Image
@@ -86,3 +85,5 @@ export default function Hero() {
     </div>
   );
 }
+
+    

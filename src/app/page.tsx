@@ -11,6 +11,7 @@ import UseCases from "@/components/landing/use-cases";
 export default function Home() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-gray-50">
+      <Header />
       <div className="flex-1">
         <main>
           <Hero />
@@ -28,3 +29,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
