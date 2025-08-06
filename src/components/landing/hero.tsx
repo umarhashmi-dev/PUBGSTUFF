@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <div className="bg-gray-50">
+    <div className="pt-24 sm:pt-32 lg:pt-40">
       <section className="relative py-12 sm:py-16 lg:pb-40">
         <div className="absolute bottom-0 right-0 overflow-hidden">
           <Image
@@ -26,7 +26,7 @@ export default function Hero() {
                 Instantly access a massive collection of game skins, currency, and other digital goods. Level up your gaming experience today.
               </p>
 
-              <Button asChild size="lg" className="mt-8 sm:mt-10">
+              <Button asChild size="lg" className="mt-8 sm:mt-10 bg-gray-900 text-white hover:bg-gray-800">
                 <Link
                   href="/products"
                 >
@@ -84,7 +84,3 @@ export default function Hero() {
     </div>
   );
 }
-
-    
-
-    

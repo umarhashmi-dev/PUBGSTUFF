@@ -213,219 +213,210 @@ export default function Header() {
 
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white text-black">
-      <div className="container px-4 mx-auto sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Logo />
-          </div>
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
+      <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg border border-white/20 px-6">
+        <div className="flex-shrink-0">
+          <Logo />
+        </div>
 
-          <div className="flex md:hidden">
-            <button type="button" className="text-black" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
-              {!expanded ? (
-                <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              ) : (
-                <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              )}
-            </button>
-          </div>
+        <div className="flex md:hidden">
+          <button type="button" className="text-gray-700" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
+            {!expanded ? (
+              <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            ) : (
+              <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+          </button>
+        </div>
 
-          <div className="hidden md:flex md:items-center md:justify-center md:space-x-10 md:absolute md:inset-y-0 md:left-1/2 md:-translate-x-1/2 lg:space-x-16">
-            <NavigationMenu>
-              <NavigationMenuList>
-                 <NavigationMenuItem>
-                    <Link href="/" legacyBehavior passHref>
-                        <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-black hover:bg-gray-100")}>
-                        Home
-                        </NavigationMenuLink>
-                    </Link>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="bg-transparent text-black hover:bg-gray-100 data-[state=open]:bg-gray-100">Courses</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2">
-                        {courseLinks.map((course) => (
-                           <ListItem
-                            key={course.title}
-                            title={course.title}
-                            href={course.href}
-                            icon={course.icon}
-                            className="text-black"
-                          >
-                            {course.description}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
-                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-black hover:bg-gray-100 data-[state=open]:bg-gray-100">Pages</NavigationMenuTrigger>
-                   <NavigationMenuContent>
-                    <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4">
-                      <div>
-                        <NavigationMenuLink asChild>
-                            <Link
-                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                href="/about"
-                            >
-                                <div className="mb-2 mt-4 text-lg font-medium text-black">
-                                PUBGSTUFF
-                                </div>
-                                <p className="text-sm leading-tight text-gray-500">
-                                Your one-stop shop for digital gaming products.
-                                </p>
-                            </Link>
-                        </NavigationMenuLink>
-                      </div>
-                      <div className="flex flex-col">
-                        <ul className="flex flex-col gap-3">
-                            {pageLinks.map((component) => (
-                                <ListItem
-                                key={component.title}
-                                title={component.title}
-                                href={component.href}
-                                className="text-black"
-                                >
-                                {component.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                        <div className="mt-4">
-                            <h3 className="font-medium text-sm text-black px-3">Policies</h3>
-                            <ul className="grid grid-cols-2 gap-2 mt-2">
-                               {policyLinks.slice(0, 4).map((component) => (
-                                    <ListItem key={component.title} title={component.title} href={component.href} className="text-xs text-black" />
-                                ))}
-                            </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                {user && (
-                  <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-black hover:bg-gray-100 data-[state=open]:bg-gray-100">My Account</NavigationMenuTrigger>
+        <div className="hidden md:flex md:items-center md:justify-center md:space-x-2 lg:space-x-4">
+          <NavigationMenu>
+            <NavigationMenuList>
+               <NavigationMenuItem>
+                  <Link href="/" legacyBehavior passHref>
+                      <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100")}>
+                      Home
+                      </NavigationMenuLink>
+                  </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                     <ul className="grid w-auto gap-3 p-4">
-                      {accountLinks.map((component) => (
-                        <ListItem
-                          key={component.title}
-                          title={component.title}
-                          href={component.href}
-                          className="text-black"
+                    <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
+                      {courseLinks.map((course) => (
+                         <ListItem
+                          key={course.title}
+                          title={course.title}
+                          href={course.href}
+                          icon={course.icon}
+                          className="text-gray-700"
                         >
-                          {component.description}
+                          {course.description}
                         </ListItem>
                       ))}
-                      <ListItem
-                          onClick={handleLogout}
-                          title="Logout"
-                          icon={<LogOut className="h-4 w-4" />}
-                           className="text-black"
-                        >
-                          Log out of your account.
-                        </ListItem>
                     </ul>
                   </NavigationMenuContent>
-                </NavigationMenuItem>
-                )}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-          
-          <div className="hidden md:flex items-center gap-2">
-            {!loading && !user && (
-              <>
-                <Button asChild variant="ghost" className="text-black hover:bg-gray-100 hover:text-black">
-                  <Link href="/login">Login</Link>
-                </Button>
-                <Button asChild className="bg-black text-white hover:bg-gray-800">
-                  <Link href="/signup">Sign up</Link>
-                </Button>
-              </>
-            )}
-            {!loading && user && (
-               <Avatar>
-                  <AvatarImage src={user.photoURL ?? ""} alt={user.displayName ?? ""} />
-                  <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
-                </Avatar>
-            )}
-          </div>
-
+              </NavigationMenuItem>
+               <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100">Pages</NavigationMenuTrigger>
+                 <NavigationMenuContent>
+                  <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
+                    <div>
+                      <NavigationMenuLink asChild>
+                          <Link
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                              href="/about"
+                          >
+                              <div className="mb-2 mt-4 text-lg font-medium text-gray-900">
+                              PUBGSTUFF
+                              </div>
+                              <p className="text-sm leading-tight text-gray-500">
+                              Your one-stop shop for digital gaming products.
+                              </p>
+                          </Link>
+                      </NavigationMenuLink>
+                    </div>
+                    <div className="flex flex-col">
+                      <ul className="flex flex-col gap-3">
+                          {pageLinks.map((component) => (
+                              <ListItem
+                              key={component.title}
+                              title={component.title}
+                              href={component.href}
+                              className="text-gray-700"
+                              >
+                              {component.description}
+                              </ListItem>
+                          ))}
+                      </ul>
+                      <div className="mt-4">
+                          <h3 className="font-medium text-sm text-gray-900 px-3">Policies</h3>
+                          <ul className="grid grid-cols-2 gap-2 mt-2">
+                             {policyLinks.slice(0, 4).map((component) => (
+                                  <ListItem key={component.title} title={component.title} href={component.href} className="text-xs text-gray-700" />
+                              ))}
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              {user && (
+                <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100">My Account</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                   <ul className="grid w-auto gap-3 p-4 bg-white">
+                    {accountLinks.map((component) => (
+                      <ListItem
+                        key={component.title}
+                        title={component.title}
+                        href={component.href}
+                        className="text-gray-700"
+                      >
+                        {component.description}
+                      </ListItem>
+                    ))}
+                    <ListItem
+                        onClick={handleLogout}
+                        title="Logout"
+                        icon={<LogOut className="h-4 w-4" />}
+                         className="text-gray-700"
+                      >
+                        Log out of your account.
+                      </ListItem>
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              )}
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
-        {expanded && (
-          <nav className="bg-white text-black">
-            <div className="px-1 py-8">
-              <div className="grid gap-y-7">
-                <Link
-                    href="/"
-                    onClick={() => setExpanded(false)}
-                    title="Home"
-                    className="flex items-center p-3 -m-3 text-base font-medium transition-all duration-200 rounded hover:bg-gray-100 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
-                  >
-                    Home
-                </Link>
-                <Link
-                    href="/courses"
-                    onClick={() => setExpanded(false)}
-                    title="Courses"
-                    className="flex items-center p-3 -m-3 text-base font-medium transition-all duration-200 rounded hover:bg-gray-100 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
-                  >
-                    Courses
-                </Link>
-                 <Link
-                    href="/about"
-                    onClick={() => setExpanded(false)}
-                    title="About Us"
-                    className="flex items-center p-3 -m-3 text-base font-medium transition-all duration-200 rounded hover:bg-gray-100 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
-                  >
-                    About Us
-                </Link>
-                 <Link
-                    href="/contact"
-                    onClick={() => setExpanded(false)}
-                    title="Contact Us"
-                    className="flex items-center p-3 -m-3 text-base font-medium transition-all duration-200 rounded hover:bg-gray-100 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
-                  >
-                    Contact Us
-                </Link>
-                {!loading && user ? (
-                  <>
-                    <Link
-                      href="/my-account"
-                      onClick={() => setExpanded(false)}
-                      title="My Account"
-                      className="flex items-center p-3 -m-3 text-base font-medium transition-all duration-200 rounded hover:bg-gray-100 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
-                    >
-                      My Account
-                    </Link>
-                    <Button onClick={() => { handleLogout(); setExpanded(false); }} className="bg-black text-white hover:bg-gray-800">Logout</Button>
-                  </>
-                ) : (
-                  <>
-                     <Link
-                      href="/login"
-                      onClick={() => setExpanded(false)}
-                      title="Login"
-                      className="flex items-center p-3 -m-3 text-base font-medium transition-all duration-200 rounded hover:bg-gray-100 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
-                    >
-                      Login
-                    </Link>
-                    <Button asChild className="bg-black text-white hover:bg-gray-800">
-                      <Link href="/signup" onClick={() => setExpanded(false)}>Sign up</Link>
-                    </Button>
-                  </>
-                )}
+        
+        <div className="hidden md:flex items-center gap-4">
+          {!loading && !user && (
+            <>
+              <Button asChild variant="ghost" className="text-gray-700 hover:bg-transparent">
+                <Link href="/login">Login</Link>
+              </Button>
+              <Button asChild className="bg-gray-900 text-white hover:bg-gray-800 rounded-lg">
+                <Link href="/signup">Sign up</Link>
+              </Button>
+            </>
+          )}
+          {!loading && user && (
+             <Avatar>
+                <AvatarImage src={user.photoURL ?? ""} alt={user.displayName ?? ""} />
+                <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
+              </Avatar>
+          )}
+        </div>
 
-              </div>
-            </div>
-          </nav>
-        )}
       </div>
+      {expanded && (
+        <nav className="bg-white/80 backdrop-blur-sm rounded-2xl mt-2 p-4">
+          <div className="grid gap-y-2">
+            <Link
+                href="/"
+                onClick={() => setExpanded(false)}
+                title="Home"
+                className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
+              >
+                Home
+            </Link>
+            <Link
+                href="/courses"
+                onClick={() => setExpanded(false)}
+                title="Courses"
+                className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
+              >
+                Courses
+            </Link>
+             <Link
+                href="/about"
+                onClick={() => setExpanded(false)}
+                title="About Us"
+                className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
+              >
+                About Us
+            </Link>
+             <Link
+                href="/contact"
+                onClick={() => setExpanded(false)}
+                title="Contact Us"
+                className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
+              >
+                Contact Us
+            </Link>
+            {!loading && user ? (
+              <>
+                <Link
+                  href="/my-account"
+                  onClick={() => setExpanded(false)}
+                  title="My Account"
+                  className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
+                >
+                  My Account
+                </Link>
+                <Button onClick={() => { handleLogout(); setExpanded(false); }} className="bg-gray-900 text-white hover:bg-gray-800 w-full mt-2">Logout</Button>
+              </>
+            ) : (
+              <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
+                 <Button asChild variant="ghost" className="w-full text-gray-700">
+                    <Link href="/login" onClick={() => setExpanded(false)}>Login</Link>
+                 </Button>
+                 <Button asChild className="w-full bg-gray-900 text-white hover:bg-gray-800">
+                  <Link href="/signup" onClick={() => setExpanded(false)}>Sign up</Link>
+                </Button>
+              </div>
+            )}
+
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
@@ -441,18 +432,18 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 focus:bg-gray-100",
             className
           )}
           {...props}
         >
           <div className="flex items-center gap-2">
             {icon && (
-                <div className="p-2 bg-gray-100/5 border border-gray-900/10 rounded-lg shadow-inner backdrop-blur-sm text-black">
+                <div className="p-2 bg-gray-100 rounded-lg shadow-inner text-gray-900">
                     {icon}
                 </div>
             )}
-            <div className="text-sm font-medium leading-none">{title}</div>
+            <div className="text-sm font-medium leading-none text-gray-900">{title}</div>
           </div>
           <p className="line-clamp-2 text-sm leading-snug text-gray-500">
             {children}
@@ -463,7 +454,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
-
-    
-
-    
