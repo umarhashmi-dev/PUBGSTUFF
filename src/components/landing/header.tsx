@@ -163,39 +163,6 @@ export default function Header() {
   const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
   const router = useRouter();
-  const [headerImageUrl, setHeaderImageUrl] = React.useState<string | null>(null);
-  const [imageLoading, setImageLoading] = React.useState(true);
-
-
-  React.useEffect(() => {
-    const fetchHeaderImage = async () => {
-      setImageLoading(true);
-      try {
-        const { data, error } = await supabase
-          .from('settings')
-          .select('value')
-          .eq('key', 'headerImageUrl')
-          .single();
-
-        if (error) {
-          console.error("Error fetching header image:", error.message);
-          setHeaderImageUrl(null);
-        } else if (data) {
-          setHeaderImageUrl(data.value);
-        } else {
-           setHeaderImageUrl(null);
-        }
-      } catch (error: any) {
-        console.error("An unexpected error occurred:", error.message);
-        setHeaderImageUrl(null);
-      } finally {
-        setImageLoading(false);
-      }
-    };
-
-    fetchHeaderImage();
-  }, []);
-
 
   const handleLogout = async () => {
     try {
@@ -275,15 +242,13 @@ export default function Header() {
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md"
                               href="/my-account"
                           >
-                           {imageLoading ? (
-                                <Skeleton className="w-full h-full rounded-md" />
-                            ) : headerImageUrl ? (
-                              <Image src={headerImageUrl} alt="Dynamic Header Image" layout="fill" className="object-cover rounded-md" data-ai-hint="gaming character" />
-                            ) : (
-                              <div className="w-full h-full bg-gray-200 rounded-md flex items-center justify-center">
-                                <span className="text-xs text-gray-500">No Image</span>
-                              </div>
-                            )}
+                            <Image 
+                              src="https://exeyxlrneqxfsxjprrdu.supabase.co/storage/v1/object/public/assets/BUY%20ACCOUNTS_11zon.png" 
+                              alt="Header promotion" 
+                              layout="fill" 
+                              className="object-cover w-full h-full rounded-md"
+                              data-ai-hint="gaming items abstract" 
+                            />
                           </Link>
                       </NavigationMenuLink>
                     </div>
@@ -299,6 +264,7 @@ export default function Header() {
                               {component.description}
                               </ListItem>
                           ))}
+
                       </ul>
                       <div className="mt-4">
                           <h3 className="font-medium text-sm text-gray-900 px-3">Policies</h3>
@@ -462,4 +428,5 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem"
 
+    
     
