@@ -1,3 +1,4 @@
+
 "use client"
 import React from "react";
 import Link from "next/link";
@@ -220,7 +221,7 @@ export default function Header() {
           </div>
 
           <div className="flex md:hidden">
-            <button type="button" className="text-gray-900" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
+            <button type="button" className="text-foreground" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
               {!expanded ? (
                 <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
@@ -360,7 +361,7 @@ export default function Header() {
                     href="/"
                     onClick={() => setExpanded(false)}
                     title="Home"
-                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-foreground transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
                   >
                     Home
                 </Link>
@@ -368,7 +369,7 @@ export default function Header() {
                     href="/courses"
                     onClick={() => setExpanded(false)}
                     title="Courses"
-                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-foreground transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
                   >
                     Courses
                 </Link>
@@ -376,7 +377,7 @@ export default function Header() {
                     href="/about"
                     onClick={() => setExpanded(false)}
                     title="About Us"
-                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-foreground transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
                   >
                     About Us
                 </Link>
@@ -384,7 +385,7 @@ export default function Header() {
                     href="/contact"
                     onClick={() => setExpanded(false)}
                     title="Contact Us"
-                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-foreground transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
                   >
                     Contact Us
                 </Link>
@@ -394,7 +395,7 @@ export default function Header() {
                       href="/my-account"
                       onClick={() => setExpanded(false)}
                       title="My Account"
-                      className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                      className="flex items-center p-3 -m-3 text-base font-medium text-foreground transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
                     >
                       My Account
                     </Link>
@@ -406,7 +407,7 @@ export default function Header() {
                       href="/login"
                       onClick={() => setExpanded(false)}
                       title="Login"
-                      className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                      className="flex items-center p-3 -m-3 text-base font-medium text-foreground transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
                     >
                       Login
                     </Link>
