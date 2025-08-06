@@ -290,14 +290,14 @@ export default function Header() {
                 <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">Pages</NavigationMenuTrigger>
                  <NavigationMenuContent>
                   <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
-                    <div>
+                    <div className="relative">
                       <NavigationMenuLink asChild>
                           <Link
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md"
                               href="/my-account"
                           >
                             {headerImageUrl ? (
-                              <Image src={headerImageUrl} alt="Buy Accounts" width={200} height={280} className="w-full h-auto" data-ai-hint="gaming character" />
+                              <Image src={headerImageUrl} alt="Buy Accounts" layout="fill" className="object-cover rounded-md" data-ai-hint="gaming character" />
                             ) : (
                               <div className="w-full h-full bg-gray-200 animate-pulse rounded-md"></div>
                             )}
