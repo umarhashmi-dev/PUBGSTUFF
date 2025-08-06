@@ -187,7 +187,11 @@ export default function Header() {
       <div className="relative flex items-center justify-between h-16 bg-white/80 backdrop-blur-sm rounded-2xl px-6"
            style={{ boxShadow: '0 0 15px 5px #E8DBF4, 0 0 15px 5px #E9F9D9, 0 0 15px 5px #DEE7FA, 0 0 15px 5px #FCDADC' }}>
         
-        <div className="hidden md:flex items-center justify-start flex-1 gap-4">
+        <div className="flex items-center">
+            <Logo />
+        </div>
+
+        <div className="hidden md:flex items-center justify-center">
           <NavigationMenu>
             <NavigationMenuList>
                <NavigationMenuItem>
@@ -215,32 +219,7 @@ export default function Header() {
                     </ul>
                   </NavigationMenuContent>
               </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-
-        <div className="flex md:hidden">
-          <button type="button" className="text-gray-700" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
-            {!expanded ? (
-              <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            ) : (
-              <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            )}
-          </button>
-        </div>
-        
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <Logo />
-        </div>
-
-        <div className="hidden md:flex items-center justify-end flex-1 gap-4">
-          <NavigationMenu>
-              <NavigationMenuList>
-                <NavigationMenuItem>
+               <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">Pages</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
@@ -286,6 +265,27 @@ export default function Header() {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+
+        <div className="flex md:hidden">
+          <button type="button" className="text-gray-700" onClick={() => setExpanded(!expanded)} aria-expanded={expanded}>
+            {!expanded ? (
+              <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            ) : (
+              <svg className="w-7 h-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        <div className="hidden md:flex items-center justify-end gap-4">
+          <NavigationMenu>
+              <NavigationMenuList>
                 {user && (
                   <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">My Account</NavigationMenuTrigger>
