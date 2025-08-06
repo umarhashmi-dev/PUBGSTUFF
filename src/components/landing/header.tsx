@@ -31,6 +31,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4 ml-10">
+          <div className="w-px h-5 bg-border/40"></div>
           <Link href="/login" className="text-base font-medium text-foreground transition-colors hover:text-primary">
             Login
           </Link>

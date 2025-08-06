@@ -12,7 +12,8 @@ export default function Hero() {
           height={1000}
           className="w-auto h-full" src="https://d33wubrfki0l68.cloudfront.net/1e0fc04f38f5896d10ff66824a62e466839567f8/699b5/images/hero/3/background-pattern.png" alt="" />
     </div>
-      <div className="container grid lg:grid-cols-2 gap-12 items-center py-12 md:py-24">
+    <div className="relative">
+      <div className="container grid lg:grid-cols-2 gap-12 items-center py-12 md:py-24 lg:py-32">
         <div className="text-center lg:text-left">
           <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
             Get meaningful feedbacks on your code
@@ -49,6 +50,7 @@ export default function Hero() {
             data-ai-hint="code feedback illustration"
           />
         </div>
+      </div>
       </div>
     </section>
   );
