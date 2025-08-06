@@ -8,12 +8,13 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { cn } from "@/lib/utils";
 import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School, PencilRuler, Paintbrush, Plane, Video, Tv2, Cable, Repeat, Lightbulb, BrainCircuit, BarChart, Settings, Users, GitBranch, Waypoints, Workflow, Layers, Component, Box, Package, ShoppingBag, Truck, HeartHandshake, FileText, Shield, FileQuestion, Info, LifeBuoy, LogOut } from 'lucide-react';
 import { useAuth } from "@/hooks/use-auth";
-import { auth } from "@/lib/firebase";
+import { auth, db } from "@/lib/firebase";
 import { signOut } from "firebase/auth";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
+import { doc, getDoc } from "firebase/firestore";
 
 const accountLinks = [
   {
@@ -193,6 +194,28 @@ export default function Header() {
   const { user, loading } = useAuth();
   const { toast } = useToast();
   const router = useRouter();
+  const [headerImageUrl, setHeaderImageUrl] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    const fetchHeaderImage = async () => {
+      try {
+        const docRef = doc(db, "settings", "header");
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          setHeaderImageUrl(docSnap.data().imageUrl);
+        } else {
+          // Fallback or default image if not found in Firestore
+          setHeaderImageUrl("https://storage.googleapis.com/stey-tmp/611e3328ce786f455169a19494a8f936.png");
+        }
+      } catch (error) {
+        console.error("Error fetching header image:", error);
+        // Fallback or default image on error
+        setHeaderImageUrl("https://storage.googleapis.com/stey-tmp/611e3328ce786f455169a19494a8f936.png");
+      }
+    };
+
+    fetchHeaderImage();
+  }, []);
 
 
   const handleLogout = async () => {
@@ -246,7 +269,7 @@ export default function Header() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700">Courses</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
                       {courseLinks.map((course) => (
@@ -264,7 +287,7 @@ export default function Header() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
                <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700">Pages</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">Pages</NavigationMenuTrigger>
                  <NavigationMenuContent>
                   <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
                     <div>
@@ -273,7 +296,11 @@ export default function Header() {
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                               href="/my-account"
                           >
-                            <Image src="https://storage.googleapis.com/stey-tmp/611e3328ce786f455169a19494a8f936.png" alt="Buy Accounts" width={200} height={280} className="w-full h-auto" data-ai-hint="gaming character" />
+                            {headerImageUrl ? (
+                              <Image src={headerImageUrl} alt="Buy Accounts" width={200} height={280} className="w-full h-auto" data-ai-hint="gaming character" />
+                            ) : (
+                              <div className="w-full h-full bg-gray-200 animate-pulse rounded-md"></div>
+                            )}
                           </Link>
                       </NavigationMenuLink>
                     </div>
@@ -304,7 +331,7 @@ export default function Header() {
               </NavigationMenuItem>
               {user && (
                 <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700">My Account</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-transparent data-[state=open]:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent">My Account</NavigationMenuTrigger>
                 <NavigationMenuContent>
                    <ul className="grid w-auto gap-3 p-4 bg-white">
                     {accountLinks.map((component) => (
@@ -336,7 +363,7 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-4">
           {!loading && !user && (
             <>
-              <Button asChild variant="ghost" className="text-gray-700 hover:bg-transparent">
+              <Button asChild variant="ghost" className="text-gray-700 hover:bg-transparent hover:text-gray-700">
                 <Link href="/login">Login</Link>
               </Button>
               <Button asChild className="bg-gray-900 text-white hover:bg-gray-800 rounded-lg">
