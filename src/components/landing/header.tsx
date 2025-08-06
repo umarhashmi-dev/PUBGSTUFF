@@ -237,9 +237,9 @@ export default function Header() {
           <NavigationMenu>
             <NavigationMenuList>
                <NavigationMenuItem>
-                  <Link href="/" passHref>
-                      <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100")}>
-                      Home
+                  <Link href="/" legacyBehavior passHref>
+                      <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100")}>
+                        <a>Home</a>
                       </NavigationMenuLink>
                   </Link>
               </NavigationMenuItem>
