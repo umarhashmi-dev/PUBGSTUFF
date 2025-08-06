@@ -72,10 +72,10 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        'logo-1': '#E8DBF4',
-        'logo-2': '#E9F9D9',
-        'logo-3': '#DEE7FA',
-        'logo-4': '#FCDADC',
+        'logo-1': '#C5A8E0',
+        'logo-2': '#B9E0A0',
+        'logo-3': '#AEC5F3',
+        'logo-4': '#F7B5B8',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -100,10 +100,10 @@ export default {
           },
         },
         'logo-color-cycle': {
-          '0%, 100%': { color: '#E8DBF4' }, // logo-1
-          '25%': { color: '#E9F9D9' },      // logo-2
-          '50%': { color: '#DEE7FA' },      // logo-3
-          '75%': { color: '#FCDADC' },      // logo-4
+          '0%, 100%': { color: 'hsl(var(--logo-1))' },
+          '25%': { color: 'hsl(var(--logo-2))' },
+          '50%': { color: 'hsl(var(--logo-3))' },
+          '75%': { color: 'hsl(var(--logo-4))' },
         }
       },
       animation: {
