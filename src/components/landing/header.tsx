@@ -157,36 +157,6 @@ const courseLinks = [
     icon: <Tv className="h-5 w-5" />,
     description: 'Professional video editing mastery.',
   },
-  {
-    title: 'Dropshipping',
-    href: '/courses/dropshipping',
-    icon: <ShoppingCart className="h-5 w-5" />,
-    description: 'Launch an online store without inventory.',
-  },
-  {
-    title: 'Online Business',
-    href: '/courses/online-business',
-    icon: <Briefcase className="h-5 w-5" />,
-    description: 'Start and grow your digital business.',
-  },
-  {
-    title: 'Web Animations',
-    href: '/courses/web-animations',
-    icon: <Wind className="h-5 w-5" />,
-    description: 'Animate your web creations.',
-  },
-  {
-    title: 'Web Development',
-    href: '/courses/web-development',
-    icon: <LayoutTemplate className="h-5 w-5" />,
-    description: 'Become a full-stack web developer.',
-  },
-  {
-    title: 'Premiere',
-    href: '/courses/premiere',
-    icon: <School className="h-5 w-5" />,
-    description: 'Beginner-friendly video editing.',
-  },
 ];
 
 export default function Header() {
@@ -204,13 +174,11 @@ export default function Header() {
         if (docSnap.exists()) {
           setHeaderImageUrl(docSnap.data().imageUrl);
         } else {
-          // Fallback or default image if not found in Firestore
-          setHeaderImageUrl("https://storage.googleapis.com/stey-tmp/611e3328ce786f455169a19494a8f936.png");
+          setHeaderImageUrl(null);
         }
       } catch (error) {
         console.error("Error fetching header image:", error);
-        // Fallback or default image on error
-        setHeaderImageUrl("https://storage.googleapis.com/stey-tmp/611e3328ce786f455169a19494a8f936.png");
+        setHeaderImageUrl(null);
       }
     };
 
@@ -297,9 +265,11 @@ export default function Header() {
                               href="/my-account"
                           >
                             {headerImageUrl ? (
-                              <Image src={headerImageUrl} alt="Buy Accounts" layout="fill" className="object-cover rounded-md" data-ai-hint="gaming character" />
+                              <Image src={headerImageUrl} alt="Buy Accounts" fill className="object-cover rounded-md" data-ai-hint="gaming character" />
                             ) : (
-                              <div className="w-full h-full bg-gray-200 animate-pulse rounded-md"></div>
+                              <div className="w-full h-full bg-gray-200 animate-pulse rounded-md flex items-center justify-center">
+                                <span className="text-xs text-gray-500">No Image</span>
+                              </div>
                             )}
                           </Link>
                       </NavigationMenuLink>
