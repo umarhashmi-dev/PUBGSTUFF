@@ -317,10 +317,10 @@ export default function Header() {
           {!authLoading && !user && (
             <>
               <Button asChild variant="ghost" className="text-gray-700 hover:bg-gray-100">
-                <Link href="/login">Login</Link>
+                <Link href="/login" prefetch={false}>Login</Link>
               </Button>
               <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-lg">
-                <Link href="/signup">Sign up</Link>
+                <Link href="/signup" prefetch={false}>Sign up</Link>
               </Button>
             </>
           )}
@@ -383,10 +383,10 @@ export default function Header() {
             ) : (
               <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
                  <Button asChild variant="ghost" className="w-full text-gray-700 hover:bg-gray-100">
-                    <Link href="/login" onClick={() => setExpanded(false)}>Login</Link>
+                    <Link href="/login" onClick={() => setExpanded(false)} prefetch={false}>Login</Link>
                  </Button>
                  <Button asChild className="w-full bg-black text-white hover:bg-gray-800">
-                  <Link href="/signup" onClick={() => setExpanded(false)}>Sign up</Link>
+                  <Link href="/signup" onClick={() => setExpanded(false)} prefetch={false}>Sign up</Link>
                 </Button>
               </div>
             )}
