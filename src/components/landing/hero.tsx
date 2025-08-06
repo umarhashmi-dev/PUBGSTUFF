@@ -4,31 +4,32 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="py-20 md:py-32">
-      <div className="container text-center">
-        <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-          Get Your Game On
-          <span className="text-primary"> With Digital Goods</span>
-        </h1>
-        <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
-          Your one-stop shop for the best digital products for your favorite games. Instant delivery, secure checkout.
-        </p>
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button asChild size="lg" className="w-full sm:w-auto">
-            <Link href="/products">Browse Products</Link>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
-            <Link href="/about">Learn More</Link>
-          </Button>
+    <section className="bg-background">
+      <div className="container grid md:grid-cols-2 gap-12 items-center py-20 md:py-32">
+        <div className="text-center md:text-left">
+          <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
+            Elevate Your Gameplay
+          </h1>
+          <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+            Discover exclusive digital gear and assets to dominate the competition. Instant delivery, unbeatable value.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <Button asChild size="lg">
+              <Link href="#featured-products">Explore Products</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <Link href="/about">Learn More</Link>
+            </Button>
+          </div>
         </div>
-        <div className="mt-16">
+        <div className="relative h-80 md:h-full w-full">
           <Image
-            src="https://placehold.co/1200x600.png"
+            src="https://placehold.co/800x600.png"
             alt="Hero Image"
-            width={1200}
-            height={600}
-            className="rounded-lg shadow-xl mx-auto"
-            data-ai-hint="gaming items"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-xl shadow-2xl"
+            data-ai-hint="gaming cinematic"
           />
         </div>
       </div>

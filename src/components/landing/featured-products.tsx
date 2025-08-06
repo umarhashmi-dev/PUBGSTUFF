@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 const products = [
   {
@@ -36,43 +37,52 @@ const products = [
 
 export default function FeaturedProducts() {
   return (
-    <section id="featured-products" className="py-20 md:py-28">
+    <section id="featured-products" className="py-20 md:py-28 bg-secondary">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Featured Products
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Check out our most popular items.
+            Hand-picked items to give you an edge.
           </p>
         </div>
 
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <Card key={product.id} className="group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="p-0">
+            <Card key={product.id} className="group overflow-hidden rounded-lg bg-card shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+              <div className="aspect-square overflow-hidden">
                 <Image
                   src={product.image}
                   alt={product.name}
                   width={400}
                   height={400}
-                  className="object-cover w-full h-64"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
                   data-ai-hint={product.aiHint}
                 />
-              </CardHeader>
+              </div>
               <CardContent className="p-4">
-                <CardTitle className="text-lg font-semibold group-hover:text-primary transition-colors">
-                  <Link href={`/products/${product.id}`}>{product.name}</Link>
-                </CardTitle>
+                <h3 className="text-lg font-semibold text-foreground">{product.name}</h3>
+                <p className="font-bold text-lg text-primary mt-1">{product.price}</p>
               </CardContent>
-              <CardFooter className="flex justify-between items-center p-4 pt-0">
-                <span className="font-bold text-lg text-primary">{product.price}</span>
-                <Button asChild>
-                  <Link href={`/products/${product.id}`}>View</Link>
+              <CardFooter className="p-4 pt-0">
+                <Button asChild variant="outline" className="w-full">
+                  <Link href={`/products/${product.id}`}>
+                    View Product
+                    <ArrowRight className="ml-2" />
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
           ))}
+        </div>
+        <div className="mt-16 text-center">
+          <Button asChild size="lg" variant="ghost">
+            <Link href="/products">
+              View All Products
+              <ArrowRight className="ml-2" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>
