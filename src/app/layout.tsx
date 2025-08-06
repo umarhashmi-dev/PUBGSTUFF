@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Textify AI',
-  description: 'Amplify Your Content Creation with AI',
+  title: 'PUBGStuff Store',
+  description: 'Your one-stop shop for digital gaming products.',
 };
 
 export default function RootLayout({

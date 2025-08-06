@@ -2,15 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
 
 const navLinks = [
-  { href: "#features", label: "Features" },
-  { href: "#pricing", label: "Pricing" },
-  { href: "#about", label: "About Us" },
-  { href: "#contact", label: "Contact Us" },
+  { href: "/products", label: "Products" },
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
 ];
 
 export default function Header() {
@@ -31,12 +30,21 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-4 ml-auto">
-          <Button asChild className="hidden sm:flex">
-            <Link href="#cta">Get Started</Link>
+        <div className="flex items-center gap-4 ml-4">
+          <Button asChild variant="ghost" size="icon">
+            <Link href="/cart">
+              <ShoppingCart className="h-5 w-5" />
+              <span className="sr-only">Cart</span>
+            </Link>
+          </Button>
+          <Button asChild variant="ghost" size="icon">
+            <Link href="/login">
+              <User className="h-5 w-5" />
+              <span className="sr-only">Login</span>
+            </Link>
           </Button>
           <button
-            className="md:hidden"
+            className="md:hidden ml-4"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -57,9 +65,6 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild>
-              <Link href="#cta">Get Started</Link>
-            </Button>
           </div>
         </div>
       )}

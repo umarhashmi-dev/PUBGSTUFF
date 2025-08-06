@@ -5,9 +5,9 @@ import { Github, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 const quickLinks = [
-  { href: "#", label: "About Us" },
-  { href: "#", label: "Contact Us" },
-  { href: "#", label: "My account" },
+  { href: "/about", label: "About Us" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/account", label: "My account" },
 ];
 
 const policyLinks = [
@@ -18,13 +18,13 @@ const policyLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="bg-white dark:bg-card border-t py-12">
+    <footer id="contact" className="bg-card border-t py-12">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Logo />
             <p className="text-muted-foreground">
-              Supercharge your content creation with the power of AI.
+              Your one-stop shop for digital gaming products.
             </p>
             <div className="flex space-x-4">
               <Link href="#" aria-label="Github"><Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Textify AI. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PUBGStuff Store. All rights reserved.</p>
         </div>
       </div>
     </footer>
