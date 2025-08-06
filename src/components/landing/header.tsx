@@ -5,7 +5,13 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "../logo";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School, PencilRuler, Paintbrush, Plane, Video, Tv2, Cable, Repeat, Lightbulb, BrainCircuit, BarChart, Settings, Users, GitBranch, Waypoints, Workflow, Layers, Component, Box, Package, ShoppingBag, Truck, HeartHandshake, FileText, Shield, FileQuestion, Info, LifeBuoy } from 'lucide-react';
+import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School, PencilRuler, Paintbrush, Plane, Video, Tv2, Cable, Repeat, Lightbulb, BrainCircuit, BarChart, Settings, Users, GitBranch, Waypoints, Workflow, Layers, Component, Box, Package, ShoppingBag, Truck, HeartHandshake, FileText, Shield, FileQuestion, Info, LifeBuoy, LogOut } from 'lucide-react';
+import { useAuth } from "@/hooks/use-auth";
+import { auth } from "@/lib/firebase";
+import { signOut } from "firebase/auth";
+import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 const accountLinks = [
   {
@@ -182,6 +188,28 @@ const courseLinks = [
 
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
+  const { user, loading } = useAuth();
+  const { toast } = useToast();
+  const router = useRouter();
+
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      toast({
+        title: "Success!",
+        description: "You have successfully logged out.",
+      });
+      router.push("/");
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: error.message,
+        variant: "destructive",
+      });
+    }
+  };
+
 
   return (
     <header className="relative z-50 py-4 md:py-6">
@@ -275,7 +303,8 @@ export default function Header() {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                {user && (
+                  <NavigationMenuItem>
                   <NavigationMenuTrigger>My Account</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="w-[300px] gap-3 p-4 flex flex-col">
@@ -288,18 +317,40 @@ export default function Header() {
                           {component.description}
                         </ListItem>
                       ))}
+                      <ListItem
+                          onClick={handleLogout}
+                          title="Logout"
+                          icon={<LogOut className="h-4 w-4" />}
+                        >
+                          Log out of your account.
+                        </ListItem>
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
+                )}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
-
-          <div className="hidden md:flex">
-            <Button asChild>
-              <Link href="/products">Get Started</Link>
-            </Button>
+          
+          <div className="hidden md:flex items-center gap-2">
+            {!loading && !user && (
+              <>
+                <Button asChild variant="ghost">
+                  <Link href="/login">Login</Link>
+                </Button>
+                <Button asChild>
+                  <Link href="/signup">Sign up</Link>
+                </Button>
+              </>
+            )}
+            {!loading && user && (
+               <Avatar>
+                  <AvatarImage src={user.photoURL ?? ""} alt={user.displayName ?? ""} />
+                  <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
+                </Avatar>
+            )}
           </div>
+
         </div>
         {expanded && (
           <nav>
@@ -337,17 +388,34 @@ export default function Header() {
                   >
                     Contact Us
                 </Link>
-                 <Link
-                    href="/my-account"
-                    onClick={() => setExpanded(false)}
-                    title="My Account"
-                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
-                  >
-                    My Account
-                </Link>
-                <Button asChild>
-                  <Link href="/products">Get Started</Link>
-                </Button>
+                {!loading && user ? (
+                  <>
+                    <Link
+                      href="/my-account"
+                      onClick={() => setExpanded(false)}
+                      title="My Account"
+                      className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                    >
+                      My Account
+                    </Link>
+                    <Button onClick={() => { handleLogout(); setExpanded(false); }}>Logout</Button>
+                  </>
+                ) : (
+                  <>
+                     <Link
+                      href="/login"
+                      onClick={() => setExpanded(false)}
+                      title="Login"
+                      className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                    >
+                      Login
+                    </Link>
+                    <Button asChild>
+                      <Link href="/signup" onClick={() => setExpanded(false)}>Sign up</Link>
+                    </Button>
+                  </>
+                )}
+
               </div>
             </div>
           </nav>
