@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
+import { Skeleton } from "../ui/skeleton";
 
 const accountLinks = [
   {
@@ -159,13 +160,16 @@ const courseLinks = [
 
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
-  const { user, loading } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
   const router = useRouter();
   const [headerImageUrl, setHeaderImageUrl] = React.useState<string | null>(null);
+  const [imageLoading, setImageLoading] = React.useState(true);
+
 
   React.useEffect(() => {
     const fetchHeaderImage = async () => {
+      setImageLoading(true);
       try {
         const { data, error } = await supabase
           .from('settings')
@@ -174,16 +178,18 @@ export default function Header() {
           .single();
 
         if (error) {
-          console.error("Error fetching header image:", error);
+          console.error("Error fetching header image:", error.message);
           setHeaderImageUrl(null);
         } else if (data) {
           setHeaderImageUrl(data.value);
         } else {
-          setHeaderImageUrl(null);
+           setHeaderImageUrl(null);
         }
-      } catch (error) {
-        console.error("Error fetching header image:", error);
+      } catch (error: any) {
+        console.error("An unexpected error occurred:", error.message);
         setHeaderImageUrl(null);
+      } finally {
+        setImageLoading(false);
       }
     };
 
@@ -269,10 +275,12 @@ export default function Header() {
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md"
                               href="/my-account"
                           >
-                            {headerImageUrl ? (
+                           {imageLoading ? (
+                                <Skeleton className="w-full h-full rounded-md" />
+                            ) : headerImageUrl ? (
                               <Image src={headerImageUrl} alt="Dynamic Header Image" layout="fill" className="object-cover rounded-md" data-ai-hint="gaming character" />
                             ) : (
-                              <div className="w-full h-full bg-gray-200 animate-pulse rounded-md flex items-center justify-center">
+                              <div className="w-full h-full bg-gray-200 rounded-md flex items-center justify-center">
                                 <span className="text-xs text-gray-500">No Image</span>
                               </div>
                             )}
@@ -336,7 +344,7 @@ export default function Header() {
         </div>
         
         <div className="hidden md:flex items-center gap-4">
-          {!loading && !user && (
+          {!authLoading && !user && (
             <>
               <Button asChild variant="ghost" className="text-gray-700 hover:bg-transparent hover:text-gray-700">
                 <Link href="/login">Login</Link>
@@ -346,7 +354,7 @@ export default function Header() {
               </Button>
             </>
           )}
-          {!loading && user && (
+          {!authLoading && user && (
              <Avatar>
                 <AvatarImage src={user.user_metadata.avatar_url ?? ""} alt={user.user_metadata.full_name ?? ""} />
                 <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
@@ -390,7 +398,7 @@ export default function Header() {
               >
                 Contact Us
             </Link>
-            {!loading && user ? (
+            {!authLoading && user ? (
               <>
                 <Link
                   href="/my-account"
@@ -453,3 +461,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
+
+    
