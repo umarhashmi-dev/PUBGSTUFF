@@ -1,18 +1,70 @@
 "use client"
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Logo } from "../logo";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
-const navLinks = [
-  { href: "#featured-products", label: "Featured Products" },
-  { href: "#how-it-works", label: "How It Works" },
-  { href: "#testimonials", label: "Testimonials" },
+const accountLinks = [
+  {
+    title: "My Account",
+    href: "/my-account",
+    description: "View your account details and manage your settings.",
+  },
+  {
+    title: "Orders",
+    href: "/my-account/orders",
+    description: "Check the status of your recent orders.",
+  },
+  {
+    title: "Downloads",
+    href: "/my-account/downloads",
+    description: "Access your downloadable products.",
+  },
 ];
 
+const policyLinks = [
+    {
+        title: "Terms of Use",
+        href: "/policies/terms-of-use",
+        description: "Read the terms and conditions of using our site.",
+    },
+    {
+        title: "Privacy Policy",
+        href: "/policies/privacy-policy",
+        description: "Understand how we handle your personal data.",
+    },
+    {
+        title: "Refund Policy",
+        href: "/policies/refund-policy",
+        description: "Learn about our policy on refunds and returns.",
+    },
+     {
+        title: "User Agreement",
+        href: "/policies/user-agreement",
+        description: "Read our user agreement.",
+    },
+    {
+        title: "Disclaimer",
+        href: "/policies/disclaimer",
+        description: "Read our disclaimer.",
+    },
+    {
+        title: "Cookies Policy",
+        href: "/policies/cookies-policy",
+        description: "Learn about our use of cookies.",
+    },
+    {
+        title: "Shipping Policy",
+        href: "/policies/shipping-policy",
+        description: "Learn about our shipping policy.",
+    },
+]
+
 export default function Header() {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = React.useState(false);
 
   return (
     <header className="relative z-10 py-4 md:py-6">
@@ -37,11 +89,71 @@ export default function Header() {
           </div>
 
           <div className="hidden md:flex md:items-center md:justify-center md:space-x-10 md:absolute md:inset-y-0 md:left-1/2 md:-translate-x-1/2 lg:space-x-16">
-            {navLinks.map(link => (
-              <Link key={link.href} href={link.href} title={link.label} className="text-base font-medium text-gray-900 transition-all duration-200 rounded focus:outline-none font-pj hover:text-opacity-50 focus:ring-1 focus:ring-gray-900 focus:ring-offset-2">
-                {link.label}
-              </Link>
-            ))}
+            <NavigationMenu>
+              <NavigationMenuList>
+                 <NavigationMenuItem>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Home
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/courses" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Courses
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                 <NavigationMenuItem>
+                  <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                      <li className="row-span-3">
+                        <NavigationMenuLink asChild>
+                          <a
+                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                            href="/about"
+                          >
+                            <div className="mb-2 mt-4 text-lg font-medium">
+                              About Us
+                            </div>
+                            <p className="text-sm leading-tight text-muted-foreground">
+                              Learn more about our company, mission, and values.
+                            </p>
+                          </a>
+                        </NavigationMenuLink>
+                      </li>
+                      <ListItem href="/contact" title="Contact Us">
+                        Get in touch with our team for support or inquiries.
+                      </ListItem>
+                      <ListItem href="/policies/privacy-policy" title="Privacy Policy">
+                         Understand how we handle your personal data.
+                      </ListItem>
+                       <ListItem href="/policies/terms-of-use" title="Terms of Use">
+                        Read the terms and conditions of using our site.
+                      </ListItem>
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>My Account</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                     <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                      {accountLinks.map((component) => (
+                        <ListItem
+                          key={component.title}
+                          title={component.title}
+                          href={component.href}
+                        >
+                          {component.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
 
           <div className="hidden md:flex">
@@ -54,17 +166,46 @@ export default function Header() {
           <nav>
             <div className="px-1 py-8">
               <div className="grid gap-y-7">
-                {navLinks.map(link => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
+                <Link
+                    href="/"
                     onClick={() => setExpanded(false)}
-                    title={link.label}
+                    title="Home"
                     className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
                   >
-                    {link.label}
-                  </Link>
-                ))}
+                    Home
+                </Link>
+                <Link
+                    href="/courses"
+                    onClick={() => setExpanded(false)}
+                    title="Courses"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                  >
+                    Courses
+                </Link>
+                 <Link
+                    href="/about"
+                    onClick={() => setExpanded(false)}
+                    title="About Us"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                  >
+                    About Us
+                </Link>
+                 <Link
+                    href="/contact"
+                    onClick={() => setExpanded(false)}
+                    title="Contact Us"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                  >
+                    Contact Us
+                </Link>
+                 <Link
+                    href="/my-account"
+                    onClick={() => setExpanded(false)}
+                    title="My Account"
+                    className="flex items-center p-3 -m-3 text-base font-medium text-gray-900 transition-all duration-200 rounded hover:bg-gray-50 focus:outline-none font-pj focus:ring-1 focus:ring-gray-900 focus:ring-offset-2"
+                  >
+                    My Account
+                </Link>
                 <Button asChild>
                   <Link href="/products">Get Started</Link>
                 </Button>
@@ -76,3 +217,30 @@ export default function Header() {
     </header>
   );
 }
+
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem"
