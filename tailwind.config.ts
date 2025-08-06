@@ -73,7 +73,6 @@ export default {
           ring: 'hsl(var(--sidebar-ring))',
         },
         'logo-1': '#211f2f',
-        'logo-2': '#918ca9',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -97,15 +96,10 @@ export default {
             height: '0',
           },
         },
-        'logo-color-cycle': {
-          '0%, 100%': { color: 'hsl(var(--logo-1))' },
-          '50%': { color: 'hsl(var(--logo-2))' },
-        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'logo-color-cycle': 'logo-color-cycle 4s ease-in-out infinite',
       },
     },
   },
