@@ -13,6 +13,7 @@ import { signOut } from "firebase/auth";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import Image from "next/image";
 
 const accountLinks = [
   {
@@ -239,7 +240,7 @@ export default function Header() {
             <NavigationMenuList>
                <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-transparent hover:text-gray-700 focus:text-gray-700")}>
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-transparent hover:text-gray-700 focus:text-gray-700 focus:bg-transparent data-[state=open]:bg-transparent")}>
                       Home
                     </Link>
                   </NavigationMenuLink>
@@ -270,14 +271,9 @@ export default function Header() {
                       <NavigationMenuLink asChild>
                           <Link
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                              href="/about"
+                              href="/my-account"
                           >
-                              <div className="mb-2 mt-4 text-lg font-medium text-gray-900">
-                              PUBGSTUFF
-                              </div>
-                              <p className="text-sm leading-tight text-gray-500">
-                              Your one-stop shop for digital gaming products.
-                              </p>
+                            <Image src="https://storage.googleapis.com/stey-tmp/611e3328ce786f455169a19494a8f936.png" alt="Buy Accounts" width={200} height={280} className="w-full h-auto" data-ai-hint="gaming character" />
                           </Link>
                       </NavigationMenuLink>
                     </div>
