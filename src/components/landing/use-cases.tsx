@@ -40,7 +40,7 @@ export default function UseCases() {
       <div className="container">
         <div className="text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Multiple Use Cases Of PubgStuff
+            Multiple Use Cases Of PUBGSTUFF
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Providing you with the best digital product experience.

@@ -271,7 +271,7 @@ export default function Header() {
                                 href="/about"
                             >
                                 <div className="mb-2 mt-4 text-lg font-medium">
-                                Textify AI
+                                PUBGSTUFF
                                 </div>
                                 <p className="text-sm leading-tight text-muted-foreground">
                                 Your one-stop shop for digital gaming products.

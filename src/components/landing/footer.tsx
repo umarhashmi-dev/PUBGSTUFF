@@ -68,7 +68,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} PUBGStuff Store. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} PUBGSTUFF. All rights reserved.</p>
         </div>
       </div>
     </footer>
