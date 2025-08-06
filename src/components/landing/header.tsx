@@ -2,10 +2,10 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import { Logo } from "../logo";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School } from 'lucide-react';
 
 const accountLinks = [
   {
@@ -24,6 +24,19 @@ const accountLinks = [
     description: "Access your downloadable products.",
   },
 ];
+
+const pageLinks = [
+    {
+        title: "About Us",
+        href: "/about",
+        description: "Learn more about our company, mission, and values.",
+    },
+    {
+        title: "Contact Us",
+        href: "/contact",
+        description: "Get in touch with our team for support or inquiries.",
+    }
+]
 
 const policyLinks = [
     {
@@ -64,23 +77,24 @@ const policyLinks = [
 ]
 
 const courseLinks = [
-    { title: "Premiere", href: "/courses/premiere" },
-    { title: "Premiere Pro", href: "/courses/premiere-pro" },
-    { title: "After Effects", href: "/courses/after-effects" },
-    { title: "AI Coding", href: "/courses/ai-coding" },
-    { title: "TikTok", href: "/courses/tiktok" },
-    { title: "Deepseek", href: "/courses/deepseek" },
-    { title: "Web Development", href: "/courses/web-development" },
-    { title: "HTML", href: "/courses/html" },
-    { title: "CSS", href: "/courses/css" },
-    { title: "JavaScript", href: "/courses/javascript" },
-    { title: "Web Animations", href: "/courses/web-animations" },
-    { title: "Gen AI", href: "/courses/gen-ai" },
-    { title: "AI Money", href: "/courses/ai-money" },
-    { title: "Online Business", href: "/courses/online-business" },
-    { title: "Shopify", href: "/courses/shopify" },
-    { title: "Dropshipping", href: "/courses/dropshipping" },
+    { title: "CSS", href: "/courses/css", icon: <Palette /> },
+    { title: "HTML", href: "/courses/html", icon: <Code /> },
+    { title: "Gen AI", href: "/courses/gen-ai", icon: <Bot /> },
+    { title: "TikTok", href: "/courses/tiktok", icon: <Film /> },
+    { title: "Shopify", href: "/courses/shopify", icon: <ShoppingCart /> },
+    { title: "AI Money", href: "/courses/ai-money", icon: <DollarSign /> },
+    { title: "AI Coding", href: "/courses/ai-coding", icon: <Bot /> },
+    { title: "Deepseek", href: "/courses/deepseek", icon: <Search /> },
+    { title: "JavaScript", href: "/courses/javascript", icon: <Code /> },
+    { title: "After Effects", href: "/courses/after-effects", icon: <Film /> },
+    { title: "Premiere Pro", href: "/courses/premiere-pro", icon: <Tv /> },
+    { title: "Dropshipping", href: "/courses/dropshipping", icon: <ShoppingCart /> },
+    { title: "Online Business", href: "/courses/online-business", icon: <Briefcase /> },
+    { title: "Web Animations", href: "/courses/web-animations", icon: <Wind /> },
+    { title: "Web Development", href: "/courses/web-development", icon: <LayoutTemplate /> },
+    { title: "Premiere", href: "/courses/premiere", icon: <School /> },
 ]
+
 
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
@@ -120,46 +134,63 @@ export default function Header() {
                 <NavigationMenuItem>
                     <NavigationMenuTrigger>Courses</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-3">
                             {courseLinks.map((course) => (
                                 <ListItem
                                     key={course.title}
                                     title={course.title}
                                     href={course.href}
-                                />
+                                >
+                                  <div className="flex items-center gap-2">
+                                    {course.icon}
+                                    <span>{course.title}</span>
+                                  </div>
+                                </ListItem>
                             ))}
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                  <NavigationMenuItem>
                   <NavigationMenuTrigger>Pages</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                      <li className="row-span-3">
+                   <NavigationMenuContent>
+                    <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4">
+                      <div>
                         <NavigationMenuLink asChild>
-                          <Link
-                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                            href="/about"
-                          >
-                            <div className="mb-2 mt-4 text-lg font-medium">
-                              About Us
-                            </div>
-                            <p className="text-sm leading-tight text-muted-foreground">
-                              Learn more about our company, mission, and values.
-                            </p>
-                          </Link>
+                            <Link
+                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                                href="/about"
+                            >
+                                <div className="mb-2 mt-4 text-lg font-medium">
+                                Textify AI
+                                </div>
+                                <p className="text-sm leading-tight text-muted-foreground">
+                                Your one-stop shop for digital gaming products.
+                                </p>
+                            </Link>
                         </NavigationMenuLink>
-                      </li>
-                      <ListItem href="/contact" title="Contact Us">
-                        Get in touch with our team for support or inquiries.
-                      </ListItem>
-                      <ListItem href="/policies/privacy-policy" title="Privacy Policy">
-                         Understand how we handle your personal data.
-                      </ListItem>
-                       <ListItem href="/policies/terms-of-use" title="Terms of Use">
-                        Read the terms and conditions of using our site.
-                      </ListItem>
-                    </ul>
+                      </div>
+                      <div className="flex flex-col">
+                        <ul className="flex flex-col gap-3">
+                            {pageLinks.map((component) => (
+                                <ListItem
+                                key={component.title}
+                                title={component.title}
+                                href={component.href}
+                                >
+                                {component.description}
+                                </ListItem>
+                            ))}
+                        </ul>
+                        <div className="mt-4">
+                            <h3 className="font-medium text-sm text-foreground px-3">Policies</h3>
+                            <ul className="grid grid-cols-2 gap-2 mt-2">
+                               {policyLinks.slice(0, 4).map((component) => (
+                                    <ListItem key={component.title} title={component.title} href={component.href} className="text-xs" />
+                                ))}
+                            </ul>
+                        </div>
+                      </div>
+                    </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
