@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X, ShoppingCart, User } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
 
 const navLinks = [
-  { href: "/products", label: "Products" },
-  { href: "/about", label: "About Us" },
-  { href: "/contact", label: "Contact Us" },
+  { href: "#features", label: "Features" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#automation", label: "Automation" },
 ];
 
 export default function Header() {
@@ -17,9 +17,9 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-20 items-center">
         <Logo />
-        <nav className="hidden md:flex items-center gap-6 ml-auto text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-6 ml-auto text-base font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -30,21 +30,17 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-4 ml-4">
-          <Button asChild variant="ghost" size="icon">
-            <Link href="/cart">
-              <ShoppingCart className="h-5 w-5" />
-              <span className="sr-only">Cart</span>
-            </Link>
+        <div className="hidden md:flex items-center gap-4 ml-10">
+          <Link href="/login" className="text-base font-medium text-foreground transition-colors hover:text-primary">
+            Login
+          </Link>
+          <Button asChild>
+            <Link href="/register">Create free account</Link>
           </Button>
-          <Button asChild variant="ghost" size="icon">
-            <Link href="/login">
-              <User className="h-5 w-5" />
-              <span className="sr-only">Login</span>
-            </Link>
-          </Button>
+        </div>
+        <div className="flex items-center md:hidden ml-auto">
           <button
-            className="md:hidden ml-4"
+            className="ml-4"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -65,6 +61,12 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
+             <Link href="/login" className="text-lg font-medium text-foreground transition-colors hover:text-primary" onClick={() => setIsMenuOpen(false)}>
+              Login
+            </Link>
+            <Button asChild>
+              <Link href="/register" onClick={() => setIsMenuOpen(false)}>Create free account</Link>
+            </Button>
           </div>
         </div>
       )}
