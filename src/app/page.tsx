@@ -10,18 +10,22 @@ import UseCases from "@/components/landing/use-cases";
 
 export default function Home() {
   return (
-    <div className="flex min-h-[100dvh] flex-col">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        <FeaturedProducts />
-        <HowItWorks />
-        <UseCases />
-        <Testimonials />
-        <Faq />
-        <Cta />
-      </main>
-      <Footer />
+    <div className="flex min-h-[100dvh] flex-col bg-gray-50">
+      <div className="flex-1">
+        <Header />
+        <main>
+          <Hero />
+          <div className="bg-background">
+            <FeaturedProducts />
+            <HowItWorks />
+            <UseCases />
+            <Testimonials />
+            <Faq />
+            <Cta />
+          </div>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 }
