@@ -7,8 +7,8 @@ import {
 
 const faqs = [
   {
-    question: "What services does Textify AI offer?",
-    answer: "Textify AI provides AI-powered tools for content research, text summarization, and generating content ideas to streamline your writing process."
+    question: "What services does PUBGSTUFF offer?",
+    answer: "PUBGSTUFF provides AI-powered tools for content research, text summarization, and generating content ideas to streamline your writing process."
   },
   {
     question: "How can I use the AI Research Tool?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     question: "Is the interface user-friendly?",
-    answer: "Yes, Textify AI is designed with an intuitive UI for easy navigation and seamless interaction with all our AI-powered tools."
+    answer: "Yes, PUBGSTUFF is designed with an intuitive UI for easy navigation and seamless interaction with all our AI-powered tools."
   },
 ]
 

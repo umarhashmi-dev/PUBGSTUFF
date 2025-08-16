@@ -6,8 +6,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | Textify AI",
-  description: "Meet the team behind Textify AI. Learn about our mission, our skills in web development, design, and our commitment to providing top-tier AI-powered tools.",
+  title: "About Us | PUBGSTUFF",
+  description: "Meet the team behind PUBGSTUFF. Learn about our mission, our skills in web development, design, and our commitment to providing top-tier AI-powered tools.",
 };
 
 const teamMembers = [
@@ -82,7 +82,7 @@ export default function AboutPage() {
         <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center bg-secondary/50">
           <div className="container">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl font-headline">
-              About Textify AI
+              About PUBGSTUFF
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-muted-foreground">
              Have a question or need help? Reach out to our team, and we’ll assist you as soon as possible!
@@ -140,7 +140,7 @@ export default function AboutPage() {
         <section id="why-us" className="py-16 md:py-24">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Multiple Use Cases Of Textify AI</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Multiple Use Cases Of PUBGSTUFF</h2>
                     <p className="mt-4 text-lg text-muted-foreground">A versatile AI Tool with a multitude of use cases.</p>
                 </div>
                 <div className="max-w-5xl mx-auto">

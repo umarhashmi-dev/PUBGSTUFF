@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider } from '@/components/auth-provider';
 
 export const metadata: Metadata = {
-  title: 'Textify AI',
+  title: 'PUBGSTUFF',
   description: 'AI-powered tools for content research, summarization, and idea generation.',
 };
 
