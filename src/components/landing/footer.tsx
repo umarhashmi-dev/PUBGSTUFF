@@ -77,7 +77,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="font-medium text-foreground hover:underline"
             >
-              Omar Hashmi
+              Umar Hashmi
             </a>
           </p>
         </div>
