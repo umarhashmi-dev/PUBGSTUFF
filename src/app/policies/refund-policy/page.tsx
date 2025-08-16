@@ -1,18 +1,72 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
+import Link from "next/link";
 
 export default function RefundPolicyPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col">
       <Header />
-      <main className="flex-1">
-        <div className="container py-12 md:py-24 lg:py-32">
-          <article className="prose prose-lg mx-auto dark:prose-invert">
-            <h1>Refund and Returns Policy</h1>
-            <p>Due to the nature of digital products, we generally do not offer refunds. All sales are final.</p>
-            <p>If you encounter an issue with your purchase, such as a faulty file or a problem with access, please contact our support team. We will work with you to resolve the issue, which may include providing a replacement file or access to the product.</p>
-            <p>We are not responsible for any issues that may arise from the use of the digital products, including compatibility with your software or system. Please ensure you have the necessary software and knowledge to use the products before purchasing.</p>
-          </article>
+      <main className="flex-1 bg-white text-black pt-24">
+        <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-8 md:mb-12">
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                Return and Refund Policy
+                </h1>
+                <p className="mt-4 text-sm text-gray-500 md:text-base">
+                Last updated: Friday, 21 February 2025 in I-9, Islamabad
+                </p>
+            </div>
+
+            <div className="space-y-6 md:space-y-8">
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  At PubgStuff, we do not offer any refunds or returns for products purchased. All sales are final.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Software Maintenance</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  If you purchase our software and experience any downtime due to maintenance or server issues, we will hold your license key time during the outage. Once services are restored, your time will be unheld, allowing uninterrupted access to your software.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Sale Items</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  Items purchased on sale or at a discount are also not eligible for refunds. All sales of discounted items are final.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Exchanges</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  We do not offer exchanges for any products. All purchases are final and cannot be replaced.
+                </p>
+              </div>
+
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Important Notice for Virtual Products</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  These are virtual products. Once you activate them on your devices, no refunds are available.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Contact Us</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  If you have any questions regarding our Refund Policy, please contact us:
+                </p>
+                <ul className="mt-2 space-y-2 text-gray-700 md:mt-4">
+                  <li><strong>By email:</strong> <a href="mailto:contact@pubgstuff.store" className="text-black underline">contact@pubgstuff.store</a></li>
+                  <li><strong>By visiting our website:</strong> <Link href="/contact" className="text-black underline">Contact Us</Link></li>
+                  <li><strong>By phone:</strong> +92 335 5448505 | +92 302 1550385</li>
+                  <li><strong>Address:</strong> Shams Colony H-13, Islamabad, Pakistan, 46000</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
