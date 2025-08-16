@@ -1,12 +1,10 @@
 
-
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Button } from "@/components/ui/button";
 
 const faqs = [
   {
@@ -38,20 +36,22 @@ const faqs = [
 export default function Faq() {
   return (
     <section id="faq" className="py-20 md:py-28 bg-gray-50/50">
-      <div className="container max-w-5xl mx-auto">
+      <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Frequently Asked Questions
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+        <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, index) => (
-            <div key={index}>
-              <h3 className="text-lg font-semibold">{faq.question}</h3>
-              <p className="mt-2 text-muted-foreground">{faq.answer}</p>
-            </div>
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger className="text-lg text-left">{faq.question}</AccordionTrigger>
+              <AccordionContent className="text-base text-muted-foreground">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   )
