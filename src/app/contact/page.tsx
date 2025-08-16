@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
-      <main className="flex-1">
+      <main className="flex-1 pt-24">
         <section className="py-16 text-center">
           <div className="container">
             <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary">
