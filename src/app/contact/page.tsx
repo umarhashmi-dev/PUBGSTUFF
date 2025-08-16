@@ -1,83 +1,66 @@
 
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 export default function ContactPage() {
   return (
-    <div className="flex min-h-[100dvh] flex-col">
+    <div className="flex min-h-[100dvh] flex-col bg-gray-50/50">
       <Header />
-      <main className="flex-1 bg-white pt-24 md:pt-32">
+      <main className="flex-1 py-24 sm:py-32">
         <div className="container">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Get in Touch</h1>
-            <p className="mt-4 text-lg leading-8 text-muted-foreground max-w-2xl mx-auto">
+          <div className="mx-auto max-w-2xl text-center">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              Get in Touch
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
               Have a question or need help? Reach out to our team at PUBGStuff, and we’ll assist you as soon as possible!
             </p>
           </div>
 
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-2xl font-bold">Contact Information</h2>
-                <p className="text-muted-foreground mt-2">Find us at the following locations and channels.</p>
-              </div>
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 text-primary p-3 rounded-lg">
-                    <MapPin className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold">Location</h3>
-                    <p className="text-muted-foreground">Shams Colony H-13 Islamabad, Pakistan</p>
-                  </div>
+          <div className="mx-auto mt-20 grid max-w-lg grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+            <Card className="transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <CardHeader className="items-center pb-4">
+                <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
+                  <MapPin className="h-8 w-8" />
                 </div>
-                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 text-primary p-3 rounded-lg">
-                    <Phone className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold">WhatsApp</h3>
-                    <p className="text-muted-foreground">+44 7532 830145</p>
-                    <p className="text-muted-foreground">+92 302 1550385</p>
-                  </div>
+                <CardTitle className="text-2xl">Our Office</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground">
+                  Shams Colony H-13
+                  <br />
+                  Islamabad, Pakistan
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <CardHeader className="items-center pb-4">
+                <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
+                  <Phone className="h-8 w-8" />
                 </div>
-                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 text-primary p-3 rounded-lg">
-                    <Mail className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold">Email Support</h3>
-                    <p className="text-muted-foreground">contact@pubgstuff.store</p>
-                    <p className="text-muted-foreground">contact@umarhashmi.dev</p>
-                  </div>
+                <CardTitle className="text-2xl">WhatsApp</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground">+44 7532 830145</p>
+                <p className="text-muted-foreground">+92 302 1550385</p>
+              </CardContent>
+            </Card>
+
+            <Card className="transform transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl">
+              <CardHeader className="items-center pb-4">
+                <div className="mb-4 rounded-full bg-primary/10 p-4 text-primary">
+                  <Mail className="h-8 w-8" />
                 </div>
-              </div>
-            </div>
-            
-            <div className="bg-gray-50/50 p-8 rounded-lg border">
-               <h2 className="text-2xl font-bold">Send us a Message</h2>
-                <p className="text-muted-foreground mt-2 mb-8">Fill out the form below and we'll get back to you.</p>
-              <form className="space-y-6">
-                <div>
-                  <Label htmlFor="name">Name</Label>
-                  <Input type="text" id="name" name="name" required placeholder="Enter your name" />
-                </div>
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input type="email" id="email" name="email" required placeholder="Enter your email address"/>
-                </div>
-                <div>
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" name="message" rows={5} required placeholder="How can we help you?"/>
-                </div>
-                <Button type="submit" className="w-full" size="lg">Send Message</Button>
-              </form>
-            </div>
+                <CardTitle className="text-2xl">Email Us</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground">contact@pubgstuff.store</p>
+                <p className="text-muted-foreground">contact@umarhashmi.dev</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </main>
