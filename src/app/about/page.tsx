@@ -1,7 +1,7 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset, Briefcase } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset, Briefcase, Webhook } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 
@@ -39,6 +39,7 @@ const skills = [
     { icon: <Settings className="w-5 h-5 text-foreground" />, name: "Social Media Optimization (SMO)" },
     { icon: <Code className="w-5 h-5 text-foreground" />, name: "Full Stack Web Design" },
     { icon: <Headset className="w-5 h-5 text-foreground" />, name: "24/7 WhatsApp Support" },
+    { icon: <Webhook className="w-5 h-5 text-foreground" />, name: "API Integrations" },
 ];
 
 const services = [
