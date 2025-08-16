@@ -1,11 +1,16 @@
-
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset, CheckCircle } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "About Us | PUBGSTUFF",
+  description: "Meet the team behind PUBGSTUFF. Learn about our mission, our skills in web development, design, SEO, and our commitment to providing top-tier digital products and services.",
+};
 
 const teamMembers = [
   {
@@ -30,6 +35,14 @@ const teamMembers = [
       github: "https://github.com/umarhashmi-dev",
     },
   },
+];
+
+const skills = [
+    { icon: <BarChart className="w-5 h-5 text-primary" />, name: "Search Engine Optimization (SEO)" },
+    { icon: <Users className="w-5 h-5 text-primary" />, name: "Social Media Marketing (SMM)" },
+    { icon: <Settings className="w-5 h-5 text-primary" />, name: "Social Media Optimization (SMO)" },
+    { icon: <Code className="w-5 h-5 text-primary" />, name: "Full Stack Web Design" },
+    { icon: <Headset className="w-5 h-5 text-primary" />, name: "24/7 WhatsApp Support" },
 ];
 
 const services = [
@@ -70,10 +83,10 @@ export default function AboutPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="pt-24 pb-12 md:pt-32 md:pb-20 text-center bg-primary/5">
+        <section className="pt-24 pb-12 md:pt-32 md:pb-20 text-center bg-gradient-to-b from-primary/5 to-transparent">
           <div className="container">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              About Us
+              About PUBGStuff
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-muted-foreground">
              Have a question or need help? Reach out to our team at PUBGStuff, and we’ll assist you as soon as possible!
@@ -87,20 +100,18 @@ export default function AboutPage() {
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Meet Our Team</h2>
                     <p className="mt-4 text-lg text-muted-foreground">The minds behind the magic.</p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {teamMembers.map((member) => (
-                        <Card key={member.name} className="text-center group overflow-hidden">
-                            <div className="h-48 bg-primary/10 relative">
-                                <Image 
-                                    src={member.avatar} 
-                                    alt={member.name} 
-                                    width={150} 
-                                    height={150}
+                        <Card key={member.name} className="text-center overflow-hidden transition-shadow duration-300 hover:shadow-xl">
+                            <CardContent className="p-8">
+                                <Image
+                                    src={member.avatar}
+                                    alt={member.name}
+                                    width={120}
+                                    height={120}
                                     data-ai-hint={member.aiHint}
-                                    className="rounded-full w-36 h-36 border-4 border-white absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 shadow-lg group-hover:scale-105 transition-transform duration-300"
+                                    className="rounded-full w-32 h-32 mx-auto mb-6 border-4 border-background shadow-lg"
                                 />
-                            </div>
-                            <CardContent className="pt-24 pb-8">
                                 <h3 className="text-2xl font-bold">{member.name}</h3>
                                 <p className="text-primary font-medium">{member.role}</p>
                                 <div className="flex justify-center space-x-4 mt-6">
@@ -118,22 +129,25 @@ export default function AboutPage() {
 
         <section id="mission" className="py-20 md:py-28 bg-primary/5">
             <div className="container">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="relative w-full aspect-square max-w-md mx-auto">
-                        <Image src="https://placehold.co/600x600.png" alt="Our Mission" layout="fill" className="rounded-lg shadow-lg" data-ai-hint="team collaboration abstract" />
+                <div className="grid md:grid-cols-2 gap-16 items-center">
+                    <div className="relative w-full aspect-video max-w-lg mx-auto">
+                        <Image src="https://placehold.co/600x400.png" alt="Our Mission" layout="fill" className="rounded-lg shadow-lg object-cover" data-ai-hint="team brainstorming office" />
                     </div>
                     <div className="text-left">
-                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Mission &amp; Skills</h2>
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Mission & Skills</h2>
                         <p className="mt-6 text-lg text-muted-foreground">
-                            As a 25-year-old Web Designer, Content Writer, YouTuber, and Graphic Designer, our founder's mission is to provide the best services in the industry. We specialize in:
+                            As a 25-year-old Web Designer, Content Writer, YouTuber, and Graphic Designer, our founder's mission is to provide the best services in the industry. We combine creative design with technical expertise to deliver outstanding results.
                         </p>
-                        <ul className="mt-6 space-y-4 text-lg text-muted-foreground">
-                            <li className="flex items-center gap-3"><BarChart className="w-6 h-6 text-primary" /> Search Engine Optimization (SEO)</li>
-                            <li className="flex items-center gap-3"><Users className="w-6 h-6 text-primary" /> Social Media Marketing (SMM)</li>
-                            <li className="flex items-center gap-3"><Settings className="w-6 h-6 text-primary" /> Social Media Optimization (SMO)</li>
-                            <li className="flex items-center gap-3"><Code className="w-6 h-6 text-primary" /> Full Stack Web Design</li>
-                            <li className="flex items-center gap-3"><Headset className="w-6 h-6 text-primary" /> 24/7 WhatsApp Support</li>
-                        </ul>
+                        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                            {skills.map((skill) => (
+                                <div key={skill.name} className="flex items-center gap-3">
+                                    <div className="p-2 bg-primary/10 rounded-full">
+                                        {skill.icon}
+                                    </div>
+                                    <span className="text-base font-medium text-muted-foreground">{skill.name}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,16 +161,16 @@ export default function AboutPage() {
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {services.map((useCase) => (
-                    <Card key={useCase.title} className="bg-card/50 hover:bg-card transition-colors duration-300 transform hover:-translate-y-1">
-                        <CardHeader className="flex flex-row items-start gap-4 p-6">
-                            <div className="p-3 bg-primary/10 rounded-lg">
+                    <Card key={useCase.title} className="bg-card/50 hover:bg-card transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg border-transparent hover:border-border">
+                        <CardHeader className="p-6">
+                            <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
                                 {useCase.icon}
                             </div>
-                            <div>
-                                <CardTitle>{useCase.title}</CardTitle>
-                                <p className="text-muted-foreground mt-2">{useCase.description}</p>
-                            </div>
+                            <CardTitle className="text-xl">{useCase.title}</CardTitle>
                         </CardHeader>
+                        <CardContent className="p-6 pt-0">
+                            <p className="text-muted-foreground">{useCase.description}</p>
+                        </CardContent>
                     </Card>
                 ))}
                 </div>
