@@ -5,8 +5,8 @@ export default function TermsOfUsePage() {
   return (
     <div className="flex min-h-[100dvh] flex-col">
       <Header />
-      <main className="flex-1 bg-white text-black">
-        <div className="container mx-auto px-4 py-12 md:py-24 lg:py-32">
+      <main className="flex-1 bg-white text-black pt-24">
+        <div className="container mx-auto px-4 py-8 md:py-16 lg:py-24">
           <div className="mx-auto max-w-4xl">
             <h1 className="text-3xl font-bold tracking-tight text-center sm:text-4xl lg:text-5xl">
               Terms of Use
