@@ -120,27 +120,20 @@ export default function AboutPage() {
         </section>
 
         <section id="mission" className="py-16 md:py-24 bg-secondary/50">
-            <div className="container">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="relative w-full aspect-video max-w-lg mx-auto">
-                        <Image src="https://placehold.co/600x400.png" alt="Our Mission" layout="fill" className="rounded-lg shadow-lg object-cover" data-ai-hint="team brainstorming office" />
-                    </div>
-                    <div>
-                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Skills</h2>
-                        <p className="mt-6 text-lg text-muted-foreground">
-                            As a 25-year-old Web Designer, Content Writer, YouTuber, and Graphic Designer, our founder's mission is to provide the best services in the industry. We combine creative design with technical expertise to deliver outstanding results.
-                        </p>
-                        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                            {skills.map((skill) => (
-                                <div key={skill.name} className="flex items-center gap-3">
-                                    <div className="p-2 bg-foreground/10 rounded-full">
-                                        {skill.icon}
-                                    </div>
-                                    <span className="text-base font-medium text-muted-foreground">{skill.name}</span>
-                                </div>
-                            ))}
+            <div className="container max-w-4xl mx-auto text-center">
+                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Skills</h2>
+                <p className="mt-6 text-lg text-muted-foreground max-w-3xl mx-auto">
+                    As a 25-year-old Web Designer, Content Writer, YouTuber, and Graphic Designer, our founder's mission is to provide the best services in the industry. We combine creative design with technical expertise to deliver outstanding results.
+                </p>
+                <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {skills.map((skill) => (
+                        <div key={skill.name} className="flex flex-col items-center gap-4 p-6 rounded-lg bg-background shadow-sm">
+                            <div className="p-3 bg-foreground/10 rounded-full">
+                                {skill.icon}
+                            </div>
+                            <span className="text-base font-medium text-center text-muted-foreground">{skill.name}</span>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>
