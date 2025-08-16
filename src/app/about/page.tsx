@@ -22,7 +22,7 @@ const teamMembers = [
     },
   },
   {
-    name: "Umar Hashmi",
+    name: "Omar Hashmi",
     role: "Developer",
     icon: <Code className="w-16 h-16 text-foreground" />,
     socials: {
