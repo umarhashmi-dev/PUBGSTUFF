@@ -28,23 +28,6 @@ export default function ContactPage() {
         </section>
 
         <section className="container pb-20">
-          <div className="relative">
-            <Image
-              src="https://placehold.co/1200x600.png"
-              alt="World map"
-              width={1200}
-              height={600}
-              className="w-full h-auto rounded-lg"
-              data-ai-hint="world map dots"
-            />
-            <div className="absolute bottom-10 right-10 bg-gray-900 text-white p-4 rounded-lg shadow-lg">
-                <p className="font-bold">Islamabad, Pakistan</p>
-                <p className="text-sm">Shams Colony H-13</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="container pb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-left p-6">
                 <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
