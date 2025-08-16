@@ -69,7 +69,17 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t text-center text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} PUBGSTUFF. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} PUBGSTUFF. All rights reserved. Developed by{' '}
+            <a
+              href="https://umarhashmi.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground hover:underline"
+            >
+              umarhashmi.dev
+            </a>
+          </p>
         </div>
       </div>
     </footer>
