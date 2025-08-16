@@ -5,32 +5,31 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Button } from "../ui/button";
 
 const faqs = [
   {
-    question: "Is there a free trial available?",
-    answer: "Yes, you can try us for free for 30 days. If you want, we'll provide you with a free 30-minute onboarding call to get you up and running. Book a call here."
+    question: "What services does PubgStuff offer?",
+    answer: "PubgStuff provides web design, web development, graphics, RDP services, SEO, content research tools, social media marketing, and more."
   },
   {
-    question: "Can I change my plan later?",
-    answer: "Of course. You can upgrade, downgrade or cancel your plan at any time. Changes will be prorated."
+    question: "How can I enhance my gaming experience with PubgStuff?",
+    answer: "You can boost your gaming with features like the Silent Aimbot, exclusive skins, effects, and by climbing the global rankings."
   },
   {
-    question: "What is your cancellation policy?",
-    answer: "We have a simple no-questions-asked cancellation policy. You can cancel your subscription at any time from your account dashboard."
+    question: "What is the process for getting started with PubgStuff services?",
+    answer: "Simply choose your service, follow easy steps, and enjoy optimized solutions tailored to your needs and goals."
   },
   {
-    question: "Can other info be added to an invoice?",
-    answer: "Yes, you can add any extra information you need to your invoices, such as a VAT number or a PO number."
+    question: "How secure are PubgStuff’s services?",
+    answer: "All PubgStuff services, including the Silent Aimbot and RDP, are designed with maximum security to ensure safe and smooth usage."
   },
   {
-    question: "How does billing work?",
-    answer: "We bill you on a monthly or yearly basis, depending on the plan you choose. You can pay with any major credit card."
+    question: "Can PubgStuff help with my website’s SEO?",
+    answer: "Yes! PubgStuff offers SEO services to improve your SEO score by optimizing metadata, ensuring better ranking and visibility online."
   },
   {
-    question: "How do I change my account email?",
-    answer: "You can change your account email from your account settings page. We will send a confirmation link to your new email address."
+    question: "What are the benefits of using Driver Booster?",
+    answer: "Driver Booster automatically updates outdated drivers, enhancing your PC’s performance, stability, and security to optimize your overall experience."
   },
 ]
 
@@ -58,8 +57,10 @@ export default function Faq() {
             ))}
           </Accordion>
         </div>
-        <div className="text-center mt-12">
-            <Button size="lg">Load more</Button>
+        <div className="mt-12 text-center">
+            <p className="text-muted-foreground">
+                Still have questions? <a href="/contact" className="text-primary font-semibold hover:underline">Contact us</a>
+            </p>
         </div>
       </div>
     </section>
