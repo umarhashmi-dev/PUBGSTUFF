@@ -1,112 +1,102 @@
 
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { MessageSquare, MapPin, Phone, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Faq from "@/components/landing/faq";
 
 export default function ContactPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="py-16 md:py-24 bg-secondary/50">
-            <div className="container px-4 text-center">
-                <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                    Contact Us
-                </h1>
-                <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                    We&apos;d love to hear from you. Whether you have a question about our products, services, or anything else, our team is ready to answer all your questions.
-                </p>
-            </div>
+        <section className="py-20 text-center">
+          <div className="container">
+            <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary">
+              Contact Us
+            </span>
+            <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              Get in touch with our team
+            </h1>
+            <p className="mt-4 text-lg max-w-2xl mx-auto text-muted-foreground">
+              We have the team and know-how to help you scale 10x faster.
+            </p>
+          </div>
         </section>
 
-        <section className="py-16 md:py-24">
-            <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <Card className="text-center group hover:bg-card/95 transition-all duration-300 transform hover:-translate-y-2">
-                        <CardHeader>
-                             <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit group-hover:scale-110 transition-transform">
-                                <MapPin className="w-8 h-8"/>
-                            </div>
-                            <CardTitle className="mt-4">Our Office</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-muted-foreground">
-                                Shams Colony H-13 Islamabad, Pakistan
-                            </p>
-                             <Button asChild variant="link" className="mt-2">
-                                <Link href="https://maps.google.com?q=Shams+Colony+H-13+Islamabad" target="_blank" rel="noopener noreferrer">
-                                    Get Directions
-                                </Link>
-                            </Button>
-                        </CardContent>
-                    </Card>
-                     <Card className="text-center group hover:bg-card/95 transition-all duration-300 transform hover:-translate-y-2">
-                        <CardHeader>
-                             <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit group-hover:scale-110 transition-transform">
-                                <Phone className="w-8 h-8"/>
-                            </div>
-                            <CardTitle className="mt-4">Call Us</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-muted-foreground space-y-2">
-                                <p>
-                                    <Link href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                                        +44 7532 830145
-                                    </Link>
-                                </p>
-                                 <p>
-                                    <Link href="https://wa.me/923021550385" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                                        +92 302 1550385
-                                    </Link>
-                                </p>
-                            </div>
-                        </CardContent>
-                    </Card>
-                     <Card className="text-center group hover:bg-card/95 transition-all duration-300 transform hover:-translate-y-2">
-                        <CardHeader>
-                            <div className="mx-auto bg-primary/10 text-primary rounded-full p-4 w-fit group-hover:scale-110 transition-transform">
-                                <Mail className="w-8 h-8"/>
-                            </div>
-                            <CardTitle className="mt-4">Email Us</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <div className="text-muted-foreground space-y-2">
-                               <p>
-                                    <Link href="mailto:contact@pubgstuff.store" className="hover:text-primary transition-colors">
-                                        contact@pubgstuff.store
-                                    </Link>
-                                </p>
-                                <p>
-                                    <Link href="mailto:contact@umarhashmi.dev" className="hover:text-primary transition-colors">
-                                        contact@umarhashmi.dev
-                                    </Link>
-                                </p>
-                            </div>
-                        </CardContent>
-                    </Card>
+        <section className="container pb-20">
+          <div className="relative">
+            <Image
+              src="https://placehold.co/1200x600.png"
+              alt="World map"
+              width={1200}
+              height={600}
+              className="w-full h-auto rounded-lg"
+              data-ai-hint="world map dots"
+            />
+            <div className="absolute bottom-10 right-10 bg-gray-900 text-white p-4 rounded-lg shadow-lg">
+                <p className="font-bold">Islamabad, Pakistan</p>
+                <p className="text-sm">Shams Colony H-13</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="container pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-left p-6">
+                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                    <MessageSquare className="w-6 h-6" />
                 </div>
-            </div>
+                <h3 className="text-xl font-bold">Chat to sales</h3>
+                <p className="text-muted-foreground mt-2 mb-4">Speak to our friendly team.</p>
+                <Button asChild>
+                    <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
+                </Button>
+            </Card>
+            <Card className="text-left p-6">
+                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                    <Mail className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold">Chat to support</h3>
+                <p className="text-muted-foreground mt-2 mb-4">We're here to help.</p>
+                <Button variant="outline" asChild>
+                    <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
+                </Button>
+            </Card>
+            <Card className="text-left p-6">
+                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                    <MapPin className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold">Visit us</h3>
+                <p className="text-muted-foreground mt-2 mb-4">Visit our office HQ.</p>
+                <Button variant="outline" asChild>
+                    <a href="https://maps.google.com?q=Shams+Colony+H-13+Islamabad" target="_blank" rel="noopener noreferrer">
+                        View on Google Maps
+                    </a>
+                </Button>
+            </Card>
+             <Card className="text-left p-6">
+                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                    <Phone className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold">Call us</h3>
+                <p className="text-muted-foreground mt-2 mb-4">Mon-Fri from 8am to 5pm.</p>
+                 <div className="space-y-2">
+                    <Button variant="outline" asChild className="w-full justify-start">
+                        <a href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer">+44 7532 830145</a>
+                    </Button>
+                    <Button variant="outline" asChild className="w-full justify-start">
+                         <a href="https://wa.me/923021550385" target="_blank" rel="noopener noreferrer">+92 302 1550385</a>
+                    </Button>
+                 </div>
+            </Card>
+          </div>
         </section>
 
-         <section className="pb-16 md:pb-24">
-            <div className="container">
-               <div className="rounded-lg overflow-hidden shadow-lg">
-                 <Image 
-                    src="https://placehold.co/1200x400.png"
-                    alt="Our Location"
-                    width={1200}
-                    height={400}
-                    className="w-full h-full object-cover"
-                    data-ai-hint="world map"
-                 />
-               </div>
-            </div>
-        </section>
-
+        <Faq />
       </main>
       <Footer />
     </div>
