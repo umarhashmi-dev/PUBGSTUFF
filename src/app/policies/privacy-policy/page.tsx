@@ -1,20 +1,94 @@
+
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
+import Link from "next/link";
 
 export default function PrivacyPolicyPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col">
       <Header />
-      <main className="flex-1">
-        <div className="container py-12 md:py-24 lg:py-32">
-          <article className="prose prose-lg mx-auto dark:prose-invert">
-            <h1>Privacy Policy</h1>
-            <p>We are committed to protecting your privacy. This privacy policy tells you about our online collection and use of data.</p>
-            <h2>1. Information We Collect</h2>
-            <p>We may collect information about you when you use our website, including your name, email address, and other personal information. We may also collect information about your use of our website, such as the pages you visit and the links you click.</p>
-            <h2>2. How We Use Your Information</h2>
-            <p>We may use your information to provide you with our services, to communicate with you, and to improve our website. We may also use your information to personalize your experience on our website.</p>
-          </article>
+      <main className="flex-1 bg-white text-black pt-24">
+        <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+          <div className="mx-auto max-w-4xl">
+            <div className="text-center mb-8 md:mb-12">
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+                Privacy Policy
+                </h1>
+                <p className="mt-4 text-sm text-gray-500 md:text-base">
+                Last updated: Friday, 21 February 2025 in I-9, Islamabad
+                </p>
+            </div>
+
+            <div className="space-y-6 md:space-y-8">
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  This Privacy Policy outlines our practices regarding the collection, use, and disclosure of your information when you use our service, along with your privacy rights and legal protections.
+                </p>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  By using our service, you consent to the collection and use of information in accordance with this policy.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Definitions</h2>
+                 <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
+                  <li><strong>Account:</strong> A unique account created for you to access our service.</li>
+                  <li><strong>Company:</strong> Refers to PubgStuff, located in Shams Colony H-13, Islamabad.</li>
+                  <li><strong>Cookies:</strong> Small files placed on your device to track browsing activity.</li>
+                  <li><strong>Personal Data:</strong> Any information that can identify an individual.</li>
+                  <li><strong>You:</strong> The individual or entity using the service.</li>
+                </ul>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Data Collection</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">We may collect personal data including:</p>
+                <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Address, City, ZIP/Postal code</li>
+                    <li>Usage Data</li>
+                </ul>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Use of Data</h2>
+                 <p className="mt-2 text-gray-700 md:mt-4">We may use your personal data for:</p>
+                <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
+                    <li>Maintaining our service</li>
+                    <li>Managing your account</li>
+                    <li>Contacting you with updates</li>
+                </ul>
+              </div>
+
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Children’s Privacy</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  Our service is not intended for anyone under 18. If you believe we have collected personal data from your child, please contact us.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Changes to This Policy</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  We may update our Privacy Policy periodically. Changes will be posted on this page.
+                </p>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+                <h2 className="text-xl font-bold md:text-2xl">Contact Us</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  If you have any questions regarding our Cookies Policy, please contact us:
+                </p>
+                <ul className="mt-2 space-y-2 text-gray-700 md:mt-4">
+                  <li><strong>By email:</strong> <a href="mailto:contact@pubgstuff.store" className="text-black underline">contact@pubgstuff.store</a></li>
+                  <li><strong>By visiting our website:</strong> <Link href="/contact" className="text-black underline">Contact Us</Link></li>
+                  <li><strong>By phone:</strong> +92 335 5448505 | +92 302 1550385</li>
+                  <li><strong>Address:</strong> Shams Colony H-13, Islamabad, Pakistan, 46000</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
       <Footer />
