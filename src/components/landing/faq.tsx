@@ -52,9 +52,6 @@ export default function Faq() {
             </div>
           ))}
         </div>
-        <div className="mt-16 text-center">
-            <Button variant="outline">Load more</Button>
-        </div>
       </div>
     </section>
   )
