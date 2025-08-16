@@ -4,7 +4,7 @@ import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="py-24 bg-gray-50/50">
+        <section className="py-16 bg-gray-50/50">
             <div className="container px-4 text-center">
                 <Badge variant="outline" className="mb-4 text-sm">Contact</Badge>
                 <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -51,7 +51,7 @@ export default function ContactPage() {
             </div>
         </section>
 
-        <section className="py-24">
+        <section className="py-16">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {contactMethods.map((method, index) => (
