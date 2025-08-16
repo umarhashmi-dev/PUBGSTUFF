@@ -1,7 +1,7 @@
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Github, Twitter, Linkedin } from "lucide-react";
+import { Github, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
 import Link from "next/link";
 
 const quickLinks = [
@@ -27,9 +27,10 @@ export default function Footer() {
               Your one-stop shop for digital gaming products.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" aria-label="Github"><Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
-              <Link href="#" aria-label="Twitter"><Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
-              <Link href="#" aria-label="Linkedin"><Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
+              <Link href="https://x.com/dev_umar9" target="_blank" aria-label="Twitter"><Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
+              <Link href="https://www.instagram.com/umarhashmi.dev/" target="_blank" aria-label="Instagram"><Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
+              <Link href="https://github.com/umarhashmi-dev" target="_blank" aria-label="Github"><Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
+              <Link href="https://www.facebook.com/bilal.hashim.3" target="_blank" aria-label="Facebook"><Facebook className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>
             </div>
           </div>
           <div>
