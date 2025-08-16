@@ -28,26 +28,21 @@ export default function ContactPage() {
         </section>
 
         <section className="container pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="text-left p-6">
                 <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <MessageSquare className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold">Chat to sales</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Speak to our friendly team.</p>
-                <Button asChild>
-                    <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
-                </Button>
-            </Card>
-            <Card className="text-left p-6">
-                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
-                    <Mail className="w-6 h-6" />
+                <div className="space-y-2">
+                    <Button asChild variant="outline" className="w-full justify-start">
+                        <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
+                    </Button>
+                     <Button asChild variant="outline" className="w-full justify-start">
+                        <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
+                    </Button>
                 </div>
-                <h3 className="text-xl font-bold">Chat to support</h3>
-                <p className="text-muted-foreground mt-2 mb-4">We're here to help.</p>
-                <Button variant="outline" asChild>
-                    <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
-                </Button>
             </Card>
             <Card className="text-left p-6">
                 <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
