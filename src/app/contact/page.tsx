@@ -12,7 +12,7 @@ export default function ContactPage() {
       <main className="flex-1 pt-32 md:pt-40">
         <section className="py-16 text-center">
           <div className="container">
-            <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary">
+            <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-foreground/10 text-foreground">
               Contact Us
             </span>
             <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl font-headline">
@@ -27,7 +27,7 @@ export default function ContactPage() {
         <section className="container pb-20">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
                     <MessageSquare className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold font-headline">Chat to sales</h3>
@@ -37,7 +37,7 @@ export default function ContactPage() {
                 </Button>
             </Card>
             <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
                     <Mail className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold font-headline">Chat to support</h3>
@@ -47,7 +47,7 @@ export default function ContactPage() {
                 </Button>
             </Card>
             <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
                     <MapPin className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold font-headline">Visit us</h3>
@@ -59,7 +59,7 @@ export default function ContactPage() {
                 </Button>
             </Card>
              <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
                     <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold font-headline">Call us</h3>
@@ -82,5 +82,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
-    

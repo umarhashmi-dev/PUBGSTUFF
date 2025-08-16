@@ -37,41 +37,41 @@ const teamMembers = [
 ];
 
 const skills = [
-    { icon: <BarChart className="w-5 h-5 text-primary" />, name: "Search Engine Optimization (SEO)" },
-    { icon: <Users className="w-5 h-5 text-primary" />, name: "Social Media Marketing (SMM)" },
-    { icon: <Settings className="w-5 h-5 text-primary" />, name: "Social Media Optimization (SMO)" },
-    { icon: <Code className="w-5 h-5 text-primary" />, name: "Full Stack Web Design" },
-    { icon: <Headset className="w-5 h-5 text-primary" />, name: "24/7 WhatsApp Support" },
+    { icon: <BarChart className="w-5 h-5 text-foreground" />, name: "Search Engine Optimization (SEO)" },
+    { icon: <Users className="w-5 h-5 text-foreground" />, name: "Social Media Marketing (SMM)" },
+    { icon: <Settings className="w-5 h-5 text-foreground" />, name: "Social Media Optimization (SMO)" },
+    { icon: <Code className="w-5 h-5 text-foreground" />, name: "Full Stack Web Design" },
+    { icon: <Headset className="w-5 h-5 text-foreground" />, name: "24/7 WhatsApp Support" },
 ];
 
 const services = [
     {
-        icon: <Code className="w-8 h-8 text-primary" />,
+        icon: <Code className="w-8 h-8 text-foreground" />,
         title: "Web Development",
         description: "At PubgStuff, we offer comprehensive web development services to create your web-based product."
     },
     {
-        icon: <PencilRuler className="w-8 h-8 text-primary" />,
+        icon: <PencilRuler className="w-8 h-8 text-foreground" />,
         title: "Web Design",
         description: "At PubgStuff, we offer comprehensive web Designing services to create your online appearance."
     },
     {
-        icon: <Bot className="w-8 h-8 text-primary" />,
+        icon: <Bot className="w-8 h-8 text-foreground" />,
         title: "SMM Service",
         description: "At PubgStuff, we offer comprehensive SMM services to manage your social appearance."
     },
     {
-        icon: <BarChart className="w-8 h-8 text-primary" />,
+        icon: <BarChart className="w-8 h-8 text-foreground" />,
         title: "Ads & Marketing Tools",
         description: "At PubgStuff, we offer Ads & Marketing Tools & services to create your achive your social goals."
     },
     {
-        icon: <Settings className="w-8 h-8 text-primary" />,
+        icon: <Settings className="w-8 h-8 text-foreground" />,
         title: "Website SEO",
         description: "At PubgStuff, we provide SEO services to boost your SEO score with optimized metadata for social ranking."
     },
     {
-        icon: <Search className="w-8 h-8 text-primary" />,
+        icon: <Search className="w-8 h-8 text-foreground" />,
         title: "Research Content",
         description: "At PubgStuff, we offer content research tools to enhance your content strategy for university and researches."
     }
@@ -82,7 +82,7 @@ export default function AboutPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center bg-primary/5">
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center bg-secondary/50">
           <div className="container">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl font-headline">
               About Textify AI
@@ -114,10 +114,10 @@ export default function AboutPage() {
                                 <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
                                 <p className="text-primary font-medium">{member.role}</p>
                                 <div className="flex justify-center space-x-4 mt-6">
-                                    {member.socials.twitter && <Link href={member.socials.twitter} target="_blank"><Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>}
-                                    {member.socials.instagram && <Link href={member.socials.instagram} target="_blank"><Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>}
-                                    {member.socials.facebook && <Link href={member.socials.facebook} target="_blank"><Facebook className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>}
-                                    {member.socials.github && <Link href={member.socials.github} target="_blank"><Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>}
+                                    {member.socials.twitter && <Link href={member.socials.twitter} target="_blank"><Twitter className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" /></Link>}
+                                    {member.socials.instagram && <Link href={member.socials.instagram} target="_blank"><Instagram className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" /></Link>}
+                                    {member.socials.facebook && <Link href={member.socials.facebook} target="_blank"><Facebook className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" /></Link>}
+                                    {member.socials.github && <Link href={member.socials.github} target="_blank"><Github className="h-6 w-6 text-muted-foreground hover:text-foreground transition-colors" /></Link>}
                                 </div>
                             </CardContent>
                         </Card>
@@ -126,7 +126,7 @@ export default function AboutPage() {
             </div>
         </section>
 
-        <section id="mission" className="py-16 md:py-24 bg-primary/5">
+        <section id="mission" className="py-16 md:py-24 bg-secondary/50">
             <div className="container">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="relative w-full aspect-video max-w-lg mx-auto">
@@ -140,7 +140,7 @@ export default function AboutPage() {
                         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
                             {skills.map((skill) => (
                                 <div key={skill.name} className="flex items-center gap-3">
-                                    <div className="p-2 bg-primary/10 rounded-full">
+                                    <div className="p-2 bg-foreground/10 rounded-full">
                                         {skill.icon}
                                     </div>
                                     <span className="text-base font-medium text-muted-foreground">{skill.name}</span>
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 {services.map((useCase) => (
                     <Card key={useCase.title} className="bg-card/50 hover:bg-card transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg border-transparent hover:border-border">
                         <CardHeader className="p-6">
-                            <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                            <div className="p-3 bg-foreground/10 rounded-lg w-fit mb-4">
                                 {useCase.icon}
                             </div>
                             <CardTitle className="text-xl font-headline">{useCase.title}</CardTitle>
@@ -181,5 +181,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
-    
