@@ -1,7 +1,7 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset, Briefcase } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,8 +15,7 @@ const teamMembers = [
   {
     name: "M.Bilal",
     role: "Founder",
-    avatar: "https://placehold.co/200x200.png",
-    aiHint: "man portrait professional",
+    icon: <Briefcase className="w-16 h-16 text-foreground" />,
     socials: {
       twitter: "https://x.com/bilalhashim98?",
       instagram: "https://www.instagram.com/bilal.hashim.3",
@@ -26,8 +25,7 @@ const teamMembers = [
   {
     name: "Umar Hashmi",
     role: "Developer",
-    avatar: "https://placehold.co/200x200.png",
-    aiHint: "man portrait developer",
+    icon: <Code className="w-16 h-16 text-foreground" />,
     socials: {
       twitter: "https://x.com/dev_umar9",
       instagram: "https://www.instagram.com/umarhashmi.dev/",
@@ -103,14 +101,9 @@ export default function AboutPage() {
                     {teamMembers.map((member) => (
                         <Card key={member.name} className="text-center overflow-hidden transition-shadow duration-300 hover:shadow-xl">
                             <CardContent className="p-8">
-                                <Image
-                                    src={member.avatar}
-                                    alt={member.name}
-                                    width={120}
-                                    height={120}
-                                    data-ai-hint={member.aiHint}
-                                    className="rounded-full w-32 h-32 mx-auto mb-6 border-4 border-background shadow-lg"
-                                />
+                                <div className="flex justify-center items-center h-32 w-32 rounded-full bg-secondary/50 mx-auto mb-6 border-4 border-background shadow-lg">
+                                    {member.icon}
+                                </div>
                                 <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
                                 <p className="text-primary font-medium">{member.role}</p>
                                 <div className="flex justify-center space-x-4 mt-6">
