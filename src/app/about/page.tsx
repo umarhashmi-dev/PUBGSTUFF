@@ -1,15 +1,14 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset, CheckCircle } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | PUBGSTUFF",
-  description: "Meet the team behind PUBGSTUFF. Learn about our mission, our skills in web development, design, SEO, and our commitment to providing top-tier digital products and services.",
+  title: "About Us | Textify AI",
+  description: "Meet the team behind Textify AI. Learn about our mission, our skills in web development, design, and our commitment to providing top-tier AI-powered tools.",
 };
 
 const teamMembers = [
@@ -83,21 +82,21 @@ export default function AboutPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="pt-24 pb-12 md:pt-32 md:pb-20 text-center bg-gradient-to-b from-primary/5 to-transparent">
+        <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center bg-primary/5">
           <div className="container">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
-              About PUBGStuff
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl font-headline">
+              About Textify AI
             </h1>
             <p className="mt-6 max-w-3xl mx-auto text-lg leading-8 text-muted-foreground">
-             Have a question or need help? Reach out to our team at PUBGStuff, and we’ll assist you as soon as possible!
+             Have a question or need help? Reach out to our team, and we’ll assist you as soon as possible!
             </p>
           </div>
         </section>
 
-        <section id="team" className="py-20 md:py-28">
+        <section id="team" className="py-16 md:py-24">
             <div className="container">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Meet Our Team</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Meet Our Team</h2>
                     <p className="mt-4 text-lg text-muted-foreground">The minds behind the magic.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -112,7 +111,7 @@ export default function AboutPage() {
                                     data-ai-hint={member.aiHint}
                                     className="rounded-full w-32 h-32 mx-auto mb-6 border-4 border-background shadow-lg"
                                 />
-                                <h3 className="text-2xl font-bold">{member.name}</h3>
+                                <h3 className="text-2xl font-bold font-headline">{member.name}</h3>
                                 <p className="text-primary font-medium">{member.role}</p>
                                 <div className="flex justify-center space-x-4 mt-6">
                                     {member.socials.twitter && <Link href={member.socials.twitter} target="_blank"><Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" /></Link>}
@@ -127,14 +126,14 @@ export default function AboutPage() {
             </div>
         </section>
 
-        <section id="mission" className="py-20 md:py-28 bg-primary/5">
+        <section id="mission" className="py-16 md:py-24 bg-primary/5">
             <div className="container">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
+                <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="relative w-full aspect-video max-w-lg mx-auto">
                         <Image src="https://placehold.co/600x400.png" alt="Our Mission" layout="fill" className="rounded-lg shadow-lg object-cover" data-ai-hint="team brainstorming office" />
                     </div>
-                    <div className="text-left">
-                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Our Mission & Skills</h2>
+                    <div>
+                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Skills</h2>
                         <p className="mt-6 text-lg text-muted-foreground">
                             As a 25-year-old Web Designer, Content Writer, YouTuber, and Graphic Designer, our founder's mission is to provide the best services in the industry. We combine creative design with technical expertise to deliver outstanding results.
                         </p>
@@ -153,10 +152,10 @@ export default function AboutPage() {
             </div>
         </section>
 
-        <section id="why-us" className="py-20 md:py-28">
+        <section id="why-us" className="py-16 md:py-24">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Multiple Use Cases Of PubgStuff</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Multiple Use Cases Of Textify AI</h2>
                     <p className="mt-4 text-lg text-muted-foreground">A versatile AI Tool with a multitude of use cases.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -166,7 +165,7 @@ export default function AboutPage() {
                             <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
                                 {useCase.icon}
                             </div>
-                            <CardTitle className="text-xl">{useCase.title}</CardTitle>
+                            <CardTitle className="text-xl font-headline">{useCase.title}</CardTitle>
                         </CardHeader>
                         <CardContent className="p-6 pt-0">
                             <p className="text-muted-foreground">{useCase.description}</p>
@@ -182,3 +181,5 @@ export default function AboutPage() {
     </div>
   );
 }
+
+    

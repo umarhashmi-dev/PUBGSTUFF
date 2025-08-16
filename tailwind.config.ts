@@ -19,7 +19,6 @@ export default {
       fontFamily: {
         body: ['Inter', 'sans-serif'],
         headline: ['Space Grotesk', 'sans-serif'],
-        code: ['monospace'],
       },
       colors: {
         background: 'hsl(var(--background))',
@@ -72,11 +71,6 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
-        'logo-1': '#211f2f',
-        'glow-1': '#E8DBF4',
-        'glow-2': '#E9F9D9',
-        'glow-3': '#DEE7FA',
-        'glow-4': '#FCDADC',
       },
       borderRadius: {
         lg: 'var(--radius)',

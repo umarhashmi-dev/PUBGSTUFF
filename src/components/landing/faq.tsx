@@ -1,4 +1,3 @@
-
 import {
   Accordion,
   AccordionContent,
@@ -8,37 +7,33 @@ import {
 
 const faqs = [
   {
-    question: "What services does PubgStuff offer?",
-    answer: "PubgStuff provides web design, web development, graphics, RDP services, SEO, content research tools, social media marketing, and more."
+    question: "What services does Textify AI offer?",
+    answer: "Textify AI provides AI-powered tools for content research, text summarization, and generating content ideas to streamline your writing process."
   },
   {
-    question: "How can I enhance my gaming experience with PubgStuff?",
-    answer: "You can boost your gaming with features like the Silent Aimbot, exclusive skins, effects, and by climbing the global rankings."
+    question: "How can I use the AI Research Tool?",
+    answer: "You can input a topic, and our AI will analyze it to find useful resources, key insights, and relevant information to aid your writing."
   },
   {
-    question: "What is the process for getting started with PubgStuff services?",
-    answer: "Simply choose your service, follow easy steps, and enjoy optimized solutions tailored to your needs and goals."
+    question: "What kind of text can I summarize?",
+    answer: "You can import or copy-paste long excerpts of text, and our AI will generate a concise summary of the key points for you."
   },
   {
-    question: "How secure are PubgStuff’s services?",
-    answer: "All PubgStuff services, including the Silent Aimbot and RDP, are designed with maximum security to ensure safe and smooth usage."
+    question: "How does the Content Ideas generator work?",
+    answer: "Based on your input or selected parameters, our AI will generate a list of creative and relevant writing ideas to kickstart your content creation."
   },
   {
-    question: "Can PubgStuff help with my website’s SEO?",
-    answer: "Yes! PubgStuff offers SEO services to improve your SEO score by optimizing metadata, ensuring better ranking and visibility online."
-  },
-  {
-    question: "What are the benefits of using Driver Booster?",
-    answer: "Driver Booster automatically updates outdated drivers, enhancing your PC’s performance, stability, and security to optimize your overall experience."
+    question: "Is the interface user-friendly?",
+    answer: "Yes, Textify AI is designed with an intuitive UI for easy navigation and seamless interaction with all our AI-powered tools."
   },
 ]
 
 export default function Faq() {
   return (
-    <section id="faq" className="py-20 md:py-28 bg-gray-50/50">
+    <section id="faq" className="py-16 md:py-24 bg-primary/5">
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">
             Frequently Asked Questions
           </h2>
         </div>
@@ -56,3 +51,5 @@ export default function Faq() {
     </section>
   )
 }
+
+    

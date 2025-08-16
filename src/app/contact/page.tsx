@@ -1,4 +1,3 @@
-
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
@@ -10,13 +9,13 @@ export default function ContactPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
-      <main className="flex-1 pt-24">
+      <main className="flex-1 pt-32 md:pt-40">
         <section className="py-16 text-center">
           <div className="container">
             <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary">
               Contact Us
             </span>
-            <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold tracking-tight text-foreground sm:text-5xl font-headline">
               Get in touch with our team
             </h1>
             <p className="mt-4 text-lg max-w-2xl mx-auto text-muted-foreground">
@@ -31,7 +30,7 @@ export default function ContactPage() {
                 <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <MessageSquare className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold">Chat to sales</h3>
+                <h3 className="text-xl font-bold font-headline">Chat to sales</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Speak to our friendly team.</p>
                 <Button asChild variant="outline" className="w-full justify-start mt-auto">
                     <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
@@ -41,7 +40,7 @@ export default function ContactPage() {
                 <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <Mail className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold">Chat to support</h3>
+                <h3 className="text-xl font-bold font-headline">Chat to support</h3>
                 <p className="text-muted-foreground mt-2 mb-4">We're here to help.</p>
                  <Button asChild variant="outline" className="w-full justify-start mt-auto">
                     <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
@@ -51,7 +50,7 @@ export default function ContactPage() {
                 <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <MapPin className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold">Visit us</h3>
+                <h3 className="text-xl font-bold font-headline">Visit us</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Visit our office HQ.</p>
                 <Button variant="outline" asChild className="w-full mt-auto">
                     <a href="https://maps.google.com?q=Shams+Colony+H-13+Islamabad" target="_blank" rel="noopener noreferrer">
@@ -63,7 +62,7 @@ export default function ContactPage() {
                 <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <Phone className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-bold">Call us</h3>
+                <h3 className="text-xl font-bold font-headline">Call us</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Mon-Fri from 8am to 5pm.</p>
                  <div className="space-y-2 w-full mt-auto">
                     <Button variant="outline" asChild className="w-full justify-start">
@@ -83,3 +82,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    
