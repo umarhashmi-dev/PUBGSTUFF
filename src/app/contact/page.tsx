@@ -2,10 +2,8 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { MessageSquare, MapPin, Phone, Mail } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
+import { MessageSquare, Mail, MapPin, Phone } from "lucide-react";
 import Faq from "@/components/landing/faq";
 
 export default function ContactPage() {
@@ -13,7 +11,7 @@ export default function ContactPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="py-20 text-center">
+        <section className="py-16 text-center">
           <div className="container">
             <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary">
               Contact Us
@@ -28,41 +26,46 @@ export default function ContactPage() {
         </section>
 
         <section className="container pb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-left p-6">
-                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
+                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <MessageSquare className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold">Chat to sales</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Speak to our friendly team.</p>
-                <div className="space-y-2">
-                    <Button asChild variant="outline" className="w-full justify-start">
-                        <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
-                    </Button>
-                     <Button asChild variant="outline" className="w-full justify-start">
-                        <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
-                    </Button>
-                </div>
+                <Button asChild variant="outline" className="w-full justify-start mt-auto">
+                    <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
+                </Button>
             </Card>
-            <Card className="text-left p-6">
-                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+            <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
+                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+                    <Mail className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold">Chat to support</h3>
+                <p className="text-muted-foreground mt-2 mb-4">We're here to help.</p>
+                 <Button asChild variant="outline" className="w-full justify-start mt-auto">
+                    <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
+                </Button>
+            </Card>
+            <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
+                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <MapPin className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold">Visit us</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Visit our office HQ.</p>
-                <Button variant="outline" asChild>
+                <Button variant="outline" asChild className="w-full mt-auto">
                     <a href="https://maps.google.com?q=Shams+Colony+H-13+Islamabad" target="_blank" rel="noopener noreferrer">
                         View on Google Maps
                     </a>
                 </Button>
             </Card>
-             <Card className="text-left p-6">
-                <div className="p-2 bg-primary/10 text-primary rounded-lg w-fit mb-4">
+             <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
+                <div className="p-3 bg-primary/10 text-primary rounded-lg w-fit mb-4">
                     <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold">Call us</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Mon-Fri from 8am to 5pm.</p>
-                 <div className="space-y-2">
+                 <div className="space-y-2 w-full mt-auto">
                     <Button variant="outline" asChild className="w-full justify-start">
                         <a href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer">+44 7532 830145</a>
                     </Button>
