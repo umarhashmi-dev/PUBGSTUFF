@@ -56,6 +56,9 @@ export default function Hero() {
                         <AvatarFallback>CH</AvatarFallback>
                       </Avatar>
                     </div>
+                     <p className="text-xs text-muted-foreground me-1.5">
+                      Trusted by <span className="font-semibold text-foreground">100K+</span> users.
+                    </p>
                   </div>
                 </div>
 
