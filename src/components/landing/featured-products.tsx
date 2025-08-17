@@ -1,5 +1,6 @@
+
 import { Button } from "@/components/ui/button";
-import { Check, User } from "lucide-react";
+import { Check, User, Wand2, Shield, Gem } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -7,61 +8,60 @@ import { cn } from "@/lib/utils";
 const plans = [
   {
     name: "Free",
-    price: null,
+    icon: <Wand2 className="h-6 w-6 text-foreground" />,
+    headerText: "30-Day Free Trial",
+    price: "Free",
     priceSuffix: "",
-    description: "Perfect for individuals and small projects.",
+    description: "Unlock your full potential with Stay AI—try all our tools and features absolutely free for 30 days!",
     badge: null,
-    bgColor: "bg-background",
     buttonVariant: "default",
     buttonText: "Try for Free",
     features: [
-      "Single Access",
-      "UI Limit 05/Design",
-      "5 AI tools integrated",
-      "10+ tools to proofread",
-      "10+ languages",
-      "Basic Support",
+      "Subscription Management Tools",
+      "Advanced A/B testing capabilities",
+      "AI-powered cancellation",
+      "Churn prevention features",
+      "Branded digital punch card",
+      "Integrations with top e-comm tools",
     ],
   },
   {
     name: "Pro Plan",
+    icon: <Shield className="h-6 w-6 text-foreground" />,
+    headerText: "Pro Plan",
     price: "$4999",
-    priceSuffix: "One-time Fee",
-    description: "Ideal for businesses and professional use.",
+    priceSuffix: "One time Fee",
+    description: "Perfect for Shopify merchants or want to scale their subscription.",
     badge: "Client Choice",
-    bgColor: "bg-gradient-to-br from-purple-500 to-blue-500",
     buttonVariant: "gradient",
     buttonText: "Book a 20-min Call",
     features: [
-        "Single Access",
-        "UI Limit 05/Design",
-        "5 AI tools integrated",
-        "10+ tools to proofread",
-        "10+ languages",
-        "Basic Support",
-        "1:1 Migration and Onboarding"
+        "1:1 Migration And Onboarding",
+        "Subscription management tools",
+        "Advanced A/B testing capabilities",
+        "AI-powered cancellation",
+        "Churn prevention features",
+        "Branded digital punch card",
+        "Integrations with top e-comm tools",
     ],
   },
   {
     name: "Enterprise",
-    price: null,
-    priceSuffix: "Custom Pricing",
-    description: "For large-scale applications and custom needs.",
+    icon: <Gem className="h-6 w-6 text-foreground" />,
+    headerText: "Enterprise",
+    price: "Custom Pricing",
+    priceSuffix: "",
+    description: "For larger brands looking to supercharge their subscription program.",
     badge: null,
-    bgColor: "bg-background",
     buttonVariant: "default",
     buttonText: "Contact Us",
     features: [
-      "Single Access",
-      "UI Limit 05/Design",
-      "5 AI tools integrated",
-      "10+ tools to proofread",
-      "10+ languages",
-      "Basic Support",
-      "1:1 Migration and Onboarding",
+      "Every feature we offer in Pro plus",
+      "1:1 Migration And Onboarding",
+      "AI-Powered Cancellation",
       "Custom development",
       "Personalized growth planning",
-      "Early access to new features and tools"
+      "Early access to new features and tools",
     ],
   },
 ];
@@ -82,45 +82,38 @@ export default function FeaturedProducts() {
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           {plans.map((plan) => (
             <Card key={plan.name} className={cn(
-                "flex flex-col rounded-2xl shadow-lg transition-all duration-300 border text-center",
-                plan.badge && "relative"
+                "flex flex-col rounded-2xl shadow-lg transition-all duration-300 border text-left",
+                plan.badge && "relative bg-white/50"
               )}>
               {plan.badge && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className="inline-flex items-center rounded-full bg-primary px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-foreground">
+                <div className="absolute top-0 right-6 -translate-y-1/2">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
+                        <Shield className="h-4 w-4" />
                         {plan.badge}
                     </div>
                 </div>
               )}
 
-              <CardHeader className={cn("p-8 rounded-t-2xl", plan.name === 'Pro Plan' ? 'bg-gradient-to-br from-purple-600 to-blue-600 text-primary-foreground' : 'bg-card')}>
-                <CardTitle className={cn(
-                    "text-2xl font-bold font-headline uppercase tracking-wide",
-                     plan.name === 'Pro Plan' ? 'text-white' : 'text-foreground'
-                )}>{plan.name}</CardTitle>
-                
-                <div className="flex items-baseline justify-center gap-2 mt-6">
-                  {plan.price ? (
-                    <>
-                      <span className={cn(
-                          "text-5xl font-extrabold tracking-tight",
-                          plan.name === 'Pro Plan' ? 'text-white' : 'text-foreground'
-                      )}>{plan.price}</span>
-                    </>
-                  ) : <span className="text-2xl font-bold tracking-tight h-[56px] flex items-center">{plan.priceSuffix}</span> }
+              <CardHeader className={cn("p-8 rounded-t-2xl", plan.name === 'Pro Plan' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
+                <div className="flex items-center gap-3">
+                    {plan.icon}
+                    <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">{plan.headerText}</h3>
                 </div>
-                 {plan.price && <p className={cn(
-                    "text-sm",
-                    plan.name === 'Pro Plan' ? 'text-blue-100' : 'text-muted-foreground'
-                  )}>{plan.priceSuffix}</p>}
+                <p className="text-muted-foreground text-sm min-h-[60px] pt-4">{plan.description}</p>
                 
+                <div className="flex items-baseline gap-2 mt-6">
+                    <span className={cn(
+                        "text-5xl font-extrabold tracking-tight",
+                        plan.name === "Free" && "text-4xl"
+                    )}>{plan.price}</span>
+                  {plan.priceSuffix && <p className="text-sm text-muted-foreground">{plan.priceSuffix}</p>}
+                </div>
               </CardHeader>
-              <CardContent className="p-8 pt-6 flex-1 bg-card">
-                 <p className="text-muted-foreground mb-8">{plan.description}</p>
+              <CardContent className="p-8 pt-0 flex-1 bg-card">
                 <ul className="space-y-4 text-left">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3">
-                      <Check className="h-5 w-5 text-foreground shrink-0" />
+                      <Check className="h-5 w-5 text-foreground rounded-full bg-primary/10 p-1 shrink-0" />
                       <span className="text-muted-foreground">{feature}</span>
                     </li>
                   ))}
@@ -128,9 +121,9 @@ export default function FeaturedProducts() {
               </CardContent>
               <CardFooter className="p-8 mt-auto bg-card rounded-b-2xl">
                  {plan.buttonVariant === 'gradient' ? (
-                   <Button asChild size="lg" className="w-full text-lg bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
+                   <Button asChild size="lg" className="w-full text-lg bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
                       <Link href="/signup">
-                        <User className="mr-2 h-5 w-5 rounded-full" />
+                        <User className="mr-2 h-5 w-5 rounded-full bg-white/20 p-1" />
                         {plan.buttonText}
                       </Link>
                     </Button>
