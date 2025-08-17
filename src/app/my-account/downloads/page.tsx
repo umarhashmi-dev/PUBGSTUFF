@@ -38,7 +38,7 @@ export default function DownloadsPage() {
                       <TableCell className="font-medium">{download.name}</TableCell>
                       <TableCell>{download.expires}</TableCell>
                       <TableCell className="text-right">
-                         <Button asChild size="sm">
+                         <Button asChild size="sm" className="hover-shimmer-button">
                           <a href={download.link}><Download className="mr-2" /> Download</a>
                          </Button>
                       </TableCell>

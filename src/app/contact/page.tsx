@@ -32,7 +32,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-bold font-headline">Chat to sales</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Speak to our friendly team.</p>
-                <Button asChild variant="outline" className="w-full justify-start mt-auto">
+                <Button asChild variant="outline" className="w-full justify-start mt-auto hover-shimmer-button">
                     <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
                 </Button>
             </Card>
@@ -42,7 +42,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-bold font-headline">Chat to support</h3>
                 <p className="text-muted-foreground mt-2 mb-4">We're here to help.</p>
-                 <Button asChild variant="outline" className="w-full justify-start mt-auto">
+                 <Button asChild variant="outline" className="w-full justify-start mt-auto hover-shimmer-button">
                     <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
                 </Button>
             </Card>
@@ -52,7 +52,7 @@ export default function ContactPage() {
                 </div>
                 <h3 className="text-xl font-bold font-headline">Visit us</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Visit our office HQ.</p>
-                <Button variant="outline" asChild className="w-full mt-auto">
+                <Button variant="outline" asChild className="w-full mt-auto hover-shimmer-button">
                     <a href="https://maps.google.com?q=Shams+Colony+H-13+Islamabad" target="_blank" rel="noopener noreferrer">
                         View on Google Maps
                     </a>
@@ -65,10 +65,10 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold font-headline">Call us</h3>
                 <p className="text-muted-foreground mt-2 mb-4">Mon-Fri from 8am to 5pm.</p>
                  <div className="space-y-2 w-full mt-auto">
-                    <Button variant="outline" asChild className="w-full justify-start">
+                    <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button">
                         <a href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer">+44 7532 830145</a>
                     </Button>
-                    <Button variant="outline" asChild className="w-full justify-start">
+                    <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button">
                          <a href="https://wa.me/923021550385" target="_blank" rel="noopener noreferrer">+92 302 1550385</a>
                     </Button>
                  </div>

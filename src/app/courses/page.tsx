@@ -15,7 +15,7 @@ export default function CoursesPage() {
               Explore our range of courses designed to help you master new skills and advance your career.
             </p>
             <div className="mt-10">
-              <Button asChild size="lg">
+              <Button asChild size="lg" className="hover-shimmer-button">
                 <Link href="#">Browse Courses</Link>
               </Button>
             </div>

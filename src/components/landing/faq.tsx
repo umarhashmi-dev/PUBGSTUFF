@@ -61,7 +61,7 @@ export default function Faq() {
                     <h3 className="text-lg font-semibold">Can't find an answer?</h3>
                     <p className="text-muted-foreground mt-1">Contact us for more information.</p>
                 </div>
-                <Button asChild>
+                <Button asChild className="hover-shimmer-button">
                     <Link href="/contact">
                         Contact Us <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>

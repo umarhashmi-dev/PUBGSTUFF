@@ -51,7 +51,7 @@ export default function AccountDetailsPage() {
                       </div>
                    </div>
                 </fieldset>
-                <Button type="submit" className="w-full" size="lg">Save changes</Button>
+                <Button type="submit" className="w-full hover-shimmer-button" size="lg">Save changes</Button>
               </form>
             </div>
           </div>

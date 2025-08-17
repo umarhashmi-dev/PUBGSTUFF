@@ -64,7 +64,7 @@ export default function Footer() {
             </p>
             <form className="mt-4 flex gap-2">
               <Input type="email" placeholder="Your Email Address" className="flex-1" />
-              <Button type="submit">Subscribe</Button>
+              <Button type="submit" className="hover-shimmer-button">Subscribe</Button>
             </form>
           </div>
         </div>

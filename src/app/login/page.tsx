@@ -87,11 +87,11 @@ export default function LoginPage() {
 
             <div className="mt-6 space-y-6">
               <div className="grid grid-cols-2 gap-3">
-                <Button variant="outline" onClick={() => handleSocialSignIn('github')} className="w-full inline-flex items-center justify-center gap-2">
+                <Button variant="outline" onClick={() => handleSocialSignIn('github')} className="w-full inline-flex items-center justify-center gap-2 hover-shimmer-button">
                   <GitHubIcon className="w-5 h-5" />
                   GitHub
                 </Button>
-                <Button variant="outline" onClick={() => handleSocialSignIn('google')} className="w-full inline-flex items-center justify-center gap-2">
+                <Button variant="outline" onClick={() => handleSocialSignIn('google')} className="w-full inline-flex items-center justify-center gap-2 hover-shimmer-button">
                   <GoogleIcon className="w-5 h-5" />
                   Google
                 </Button>
@@ -139,7 +139,7 @@ export default function LoginPage() {
                   />
                 </div>
                 {error && <p className="text-red-500 text-sm">{error}</p>}
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full hover-shimmer-button">
                   Sign in
                 </Button>
               </form>

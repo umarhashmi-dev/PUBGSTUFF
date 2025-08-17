@@ -13,7 +13,7 @@ export default function Cta() {
             Join our community of satisfied gamers and digital enthusiasts. Get instant access to the best products and deals.
           </p>
           <div className="mt-8">
-            <Button asChild size="lg" variant="secondary" className="text-lg">
+            <Button asChild size="lg" variant="secondary" className="text-lg hover-shimmer-button">
               <Link href="/products">Get Started Now</Link>
             </Button>
           </div>

@@ -21,21 +21,21 @@ export default function MyAccountPage() {
               <div className="text-center">
                 <h2 className="text-2xl font-bold">Orders</h2>
                 <p className="mt-2 text-muted-foreground">Check your order history.</p>
-                <Button asChild variant="outline" className="mt-4">
+                <Button asChild variant="outline" className="mt-4 hover-shimmer-button">
                   <Link href="/my-account/orders">View Orders</Link>
                 </Button>
               </div>
                <div className="text-center">
                 <h2 className="text-2xl font-bold">Downloads</h2>
                 <p className="mt-2 text-muted-foreground">Access your downloads.</p>
-                <Button asChild variant="outline" className="mt-4">
+                <Button asChild variant="outline" className="mt-4 hover-shimmer-button">
                   <Link href="/my-account/downloads">View Downloads</Link>
                 </Button>
               </div>
                <div className="text-center">
                 <h2 className="text-2xl font-bold">Account Details</h2>
                 <p className="mt-2 text-muted-foreground">Update your information.</p>
-                <Button asChild variant="outline" className="mt-4">
+                <Button asChild variant="outline" className="mt-4 hover-shimmer-button">
                   <Link href="/my-account/account-details">Edit Details</Link>
                 </Button>
               </div>
