@@ -25,7 +25,7 @@ const products = [
     name: "Web Development",
     price: "$250",
     priceSuffix: "/project",
-    popular: false,
+    popular: true,
     icon: <Code className="w-6 h-6 text-primary" />,
     description: "Ideal for full-scale projects with team access and extensive tools.",
     features: [
@@ -70,7 +70,7 @@ export default function FeaturedProducts() {
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           {products.map((product) => (
-            <Card key={product.name} className="flex flex-col rounded-2xl shadow-lg transition-all duration-300 border">
+            <Card key={product.name} className={cn("flex flex-col rounded-2xl shadow-lg transition-all duration-300 border", product.popular && "border-primary ring-2 ring-primary")}>
               <CardHeader className="p-8">
                 <div className="flex items-center gap-3">
                     {product.icon}
