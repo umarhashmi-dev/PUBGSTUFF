@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Check, User, Shield, Gem, Wand2 } from "lucide-react";
+import { Check, User, Shield, Wand2, Gem } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
