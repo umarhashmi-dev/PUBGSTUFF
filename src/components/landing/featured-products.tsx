@@ -1,9 +1,10 @@
 
 import { Button } from "@/components/ui/button";
-import { Check, User, Wand2, Shield, Gem } from "lucide-react";
+import { Check, User, Shield, Gem, Wand2 } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { ShimmeringText } from "@/components/ui/shimmering-text";
 
 const plans = [
   {
@@ -82,7 +83,7 @@ export default function FeaturedProducts() {
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           {plans.map((plan) => (
             <Card key={plan.name} className={cn(
-                "flex flex-col rounded-2xl shadow-lg transition-all duration-300 border text-left",
+                "flex flex-col rounded-2xl shadow-lg transition-all duration-300 border text-left group",
                 plan.badge && "relative"
               )}>
               {plan.badge && (
@@ -100,12 +101,17 @@ export default function FeaturedProducts() {
                       {plan.icon}
                       <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">{plan.headerText}</h3>
                   </div>
-                  <p className="text-muted-foreground text-sm min-h-[40px] pt-2">{plan.description}</p>
+                  <div className="min-h-[60px] pt-2">
+                    <p className="text-muted-foreground text-sm">{plan.description}</p>
+                  </div>
                   
                   <div className="flex items-baseline gap-2 pt-4">
-                      <span className={cn(
-                          "text-4xl font-extrabold tracking-tight text-gray-900",
-                      )}>{plan.price}</span>
+                    <div className="text-4xl font-extrabold tracking-tight text-gray-900">
+                        <span className="group-hover:hidden">{plan.price}</span>
+                        <div className="hidden group-hover:block">
+                          <ShimmeringText text={plan.price} duration={2} />
+                        </div>
+                    </div>
                     {plan.priceSuffix && <p className="text-sm text-gray-500">{plan.priceSuffix}</p>}
                   </div>
                 </CardHeader>
