@@ -37,50 +37,50 @@ export default function Hero() {
 
               <div className="mt-8 sm:mt-16">
                 <div className="flex items-center justify-center lg:justify-start">
-                  <div>
-                    <div className="font-semibold text-center md:text-left">Trusted by</div>
-                    <div className="flex space-x-2 items-center flex-col md:flex-row">
-                      <div className="flex -space-x-2 overflow-hidden p-2">
-                        <img
-                          className="inline-block h-10 w-10 rounded-full ring-2 ring-gray-200 hover:scale-105 tranform duration-100"
-                          src="https://placehold.co/40x40.png"
-                          alt="User avatar"
-                          data-ai-hint="man portrait"
-                        />
-                        <img
-                          className="inline-block h-10 w-10 rounded-full ring-2 ring-gray-200 hover:scale-105 tranform duration-100"
-                          src="https://placehold.co/40x40.png"
-                          alt="User avatar"
-                          data-ai-hint="woman portrait"
-                        />
-                        <img
-                          className="inline-block h-10 w-10 rounded-full ring-2 ring-gray-200 hover:scale-105 tranform duration-100"
-                          src="https://placehold.co/40x40.png"
-                          alt="User avatar"
-                          data-ai-hint="man portrait"
-                        />
-                        <img
-                          className="inline-block h-10 w-10 rounded-full ring-2 ring-gray-200 hover:scale-105 tranform duration-100"
-                          src="https://placehold.co/40x40.png"
-                          alt="User avatar"
-                          data-ai-hint="woman portrait"
-                        />
-                        <img
-                          className="inline-block h-10 w-10 rounded-full ring-2 ring-gray-200 hover:scale-105 tranform duration-100"
-                          src="https://placehold.co/40x40.png"
-                          alt="User avatar"
-                          data-ai-hint="man portrait"
-                        />
-                         <img
-                          className="inline-block h-10 w-10 rounded-full ring-2 ring-gray-200 hover:scale-105 tranform duration-100"
-                          src="https://placehold.co/40x40.png"
-                          alt="User avatar"
-                          data-ai-hint="woman portrait"
-                        />
-                      </div>
-                      <div className="text-muted-foreground">Join 5,000+ other members</div>
+                    <div className="flex items-center rounded-full p-0.5 gap-1.5 border border-border shadow-sm shadow-black/5">
+                        <div className="flex -space-x-1">
+                            <Avatar className="size-7">
+                                <AvatarImage
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@user1"
+                                    className="border-2 border-background hover:z-10"
+                                    data-ai-hint="man portrait"
+                                />
+                                <AvatarFallback>U1</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="size-7">
+                                <AvatarImage
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@user2"
+                                    className="border-2 border-background hover:z-10"
+                                    data-ai-hint="woman portrait"
+                                />
+                                <AvatarFallback>U2</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="size-7">
+                                <AvatarImage
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@user3"
+                                    className="border-2 border-background hover:z-10"
+                                    data-ai-hint="man portrait"
+                                />
+                                <AvatarFallback>U3</AvatarFallback>
+                            </Avatar>
+                            <Avatar className="size-7">
+                                <AvatarImage
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@user4"
+                                    className="border-2 border-background hover:z-10"
+                                    data-ai-hint="woman portrait"
+                                />
+                                <AvatarFallback>U4</AvatarFallback>
+                            </Avatar>
+                        </div>
+                        <p className="text-xs text-muted-foreground me-1.5">
+                            Trusted by <span className="font-semibold text-foreground">100K+</span>{" "}
+                            users.
+                        </p>
                     </div>
-                  </div>
                 </div>
 
                 <blockquote className="mt-6">
