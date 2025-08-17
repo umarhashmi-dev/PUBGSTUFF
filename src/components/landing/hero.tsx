@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function Hero() {
   return (
@@ -36,11 +37,26 @@ export default function Hero() {
 
               <div className="mt-8 sm:mt-16">
                 <div className="flex items-center justify-center lg:justify-start">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-[#FDB241]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
+                  <div className="flex items-center rounded-full p-0.5 gap-1.5 border border-border shadow-sm shadow-black/5">
+                    <div className="flex -space-x-1">
+                      <Avatar className="size-7">
+                        <AvatarImage src="https://placehold.co/28x28.png" alt="@reui" className="border-2 border-background hover:z-10" data-ai-hint="man portrait" />
+                        <AvatarFallback>CH</AvatarFallback>
+                      </Avatar>
+                      <Avatar className="size-7">
+                        <AvatarImage src="https://placehold.co/28x28.png" alt="@reui" className="border-2 border-background hover:z-10" data-ai-hint="woman portrait" />
+                        <AvatarFallback>CH</AvatarFallback>
+                      </Avatar>
+                      <Avatar className="size-7">
+                        <AvatarImage src="https://placehold.co/28x28.png" alt="@reui" className="border-2 border-background hover:z-10" data-ai-hint="person portrait" />
+                        <AvatarFallback>CH</AvatarFallback>
+                      </Avatar>
+                      <Avatar className="size-7">
+                        <AvatarImage src="https://placehold.co/28x28.png" alt="@reui" className="border-2 border-background hover:z-10" data-ai-hint="woman portrait" />
+                        <AvatarFallback>CH</AvatarFallback>
+                      </Avatar>
+                    </div>
+                  </div>
                 </div>
 
                 <blockquote className="mt-6">
