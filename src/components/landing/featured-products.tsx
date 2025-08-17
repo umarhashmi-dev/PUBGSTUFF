@@ -89,7 +89,7 @@ export default function FeaturedProducts() {
                 )}>
                 {plan.badge && (
                   <div className="absolute top-0 right-6 -translate-y-1/2 z-10">
-                      <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-primary shadow-md">
                           <Shield className="h-4 w-4" />
                           {plan.badge}
                       </div>
