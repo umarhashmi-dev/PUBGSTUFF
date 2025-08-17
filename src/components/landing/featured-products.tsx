@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Check, User, Shield, Wand2, Gem } from "lucide-react";
+import { Check, User, Shield, Gem, Wand2 } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -82,67 +82,69 @@ export default function FeaturedProducts() {
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
           {plans.map((plan) => (
-            <Card key={plan.name} className={cn(
-                "flex flex-col rounded-2xl shadow-lg transition-all duration-300 border text-left group",
-                plan.badge && "relative"
-              )}>
-              {plan.badge && (
-                <div className="absolute top-0 right-6 -translate-y-1/2 z-10">
-                    <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
-                        <Shield className="h-4 w-4" />
-                        {plan.badge}
-                    </div>
-                </div>
-              )}
+            <div key={plan.name} className="glowing-card">
+              <Card className={cn(
+                  "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
+                  plan.badge && "relative"
+                )}>
+                {plan.badge && (
+                  <div className="absolute top-0 right-6 -translate-y-1/2 z-10">
+                      <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white shadow-md">
+                          <Shield className="h-4 w-4" />
+                          {plan.badge}
+                      </div>
+                  </div>
+                )}
 
-              <div className="flex flex-col flex-grow">
-                <CardHeader className={cn("p-6 rounded-t-2xl", plan.name === 'Pro Plan' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
-                  <div className="flex items-center gap-3">
-                      {plan.icon}
-                      <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">{plan.headerText}</h3>
-                  </div>
-                  <div className="min-h-[60px] pt-2">
-                    <p className="text-muted-foreground text-sm">{plan.description}</p>
-                  </div>
-                  
-                  <div className="flex items-baseline gap-2 pt-4">
-                    <div className="text-4xl font-extrabold tracking-tight text-gray-900">
-                        <span className="group-hover:hidden">{plan.price}</span>
-                        <div className="hidden group-hover:block">
-                          <ShimmeringText text={plan.price} duration={3} />
-                        </div>
+                <div className="flex flex-col flex-grow">
+                  <CardHeader className={cn("p-6 rounded-t-2xl", plan.name === 'Pro Plan' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
+                    <div className="flex items-center gap-3">
+                        {plan.icon}
+                        <h3 className="text-sm font-semibold uppercase tracking-wider text-gray-500">{plan.headerText}</h3>
                     </div>
-                    {plan.priceSuffix && <p className="text-sm text-gray-500">{plan.priceSuffix}</p>}
-                  </div>
-                </CardHeader>
-                <CardContent className="p-6 flex-1">
-                  <ul className="space-y-3 text-left">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-blue-500 rounded-full bg-blue-500/10 p-1 shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-                <CardFooter className="p-6 mt-auto">
-                   {plan.buttonVariant === 'gradient' ? (
-                     <Button asChild size="lg" className="w-full text-base bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow hover-shimmer-button">
-                        <Link href="/signup">
-                          <User className="mr-2 h-5 w-5 rounded-full bg-white/20 p-1" />
-                          <span>{plan.buttonText}</span>
-                        </Link>
-                      </Button>
-                   ) : (
-                      <Button asChild size="lg" className="w-full text-base bg-gray-800 text-white rounded-full hover:bg-gray-900 hover-shimmer-button">
+                    <div className="min-h-[60px] pt-2">
+                      <p className="text-muted-foreground text-sm">{plan.description}</p>
+                    </div>
+                    
+                    <div className="flex items-baseline gap-2 pt-4">
+                      <div className="text-4xl font-extrabold tracking-tight text-gray-900">
+                          <span className="group-hover:hidden">{plan.price}</span>
+                          <div className="hidden group-hover:block">
+                            <ShimmeringText text={plan.price} duration={3} />
+                          </div>
+                      </div>
+                      {plan.priceSuffix && <p className="text-sm text-gray-500">{plan.priceSuffix}</p>}
+                    </div>
+                  </CardHeader>
+                  <CardContent className="p-6 flex-1">
+                    <ul className="space-y-3 text-left">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Check className="h-5 w-5 text-blue-500 rounded-full bg-blue-500/10 p-1 shrink-0 mt-0.5" />
+                          <span className="text-gray-700">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                  <CardFooter className="p-6 mt-auto">
+                    {plan.buttonVariant === 'gradient' ? (
+                      <Button asChild size="lg" className="w-full text-base bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow hover-shimmer-button">
                           <Link href="/signup">
-                              <span>{plan.buttonText}</span>
+                            <User className="mr-2 h-5 w-5 rounded-full bg-white/20 p-1" />
+                            <span>{plan.buttonText}</span>
                           </Link>
-                      </Button>
-                   )}
-                </CardFooter>
-              </div>
-            </Card>
+                        </Button>
+                    ) : (
+                        <Button asChild size="lg" className="w-full text-base bg-gray-800 text-white rounded-full hover:bg-gray-900 hover-shimmer-button">
+                            <Link href="/signup">
+                                <span>{plan.buttonText}</span>
+                            </Link>
+                        </Button>
+                    )}
+                  </CardFooter>
+                </div>
+              </Card>
+            </div>
           ))}
         </div>
       </div>
