@@ -36,38 +36,52 @@ export default function Faq() {
   return (
     <section id="faq" className="py-16 md:py-24 bg-secondary/50">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">
             Frequently Asked Questions
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground">
             Quick answers to questions you may have.
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg">
-                <AccordionTrigger className="text-lg text-left font-semibold px-6 py-4 hover:no-underline">
-                    {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground px-6">
-                    {faq.answer}
-                </AccordionContent>
-            </AccordionItem>
-          ))}
-            <div className="bg-background border rounded-lg p-6 flex items-center justify-between">
-                <div>
-                    <h3 className="text-lg font-semibold">Can't find an answer?</h3>
-                    <p className="text-muted-foreground mt-1">Contact us for more information.</p>
-                </div>
-                <Button asChild className="hover-shimmer-button">
-                    <Link href="/contact">
-                        Contact Us <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                </Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.slice(0, 3).map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg">
+                  <AccordionTrigger className="text-base sm:text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
+                      {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm sm:text-base text-muted-foreground px-4 sm:px-6">
+                      {faq.answer}
+                  </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+          <Accordion type="single" collapsible className="w-full space-y-4">
+            {faqs.slice(3).map((faq, index) => (
+              <AccordionItem key={index} value={`item-${index+3}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg">
+                  <AccordionTrigger className="text-base sm:text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
+                      {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-sm sm:text-base text-muted-foreground px-4 sm:px-6">
+                      {faq.answer}
+                  </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+        <div className="bg-background border rounded-lg p-6 flex flex-col sm:flex-row items-center justify-between mt-6 text-center sm:text-left">
+            <div className="mb-4 sm:mb-0">
+                <h3 className="text-lg font-semibold">Can't find an answer?</h3>
+                <p className="text-muted-foreground mt-1 text-sm sm:text-base">Contact us for more information.</p>
             </div>
-        </Accordion>
+            <Button asChild className="hover-shimmer-button w-full sm:w-auto">
+                <Link href="/contact">
+                    Contact Us <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+            </Button>
+        </div>
       </div>
     </section>
   )

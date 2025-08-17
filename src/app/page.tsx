@@ -15,7 +15,7 @@ export default function Home() {
       <div className="flex-1">
         <main>
           <Hero />
-          <div>
+          <div className="overflow-x-hidden">
             <FeaturedProducts />
             <HowItWorks />
             <UseCases />

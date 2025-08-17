@@ -69,13 +69,13 @@ const plans = [
 
 export default function FeaturedProducts() {
   return (
-    <section id="featured-products" className="py-20 md:py-28 bg-white">
+    <section id="featured-products" className="py-16 md:py-28 bg-white">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Choose Your Plan
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-base sm:text-lg text-gray-600">
             Simple, transparent pricing for teams of all sizes.
           </p>
         </div>
@@ -121,7 +121,7 @@ export default function FeaturedProducts() {
                       {plan.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
                           <Check className="h-5 w-5 text-blue-500 rounded-full bg-blue-500/10 p-1 shrink-0 mt-0.5" />
-                          <span className="text-gray-700">{feature}</span>
+                          <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
                         </li>
                       ))}
                     </ul>

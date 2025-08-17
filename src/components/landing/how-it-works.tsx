@@ -2,17 +2,17 @@ import { CircleUser, Package, Send } from "lucide-react";
 
 const steps = [
   {
-    icon: <CircleUser className="w-12 h-12 text-primary" />,
+    icon: <CircleUser className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
     title: "Create an Account",
     description: "Sign up for a free account in just a few minutes and get started.",
   },
   {
-    icon: <Package className="w-12 h-12 text-primary" />,
+    icon: <Package className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
     title: "Choose Your Product",
     description: "Browse our extensive catalog of digital goods and find what you need.",
   },
   {
-    icon: <Send className="w-12 h-12 text-primary" />,
+    icon: <Send className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
     title: "Instant Delivery",
     description: "Your digital products are delivered to your account instantly upon purchase.",
   },
@@ -20,13 +20,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 md:py-28 bg-white">
+    <section id="how-it-works" className="py-16 md:py-28 bg-white">
       <div className="container">
-        <div className="text-center">
+        <div className="text-center max-w-2xl mx-auto">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             How It Works
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-base sm:text-lg text-gray-600">
             A simple, three-step process to get your digital goods.
           </p>
         </div>
@@ -36,8 +36,8 @@ export default function HowItWorks() {
               <div className="p-4 bg-gray-100 rounded-full mb-6">
                 {step.icon}
               </div>
-              <h3 className="text-xl font-bold font-headline mb-2 text-gray-900">{step.title}</h3>
-              <p className="text-gray-600">{step.description}</p>
+              <h3 className="text-lg sm:text-xl font-bold font-headline mb-2 text-gray-900">{step.title}</h3>
+              <p className="text-gray-600 text-sm sm:text-base">{step.description}</p>
             </div>
           ))}
         </div>

@@ -36,24 +36,24 @@ const useCases = [
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="py-20 md:py-28">
+    <section id="use-cases" className="py-16 md:py-28">
       <div className="container">
-        <div className="text-center">
+        <div className="text-center max-w-3xl mx-auto">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Multiple Use Cases Of PUBGSTUFF
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground">
             Providing you with the best digital product experience.
           </p>
         </div>
         <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {useCases.map((useCase, index) => (
             <Card key={index} className="bg-card/50 hover:bg-card transition-colors duration-300">
-              <CardHeader className="flex flex-row items-center gap-4">
-                {useCase.icon}
+              <CardHeader className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6">
+                <div className="shrink-0">{useCase.icon}</div>
                 <div>
-                  <CardTitle>{useCase.title}</CardTitle>
-                  <CardDescription className="mt-1">{useCase.description}</CardDescription>
+                  <CardTitle className="text-base sm:text-lg">{useCase.title}</CardTitle>
+                  <CardDescription className="mt-1 text-sm sm:text-base">{useCase.description}</CardDescription>
                 </div>
               </CardHeader>
             </Card>
