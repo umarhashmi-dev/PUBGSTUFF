@@ -21,7 +21,7 @@ export default function Hero() {
           <div className="grid grid-cols-1 gap-y-4 lg:items-center lg:grid-cols-2 xl:grid-cols-2">
             <div className="text-center xl:col-span-1 lg:text-left md:px-16 lg:px-0 xl:pr-20">
               <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl sm:leading-tight lg:text-6xl lg:leading-tight font-pj">
-                Your One-Stop Shop for Digital Gaming Products.
+                Your One-Stop Digital Shop
               </h1>
               <p className="mt-2 text-lg text-gray-600 sm:mt-6 font-inter">
                 Instantly access a massive collection of game skins, currency, and other digital goods. Level up your gaming experience today.
