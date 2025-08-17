@@ -39,7 +39,7 @@ export default function Hero() {
                 <div className="flex items-center justify-center lg:justify-start">
                     <div className="flex items-center rounded-full p-0.5 gap-1.5 border border-border shadow-sm shadow-black/5">
                         <div className="flex -space-x-1">
-                            <Avatar className="size-7">
+                            <Avatar className="size-7 rounded-full">
                                 <AvatarImage
                                     src="https://i.pravatar.cc/40?img=1"
                                     alt="@user1"
@@ -47,7 +47,7 @@ export default function Hero() {
                                 />
                                 <AvatarFallback>U1</AvatarFallback>
                             </Avatar>
-                            <Avatar className="size-7">
+                            <Avatar className="size-7 rounded-full">
                                 <AvatarImage
                                     src="https://i.pravatar.cc/40?img=2"
                                     alt="@user2"
@@ -55,7 +55,7 @@ export default function Hero() {
                                 />
                                 <AvatarFallback>U2</AvatarFallback>
                             </Avatar>
-                            <Avatar className="size-7">
+                            <Avatar className="size-7 rounded-full">
                                 <AvatarImage
                                     src="https://i.pravatar.cc/40?img=3"
                                     alt="@user3"
@@ -63,7 +63,7 @@ export default function Hero() {
                                 />
                                 <AvatarFallback>U3</AvatarFallback>
                             </Avatar>
-                            <Avatar className="size-7">
+                            <Avatar className="size-7 rounded-full">
                                 <AvatarImage
                                     src="https://i.pravatar.cc/40?img=4"
                                     alt="@user4"
