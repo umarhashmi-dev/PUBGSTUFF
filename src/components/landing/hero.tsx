@@ -40,40 +40,36 @@ export default function Hero() {
                     <div className="flex items-center rounded-full p-0.5 gap-1.5 border border-border shadow-sm shadow-black/5">
                         <div className="flex -space-x-1">
                             <Avatar className="size-7 rounded-full">
-                                <AvatarImage
-                                    src="https://placehold.co/40x40.png"
-                                    alt="@reui"
-                                    className="border-2 border-background hover:z-10 rounded-full"
-                                    data-ai-hint="man portrait"
-                                />
-                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
+                            <AvatarImage
+                                src="https://i.pravatar.cc/40?img=1"
+                                alt="@user1"
+                                className="border-2 border-background hover:z-10 rounded-full"
+                            />
+                            <AvatarFallback className="rounded-full">U1</AvatarFallback>
                             </Avatar>
                             <Avatar className="size-7 rounded-full">
-                                <AvatarImage
-                                    src="https://placehold.co/40x40.png"
-                                    alt="@reui"
-                                    className="border-2 border-background hover:z-10 rounded-full"
-                                    data-ai-hint="woman portrait"
-                                />
-                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
+                            <AvatarImage
+                                src="https://i.pravatar.cc/40?img=2"
+                                alt="@user2"
+                                className="border-2 border-background hover:z-10 rounded-full"
+                            />
+                            <AvatarFallback className="rounded-full">U2</AvatarFallback>
                             </Avatar>
                             <Avatar className="size-7 rounded-full">
-                                <AvatarImage
-                                    src="https://placehold.co/40x40.png"
-                                    alt="@reui"
-                                    className="border-2 border-background hover:z-10 rounded-full"
-                                    data-ai-hint="man portrait"
-                                />
-                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
+                            <AvatarImage
+                                src="https://i.pravatar.cc/40?img=3"
+                                alt="@user3"
+                                className="border-2 border-background hover:z-10 rounded-full"
+                            />
+                            <AvatarFallback className="rounded-full">U3</AvatarFallback>
                             </Avatar>
                             <Avatar className="size-7 rounded-full">
-                                <AvatarImage
-                                    src="https://placehold.co/40x40.png"
-                                    alt="@reui"
-                                    className="border-2 border-background hover:z-10 rounded-full"
-                                    data-ai-hint="woman portrait"
-                                />
-                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
+                            <AvatarImage
+                                src="https://i.pravatar.cc/40?img=4"
+                                alt="@user4"
+                                className="border-2 border-background hover:z-10 rounded-full"
+                            />
+                            <AvatarFallback className="rounded-full">U4</AvatarFallback>
                             </Avatar>
                         </div>
                         <p className="text-xs text-muted-foreground me-1.5">
