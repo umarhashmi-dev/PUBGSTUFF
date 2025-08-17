@@ -41,35 +41,39 @@ export default function Hero() {
                         <div className="flex -space-x-1">
                             <Avatar className="size-7 rounded-full">
                                 <AvatarImage
-                                    src="https://i.pravatar.cc/40?img=1"
-                                    alt="@user1"
-                                    className="border-2 border-background hover:z-10"
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@reui"
+                                    className="border-2 border-background hover:z-10 rounded-full"
+                                    data-ai-hint="man portrait"
                                 />
-                                <AvatarFallback>U1</AvatarFallback>
+                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
                             </Avatar>
                             <Avatar className="size-7 rounded-full">
                                 <AvatarImage
-                                    src="https://i.pravatar.cc/40?img=2"
-                                    alt="@user2"
-                                    className="border-2 border-background hover:z-10"
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@reui"
+                                    className="border-2 border-background hover:z-10 rounded-full"
+                                    data-ai-hint="woman portrait"
                                 />
-                                <AvatarFallback>U2</AvatarFallback>
+                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
                             </Avatar>
                             <Avatar className="size-7 rounded-full">
                                 <AvatarImage
-                                    src="https://i.pravatar.cc/40?img=3"
-                                    alt="@user3"
-                                    className="border-2 border-background hover:z-10"
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@reui"
+                                    className="border-2 border-background hover:z-10 rounded-full"
+                                    data-ai-hint="man portrait"
                                 />
-                                <AvatarFallback>U3</AvatarFallback>
+                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
                             </Avatar>
                             <Avatar className="size-7 rounded-full">
                                 <AvatarImage
-                                    src="https://i.pravatar.cc/40?img=4"
-                                    alt="@user4"
-                                    className="border-2 border-background hover:z-10"
+                                    src="https://placehold.co/40x40.png"
+                                    alt="@reui"
+                                    className="border-2 border-background hover:z-10 rounded-full"
+                                    data-ai-hint="woman portrait"
                                 />
-                                <AvatarFallback>U4</AvatarFallback>
+                                <AvatarFallback className="rounded-full">CH</AvatarFallback>
                             </Avatar>
                         </div>
                         <p className="text-xs text-muted-foreground me-1.5">
