@@ -65,10 +65,10 @@
 @layer utilities {
   @keyframes shimmer {
     from {
-      background-position: -200% 0;
+      background-position: 200% 0;
     }
     to {
-      background-position: 200% 0;
+      background-position: -200% 0;
     }
   }
 
