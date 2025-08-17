@@ -109,7 +109,7 @@ export default function FeaturedProducts() {
                     <div className="text-4xl font-extrabold tracking-tight text-gray-900">
                         <span className="group-hover:hidden">{plan.price}</span>
                         <div className="hidden group-hover:block">
-                          <ShimmeringText text={plan.price} duration={2} />
+                          <ShimmeringText text={plan.price} duration={3} />
                         </div>
                     </div>
                     {plan.priceSuffix && <p className="text-sm text-gray-500">{plan.priceSuffix}</p>}
@@ -132,7 +132,7 @@ export default function FeaturedProducts() {
                           <User className="mr-2 h-5 w-5 rounded-full bg-white/20 p-1" />
                           <span className="group-hover:hidden">{plan.buttonText}</span>
                           <div className="hidden group-hover:block">
-                            <ShimmeringText text={plan.buttonText} className="text-white" duration={2} />
+                            <ShimmeringText text={plan.buttonText} className="text-white" duration={3} />
                           </div>
                         </Link>
                       </Button>
@@ -141,7 +141,7 @@ export default function FeaturedProducts() {
                           <Link href="/signup">
                               <span className="group-hover:hidden">{plan.buttonText}</span>
                               <div className="hidden group-hover:block">
-                                <ShimmeringText text={plan.buttonText} className="text-white" duration={2} />
+                                <ShimmeringText text={plan.buttonText} className="text-white" duration={3} />
                               </div>
                           </Link>
                       </Button>
