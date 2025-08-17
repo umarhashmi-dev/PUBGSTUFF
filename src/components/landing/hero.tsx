@@ -27,7 +27,7 @@ export default function Hero() {
                 Instantly access a massive collection of game skins, currency, and other digital goods. Level up your gaming experience today.
               </p>
 
-              <Button asChild size="lg" className="mt-8 sm:mt-10 bg-gray-900 text-white hover:bg-gray-800">
+              <Button asChild size="lg" className="mt-8 sm:mt-10 bg-gray-900 text-white hover:bg-gray-800 hover-shimmer-button">
                 <Link
                   href="/products"
                 >
