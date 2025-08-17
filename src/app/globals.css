@@ -77,4 +77,29 @@
     animation-delay: var(--shimmer-delay);
     background-size: 200% 100%;
   }
+
+  .hover-shimmer-button {
+    @apply relative overflow-hidden;
+  }
+
+  .hover-shimmer-button:hover::before {
+    content: '';
+    @apply absolute inset-0 -translate-x-full;
+    animation: shimmer-button 1.5s infinite;
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+  }
+
+  @keyframes shimmer-button {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
 }

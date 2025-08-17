@@ -127,22 +127,16 @@ export default function FeaturedProducts() {
                 </CardContent>
                 <CardFooter className="p-6 mt-auto">
                    {plan.buttonVariant === 'gradient' ? (
-                     <Button asChild size="lg" className="w-full text-base bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
+                     <Button asChild size="lg" className="w-full text-base bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow hover-shimmer-button">
                         <Link href="/signup">
                           <User className="mr-2 h-5 w-5 rounded-full bg-white/20 p-1" />
-                          <span className="group-hover:hidden">{plan.buttonText}</span>
-                          <div className="hidden group-hover:block">
-                            <ShimmeringText text={plan.buttonText} className="text-white" duration={3} />
-                          </div>
+                          <span>{plan.buttonText}</span>
                         </Link>
                       </Button>
                    ) : (
-                      <Button asChild size="lg" className="w-full text-base bg-gray-800 text-white rounded-full hover:bg-gray-900">
+                      <Button asChild size="lg" className="w-full text-base bg-gray-800 text-white rounded-full hover:bg-gray-900 hover-shimmer-button">
                           <Link href="/signup">
-                              <span className="group-hover:hidden">{plan.buttonText}</span>
-                              <div className="hidden group-hover:block">
-                                <ShimmeringText text={plan.buttonText} className="text-white" duration={3} />
-                              </div>
+                              <span>{plan.buttonText}</span>
                           </Link>
                       </Button>
                    )}
