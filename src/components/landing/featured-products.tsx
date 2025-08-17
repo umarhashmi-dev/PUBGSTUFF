@@ -130,13 +130,19 @@ export default function FeaturedProducts() {
                      <Button asChild size="lg" className="w-full text-base bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow">
                         <Link href="/signup">
                           <User className="mr-2 h-5 w-5 rounded-full bg-white/20 p-1" />
-                          {plan.buttonText}
+                          <span className="group-hover:hidden">{plan.buttonText}</span>
+                          <div className="hidden group-hover:block">
+                            <ShimmeringText text={plan.buttonText} className="text-white" duration={2} />
+                          </div>
                         </Link>
                       </Button>
                    ) : (
                       <Button asChild size="lg" className="w-full text-base bg-gray-800 text-white rounded-full hover:bg-gray-900">
                           <Link href="/signup">
-                              {plan.buttonText}
+                              <span className="group-hover:hidden">{plan.buttonText}</span>
+                              <div className="hidden group-hover:block">
+                                <ShimmeringText text={plan.buttonText} className="text-white" duration={2} />
+                              </div>
                           </Link>
                       </Button>
                    )}
