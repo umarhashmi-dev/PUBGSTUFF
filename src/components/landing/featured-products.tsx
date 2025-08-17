@@ -33,6 +33,27 @@ const products = [
     image: "https://placehold.co/400x400.png",
     aiHint: "gaming currency coins"
   },
+  {
+    id: "5",
+    name: "Graphic Design",
+    price: "$32",
+    image: "https://placehold.co/400x400.png",
+    aiHint: "graphic design abstract"
+  },
+  {
+    id: "6",
+    name: "Web Development",
+    price: "$250/project",
+    image: "https://placehold.co/400x400.png",
+    aiHint: "web development code"
+  },
+  {
+    id: "7",
+    name: "RDP's Service",
+    price: "$32/month",
+    image: "https://placehold.co/400x400.png",
+    aiHint: "remote desktop server"
+  },
 ];
 
 export default function FeaturedProducts() {
