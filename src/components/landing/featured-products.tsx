@@ -6,34 +6,6 @@ import { ArrowRight } from "lucide-react";
 
 const products = [
   {
-    id: "1",
-    name: "Glacier M416 Skin",
-    price: "$49.99",
-    image: "https://placehold.co/400x400.png",
-    aiHint: "gaming skin weapon"
-  },
-  {
-    id: "2",
-    name: "Golden Pharaoh X-Suit",
-    price: "$99.99",
-    image: "https://placehold.co/400x400.png",
-    aiHint: "gaming suit armor"
-  },
-  {
-    id: "3",
-    name: "Godzilla AWM Skin",
-    price: "$39.99",
-    image: "https://placehold.co/400x400.png",
-    aiHint: "gaming skin weapon"
-  },
-  {
-    id: "4",
-    name: "10,000 G-Coin Pack",
-    price: "$89.99",
-    image: "https://placehold.co/400x400.png",
-    aiHint: "gaming currency coins"
-  },
-  {
     id: "5",
     name: "Graphic Design",
     price: "$32",
@@ -69,7 +41,7 @@ export default function FeaturedProducts() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {products.map((product) => (
             <Card key={product.id} className="group overflow-hidden rounded-lg bg-card shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
               <div className="aspect-square overflow-hidden">
