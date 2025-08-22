@@ -195,7 +195,7 @@ export default function Header() {
             <NavigationMenuList>
                <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 focus:bg-gray-100")}>
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 focus:bg-gray-100 hover:text-black")}>
                       Home
                     </Link>
                   </NavigationMenuLink>
@@ -431,5 +431,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
-
-    
