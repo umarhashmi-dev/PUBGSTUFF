@@ -150,8 +150,8 @@ const Feature = ({
         {icon}
       </div>
       <div className="text-lg font-bold mb-2 relative z-10 px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-neutral-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-800 dark:bg-neutral-100 transition-all duration-200 origin-center opacity-0 group-hover/feature:opacity-100" />
+        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-600 dark:text-neutral-300 group-hover/feature:text-neutral-800 dark:group-hover/feature:text-neutral-100">
           {title}
         </span>
       </div>
