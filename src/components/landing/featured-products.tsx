@@ -120,7 +120,7 @@ export default function FeaturedProducts() {
                     <ul className="space-y-3 text-left">
                       {plan.features.map((feature, i) => (
                         <li key={i} className="flex items-start gap-3">
-                          <Check className="h-5 w-5 text-blue-500 rounded-full bg-blue-500/10 p-1 shrink-0 mt-0.5" />
+                          <Check className="h-5 w-5 text-white rounded-full bg-black p-1 shrink-0 mt-0.5" />
                           <span className="text-gray-700 text-sm sm:text-base">{feature}</span>
                         </li>
                       ))}
