@@ -195,13 +195,13 @@ export default function Header() {
             <NavigationMenuList>
                <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 focus:bg-gray-100 hover:text-black")}>
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black focus:bg-gray-100")}>
                       Home
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100 focus:bg-gray-100">Courses</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 focus:bg-gray-100">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
                       {courseLinks.map((course) => (
