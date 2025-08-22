@@ -316,7 +316,7 @@ export default function Header() {
           </NavigationMenu>
           {!authLoading && !user && (
             <>
-              <Button asChild variant="ghost" className="text-gray-700 hover:bg-gray-100 hover-shimmer-button">
+              <Button asChild variant="ghost" className="text-gray-700 hover:bg-gray-100 hover:text-black hover-shimmer-button">
                 <Link href="/login" prefetch={false}>Login</Link>
               </Button>
               <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-lg hover-shimmer-button">
@@ -382,7 +382,7 @@ export default function Header() {
               </>
             ) : (
               <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
-                 <Button asChild variant="ghost" className="w-full text-gray-700 hover:bg-gray-100 hover-shimmer-button">
+                 <Button asChild variant="ghost" className="w-full text-gray-700 hover:bg-gray-100 hover:text-black hover-shimmer-button">
                     <Link href="/login" onClick={() => setExpanded(false)} prefetch={false}>Login</Link>
                  </Button>
                  <Button asChild className="w-full bg-black text-white hover:bg-gray-800 hover-shimmer-button">
@@ -431,3 +431,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
+
+    
