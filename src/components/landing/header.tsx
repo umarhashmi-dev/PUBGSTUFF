@@ -219,7 +219,7 @@ export default function Header() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100 focus:bg-gray-100">Pages</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 focus:bg-gray-100">Pages</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
                       <div className="relative">
