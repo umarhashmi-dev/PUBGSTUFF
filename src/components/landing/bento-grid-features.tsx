@@ -10,6 +10,7 @@ import {
   IconTableColumn,
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 
 export default function BentoGridFeatures() {
@@ -42,6 +43,7 @@ export default function BentoGridFeatures() {
 }
 
 const SkeletonOne = () => {
+  const isMobile = useIsMobile();
   const variants = {
     initial: {
       x: 0,
@@ -70,7 +72,8 @@ const SkeletonOne = () => {
   return (
     <motion.div
       initial="initial"
-      whileHover="animate"
+      whileHover={!isMobile ? "animate" : ""}
+      whileInView={isMobile ? "animate" : ""}
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
       <motion.div
@@ -98,6 +101,7 @@ const SkeletonOne = () => {
   );
 };
 const SkeletonTwo = () => {
+  const isMobile = useIsMobile();
   const variants = {
     initial: {
       width: 0,
@@ -120,7 +124,8 @@ const SkeletonTwo = () => {
     <motion.div
       initial="initial"
       animate="animate"
-      whileHover="hover"
+      whileHover={!isMobile ? "hover" : ""}
+      whileInView={isMobile ? "hover" : ""}
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
       {arr.map((_, i) => (
@@ -167,6 +172,7 @@ const SkeletonThree = () => {
   );
 };
 const SkeletonFour = () => {
+  const isMobile = useIsMobile();
   const first = {
     initial: {
       x: 20,
@@ -191,7 +197,8 @@ const SkeletonFour = () => {
     <motion.div
       initial="initial"
       animate="animate"
-      whileHover="hover"
+      whileHover={!isMobile ? "hover" : ""}
+      whileInView={isMobile ? "hover" : ""}
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
     >
       <motion.div
@@ -249,6 +256,7 @@ const SkeletonFour = () => {
   );
 };
 const SkeletonFive = () => {
+  const isMobile = useIsMobile();
   const variants = {
     initial: {
       x: 0,
@@ -277,7 +285,8 @@ const SkeletonFive = () => {
   return (
     <motion.div
       initial="initial"
-      whileHover="animate"
+      whileHover={!isMobile ? "animate" : ""}
+      whileInView={isMobile ? "animate" : ""}
       className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
     >
       <motion.div
