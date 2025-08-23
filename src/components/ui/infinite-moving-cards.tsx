@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { BadgeCheck, Star } from "lucide-react";
 
 export const InfiniteMovingCards = ({
   items,
@@ -101,10 +101,13 @@ export const InfiniteMovingCards = ({
                 <AvatarFallback>{item.name.charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div>
-                <h3 className="font-bold text-lg">{item.name}</h3>
-                <div className="flex text-primary">
-                    {[...Array(item.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-                </div>
+                  <div className="flex items-center gap-1.5">
+                    <h3 className="font-bold text-lg">{item.name}</h3>
+                    <BadgeCheck className="w-5 h-5 text-blue-500 fill-current" />
+                  </div>
+                  <div className="flex text-yellow-500">
+                      {[...Array(item.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                  </div>
                 </div>
             </div>
             <h4 className="font-headline font-semibold text-xl mb-2">{item.title}</h4>
