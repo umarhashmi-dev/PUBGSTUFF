@@ -1,3 +1,4 @@
+
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
