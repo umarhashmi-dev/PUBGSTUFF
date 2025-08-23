@@ -2,7 +2,7 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Twitter, Code, ShieldCheck, Server, Palette, Briefcase, Webhook, PenTool, LayoutDashboard, Brush, Layers } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, LayoutDashboard, Brush, Palette, Server, Webhook, ShieldCheck } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
@@ -16,7 +16,7 @@ const teamMembers = [
   {
     name: "M.Bilal",
     role: "Founder & CEO",
-    avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
+    avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
     aiHint: "man portrait",
     socials: {
       twitter: "https://x.com/bilalhashim98?",
@@ -27,7 +27,7 @@ const teamMembers = [
   {
     name: "Umar Hashmi",
     role: "Lead Developer",
-    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
+    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
     aiHint: "person portrait",
     socials: {
       twitter: "https://x.com/dev_umar9",
