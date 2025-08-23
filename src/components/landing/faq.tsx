@@ -52,11 +52,11 @@ export default function Faq() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:items-stretch">
           <Accordion type="single" collapsible className="w-full space-y-4 flex flex-col">
             {faqs.slice(0, 3).map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg flex-1">
+              <AccordionItem key={index} value={`item-${index}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg flex-1 flex flex-col">
                   <AccordionTrigger className="text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
                       {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground px-4 sm:px-6">
+                  <AccordionContent className="text-base text-muted-foreground px-4 sm:px-6 flex-1">
                       {faq.answer}
                   </AccordionContent>
               </AccordionItem>
@@ -64,11 +64,11 @@ export default function Faq() {
           </Accordion>
           <Accordion type="single" collapsible className="w-full space-y-4 flex flex-col">
             {faqs.slice(3).map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index+3}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg flex-1">
+              <AccordionItem key={index} value={`item-${index+3}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg flex-1 flex flex-col">
                   <AccordionTrigger className="text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
                       {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground px-4 sm:px-6">
+                  <AccordionContent className="text-base text-muted-foreground px-4 sm:px-6 flex-1">
                       {faq.answer}
                   </AccordionContent>
               </AccordionItem>
