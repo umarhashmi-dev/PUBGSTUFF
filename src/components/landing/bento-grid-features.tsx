@@ -14,6 +14,12 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 
 export default function BentoGridFeatures() {
+  const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return null;
+  }
+  
   return (
     <section className="py-16 md:py-24 bg-background">
         <div className="container">
