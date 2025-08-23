@@ -11,25 +11,29 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "What services does PUBGSTUFF offer?",
-    answer: "PUBGSTUFF provides AI-powered tools for content research, text summarization, and generating content ideas to streamline your writing process."
+    question: "What services does PubgStuff offer?",
+    answer: "PubgStuff provides web design, web development, graphic design, and RDP services. Additionally, we offer Driver Booster to enhance your gaming performance."
   },
   {
-    question: "Is the interface user-friendly?",
-    answer: "Yes, PUBGSTUFF is designed with an intuitive UI for easy navigation and seamless interaction with all our AI-powered tools."
+    question: "How can I enhance my gaming experience with PubgStuff?",
+    answer: "You can boost your gaming by using our Driver Booster, which updates outdated drivers automatically for better performance, stability, and security."
   },
   {
-    question: "How can I use the AI Research Tool?",
-    answer: "You can input a topic, and our AI will analyze it to find useful resources, key insights, and relevant information to aid your writing."
+    question: "What is the process for getting started with PubgStuff services?",
+    answer: "Simply choose a service plan that fits your needs, such as Web Development, Graphic Design, or RDP. After selecting your plan, you can contact us directly via email, WhatsApp, or other listed platforms."
   },
   {
-    question: "How does the Content Ideas generator work?",
-    answer: "Based on your input or selected parameters, our AI will generate a list of creative and relevant writing ideas to kickstart your content creation."
+    question: "How secure are PubgStuff’s services?",
+    answer: "Our RDP services are safe and secure, offering custom IPs, dedicated RAM options, and 24/7 WhatsApp support to ensure complete reliability."
   },
   {
-    question: "What kind of text can I summarize?",
-    answer: "You can import or copy-paste long excerpts of text, and our AI will generate a concise summary of the key points for you."
+    question: "Can PubgStuff help with my website’s SEO?",
+    answer: "Yes! Along with web development and design, we integrate AI-powered tools and multilingual support that can help optimize your website for better SEO results."
   },
+  {
+    question: "What are the benefits of using Driver Booster from PubgStuff?",
+    answer: "Driver Booster keeps your PC running smoothly by updating outdated drivers automatically, improving system performance, enhancing security, and ensuring stability for the best possible user experience."
+  }
 ];
 
 export default function Faq() {
