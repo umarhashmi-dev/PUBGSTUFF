@@ -37,30 +37,36 @@ const teamMembers = [
   },
 ];
 
-const skills = [
-    { icon: <Code className="w-6 h-6 text-primary" />, name: "Web Development" },
-    { icon: <PenTool className="w-6 h-6 text-primary" />, name: "UI/UX Design" },
-    { icon: <Palette className="w-6 h-6 text-primary" />, name: "Graphic Design" },
-    { icon: <Server className="w-6 h-6 text-primary" />, name: "RDP Services" },
-    { icon: <Webhook className="w-6 h-6 text-primary" />, name: "API Integration" },
-    { icon: <ShieldCheck className="w-6 h-6 text-primary" />, name: "Digital Security" },
-];
-
 const services = [
     {
         icon: <LayoutDashboard className="w-8 h-8 text-foreground" />,
         title: "Custom Web Solutions",
-        description: "We build fast, responsive, and scalable websites tailored to your business needs."
+        description: "We build fast, responsive, and scalable websites tailored to your business needs, from stunning landing pages to complex web applications."
     },
     {
         icon: <Brush className="w-8 h-8 text-foreground" />,
-        title: "Creative Design",
-        description: "From UI/UX to graphic design, we create stunning visuals that elevate your brand."
+        title: "Creative UI/UX Design",
+        description: "Our design team crafts intuitive and beautiful user interfaces that provide an exceptional user experience and elevate your brand's digital presence."
     },
     {
-        icon: <Layers className="w-8 h-8 text-foreground" />,
-        title: "Reliable Digital Services",
-        description: "We provide a wide range of secure and efficient digital services, including RDP."
+        icon: <Palette className="w-8 h-8 text-foreground" />,
+        title: "Graphic Design",
+        description: "From logos and branding to marketing materials, our graphic design services help you create a strong and cohesive visual identity."
+    },
+    {
+        icon: <Server className="w-8 h-8 text-foreground" />,
+        title: "Reliable RDP Services",
+        description: "We offer secure and high-performance RDP services, ensuring you have reliable remote access to your digital workspace whenever you need it."
+    },
+    {
+        icon: <Webhook className="w-8 h-8 text-foreground" />,
+        title: "API Integration",
+        description: "We seamlessly integrate third-party APIs to extend the functionality of your applications and streamline your business processes."
+    },
+    {
+        icon: <ShieldCheck className="w-8 h-8 text-foreground" />,
+        title: "Digital Security",
+        description: "Protect your digital assets with our robust security solutions. We help safeguard your data and applications from potential threats."
     },
 ]
 
@@ -69,26 +75,49 @@ export default function AboutPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="pt-24 md:pt-32 pb-12 md:pb-20 text-center bg-secondary/50">
+        <section className="pt-32 md:pt-40 pb-16 md:pb-24">
           <div className="container">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
-              Your Partner in Digital Excellence
-            </h1>
-            <p className="mt-4 md:mt-6 max-w-3xl mx-auto text-base sm:text-lg leading-8 text-muted-foreground">
-             At PUBGSTUFF, we are dedicated to providing top-tier digital services, from web development and design to secure RDP solutions.
-            </p>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
+                        Your Partner in Digital Excellence
+                    </h1>
+                    <p className="mt-6 text-lg leading-8 text-muted-foreground">
+                        At PUBGSTUFF, we are a passionate team of developers, designers, and digital experts dedicated to providing top-tier services that drive growth and innovation.
+                    </p>
+                </div>
+                <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+                    <Image 
+                        src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974"
+                        alt="Team working in an office"
+                        layout="fill"
+                        objectFit="cover"
+                        data-ai-hint="team collaboration"
+                    />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+            </div>
           </div>
         </section>
+        
+        <section className="py-16 md:py-24 bg-secondary/50">
+            <div className="container text-center max-w-3xl mx-auto">
+                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Who We Are</h2>
+                <p className="mt-4 text-lg leading-8 text-muted-foreground">
+                   We are a collective of creative minds and technical experts committed to delivering high-quality digital solutions. Our mission is to combine our passion for technology with creative problem-solving to build exceptional digital experiences for our clients worldwide.
+                </p>
+            </div>
+        </section>
 
-        <section id="team" className="py-12 md:py-24">
+        <section id="team" className="py-16 md:py-24">
             <div className="container">
                 <div className="text-center mb-12 md:mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Meet Our Team</h2>
-                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">The dedicated minds behind PUBGSTUFF.</p>
+                    <p className="mt-4 text-lg text-muted-foreground">The dedicated minds behind PUBGSTUFF.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {teamMembers.map((member) => (
-                        <div key={member.name} className="relative group overflow-hidden rounded-2xl">
+                        <div key={member.name} className="relative group overflow-hidden rounded-2xl shadow-lg border border-border/10">
                             <Image 
                                 src={member.avatar} 
                                 alt={member.name} 
@@ -114,43 +143,24 @@ export default function AboutPage() {
             </div>
         </section>
 
-        <section id="mission" className="py-12 md:py-24 bg-secondary/50">
-            <div className="container max-w-4xl mx-auto text-center">
-                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Skills</h2>
-                <p className="mt-4 md:mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Our mission is to be a trusted provider of high-quality digital solutions. We combine creative passion with technical expertise to deliver seamless and secure experiences for our clients.
-                </p>
-                <div className="mt-10 md:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
-                    {skills.map((skill) => (
-                        <div key={skill.name} className="flex flex-col items-center gap-3 p-4 md:p-6 rounded-lg bg-background shadow-sm border border-transparent hover:border-primary/20 hover:shadow-lg transition-all duration-300">
-                             <div className="p-3 bg-primary/10 rounded-full">
-                                {skill.icon}
-                            </div>
-                            <span className="text-sm sm:text-base font-medium text-center text-muted-foreground">{skill.name}</span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-
-        <section id="why-us" className="py-12 md:py-24">
+        <section id="services" className="py-16 md:py-24 bg-secondary/50">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Why Choose PUBGSTUFF?</h2>
-                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">The best place for your digital needs.</p>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Services</h2>
+                    <p className="mt-4 text-lg text-muted-foreground">Comprehensive digital solutions to power your success.</p>
                 </div>
                 <div className="max-w-5xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {services.map((useCase) => (
-                        <Card key={useCase.title} className="bg-card/50 hover:bg-card transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg border-transparent hover:border-border">
+                    {services.map((service) => (
+                        <Card key={service.title} className="bg-card hover:bg-card/90 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-lg border-border/10">
                             <CardHeader className="p-6">
                                 <div className="p-3 bg-foreground/10 rounded-lg w-fit mb-4">
-                                    {useCase.icon}
+                                    {service.icon}
                                 </div>
-                                <CardTitle className="text-lg sm:text-xl font-headline">{useCase.title}</CardTitle>
+                                <CardTitle className="text-xl font-headline">{service.title}</CardTitle>
                             </CardHeader>
                             <CardContent className="p-6 pt-0">
-                                <p className="text-muted-foreground text-sm sm:text-base">{useCase.description}</p>
+                                <p className="text-muted-foreground">{service.description}</p>
                             </CardContent>
                         </Card>
                     ))}
