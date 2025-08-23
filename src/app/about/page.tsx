@@ -1,6 +1,7 @@
 
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Facebook, Github, Instagram, Twitter, LayoutDashboard, Brush, Palette, Server, Webhook, ShieldCheck } from "lucide-react";
 import { Metadata } from "next";
@@ -68,48 +69,25 @@ const services = [
         title: "Digital Security",
         description: "Protect your digital assets with our robust security solutions. We help safeguard your data and applications from potential threats."
     },
-]
+];
 
 export default function AboutPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       <main className="flex-1">
-        <section className="pt-32 md:pt-40 pb-16 md:pb-24">
+        <section className="pt-32 md:pt-40 pb-16 md:pb-24 text-center">
           <div className="container">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
-                        Your Partner in Digital Excellence
-                    </h1>
-                    <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                        At PUBGSTUFF, we are a passionate team of developers, designers, and digital experts dedicated to providing top-tier services that drive growth and innovation.
-                    </p>
-                </div>
-                <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-lg">
-                    <Image 
-                        src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974"
-                        alt="Team working in an office"
-                        layout="fill"
-                        objectFit="cover"
-                        data-ai-hint="team collaboration"
-                    />
-                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                </div>
-            </div>
+            <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
+              Your Partner in Digital Excellence
+            </h1>
+            <p className="mt-6 text-lg max-w-3xl mx-auto leading-8 text-muted-foreground">
+              At PUBGSTUFF, we are a passionate team of developers, designers, and digital experts dedicated to providing top-tier services that drive growth and innovation.
+            </p>
           </div>
         </section>
         
-        <section className="py-16 md:py-24 bg-secondary/50">
-            <div className="container text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Who We Are</h2>
-                <p className="mt-4 text-lg leading-8 text-muted-foreground">
-                   We are a collective of creative minds and technical experts committed to delivering high-quality digital solutions. Our mission is to combine our passion for technology with creative problem-solving to build exceptional digital experiences for our clients worldwide.
-                </p>
-            </div>
-        </section>
-
-        <section id="team" className="py-16 md:py-24">
+        <section id="team" className="py-16 md:py-24 bg-secondary/50">
             <div className="container">
                 <div className="text-center mb-12 md:mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Meet Our Team</h2>
@@ -143,7 +121,7 @@ export default function AboutPage() {
             </div>
         </section>
 
-        <section id="services" className="py-16 md:py-24 bg-secondary/50">
+        <section id="services" className="py-16 md:py-24">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Services</h2>
