@@ -59,7 +59,7 @@ const SkeletonOne = () => {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] flex-col space-y-2"
     >
       <motion.div
         variants={variants}
@@ -109,7 +109,7 @@ const SkeletonTwo = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] flex-col space-y-2"
     >
       {arr.map((_, i) => (
         <motion.div
@@ -143,7 +143,7 @@ const SkeletonThree = () => {
         repeat: Infinity,
         repeatType: "reverse",
       }}
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] rounded-lg flex-col space-y-2"
       style={{
         background:
           "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
@@ -180,7 +180,7 @@ const SkeletonFour = () => {
       initial="initial"
       animate="animate"
       whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] flex-row space-x-2"
     >
       <motion.div
         variants={first}
@@ -266,7 +266,7 @@ const SkeletonFive = () => {
     <motion.div
       initial="initial"
       whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      className="flex flex-1 w-full h-full min-h-[6rem] flex-col space-y-2"
     >
       <motion.div
         variants={variants}
