@@ -7,6 +7,7 @@ import Hero from "@/components/landing/hero";
 import HowItWorks from "@/components/landing/how-it-works";
 import Testimonials from "@/components/landing/testimonials";
 import UseCases from "@/components/landing/use-cases";
+import BentoGridFeatures from "@/components/landing/bento-grid-features";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <div className="overflow-x-hidden">
             <FeaturedProducts />
             <HowItWorks />
+            <BentoGridFeatures />
             <UseCases />
             <Testimonials />
             <Faq />
