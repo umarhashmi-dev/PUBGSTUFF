@@ -100,7 +100,7 @@ const people = [
 
 function AnimatedTooltipPreview() {
   return (
-    <div className="flex flex-row items-center justify-center mb-10 w-full">
+    <div className="flex flex-row items-center justify-center mt-12 mb-10 w-full">
       <AnimatedTooltip items={people} />
     </div>
   );
@@ -119,7 +119,7 @@ export default function Testimonials() {
           </p>
         </div>
         <AnimatedTooltipPreview />
-        <div className="mt-16 flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="mt-8 flex flex-col items-center justify-center relative overflow-hidden">
            <InfiniteMovingCards
             items={testimonials}
             direction="right"
