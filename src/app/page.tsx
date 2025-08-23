@@ -1,4 +1,3 @@
-import BentoGridSection from "@/components/landing/bento-grid-section";
 import Cta from "@/components/landing/cta";
 import Faq from "@/components/landing/faq";
 import FeaturedProducts from "@/components/landing/featured-products";
@@ -20,7 +19,6 @@ export default function Home() {
             <FeaturedProducts />
             <HowItWorks />
             <UseCases />
-            <BentoGridSection />
             <Testimonials />
             <Faq />
             <Cta />
