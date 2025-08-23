@@ -1,20 +1,20 @@
-import { CircleUser, Package, Send } from "lucide-react";
+import { Handshake, Search, Zap } from "lucide-react";
 
 const steps = [
   {
-    icon: <CircleUser className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
-    title: "Create an Account",
-    description: "Sign up for a free account in just a few minutes and get started.",
+    icon: <Search className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
+    title: "Browse Our Services",
+    description: "Explore our digital solutions, from web development to performance boosters.",
   },
   {
-    icon: <Package className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
-    title: "Choose Your Product",
-    description: "Browse our extensive catalog of digital goods and find what you need.",
+    icon: <Handshake className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
+    title: "Select Your Plan",
+    description: "Choose the service that best fits your needs and get started in minutes.",
   },
   {
-    icon: <Send className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
-    title: "Instant Delivery",
-    description: "Your digital products are delivered to your account instantly upon purchase.",
+    icon: <Zap className="w-10 h-10 md:w-12 md:h-12 text-primary" />,
+    title: "Get Instant Access",
+    description: "Your services and digital products are activated instantly upon purchase.",
   },
 ]
 
