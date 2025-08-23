@@ -12,7 +12,7 @@ import {
 import { motion } from "framer-motion";
 
 
-export function BentoGridSection() {
+export default function BentoGridSection() {
   return (
     <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
       {items.map((item, i) => (
@@ -77,11 +77,6 @@ const SkeletonThree = () => {
   return (
     <div
       className="flex flex-1 w-full h-full min-h-[6rem] rounded-lg flex-col space-y-2"
-      style={{
-        background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-        backgroundSize: "400% 400%",
-      }}
     >
       <div className="h-full w-full rounded-lg"></div>
     </div>
