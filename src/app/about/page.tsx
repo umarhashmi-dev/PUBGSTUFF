@@ -2,20 +2,20 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Twitter, Code, Search, BarChart, Settings, Bot, PencilRuler, Users, Headset, Briefcase, Webhook, BrainCircuit, Lightbulb, PenTool, Blend } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, Code, ShieldCheck, ShoppingCart, Headset, Briefcase, Webhook, Gamepad2, CreditCard, Users, Bot, PencilRuler, Search, Lightbulb, PenTool, Blend } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Us | Textify AI",
-  description: "Meet the team behind Textify AI. Learn about our mission, our skills in AI and content creation, and our commitment to providing top-tier AI-powered tools.",
+  title: "About Us | PUBGSTUFF",
+  description: "Meet the team behind PUBGSTUFF. Learn about our mission, our passion for gaming, and our commitment to providing the best digital gaming products.",
 };
 
 const teamMembers = [
   {
     name: "M.Bilal",
-    role: "Founder & AI Strategist",
+    role: "Founder & CEO",
     avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "man portrait",
     socials: {
@@ -38,29 +38,29 @@ const teamMembers = [
 ];
 
 const skills = [
-    { icon: <BrainCircuit className="w-6 h-6 text-primary" />, name: "AI/ML Integration" },
-    { icon: <Code className="w-6 h-6 text-primary" />, name: "Full-Stack Development" },
-    { icon: <PenTool className="w-6 h-6 text-primary" />, name: "Content Strategy" },
-    { icon: <Blend className="w-6 h-6 text-primary" />, name: "UI/UX Design" },
-    { icon: <Webhook className="w-6 h-6 text-primary" />, name: "API Development" },
-    { icon: <Headset className="w-6 h-6 text-primary" />, name: "User Support" },
+    { icon: <ShoppingCart className="w-6 h-6 text-primary" />, name: "E-commerce" },
+    { icon: <Code className="w-6 h-6 text-primary" />, name: "Web Development" },
+    { icon: <CreditCard className="w-6 h-6 text-primary" />, name: "Secure Payments" },
+    { icon: <ShieldCheck className="w-6 h-6 text-primary" />, name: "Digital Security" },
+    { icon: <Webhook className="w-6 h-6 text-primary" />, name: "API Integration" },
+    { icon: <Headset className="w-6 h-6 text-primary" />, name: "Customer Support" },
 ];
 
 const services = [
     {
-        icon: <Search className="w-8 h-8 text-foreground" />,
-        title: "AI Research Tool",
-        description: "Use AI as a tool to analyze a topic and find useful resources for writing."
+        icon: <Gamepad2 className="w-8 h-8 text-foreground" />,
+        title: "Instant Digital Delivery",
+        description: "Get immediate access to your purchased game skins, currency, and digital goods right after checkout."
     },
     {
-        icon: <Bot className="w-8 h-8 text-foreground" />,
-        title: "Text Summarization",
-        description: "AI-powered text summarization. Users provide a text excerpt, and the AI summarizes the key points."
+        icon: <CreditCard className="w-8 h-8 text-foreground" />,
+        title: "Secure Transactions",
+        description: "Shop with confidence using our secure payment gateway that protects your financial information."
     },
     {
-        icon: <Lightbulb className="w-8 h-8 text-foreground" />,
-        title: "Content Ideas",
-        description: "AI-powered content suggestions. Based on user input, the tool generates writing ideas."
+        icon: <Users className="w-8 h-8 text-foreground" />,
+        title: "Community Focused",
+        description: "We're gamers too! We're dedicated to building a trusted community for digital item enthusiasts."
     },
 ]
 
@@ -72,10 +72,10 @@ export default function AboutPage() {
         <section className="pt-24 md:pt-32 pb-12 md:pb-20 text-center bg-secondary/50">
           <div className="container">
             <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
-              Powering Content Creation with AI
+              Powering Your Gaming Experience
             </h1>
             <p className="mt-4 md:mt-6 max-w-3xl mx-auto text-base sm:text-lg leading-8 text-muted-foreground">
-             At Textify AI, we are dedicated to building intelligent tools that empower writers, researchers, and creators to produce their best work, faster.
+             At PUBGSTUFF, we are dedicated to providing gamers with instant, secure access to the best digital products and a thriving community.
             </p>
           </div>
         </section>
@@ -84,7 +84,7 @@ export default function AboutPage() {
             <div className="container">
                 <div className="text-center mb-12 md:mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Meet Our Team</h2>
-                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">The innovative minds behind Textify AI.</p>
+                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">The dedicated minds behind PUBGSTUFF.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {teamMembers.map((member) => (
@@ -118,7 +118,7 @@ export default function AboutPage() {
             <div className="container max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Skills</h2>
                 <p className="mt-4 md:mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Our mission is to democratize content creation by providing powerful, intuitive, and accessible AI tools. We combine creative vision with technical expertise to deliver outstanding results.
+                    Our mission is to be the most trusted one-stop shop for digital gaming products. We combine our passion for gaming with technical expertise to deliver a seamless and secure experience.
                 </p>
                 <div className="mt-10 md:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
                     {skills.map((skill) => (
@@ -136,8 +136,8 @@ export default function AboutPage() {
         <section id="why-us" className="py-12 md:py-24">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Core Features of Textify AI</h2>
-                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">A versatile AI tool with a multitude of use cases.</p>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Why Choose PUBGSTUFF?</h2>
+                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">The best place for your digital gaming needs.</p>
                 </div>
                 <div className="max-w-5xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
