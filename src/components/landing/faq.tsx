@@ -49,26 +49,26 @@ export default function Faq() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Accordion type="single" collapsible className="w-full space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:items-stretch">
+          <Accordion type="single" collapsible className="w-full space-y-4 flex flex-col">
             {faqs.slice(0, 3).map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg">
-                  <AccordionTrigger className="text-base sm:text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
+              <AccordionItem key={index} value={`item-${index}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg flex-1">
+                  <AccordionTrigger className="text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
                       {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground px-4 sm:px-6">
+                  <AccordionContent className="text-base text-muted-foreground px-4 sm:px-6">
                       {faq.answer}
                   </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
-          <Accordion type="single" collapsible className="w-full space-y-4">
+          <Accordion type="single" collapsible className="w-full space-y-4 flex flex-col">
             {faqs.slice(3).map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index+3}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg">
-                  <AccordionTrigger className="text-base sm:text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
+              <AccordionItem key={index} value={`item-${index+3}`} className="bg-background border rounded-lg p-1 transition-all duration-300 data-[state=open]:shadow-lg flex-1">
+                  <AccordionTrigger className="text-lg text-left font-semibold px-4 sm:px-6 py-3 sm:py-4 hover:no-underline">
                       {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm sm:text-base text-muted-foreground px-4 sm:px-6">
+                  <AccordionContent className="text-base text-muted-foreground px-4 sm:px-6">
                       {faq.answer}
                   </AccordionContent>
               </AccordionItem>
