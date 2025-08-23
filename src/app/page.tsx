@@ -7,7 +7,6 @@ import Hero from "@/components/landing/hero";
 import HowItWorks from "@/components/landing/how-it-works";
 import Testimonials from "@/components/landing/testimonials";
 import UseCases from "@/components/landing/use-cases";
-import BentoGridSection from "@/components/landing/bento-grid-section";
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
             <FeaturedProducts />
             <HowItWorks />
             <UseCases />
-            <BentoGridSection />
             <Testimonials />
             <Faq />
             <Cta />
