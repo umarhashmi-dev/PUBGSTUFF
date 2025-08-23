@@ -2,14 +2,14 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Facebook, Github, Instagram, Twitter, Code, ShieldCheck, ShoppingCart, Headset, Briefcase, Webhook, Gamepad2, CreditCard, Users, Bot, PencilRuler, Search, Lightbulb, PenTool, Blend } from "lucide-react";
+import { Facebook, Github, Instagram, Twitter, Code, ShieldCheck, Server, Palette, Briefcase, Webhook, PenTool, LayoutDashboard, Brush, Layers } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us | PUBGSTUFF",
-  description: "Meet the team behind PUBGSTUFF. Learn about our mission, our passion for gaming, and our commitment to providing the best digital gaming products.",
+  description: "Meet the team behind PUBGSTUFF. Learn about our mission and our commitment to providing the best digital services.",
 };
 
 const teamMembers = [
@@ -38,29 +38,29 @@ const teamMembers = [
 ];
 
 const skills = [
-    { icon: <ShoppingCart className="w-6 h-6 text-primary" />, name: "E-commerce" },
     { icon: <Code className="w-6 h-6 text-primary" />, name: "Web Development" },
-    { icon: <CreditCard className="w-6 h-6 text-primary" />, name: "Secure Payments" },
-    { icon: <ShieldCheck className="w-6 h-6 text-primary" />, name: "Digital Security" },
+    { icon: <PenTool className="w-6 h-6 text-primary" />, name: "UI/UX Design" },
+    { icon: <Palette className="w-6 h-6 text-primary" />, name: "Graphic Design" },
+    { icon: <Server className="w-6 h-6 text-primary" />, name: "RDP Services" },
     { icon: <Webhook className="w-6 h-6 text-primary" />, name: "API Integration" },
-    { icon: <Headset className="w-6 h-6 text-primary" />, name: "Customer Support" },
+    { icon: <ShieldCheck className="w-6 h-6 text-primary" />, name: "Digital Security" },
 ];
 
 const services = [
     {
-        icon: <Gamepad2 className="w-8 h-8 text-foreground" />,
-        title: "Instant Digital Delivery",
-        description: "Get immediate access to your purchased game skins, currency, and digital goods right after checkout."
+        icon: <LayoutDashboard className="w-8 h-8 text-foreground" />,
+        title: "Custom Web Solutions",
+        description: "We build fast, responsive, and scalable websites tailored to your business needs."
     },
     {
-        icon: <CreditCard className="w-8 h-8 text-foreground" />,
-        title: "Secure Transactions",
-        description: "Shop with confidence using our secure payment gateway that protects your financial information."
+        icon: <Brush className="w-8 h-8 text-foreground" />,
+        title: "Creative Design",
+        description: "From UI/UX to graphic design, we create stunning visuals that elevate your brand."
     },
     {
-        icon: <Users className="w-8 h-8 text-foreground" />,
-        title: "Community Focused",
-        description: "We're gamers too! We're dedicated to building a trusted community for digital item enthusiasts."
+        icon: <Layers className="w-8 h-8 text-foreground" />,
+        title: "Reliable Digital Services",
+        description: "We provide a wide range of secure and efficient digital services, including RDP."
     },
 ]
 
@@ -72,10 +72,10 @@ export default function AboutPage() {
         <section className="pt-24 md:pt-32 pb-12 md:pb-20 text-center bg-secondary/50">
           <div className="container">
             <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
-              Powering Your Gaming Experience
+              Your Partner in Digital Excellence
             </h1>
             <p className="mt-4 md:mt-6 max-w-3xl mx-auto text-base sm:text-lg leading-8 text-muted-foreground">
-             At PUBGSTUFF, we are dedicated to providing gamers with instant, secure access to the best digital products and a thriving community.
+             At PUBGSTUFF, we are dedicated to providing top-tier digital services, from web development and design to secure RDP solutions.
             </p>
           </div>
         </section>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             <div className="container max-w-4xl mx-auto text-center">
                 <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Skills</h2>
                 <p className="mt-4 md:mt-6 text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
-                    Our mission is to be the most trusted one-stop shop for digital gaming products. We combine our passion for gaming with technical expertise to deliver a seamless and secure experience.
+                    Our mission is to be a trusted provider of high-quality digital solutions. We combine creative passion with technical expertise to deliver seamless and secure experiences for our clients.
                 </p>
                 <div className="mt-10 md:mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
                     {skills.map((skill) => (
@@ -137,7 +137,7 @@ export default function AboutPage() {
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Why Choose PUBGSTUFF?</h2>
-                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">The best place for your digital gaming needs.</p>
+                    <p className="mt-4 text-base sm:text-lg text-muted-foreground">The best place for your digital needs.</p>
                 </div>
                 <div className="max-w-5xl mx-auto">
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
