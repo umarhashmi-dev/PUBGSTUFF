@@ -1,32 +1,54 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent } from "@/components/ui/card";
-import { Star } from "lucide-react";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 const testimonials = [
   {
-    name: "John D.",
+    name: "Alex R.",
     avatar: "https://placehold.co/100x100.png",
     aiHint: "man portrait",
-    title: "Amazing Experience!",
+    title: "A Game Changer!",
     rating: 5,
-    review: "The process was so smooth and I got my digital items instantly. Highly recommended for any gamer out there!"
+    review: "The RDP services are incredibly fast and reliable. My productivity has skyrocketed. Highly recommended for any serious developer or designer."
   },
   {
-    name: "Sarah L.",
+    name: "Samantha B.",
     avatar: "https://placehold.co/100x100.png",
     aiHint: "woman portrait",
-    title: "Best Prices",
+    title: "Stunning Web Design",
     rating: 5,
-    review: "Found the best deals here for my favorite game skins. The prices are unbeatable and the service is top-notch."
+    review: "The team at PubgStuff delivered a website that exceeded all my expectations. The design is modern, responsive, and simply beautiful."
   },
   {
     name: "Mike T.",
     avatar: "https://placehold.co/100x100.png",
     aiHint: "person portrait",
-    title: "Fast and Reliable",
+    title: "Driver Booster is a Must-Have",
     rating: 5,
-    review: "I was skeptical at first, but the delivery was instant. I'm a repeat customer now. Great job!"
+    review: "My gaming PC was lagging, but after using Driver Booster, it's like I have a new machine. All my games run smoothly now. Thank you!"
   },
+  {
+    name: "Jessica W.",
+    avatar: "https://placehold.co/100x100.png",
+    aiHint: "woman portrait",
+    title: "Top-Notch Graphic Design",
+    rating: 5,
+    review: "I needed a new logo and branding for my startup, and the graphic design service was phenomenal. The results were creative and professional."
+  },
+  {
+    name: "David L.",
+    avatar: "https://placehold.co/100x100.png",
+    aiHint: "man portrait",
+    title: "Reliable and Secure",
+    rating: 5,
+    review: "I've been using their RDP for months without a single issue. It's secure, fast, and the support team is always there to help."
+  },
+  {
+    name: "Emily C.",
+    avatar: "https://placehold.co/100x100.png",
+    aiHint: "person portrait",
+    title: "Effortless Web Development",
+    rating: 5,
+    review: "Getting my website developed was a breeze. The process was transparent, and the final product was delivered on time and on budget."
+  }
 ];
 
 export default function Testimonials() {
@@ -41,27 +63,17 @@ export default function Testimonials() {
             Real stories from satisfied customers.
           </p>
         </div>
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="bg-background">
-              <CardContent className="p-6">
-                <div className="flex items-center mb-4">
-                  <Avatar className="h-12 w-12 mr-4">
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
-                    <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <h3 className="font-bold text-lg">{testimonial.name}</h3>
-                    <div className="flex text-primary">
-                      {[...Array(testimonial.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-                    </div>
-                  </div>
-                </div>
-                <h4 className="font-headline font-semibold text-xl mb-2">{testimonial.title}</h4>
-                <p className="text-muted-foreground text-sm sm:text-base">{testimonial.review}</p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mt-16 flex flex-col items-center justify-center relative overflow-hidden">
+           <InfiniteMovingCards
+            items={testimonials}
+            direction="right"
+            speed="slow"
+          />
+           <InfiniteMovingCards
+            items={testimonials}
+            direction="left"
+            speed="slow"
+          />
         </div>
       </div>
     </section>
