@@ -5,7 +5,7 @@ import { AnimatedTooltip } from "../ui/animated-tooltip";
 const testimonials = [
   {
     name: "Alex R.",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "man portrait",
     title: "A Game Changer!",
     rating: 5,
@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     name: "Samantha B.",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "woman portrait",
     title: "Stunning Web Design",
     rating: 5,
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     name: "Mike T.",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "person portrait",
     title: "Driver Booster is a Must-Have",
     rating: 5,
@@ -29,7 +29,7 @@ const testimonials = [
   },
   {
     name: "Jessica W.",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "woman portrait",
     title: "Top-Notch Graphic Design",
     rating: 5,
@@ -37,7 +37,7 @@ const testimonials = [
   },
   {
     name: "David L.",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "man portrait",
     title: "Reliable and Secure",
     rating: 5,
@@ -45,7 +45,7 @@ const testimonials = [
   },
   {
     name: "Emily C.",
-    avatar: "https://placehold.co/100x100.png",
+    avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "person portrait",
     title: "Effortless Web Development",
     rating: 5,

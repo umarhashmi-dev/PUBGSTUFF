@@ -103,7 +103,7 @@ export const InfiniteMovingCards = ({
                 <div>
                   <div className="flex items-center gap-1.5">
                     <h3 className="font-bold text-lg">{item.name}</h3>
-                    <BadgeCheck className="w-5 h-5 text-blue-500 fill-current" />
+                    <BadgeCheck className="w-5 h-5 text-blue-500 fill-blue-100" />
                   </div>
                   <div className="flex text-yellow-500">
                       {[...Array(item.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
