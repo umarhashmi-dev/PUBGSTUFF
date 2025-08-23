@@ -11,27 +11,27 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "What services does PubgStuff offer?",
+    question: "What services are offered by PubgStuff?",
     answer: "PubgStuff provides web design, web development, graphic design, and RDP services. Additionally, we offer Driver Booster to enhance your gaming performance."
   },
   {
-    question: "How can I enhance my gaming experience with PubgStuff?",
+    question: "How can PubgStuff improve my gaming experience?",
     answer: "You can boost your gaming by using our Driver Booster, which updates outdated drivers automatically for better performance, stability, and security."
   },
   {
-    question: "What is the process for getting started with PubgStuff services?",
+    question: "How do I get started with PubgStuff services?",
     answer: "Simply choose a service plan that fits your needs, such as Web Development, Graphic Design, or RDP. After selecting your plan, you can contact us directly via email, WhatsApp, or other listed platforms."
   },
   {
-    question: "How secure are PubgStuff’s services?",
+    question: "How safe and secure are PubgStuff’s services?",
     answer: "Our RDP services are safe and secure, offering custom IPs, dedicated RAM options, and 24/7 WhatsApp support to ensure complete reliability."
   },
   {
-    question: "Can PubgStuff help with my website’s SEO?",
+    question: "Can PubgStuff support my website’s SEO needs?",
     answer: "Yes! Along with web development and design, we integrate AI-powered tools and multilingual support that can help optimize your website for better SEO results."
   },
   {
-    question: "What are the benefits of using Driver Booster from PubgStuff?",
+    question: "What advantages come with using Driver Booster?",
     answer: "Driver Booster keeps your PC running smoothly by updating outdated drivers automatically, improving system performance, enhancing security, and ensuring stability for the best possible user experience."
   }
 ];
