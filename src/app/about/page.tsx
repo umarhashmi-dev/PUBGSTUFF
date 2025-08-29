@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Brush, LayoutDashboard, Server, Zap, HeartHandshake, ArrowRight } from "lucide-react";
-import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { TextAnimate } from "@/components/magicui/text-animate";
@@ -63,7 +62,7 @@ export default function AboutPage() {
       <main className="flex-1">
 
         {/* Hero Section */}
-        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 bg-secondary/30">
+        <section className="relative pt-28 md:pt-40 pb-16 md:pb-24 bg-secondary/30">
             <div className="container px-4 text-center">
                 <TextAnimate
                     as="h1"
@@ -87,7 +86,7 @@ export default function AboutPage() {
         </section>
 
         {/* Hero Image Section */}
-        <section className="py-12 md:py-16">
+        <section className="py-16 md:py-24">
             <div className="container">
                 <div className="relative aspect-video max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
                     <Image 
@@ -198,7 +197,7 @@ export default function AboutPage() {
         {/* CTA Section */}
         <section className="py-16 md:py-24">
             <div className="container">
-                <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-16 text-center">
+                <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12 text-center">
                     <HeartHandshake className="mx-auto h-12 w-12 mb-6" />
                     <TextAnimate
                         as="h2"

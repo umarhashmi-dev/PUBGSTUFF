@@ -19,7 +19,7 @@ export default function DownloadsPage() {
       <div className="flex min-h-[100dvh] flex-col">
         <Header />
         <main className="flex-1">
-          <div className="container py-12 md:py-24 lg:py-32">
+          <div className="container py-28 md:py-32">
             <div className="mx-auto max-w-3xl text-center">
               <TextAnimate
                 as="h1"

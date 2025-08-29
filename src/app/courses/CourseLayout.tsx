@@ -33,13 +33,13 @@ export function CourseLayout({
   return (
     <div className="flex min-h-[100dvh] flex-col bg-white text-black">
       <Header />
-      <main className="flex-1 pt-32 md:pt-40">
+      <main className="flex-1 pt-28 md:pt-32">
         <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8">
 
             {/* Sticky Card - Moved up for mobile first */}
             <div className="lg:col-span-1 lg:order-2">
-              <div className="lg:sticky top-24">
+              <div className="lg:sticky top-28">
                 <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
                   <div className="relative">
                     <Image 

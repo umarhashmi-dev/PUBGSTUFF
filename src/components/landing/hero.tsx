@@ -8,7 +8,7 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function Hero() {
   return (
-    <div className="pt-24 sm:pt-32 lg:pt-40">
+    <div className="pt-24 sm:pt-28 lg:pt-32">
       <section className="relative py-12 sm:py-16 lg:pb-20 xl:pb-40">
         <div className="absolute bottom-0 right-0 overflow-hidden hidden lg:block">
           <Image
