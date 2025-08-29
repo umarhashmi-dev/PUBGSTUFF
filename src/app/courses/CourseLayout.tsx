@@ -6,6 +6,7 @@ import { ArrowRight, Check, Clock, Award, Users, Download, Star } from 'lucide-r
 import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 
 interface CourseLayoutProps {
   title: string;
@@ -21,6 +22,7 @@ export function CourseLayout({
   title,
   description,
   learningObjectives,
+  modules,
   bannerUrl,
   bannerAiHint,
 }: CourseLayoutProps) {
@@ -145,6 +147,33 @@ export function CourseLayout({
               </div>
             </div>
           </div>
+
+          {/* Course Curriculum Section */}
+          <div className="mt-16 md:mt-24">
+              <div className="max-w-3xl mx-auto text-center">
+                  <h2 className="text-3xl font-extrabold text-black">Course Curriculum</h2>
+                  <p className="mt-4 text-lg text-gray-700">
+                      A detailed breakdown of what you'll learn in each module.
+                  </p>
+              </div>
+
+              <div className="mt-12 max-w-3xl mx-auto">
+                  <Accordion type="single" collapsible className="w-full space-y-4">
+                      {modules.map((module, index) => (
+                          <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                              <AccordionTrigger className="text-lg text-left font-semibold px-6 py-4 hover:no-underline">
+                                  <span className="mr-4 text-black font-bold">0{index + 1}</span>
+                                  {module.title}
+                              </AccordionTrigger>
+                              <AccordionContent className="text-base text-gray-700 px-6 pb-4">
+                                  {module.description}
+                              </AccordionContent>
+                          </AccordionItem>
+                      ))}
+                  </Accordion>
+              </div>
+          </div>
+
         </div>
       </main>
       <Footer />
