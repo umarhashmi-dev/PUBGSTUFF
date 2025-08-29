@@ -144,18 +144,15 @@ export function CourseLayout({
                 </div>
               </div>
 
-               {/* What you'll learn Section */}
               <div className="mt-16 md:mt-24">
-                <div className="border border-gray-200 rounded-lg p-6 md:p-8">
-                    <h2 className="text-3xl font-extrabold text-black mb-6">What you'll learn</h2>
-                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                        {learningObjectives.map((objective, index) => (
-                            <li key={index} className="flex items-start gap-3">
-                                <Check className="h-5 w-5 text-black bg-gray-100 border rounded-full p-0.5 mt-1 shrink-0" />
-                                <span className="text-gray-700">{objective}</span>
-                            </li>
-                        ))}
-                    </ul>
+                <h2 className="text-3xl font-extrabold text-black mb-6 text-center">What you'll learn</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {learningObjectives.map((objective, index) => (
+                    <Card key={index} className="bg-gray-50/50 border-gray-200 p-6 flex items-start gap-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+                      <Check className="h-6 w-6 text-black bg-gray-100 border rounded-full p-1 mt-1 shrink-0" />
+                      <span className="text-gray-700">{objective}</span>
+                    </Card>
+                  ))}
                 </div>
               </div>
 
@@ -210,7 +207,6 @@ export function CourseLayout({
                       </Accordion>
                   </div>
               </div>
-
             </div>
 
             {/* Sticky Card */}
