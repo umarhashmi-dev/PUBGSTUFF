@@ -28,16 +28,16 @@ export function CourseLayout({
     <div className="flex min-h-[100dvh] flex-col bg-white text-black">
       <Header />
       <main className="flex-1">
-        <div className="container mx-auto px-4 py-16 sm:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
+        <div className="container mx-auto px-4 py-20 sm:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-16">
             
             {/* Main Content */}
             <div className="lg:col-span-2">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-6">
                 <span className="inline-block bg-black text-white text-xs font-bold px-3 py-1.5 rounded-md mb-2 sm:mb-0">
                   COMPLETELY FREE
                 </span>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1.5">
                   <div className="flex text-yellow-500">
                       <Star className="w-4 h-4 fill-current" />
                       <Star className="w-4 h-4 fill-current" />
@@ -49,16 +49,16 @@ export function CourseLayout({
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-4 leading-tight">{title}</h1>
-              <p className="text-lg text-gray-700 mb-8">{description}</p>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">{title}</h1>
+              <p className="text-lg text-gray-700 mb-10">{description}</p>
               
-              <div className="border border-gray-200 rounded-lg p-6 mb-8">
+              <div className="border border-gray-200 rounded-lg p-8 mb-10">
                 <h3 className="flex items-center gap-3 text-lg font-bold mb-4">
                   <Award className="w-6 h-6" />
                   Free Professional Certificate
                 </h3>
-                <p className="text-gray-600 mb-4">Industry-recognized certification upon course completion - No fees, ever!</p>
-                <ul className="space-y-2">
+                <p className="text-gray-600 mb-5">Industry-recognized certification upon course completion - No fees, ever!</p>
+                <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-black mt-1 shrink-0" />
                     <span className="text-gray-700">Downloadable PDF certificate</span>
@@ -79,7 +79,7 @@ export function CourseLayout({
                 </Button>
               </div>
 
-              <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
                   <h4 className="text-2xl font-bold">12K+</h4>
                   <p className="text-gray-600">Active Students</p>
@@ -120,14 +120,14 @@ export function CourseLayout({
                       <Award className="w-4 h-4" /> Free Certificate
                     </div>
                   </div>
-                  <div className="p-6">
+                  <div className="p-8">
                     <h2 className="text-xl font-bold mb-4">{title} Bootcamp 2024</h2>
                     <div className="flex justify-between text-sm text-gray-600 mb-6">
                       <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> 40+ Hours</span>
                       <span className="flex items-center gap-2"><Users className="w-4 h-4" /> 12K+ Students</span>
                     </div>
                     <h3 className="font-bold mb-4">What you'll learn:</h3>
-                    <ul className="space-y-3 mb-6">
+                    <ul className="space-y-4 mb-8">
                       {learningObjectives.slice(0, 3).map((objective, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <Check className="h-5 w-5 text-black bg-gray-100 border rounded-full p-0.5 mt-1 shrink-0" />
@@ -138,7 +138,7 @@ export function CourseLayout({
                     <hr className="border-gray-200 my-6" />
                     <div className="text-center">
                       <h3 className="text-3xl font-extrabold">100% FREE</h3>
-                      <p className="text-gray-600 text-sm">No hidden costs • Lifetime access</p>
+                      <p className="text-gray-600 text-sm mt-1">No hidden costs • Lifetime access</p>
                     </div>
                   </div>
                 </div>
