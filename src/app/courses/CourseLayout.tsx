@@ -10,8 +10,6 @@ import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { SparklesText } from '@/components/magicui/sparkles-text';
-import { TextAnimate } from '@/components/magicui/text-animate';
 
 interface CourseLayoutProps {
   title: string;
@@ -117,9 +115,7 @@ export function CourseLayout({
                 </div>
               </div>
 
-              <SparklesText>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">{title}</h1>
-              </SparklesText>
+              <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">{title}</h1>
               <p className="text-lg text-gray-700 mb-8">{description}</p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -248,24 +244,7 @@ export function CourseLayout({
                     <hr className="border-gray-200 my-6" />
                     <div className="text-center">
                         <h3 className="text-3xl font-extrabold">
-                            <TextAnimate
-                                by="character"
-                                className="inline-block"
-                                variants={{
-                                    hidden: { opacity: 0, y: 30, rotate: 45, scale: 0.5 },
-                                    show: (i) => ({
-                                        opacity: 1, y: 0, rotate: 0, scale: 1,
-                                        transition: {
-                                            delay: i * 0.1, duration: 0.4,
-                                            y: { type: "spring", damping: 12, stiffness: 200, mass: 0.8 },
-                                            rotate: { type: "spring", damping: 8, stiffness: 150 },
-                                            scale: { type: "spring", damping: 10, stiffness: 300 },
-                                        },
-                                    }),
-                                }}
-                            >
-                                100% FREE
-                            </TextAnimate>
+                            100% FREE
                         </h3>
                       <p className="text-gray-600 text-sm mt-1">No hidden costs • Lifetime access</p>
                     </div>
