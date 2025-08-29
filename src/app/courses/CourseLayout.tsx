@@ -9,6 +9,7 @@ import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { SparklesText } from '@/components/magicui/sparkles-text';
 
 interface CourseLayoutProps {
   title: string;
@@ -114,7 +115,9 @@ export function CourseLayout({
                 </div>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">{title}</h1>
+              <SparklesText>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">{title}</h1>
+              </SparklesText>
               <p className="text-lg text-gray-700 mb-8">{description}</p>
               
               <div className="flex flex-col sm:flex-row gap-4">
