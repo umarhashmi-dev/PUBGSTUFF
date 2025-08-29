@@ -1,4 +1,4 @@
-
+'use client';
 import { Palette } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 

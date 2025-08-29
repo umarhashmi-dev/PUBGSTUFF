@@ -1,4 +1,4 @@
-
+'use client';
 import { ShoppingCart } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 

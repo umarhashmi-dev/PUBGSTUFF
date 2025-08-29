@@ -1,4 +1,4 @@
-
+'use client';
 import { DollarSign } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 

@@ -1,4 +1,4 @@
-
+'use client';
 import { Tv } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 
