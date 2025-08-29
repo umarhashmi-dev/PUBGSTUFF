@@ -54,24 +54,6 @@ export function CourseLayout({
               <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">{title}</h1>
               <p className="text-lg text-gray-700 mb-8">{description}</p>
               
-              <div className="border border-gray-200 rounded-lg p-6 mb-8">
-                <h3 className="flex items-center gap-3 text-lg font-bold mb-4">
-                  <Award className="w-6 h-6" />
-                  Free Professional Certificate
-                </h3>
-                <p className="text-gray-600 mb-5">Industry-recognized certification upon course completion - No fees, ever!</p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-black mt-1 shrink-0" />
-                    <span className="text-gray-700">Downloadable PDF certificate</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Check className="h-5 w-5 text-black mt-1 shrink-0" />
-                    <span className="text-gray-700">LinkedIn profile ready</span>
-                  </li>
-                </ul>
-              </div>
-              
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 rounded-lg text-base w-full sm:w-auto hover-shimmer-button">
                   <Link href="#">Start Learning Now - FREE <ArrowRight className="ml-2 h-5 w-5" /></Link>
@@ -118,9 +100,6 @@ export function CourseLayout({
                     <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm text-black text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
                       <Star className="w-4 h-4 text-yellow-500 fill-current" /> 4.9
                     </div>
-                    <div className="absolute bottom-4 left-4 bg-white/80 backdrop-blur-sm text-black text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-2">
-                      <Award className="w-4 h-4" /> Free Certificate
-                    </div>
                   </div>
                   <div className="p-6">
                     <h2 className="text-xl font-bold mb-4">{title} Bootcamp 2024</h2>
@@ -128,15 +107,9 @@ export function CourseLayout({
                       <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> 40+ Hours</span>
                       <span className="flex items-center gap-2"><Users className="w-4 h-4" /> 12K+ Students</span>
                     </div>
-                    <h3 className="font-bold mb-4">What you'll learn:</h3>
-                    <ul className="space-y-4 mb-6">
-                      {learningObjectives.slice(0, 3).map((objective, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                          <Check className="h-5 w-5 text-black bg-gray-100 border rounded-full p-0.5 mt-1 shrink-0" />
-                          <span className="text-gray-700">{objective}</span>
-                        </li>
-                      ))}
-                    </ul>
+                     <Button asChild size="lg" className="w-full bg-black text-white hover:bg-gray-800 rounded-lg text-base hover-shimmer-button">
+                        <Link href="#">Enroll Now - It's Free</Link>
+                     </Button>
                     <hr className="border-gray-200 my-6" />
                     <div className="text-center">
                       <h3 className="text-3xl font-extrabold">100% FREE</h3>
@@ -145,6 +118,21 @@ export function CourseLayout({
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* What you'll learn Section */}
+          <div className="mt-16 md:mt-24">
+            <div className="border border-gray-200 rounded-lg p-6 md:p-8">
+                <h2 className="text-3xl font-extrabold text-black mb-6">What you'll learn</h2>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                    {learningObjectives.map((objective, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                            <Check className="h-5 w-5 text-black bg-gray-100 border rounded-full p-0.5 mt-1 shrink-0" />
+                            <span className="text-gray-700">{objective}</span>
+                        </li>
+                    ))}
+                </ul>
             </div>
           </div>
 
@@ -173,6 +161,32 @@ export function CourseLayout({
                   </Accordion>
               </div>
           </div>
+
+          {/* Certificate Section */}
+           <div className="mt-16 md:mt-24">
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+                  <div className="shrink-0">
+                      <Award className="w-24 h-24 text-black" />
+                  </div>
+                  <div>
+                      <h2 className="text-3xl font-extrabold text-black">Free Certificate of Completion</h2>
+                      <p className="mt-4 text-lg text-gray-700">
+                          Upon successfully completing the course, you'll receive a free, industry-recognized certificate.
+                          Showcase your new skills on your resume and LinkedIn profile.
+                      </p>
+                      <ul className="mt-4 space-y-2">
+                        <li className="flex items-start gap-3">
+                            <Check className="h-5 w-5 text-black mt-1 shrink-0" />
+                            <span className="text-gray-700">Downloadable PDF certificate</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <Check className="h-5 w-5 text-black mt-1 shrink-0" />
+                            <span className="text-gray-700">Shareable on LinkedIn</span>
+                        </li>
+                    </ul>
+                  </div>
+              </div>
+           </div>
 
         </div>
       </main>
