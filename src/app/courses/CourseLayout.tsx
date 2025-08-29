@@ -145,14 +145,16 @@ export function CourseLayout({
               </div>
 
               <div className="mt-16 md:mt-24">
-                <h2 className="text-3xl font-extrabold text-black mb-6 text-center">What you'll learn</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {learningObjectives.map((objective, index) => (
-                    <Card key={index} className="bg-gray-50/50 border-gray-200 p-6 flex items-start gap-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
-                      <Check className="h-6 w-6 text-black bg-gray-100 border rounded-full p-1 mt-1 shrink-0" />
-                      <span className="text-gray-700">{objective}</span>
-                    </Card>
-                  ))}
+                <div className="border border-gray-200 rounded-lg p-6 md:p-8">
+                  <h2 className="text-3xl font-extrabold text-black mb-6">What you'll learn</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {learningObjectives.map((objective, index) => (
+                      <div key={index} className="flex items-start gap-4">
+                        <Check className="h-6 w-6 text-black mt-1 shrink-0" />
+                        <span className="text-gray-700">{objective}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
