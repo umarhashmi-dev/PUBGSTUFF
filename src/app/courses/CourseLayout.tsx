@@ -28,8 +28,8 @@ export function CourseLayout({
     <div className="flex min-h-[100dvh] flex-col bg-white text-black">
       <Header />
       <main className="flex-1">
-        <div className="container mx-auto px-4 py-20 sm:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-16">
+        <div className="container mx-auto px-4 py-20 sm:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
             
             {/* Main Content */}
             <div className="lg:col-span-2">
@@ -50,9 +50,9 @@ export function CourseLayout({
               </div>
 
               <h1 className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight">{title}</h1>
-              <p className="text-lg text-gray-700 mb-10">{description}</p>
+              <p className="text-lg text-gray-700 mb-8">{description}</p>
               
-              <div className="border border-gray-200 rounded-lg p-8 mb-10">
+              <div className="border border-gray-200 rounded-lg p-6 mb-8">
                 <h3 className="flex items-center gap-3 text-lg font-bold mb-4">
                   <Award className="w-6 h-6" />
                   Free Professional Certificate
@@ -79,7 +79,7 @@ export function CourseLayout({
                 </Button>
               </div>
 
-              <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
                   <h4 className="text-2xl font-bold">12K+</h4>
                   <p className="text-gray-600">Active Students</p>
@@ -120,7 +120,7 @@ export function CourseLayout({
                       <Award className="w-4 h-4" /> Free Certificate
                     </div>
                   </div>
-                  <div className="p-8">
+                  <div className="p-6">
                     <h2 className="text-xl font-bold mb-4">{title} Bootcamp 2024</h2>
                     <div className="flex justify-between text-sm text-gray-600 mb-6">
                       <span className="flex items-center gap-2"><Clock className="w-4 h-4" /> 40+ Hours</span>
