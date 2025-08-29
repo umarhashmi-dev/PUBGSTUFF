@@ -29,7 +29,7 @@ export function CourseLayout({
       <Header />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-20 sm:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8">
             
             {/* Main Content */}
             <div className="lg:col-span-2">
@@ -127,7 +127,7 @@ export function CourseLayout({
                       <span className="flex items-center gap-2"><Users className="w-4 h-4" /> 12K+ Students</span>
                     </div>
                     <h3 className="font-bold mb-4">What you'll learn:</h3>
-                    <ul className="space-y-4 mb-8">
+                    <ul className="space-y-4 mb-6">
                       {learningObjectives.slice(0, 3).map((objective, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <Check className="h-5 w-5 text-black bg-gray-100 border rounded-full p-0.5 mt-1 shrink-0" />
