@@ -22,7 +22,7 @@ const courseContent = {
     { title: 'Building with AI APIs', description: 'Integrating generative AI into your projects.' },
     { title: 'The Future of AI', description: 'Exploring the ethics and future trends.' },
   ],
-  bannerUrl: 'https://images.unsplash.com/photo-1718303401563-146941b31aa6?q=80&w=2070&auto=format&fit=crop',
+  bannerUrl: 'https://images.unsplash.com/photo-1718303401563-146941b31aa6?q=80&w=600&h=400&auto=format&fit=crop',
   bannerAiHint: 'generative ai abstract',
 };
 

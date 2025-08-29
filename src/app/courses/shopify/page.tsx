@@ -22,7 +22,7 @@ const courseContent = {
     { title: 'Order Fulfillment and Customer Service', description: 'Managing the day-to-day operations.' },
     { title: 'Analytics and Scaling', description: 'Using data to grow your empire.' },
   ],
-  bannerUrl: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070&auto=format&fit=crop',
+  bannerUrl: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=600&h=400&auto=format&fit=crop',
   bannerAiHint: 'ecommerce online shopping',
 };
 

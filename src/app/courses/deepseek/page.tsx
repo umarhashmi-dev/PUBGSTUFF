@@ -22,7 +22,7 @@ const courseContent = {
     { title: 'Automating Research Workflows', description: 'Building tools to gather information.' },
     { title: 'Practical Applications', description: 'Case studies in market research and OSINT.' },
   ],
-  bannerUrl: 'https://images.unsplash.com/photo-1586892330835-a131a478544d?q=80&w=2070&auto=format&fit=crop',
+  bannerUrl: 'https://images.unsplash.com/photo-1586892330835-a131a478544d?q=80&w=600&h=400&auto=format&fit=crop',
   bannerAiHint: 'data analysis abstract',
 };
 

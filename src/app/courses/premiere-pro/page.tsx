@@ -22,7 +22,7 @@ const courseContent = {
     { title: 'Titles, Graphics, and Effects', description: 'Adding professional polish.' },
     { title: 'Exporting and Sharing', description: 'Delivering your final video.' },
   ],
-  bannerUrl: 'https://images.unsplash.com/photo-1578351113881-ae145f665551?q=80&w=2012&auto=format&fit=crop',
+  bannerUrl: 'https://images.unsplash.com/photo-1578351113881-ae145f665551?q=80&w=600&h=400&auto=format&fit=crop',
   bannerAiHint: 'video editing abstract',
 };
 

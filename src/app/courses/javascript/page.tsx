@@ -22,7 +22,7 @@ const courseContent = {
     { title: 'Modern ES6+ Features', description: 'Destructuring, Spread/Rest, and Modules.' },
     { title: 'JavaScript Engine and Runtime', description: 'How JavaScript works under the hood.' },
   ],
-  bannerUrl: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?q=80&w=2070&auto=format&fit=crop',
+  bannerUrl: 'https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?q=80&w=600&h=400&auto=format&fit=crop',
   bannerAiHint: 'javascript code abstract',
 };
 
