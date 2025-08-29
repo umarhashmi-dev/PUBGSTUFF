@@ -143,6 +143,74 @@ export function CourseLayout({
                   <p className="text-gray-600">Forever</p>
                 </div>
               </div>
+
+               {/* What you'll learn Section */}
+              <div className="mt-16 md:mt-24">
+                <div className="border border-gray-200 rounded-lg p-6 md:p-8">
+                    <h2 className="text-3xl font-extrabold text-black mb-6">What you'll learn</h2>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                        {learningObjectives.map((objective, index) => (
+                            <li key={index} className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-black bg-gray-100 border rounded-full p-0.5 mt-1 shrink-0" />
+                                <span className="text-gray-700">{objective}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+              </div>
+
+              {/* Certificate Section */}
+              <div className="mt-16 md:mt-24">
+                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
+                      <div className="shrink-0">
+                          <Award className="w-24 h-24 text-black" />
+                      </div>
+                      <div>
+                          <h2 className="text-3xl font-extrabold text-black">Free Certificate of Completion</h2>
+                          <p className="mt-4 text-lg text-gray-700">
+                              Upon successfully completing the course, you'll receive a free, industry-recognized certificate.
+                              Showcase your new skills on your resume and LinkedIn profile.
+                          </p>
+                          <ul className="mt-4 space-y-2">
+                            <li className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-black mt-1 shrink-0" />
+                                <span className="text-gray-700">Downloadable PDF certificate</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-black mt-1 shrink-0" />
+                                <span className="text-gray-700">Shareable on LinkedIn</span>
+                            </li>
+                        </ul>
+                      </div>
+                  </div>
+              </div>
+
+              {/* Course Curriculum Section */}
+              <div className="mt-16 md:mt-24">
+                  <div className="max-w-3xl mx-auto text-center">
+                      <h2 className="text-3xl font-extrabold text-black">Course Curriculum</h2>
+                      <p className="mt-4 text-lg text-gray-700">
+                          A detailed breakdown of what you'll learn in each module.
+                      </p>
+                  </div>
+
+                  <div className="mt-12 max-w-3xl mx-auto">
+                      <Accordion type="single" collapsible className="w-full space-y-4">
+                          {modules.map((module, index) => (
+                              <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                                  <AccordionTrigger className="text-lg text-left font-semibold px-6 py-4 hover:no-underline">
+                                      <span className="mr-4 text-black font-bold">0{index + 1}</span>
+                                      {module.title}
+                                  </AccordionTrigger>
+                                  <AccordionContent className="text-base text-gray-700 px-6 pb-4">
+                                      {module.description}
+                                  </AccordionContent>
+                              </AccordionItem>
+                          ))}
+                      </Accordion>
+                  </div>
+              </div>
+
             </div>
 
             {/* Sticky Card */}
@@ -181,73 +249,6 @@ export function CourseLayout({
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* What you'll learn Section */}
-          <div className="mt-16 md:mt-24">
-            <div className="border border-gray-200 rounded-lg p-6 md:p-8">
-                <h2 className="text-3xl font-extrabold text-black mb-6">What you'll learn</h2>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                    {learningObjectives.map((objective, index) => (
-                        <li key={index} className="flex items-start gap-3">
-                            <Check className="h-5 w-5 text-black bg-gray-100 border rounded-full p-0.5 mt-1 shrink-0" />
-                            <span className="text-gray-700">{objective}</span>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-          </div>
-          
-          {/* Certificate Section */}
-           <div className="mt-16 md:mt-24">
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 flex flex-col md:flex-row items-center gap-8">
-                  <div className="shrink-0">
-                      <Award className="w-24 h-24 text-black" />
-                  </div>
-                  <div>
-                      <h2 className="text-3xl font-extrabold text-black">Free Certificate of Completion</h2>
-                      <p className="mt-4 text-lg text-gray-700">
-                          Upon successfully completing the course, you'll receive a free, industry-recognized certificate.
-                          Showcase your new skills on your resume and LinkedIn profile.
-                      </p>
-                      <ul className="mt-4 space-y-2">
-                        <li className="flex items-start gap-3">
-                            <Check className="h-5 w-5 text-black mt-1 shrink-0" />
-                            <span className="text-gray-700">Downloadable PDF certificate</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <Check className="h-5 w-5 text-black mt-1 shrink-0" />
-                            <span className="text-gray-700">Shareable on LinkedIn</span>
-                        </li>
-                    </ul>
-                  </div>
-              </div>
-           </div>
-
-          {/* Course Curriculum Section */}
-          <div className="mt-16 md:mt-24">
-              <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-3xl font-extrabold text-black">Course Curriculum</h2>
-                  <p className="mt-4 text-lg text-gray-700">
-                      A detailed breakdown of what you'll learn in each module.
-                  </p>
-              </div>
-
-              <div className="mt-12 max-w-3xl mx-auto">
-                  <Accordion type="single" collapsible className="w-full space-y-4">
-                      {modules.map((module, index) => (
-                          <AccordionItem key={index} value={`item-${index}`} className="bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                              <AccordionTrigger className="text-lg text-left font-semibold px-6 py-4 hover:no-underline">
-                                  <span className="mr-4 text-black font-bold">0{index + 1}</span>
-                                  {module.title}
-                              </AccordionTrigger>
-                              <AccordionContent className="text-base text-gray-700 px-6 pb-4">
-                                  {module.description}
-                              </AccordionContent>
-                          </AccordionItem>
-                      ))}
-                  </Accordion>
-              </div>
           </div>
           
           {/* Related Courses Section */}
