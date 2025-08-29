@@ -1,3 +1,4 @@
+
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
