@@ -27,7 +27,7 @@ export function CourseLayout({
   return (
     <div className="flex min-h-[100dvh] flex-col bg-white text-black">
       <Header />
-      <main className="flex-1 pt-24">
+      <main className="flex-1 pt-32">
         <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-8">
             
