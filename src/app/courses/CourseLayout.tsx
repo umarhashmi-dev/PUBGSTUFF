@@ -9,7 +9,6 @@ import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
-import { CourseActivity } from './CourseActivity';
 
 interface CourseLayoutProps {
   title: string;
@@ -211,19 +210,6 @@ export function CourseLayout({
                           ))}
                       </Accordion>
                   </div>
-              </div>
-
-               {/* Latest Activity Section */}
-              <div className="mt-16 md:mt-24">
-                <div className="max-w-3xl mx-auto text-center">
-                  <h2 className="text-3xl font-extrabold text-black">Latest Course Activity</h2>
-                  <p className="mt-4 text-lg text-gray-700">
-                    See what's happening in the course right now.
-                  </p>
-                </div>
-                <div className="mt-8">
-                  <CourseActivity />
-                </div>
               </div>
             </div>
 
