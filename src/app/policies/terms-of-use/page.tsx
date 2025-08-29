@@ -1,5 +1,8 @@
+
+'use client';
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function TermsOfUsePage() {
   return (
@@ -8,9 +11,16 @@ export default function TermsOfUsePage() {
       <main className="flex-1 bg-white text-black pt-24">
         <div className="container mx-auto px-4 py-8 md:py-16 lg:py-24">
           <div className="mx-auto max-w-4xl">
-            <h1 className="text-3xl font-bold tracking-tight text-center sm:text-4xl lg:text-5xl">
+            <TextAnimate
+              as="h1"
+              animation={{
+                hidden: { opacity: 0, filter: "blur(4px)" },
+                show: { opacity: 1, filter: "blur(0px)" },
+              }}
+              className="text-3xl font-bold tracking-tight text-center sm:text-4xl lg:text-5xl"
+            >
               Terms of Use
-            </h1>
+            </TextAnimate>
             <p className="mt-4 text-center text-sm text-gray-500 md:text-base">
               Last updated: Friday, 21 February 2025 in I-9, Islamabad
             </p>

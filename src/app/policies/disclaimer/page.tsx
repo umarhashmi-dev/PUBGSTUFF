@@ -1,7 +1,9 @@
 
+'use client';
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import Link from "next/link";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function DisclaimerPage() {
   return (
@@ -11,9 +13,16 @@ export default function DisclaimerPage() {
         <div className="container mx-auto px-4 py-8 md:py-16 lg:py-24">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-8 md:mb-12">
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              <TextAnimate
+                as="h1"
+                animation={{
+                  hidden: { opacity: 0, filter: "blur(4px)" },
+                  show: { opacity: 1, filter: "blur(0px)" },
+                }}
+                className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+              >
                 Disclaimer
-              </h1>
+              </TextAnimate>
             </div>
 
             <div className="space-y-6 md:space-y-8">
@@ -71,7 +80,7 @@ export default function DisclaimerPage() {
 
               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
                 <h2 className="text-xl font-bold md:text-2xl">“Use at Your Own Risk” Disclaimer</h2>
-                <p className="mt-2 text-gray-700">All information in the Service is provided “as is”, with no guarantee of completeness, accuracy, timeliness, or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability, and fitness for a particular purpose.</p>
+                <p className="mt-2 text-gray-700">All information in the Service is provided “as is”, with no guarantee of completeness, accuracy, timeliness, or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not to warranties of performance, merchantability, and fitness for a particular purpose.</p>
                 <p className="mt-2 text-gray-700">The Company will not be liable to You or anyone else for any decision made or action taken in reliance on the information given by the Service or for any consequential, special, or similar damages, even if advised of the possibility of such damages.</p>
               </div>
 

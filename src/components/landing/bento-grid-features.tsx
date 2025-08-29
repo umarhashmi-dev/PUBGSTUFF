@@ -1,3 +1,4 @@
+
 "use client";
 import { cn } from "@/lib/utils";
 import React from "react";
@@ -11,6 +12,7 @@ import {
 } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 
 export default function BentoGridFeatures() {
@@ -24,9 +26,16 @@ export default function BentoGridFeatures() {
     <section className="py-16 md:py-24 bg-background">
         <div className="container">
             <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">
+            <TextAnimate
+                as="h2"
+                animation={{
+                hidden: { opacity: 0, filter: "blur(4px)" },
+                show: { opacity: 1, filter: "blur(0px)" },
+                }}
+                className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline"
+            >
                 Discover Our Features
-            </h2>
+            </TextAnimate>
             <p className="mt-4 text-lg text-muted-foreground">
                 Explore the powerful tools that make our platform unique.
             </p>

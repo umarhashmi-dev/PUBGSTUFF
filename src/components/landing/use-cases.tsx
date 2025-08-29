@@ -1,5 +1,8 @@
+
+'use client';
 import { cn } from "@/lib/utils";
 import React from "react";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const IconTerminal2 = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-terminal-2" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -168,9 +171,16 @@ export default function UseCases() {
     <section id="use-cases" className="py-16 md:py-28">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <TextAnimate
+            as="h2"
+            animation={{
+              hidden: { opacity: 0, filter: "blur(4px)" },
+              show: { opacity: 1, filter: "blur(0px)" },
+            }}
+            className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
+          >
             Why Choose Us
-          </h2>
+          </TextAnimate>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
             Discover the features that make our platform the best choice for you.
           </p>

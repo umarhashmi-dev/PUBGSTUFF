@@ -1,9 +1,12 @@
+
+'use client';
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import RequireAuth from "@/components/require-auth";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Download } from "lucide-react";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const downloads = [
   { id: "1", name: "Glacier M416 Skin", expires: "Never", link: "#" },
@@ -18,7 +21,16 @@ export default function DownloadsPage() {
         <main className="flex-1">
           <div className="container py-12 md:py-24 lg:py-32">
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">Your Downloads</h1>
+              <TextAnimate
+                as="h1"
+                animation={{
+                  hidden: { opacity: 0, filter: "blur(4px)" },
+                  show: { opacity: 1, filter: "blur(0px)" },
+                }}
+                className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
+              >
+                Your Downloads
+              </TextAnimate>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
                 Access your purchased digital products here.
               </p>

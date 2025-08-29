@@ -1,9 +1,12 @@
+
+'use client';
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, Mail, MapPin, Phone } from "lucide-react";
 import Faq from "@/components/landing/faq";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function ContactPage() {
   return (
@@ -15,9 +18,16 @@ export default function ContactPage() {
             <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-foreground/10 text-foreground">
               Contact Us
             </span>
-            <h1 className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground md:text-5xl font-headline">
+            <TextAnimate
+              as="h1"
+              animation={{
+                hidden: { opacity: 0, filter: "blur(4px)" },
+                show: { opacity: 1, filter: "blur(0px)" },
+              }}
+              className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground md:text-5xl font-headline"
+            >
               Get in touch with our team
-            </h1>
+            </TextAnimate>
             <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto text-muted-foreground">
               We have the team and know-how to help you scale 10x faster.
             </p>

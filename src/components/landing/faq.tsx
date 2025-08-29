@@ -1,4 +1,5 @@
 
+'use client';
 import {
   Accordion,
   AccordionContent,
@@ -8,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const faqs = [
   {
@@ -41,9 +43,16 @@ export default function Faq() {
     <section id="faq" className="py-16 md:py-24 bg-secondary/50">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">
+          <TextAnimate
+            as="h2"
+            animation={{
+              hidden: { opacity: 0, filter: "blur(4px)" },
+              show: { opacity: 1, filter: "blur(0px)" },
+            }}
+            className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline"
+          >
             Frequently Asked Questions
-          </h2>
+          </TextAnimate>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
             Quick answers to questions you may have.
           </p>

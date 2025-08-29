@@ -1,4 +1,5 @@
 
+'use client';
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
@@ -8,11 +9,7 @@ import { Brush, LayoutDashboard, Server, Zap, HeartHandshake, ArrowRight } from 
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-
-export const metadata: Metadata = {
-  title: "About Us | PUBGSTUFF",
-  description: "Learn about our mission, our values, and our commitment to providing top-tier digital services.",
-};
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const features = [
     {
@@ -68,9 +65,16 @@ export default function AboutPage() {
         {/* Hero Section */}
         <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 bg-secondary/30">
             <div className="container px-4 text-center">
-                <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
+                <TextAnimate
+                    as="h1"
+                    animation={{
+                    hidden: { opacity: 0, filter: "blur(4px)" },
+                    show: { opacity: 1, filter: "blur(0px)" },
+                    }}
+                    className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
+                >
                     We're Building the Future of Digital Services.
-                </h1>
+                </TextAnimate>
                 <p className="mt-6 text-lg max-w-3xl mx-auto leading-8 text-muted-foreground">
                     At PUBGSTUFF, we are a passionate team of developers, designers, and digital experts dedicated to providing top-tier services that drive growth and innovation.
                 </p>
@@ -89,8 +93,8 @@ export default function AboutPage() {
                     <Image 
                         src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
                         alt="Our Team"
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="object-cover"
                         data-ai-hint="team collaboration office"
                     />
                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -122,7 +126,16 @@ export default function AboutPage() {
         <section id="services" className="py-16 md:py-24 bg-secondary/30">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">What We Do</h2>
+                    <TextAnimate
+                        as="h2"
+                        animation={{
+                        hidden: { opacity: 0, filter: "blur(4px)" },
+                        show: { opacity: 1, filter: "blur(0px)" },
+                        }}
+                        className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline"
+                    >
+                        What We Do
+                    </TextAnimate>
                     <p className="mt-4 text-lg text-muted-foreground">We offer a wide range of services to meet your digital needs.</p>
                 </div>
                 <div className="max-w-5xl mx-auto">
@@ -149,7 +162,16 @@ export default function AboutPage() {
         <section className="py-16 md:py-24">
             <div className="container">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Trusted by Creatives & Businesses</h2>
+                    <TextAnimate
+                        as="h2"
+                        animation={{
+                        hidden: { opacity: 0, filter: "blur(4px)" },
+                        show: { opacity: 1, filter: "blur(0px)" },
+                        }}
+                        className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline"
+                    >
+                        Trusted by Creatives & Businesses
+                    </TextAnimate>
                     <p className="mt-4 text-lg text-muted-foreground">Here's what some of our clients have to say about their experience.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -178,7 +200,16 @@ export default function AboutPage() {
             <div className="container">
                 <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-16 text-center">
                     <HeartHandshake className="mx-auto h-12 w-12 mb-6" />
-                    <h2 className="text-3xl font-bold font-headline">Ready to Start a Project?</h2>
+                    <TextAnimate
+                        as="h2"
+                        animation={{
+                        hidden: { opacity: 0, filter: "blur(4px)" },
+                        show: { opacity: 1, filter: "blur(0px)" },
+                        }}
+                        className="text-3xl font-bold font-headline"
+                    >
+                        Ready to Start a Project?
+                    </TextAnimate>
                     <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
                         Let's work together to bring your ideas to life. Reach out to us today to discuss your project and get a free consultation.
                     </p>
