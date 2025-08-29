@@ -1,3 +1,4 @@
+
 import { Film } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 
@@ -21,6 +22,8 @@ const courseContent = {
     { title: 'Working in 3D Space', description: 'Creating depth and perspective.' },
     { title: 'Rendering and Exporting', description: 'Sharing your work with the world.' },
   ],
+  bannerUrl: 'https://images.unsplash.com/photo-1620674156044-52c713b63264?q=80&w=2070&auto=format&fit=crop',
+  bannerAiHint: 'abstract motion graphics',
 };
 
 export default function AfterEffectsCoursePage() {

@@ -1,3 +1,4 @@
+
 import { Bot } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 
@@ -21,6 +22,8 @@ const courseContent = {
     { title: 'Automated Testing with AI', description: 'Generating test cases automatically.' },
     { title: 'The Future of AI in Software Engineering', description: 'What to expect next.' },
   ],
+  bannerUrl: 'https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=2070&auto=format&fit=crop',
+  bannerAiHint: 'ai code abstract',
 };
 
 export default function AiCodingCoursePage() {

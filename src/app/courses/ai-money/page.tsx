@@ -1,3 +1,4 @@
+
 import { DollarSign } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 
@@ -21,6 +22,8 @@ const courseContent = {
     { title: 'Marketing for AI Ventures', description: 'How to attract customers and clients.' },
     { title: 'Ethical Considerations', description: 'Building a sustainable and responsible AI business.' },
   ],
+  bannerUrl: 'https://images.unsplash.com/photo-1696203435223-9524020a9a23?q=80&w=2070&auto=format&fit=crop',
+  bannerAiHint: 'ai business money',
 };
 
 export default function AiMoneyCoursePage() {

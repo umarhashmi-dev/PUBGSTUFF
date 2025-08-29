@@ -4,10 +4,11 @@ import Header from '@/components/landing/header';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { ArrowRight, Check, PlayCircle, Users } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ArrowRight, Check, FileText, Gift, Star, Users } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface CourseLayoutProps {
   title: string;
@@ -15,48 +16,53 @@ interface CourseLayoutProps {
   description: string;
   learningObjectives: string[];
   modules: { title: string; description: string }[];
+  bannerUrl: string;
+  bannerAiHint: string;
 }
 
 export function CourseLayout({
   title,
-  icon: Icon,
   description,
   learningObjectives,
   modules,
+  bannerUrl,
+  bannerAiHint
 }: CourseLayoutProps) {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="border-b bg-card">
+        <section className="border-b bg-secondary/30">
           <div className="container mx-auto px-4 py-20 md:py-32">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="text-center md:text-left">
+            <div className="text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline text-foreground">{title}</h1>
-                <p className="mt-6 text-lg max-w-xl mx-auto md:mx-0 text-muted-foreground">{description}</p>
-                <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <p className="mt-6 text-lg max-w-3xl mx-auto text-muted-foreground">{description}</p>
+                <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
                   <Button size="lg" className="bg-foreground text-background hover:bg-foreground/80 hover-shimmer-button text-base">
-                    Enroll Now
-                  </Button>
-                  <Button size="lg" variant="outline" className="hover-shimmer-button text-base">
-                    <PlayCircle className="mr-2 h-5 w-5" />
-                    Watch Preview
+                    Start Learning for Free
                   </Button>
                 </div>
-              </div>
-              <div className="hidden md:flex items-center justify-center">
-                <div className="relative w-64 h-64">
-                  <div className="absolute inset-0 border-2 border-foreground/10 rounded-full"></div>
-                  <div className="absolute inset-2 border-2 border-foreground/10 rounded-full animate-pulse"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                     <Icon className="w-32 h-32 text-foreground" />
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
+
+        {/* Banner Section */}
+        <section className="py-12 md:py-16">
+            <div className="container">
+                <div className="relative aspect-video max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl">
+                    <Image 
+                        src={bannerUrl}
+                        alt={`${title} course banner`}
+                        layout="fill"
+                        objectFit="cover"
+                        data-ai-hint={bannerAiHint}
+                    />
+                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
 
         {/* Main Content */}
         <section className="py-16 md:py-24">
@@ -65,17 +71,21 @@ export function CourseLayout({
               {/* Left Column */}
               <div className="lg:col-span-2">
                 {/* What You'll Learn */}
-                <div className="border bg-card rounded-xl p-6 md:p-8 mb-12">
-                  <h2 className="text-2xl md:text-3xl font-bold font-headline mb-6">What You'll Learn</h2>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
-                    {learningObjectives.map((objective, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-foreground bg-background border rounded-full p-0.5 mt-1 shrink-0" />
-                        <span className="text-muted-foreground">{objective}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <Card className="rounded-xl p-6 md:p-8 mb-12">
+                    <CardHeader className="p-0 mb-6">
+                        <CardTitle className="text-2xl md:text-3xl font-bold font-headline">What You'll Learn</CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-0">
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                            {learningObjectives.map((objective, index) => (
+                            <li key={index} className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-foreground bg-background border rounded-full p-0.5 mt-1 shrink-0" />
+                                <span className="text-muted-foreground">{objective}</span>
+                            </li>
+                            ))}
+                        </ul>
+                    </CardContent>
+                </Card>
 
                 {/* Course Content */}
                 <div>
@@ -100,19 +110,21 @@ export function CourseLayout({
                 <div className="sticky top-24 space-y-8">
                   <Card className="rounded-xl border shadow-sm">
                     <CardHeader className="text-center pb-4">
-                      <p className="text-sm uppercase tracking-widest text-muted-foreground">Lifetime Access</p>
-                      <h3 className="text-5xl font-extrabold text-foreground font-headline">$99</h3>
+                        <div className="w-fit mx-auto p-3 bg-primary/10 rounded-full mb-2">
+                            <Gift className="w-8 h-8 text-primary" />
+                        </div>
+                      <p className="text-sm uppercase tracking-widest text-muted-foreground">This Course Is</p>
+                      <h3 className="text-5xl font-extrabold text-foreground font-headline">Free</h3>
+                       <p className="text-sm text-muted-foreground">Lifetime Access</p>
                     </CardHeader>
                     <CardContent className="p-6">
                       <Button size="lg" className="w-full bg-foreground text-background hover:bg-foreground/80 hover-shimmer-button text-base">
-                        Add to Cart
-                      </Button>
-                      <Button size="lg" variant="outline" className="w-full mt-4 hover-shimmer-button text-base">
-                        Buy Now
+                        Enroll for Free
                       </Button>
                       <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
                           <li className="flex items-center gap-3"><Users className="w-4 h-4 text-foreground" /><span>25,000+ Students</span></li>
-                          <li className="flex items-center gap-3"><PlayCircle className="w-4 h-4 text-foreground" /><span>12 hours of on-demand video</span></li>
+                          <li className="flex items-center gap-3"><Star className="w-4 h-4 text-foreground" /><span>4.8/5 Average Rating</span></li>
+                          <li className="flex items-center gap-3"><FileText className="w-4 h-4 text-foreground" /><span>Free Certificate of Completion</span></li>
                       </ul>
                     </CardContent>
                   </Card>

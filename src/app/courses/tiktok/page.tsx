@@ -1,3 +1,4 @@
+
 import { Film } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 
@@ -21,6 +22,8 @@ const courseContent = {
     { title: 'Building a Community', description: 'Engaging with your audience.' },
     { title: 'Monetization and Brand Deals', description: 'Turning your passion into a career.' },
   ],
+  bannerUrl: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?q=80&w=1974&auto=format&fit=crop',
+  bannerAiHint: 'social media phone',
 };
 
 export default function TikTokCoursePage() {

@@ -1,3 +1,4 @@
+
 import { Palette } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
 
@@ -21,6 +22,8 @@ const courseContent = {
     { title: 'Advanced Grid Systems', description: 'Mastering two-dimensional layouts.' },
     { title: 'Transitions and Animations', description: 'Bringing your web pages to life.' },
   ],
+  bannerUrl: 'https://images.unsplash.com/photo-1507721999472-8ed4421b4352?q=80&w=2070&auto=format&fit=crop',
+  bannerAiHint: 'css code abstract',
 };
 
 export default function CssCoursePage() {
