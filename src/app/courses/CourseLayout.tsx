@@ -2,11 +2,12 @@
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Check, Clock, Award, Users, Download, Star } from 'lucide-react';
+import { ArrowRight, Check, Clock, Award, Users, Download, Star, Palette, Code, Bot, Film, ShoppingCart, DollarSign, Search, Tv } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Card } from '@/components/ui/card';
 
 interface CourseLayoutProps {
   title: string;
@@ -18,6 +19,65 @@ interface CourseLayoutProps {
   bannerAiHint: string;
 }
 
+const allCourses = [
+  {
+    title: 'CSS',
+    href: '/courses/css',
+    icon: <Palette className="h-6 w-6" />,
+  },
+  {
+    title: 'HTML',
+    href: '/courses/html',
+    icon: <Code className="h-6 w-6" />,
+  },
+  {
+    title: 'Gen AI',
+    href: '/courses/gen-ai',
+    icon: <Bot className="h-6 w-6" />,
+  },
+  {
+    title: 'TikTok',
+    href: '/courses/tiktok',
+    icon: <Film className="h-6 w-6" />,
+  },
+  {
+    title: 'Shopify',
+    href: '/courses/shopify',
+    icon: <ShoppingCart className="h-6 w-6" />,
+  },
+  {
+    title: 'AI Money',
+    href: '/courses/ai-money',
+    icon: <DollarSign className="h-6 w-6" />,
+  },
+  {
+    title: 'AI Coding',
+    href: '/courses/ai-coding',
+    icon: <Bot className="h-6 w-6" />,
+  },
+  {
+    title: 'Deepseek',
+    href: '/courses/deepseek',
+    icon: <Search className="h-6 w-6" />,
+  },
+  {
+    title: 'JavaScript',
+    href: '/courses/javascript',
+    icon: <Code className="h-6 w-6" />,
+  },
+  {
+    title: 'After Effects',
+    href: '/courses/after-effects',
+    icon: <Film className="h-6 w-6" />,
+  },
+  {
+    title: 'Premiere Pro',
+    href: '/courses/premiere-pro',
+    icon: <Tv className="h-6 w-6" />,
+  },
+];
+
+
 export function CourseLayout({
   title,
   description,
@@ -26,6 +86,8 @@ export function CourseLayout({
   bannerUrl,
   bannerAiHint,
 }: CourseLayoutProps) {
+  const relatedCourses = allCourses.filter(course => course.title !== title).slice(0, 6);
+  
   return (
     <div className="flex min-h-[100dvh] flex-col bg-white text-black">
       <Header />
@@ -186,6 +248,28 @@ export function CourseLayout({
                       ))}
                   </Accordion>
               </div>
+          </div>
+          
+          {/* Related Courses Section */}
+          <div className="mt-16 md:mt-24">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-3xl font-extrabold text-black">Related Courses</h2>
+              <p className="mt-4 text-lg text-gray-700">
+                Continue your learning journey with our other courses.
+              </p>
+            </div>
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedCourses.map((course) => (
+                <Link key={course.href} href={course.href}>
+                  <Card className="p-6 flex flex-col items-center text-center bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
+                    <div className="p-4 bg-gray-100 rounded-full mb-4 text-black">
+                      {course.icon}
+                    </div>
+                    <h3 className="text-lg font-bold text-black">{course.title}</h3>
+                  </Card>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </main>
