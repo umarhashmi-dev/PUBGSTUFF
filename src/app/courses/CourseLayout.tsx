@@ -121,7 +121,7 @@ export function CourseLayout({
                 <Button asChild size="lg" className="bg-black text-white hover:bg-gray-800 rounded-lg text-base w-full sm:w-auto hover-shimmer-button">
                   <Link href="#">Start Learning Now - FREE <ArrowRight className="ml-2 h-5 w-5" /></Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-white border-gray-300 hover:bg-gray-100 rounded-lg text-base w-full sm:w-auto hover-shimmer-button">
+                <Button asChild size="lg" variant="outline" className="bg-white border-gray-300 hover:bg-gray-100 rounded-lg text-base w-full sm:w-auto hover-shimmer-button hover:text-black">
                   <Link href="#"><Download className="mr-2 h-5 w-5" /> Download Course Materials</Link>
                 </Button>
               </div>
