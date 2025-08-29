@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { SparklesText } from '@/components/magicui/sparkles-text';
+import { TextAnimate } from '@/components/magicui/text-animate';
 
 interface CourseLayoutProps {
   title: string;
@@ -245,7 +246,26 @@ export function CourseLayout({
                      </Button>
                     <hr className="border-gray-200 my-6" />
                     <div className="text-center">
-                      <h3 className="text-3xl font-extrabold">100% FREE</h3>
+                        <h3 className="text-3xl font-extrabold">
+                            <TextAnimate
+                                by="character"
+                                className="inline-block"
+                                variants={{
+                                    hidden: { opacity: 0, y: 30, rotate: 45, scale: 0.5 },
+                                    show: (i) => ({
+                                        opacity: 1, y: 0, rotate: 0, scale: 1,
+                                        transition: {
+                                            delay: i * 0.1, duration: 0.4,
+                                            y: { type: "spring", damping: 12, stiffness: 200, mass: 0.8 },
+                                            rotate: { type: "spring", damping: 8, stiffness: 150 },
+                                            scale: { type: "spring", damping: 10, stiffness: 300 },
+                                        },
+                                    }),
+                                }}
+                            >
+                                100% FREE
+                            </TextAnimate>
+                        </h3>
                       <p className="text-gray-600 text-sm mt-1">No hidden costs • Lifetime access</p>
                     </div>
                   </div>
