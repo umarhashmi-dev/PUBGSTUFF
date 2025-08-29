@@ -31,8 +31,8 @@ export function CourseLayout({
         <div className="container mx-auto px-4 py-16 sm:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
             
-            {/* Right Column (Main Content) */}
-            <div className="lg:col-span-2 order-1 lg:order-2">
+            {/* Main Content */}
+            <div className="lg:col-span-2">
               <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-4">
                 <span className="inline-block bg-black text-white text-xs font-bold px-3 py-1.5 rounded-md mb-2 sm:mb-0">
                   COMPLETELY FREE
@@ -99,8 +99,8 @@ export function CourseLayout({
               </div>
             </div>
 
-            {/* Left Column (Sticky Card) */}
-            <div className="lg:col-span-1 order-2 lg:order-1 mt-12 lg:mt-0">
+            {/* Sticky Card */}
+            <div className="lg:col-span-1 mt-12 lg:mt-0">
               <div className="sticky top-24">
                 <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden">
                   <div className="relative">
