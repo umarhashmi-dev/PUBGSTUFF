@@ -20,8 +20,8 @@ const courseContent = {
     { title: 'Web APIs', description: 'Using browser APIs like Geolocation and Web Storage.' },
     { title: 'Accessibility (a11y)', description: 'Making your websites usable for everyone.' },
   ],
-  bannerUrl: 'https://images.unsplash.com/photo-1599507593499-a3f7d7d97667?q=80&w=600&h=400&auto=format&fit=crop',
-  bannerAiHint: 'html code abstract',
+  bannerUrl: 'https://picsum.photos/600/400',
+  bannerAiHint: 'html code',
 };
 
 export default function HtmlCoursePage() {
