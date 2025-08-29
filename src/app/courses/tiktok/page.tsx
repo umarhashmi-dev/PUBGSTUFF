@@ -1,17 +1,14 @@
 'use client';
 import { CourseLayout } from '../CourseLayout';
 
-const TikTokIcon = () => (
+const courseContent = {
+  title: 'TikTok Content Creation Mastery',
+  svgIcon: (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Z"/>
         <path d="M12 12a4 4 0 1 0-4-4v8a4 4 0 1 0 4-4Z"/>
     </svg>
-);
-
-
-const courseContent = {
-  title: 'TikTok Content Creation Mastery',
-  svgIcon: <TikTokIcon />,
+  ),
   description: 'Learn the secrets to creating viral content on TikTok. This course covers everything from finding trends and shooting engaging videos to mastering the algorithm and growing your audience.',
   learningObjectives: [
     'Understand the TikTok algorithm and how to use it to your advantage.',

@@ -1,19 +1,16 @@
 'use client';
 import { CourseLayout } from '../CourseLayout';
 
-const AiMoneyIcon = () => (
+const courseContent = {
+  title: 'Monetizing AI Skills',
+  svgIcon: (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
         <path d="M12 1v22"/>
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
         <path d="M12 12.5a2.5 2.5 0 0 0-2.5-2.5 2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 0 5 0"/>
         <path d="M12 12.5a2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 0 0 5 2.5 2.5 0 0 1-5 0"/>
     </svg>
-);
-
-
-const courseContent = {
-  title: 'Monetizing AI Skills',
-  svgIcon: <AiMoneyIcon />,
+  ),
   description: 'Learn how to turn your AI knowledge into a profitable venture. This course covers freelancing, building AI-powered SaaS products, consulting, and creating content to monetize your expertise.',
   learningObjectives: [
     'Identify profitable niches in the AI industry.',
