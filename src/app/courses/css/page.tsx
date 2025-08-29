@@ -1,10 +1,19 @@
 'use client';
-import { Palette } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
+
+const CssIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+        <path d="M2 3h14.4a2 2 0 0 1 1.6.8L22 9l-4 6.2a2 2 0 0 1-1.6.8H2z"/>
+        <path d="m22 9-4.1 4.1"/>
+        <path d="m2 9 4.1 4.1"/>
+        <path d="M13 15.2V21l-3-3-3 3v-5.8"/>
+        <path d="M2 15.2V9"/>
+    </svg>
+);
 
 const courseContent = {
   title: 'Mastering CSS',
-  icon: Palette,
+  svgIcon: <CssIcon />,
   description: 'Unlock the full potential of web styling with our comprehensive CSS course. From fundamentals to advanced animations, you will learn how to create beautiful and responsive websites.',
   learningObjectives: [
     'Understand CSS syntax, selectors, and the cascade.',

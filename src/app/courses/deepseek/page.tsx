@@ -1,10 +1,18 @@
 'use client';
-import { Search } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
+
+const DeepseekIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+        <path d="M12 2a10 10 0 1 0 10 10c0-4.42-2.87-8.17-6.84-9.5c-.52-.17-1.16-.17-1.68 0A10 10 0 0 0 12 2Z"/>
+        <path d="m10 10 4 4"/>
+        <path d="m14 10-4 4"/>
+    </svg>
+);
+
 
 const courseContent = {
   title: 'Deepseek: Advanced Search & Analysis',
-  icon: Search,
+  svgIcon: <DeepseekIcon />,
   description: 'Master the art of advanced search and data analysis with Deepseek. This course covers powerful query techniques, data extraction, pattern recognition, and leveraging AI for deep insights.',
   learningObjectives: [
     'Construct complex search queries for precise results.',

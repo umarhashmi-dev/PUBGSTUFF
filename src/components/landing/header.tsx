@@ -6,14 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "../logo";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { BookOpen, Palette, Code, Film, ShoppingCart, DollarSign, Bot, Search, Wind, Tv, Briefcase, LayoutTemplate, School, PencilRuler, Paintbrush, Plane, Video, Tv2, Cable, Repeat, Lightbulb, BrainCircuit, BarChart, Settings, Users, GitBranch, Waypoints, Workflow, Layers, Component, Box, Package, ShoppingBag, Truck, HeartHandshake, FileText, Shield, FileQuestion, Info, LifeBuoy, LogOut } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
-import { Skeleton } from "../ui/skeleton";
 
 const accountLinks = [
   {
@@ -93,67 +92,56 @@ const courseLinks = [
   {
     title: 'CSS',
     href: '/courses/css',
-    icon: <Palette className="h-5 w-5" />,
     description: 'Master the art of styling web pages.',
   },
   {
     title: 'HTML',
     href: '/courses/html',
-    icon: <Code className="h-5 w-5" />,
     description: 'Learn the fundamental structure of the web.',
   },
   {
     title: 'Gen AI',
     href: '/courses/gen-ai',
-    icon: <Bot className="h-5 w-5" />,
     description: 'Explore the world of generative AI.',
   },
   {
     title: 'TikTok',
     href: '/courses/tiktok',
-    icon: <Film className="h-5 w-5" />,
     description: 'Create engaging short-form video content.',
   },
   {
     title: 'Shopify',
     href: '/courses/shopify',
-    icon: <ShoppingCart className="h-5 w-5" />,
     description: 'Build your own e-commerce empire.',
   },
   {
     title: 'AI Money',
     href: '/courses/ai-money',
-    icon: <DollarSign className="h-5 w-5" />,
     description: 'Monetize your AI skills and projects.',
   },
   {
     title: 'AI Coding',
     href: '/courses/ai-coding',
-    icon: <Bot className="h-5 w-5" />,
     description: 'Leverage AI to accelerate your coding.',
   },
   {
     title: 'Deepseek',
     href: '/courses/deepseek',
-    icon: <Search className="h-5 w-5" />,
     description: 'Advanced search and data analysis.',
   },
   {
     title: 'JavaScript',
     href: '/courses/javascript',
-    icon: <Code className="h-5 w-5" />,
     description: 'Bring interactivity to your websites.',
   },
   {
     title: 'After Effects',
     href: '/courses/after-effects',
-    icon: <Film className="h-5 w-5" />,
     description: 'Create stunning motion graphics.',
   },
   {
     title: 'Premiere Pro',
     href: '/courses/premiere-pro',
-    icon: <Tv className="h-5 w-5" />,
     description: 'Professional video editing mastery.',
   },
 ];
@@ -209,7 +197,6 @@ export default function Header() {
                           key={course.title}
                           title={course.title}
                           href={course.href}
-                          icon={course.icon}
                           className="text-gray-700"
                         >
                           {course.description}

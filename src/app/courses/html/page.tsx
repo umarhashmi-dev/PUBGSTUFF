@@ -1,10 +1,18 @@
 'use client';
-import { Code } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
+
+const HtmlIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+        <path d="m18 16 4-2-4-2"/>
+        <path d="m6 8-4 2 4 2"/>
+        <path d="m14.5 4-5 16"/>
+    </svg>
+);
+
 
 const courseContent = {
   title: 'Advanced HTML5',
-  icon: Code,
+  svgIcon: <HtmlIcon />,
   description: 'Go beyond the basics and master the full power of HTML5. This course covers semantic markup, accessibility, multimedia integration, and modern APIs to build structured and meaningful web content.',
   learningObjectives: [
     'Write clean, semantic, and accessible HTML.',

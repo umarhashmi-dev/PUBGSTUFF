@@ -4,7 +4,7 @@
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Check, Clock, Award, Users, Download, Star, Palette, Code, Bot, Film, ShoppingCart, DollarSign, Search, Tv } from 'lucide-react';
+import { ArrowRight, Check, Clock, Award, Users, Download, Star } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -13,12 +13,12 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 
 interface CourseLayoutProps {
   title: string;
-  icon: LucideIcon;
   description: string;
   learningObjectives: string[];
   modules: { title: string; description: string }[];
   bannerUrl: string;
   bannerAiHint: string;
+  svgIcon: React.ReactNode;
 }
 
 export function CourseLayout({
@@ -28,6 +28,7 @@ export function CourseLayout({
   modules,
   bannerUrl,
   bannerAiHint,
+  svgIcon,
 }: CourseLayoutProps) {
   
   return (
@@ -94,17 +95,21 @@ export function CourseLayout({
                       <p className="text-sm text-gray-600">(4.9 stars from 2,150 reviews)</p>
                     </div>
                   </div>
-
-                  <TextAnimate
-                    as="h1"
-                    animation={{
-                      hidden: { opacity: 0, filter: "blur(4px)" },
-                      show: { opacity: 1, filter: "blur(0px)" },
-                    }}
-                    className="text-4xl md:text-5xl font-extrabold text-black mb-6 leading-tight"
-                  >
-                    {title}
-                  </TextAnimate>
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-16 h-16 text-black">
+                      {svgIcon}
+                    </div>
+                    <TextAnimate
+                        as="h1"
+                        animation={{
+                        hidden: { opacity: 0, filter: "blur(4px)" },
+                        show: { opacity: 1, filter: "blur(0px)" },
+                        }}
+                        className="text-4xl md:text-5xl font-extrabold text-black leading-tight"
+                    >
+                        {title}
+                    </TextAnimate>
+                  </div>
                   <p className="text-lg text-gray-700 mb-8">{description}</p>
                   
                   <div className="flex flex-col sm:flex-row gap-4">

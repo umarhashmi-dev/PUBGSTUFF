@@ -1,10 +1,22 @@
 'use client';
-import { Bot } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
+
+const AiCodingIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+        <path d="M14 6l-4 12"/>
+        <path d="M10 21H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4.5"/>
+        <path d="M20 12h-6"/>
+        <path d="m17 9 3 3-3 3"/>
+        <path d="M14 21v-4a2 2 0 1 1 4 0v4"/>
+        <path d="M14 17h4"/>
+        <path d="M22 21h-4"/>
+    </svg>
+);
+
 
 const courseContent = {
   title: 'AI-Powered Coding',
-  icon: Bot,
+  svgIcon: <AiCodingIcon />,
   description: 'Supercharge your development workflow with AI tools. Learn how to use AI code assistants, generate code from prompts, debug with AI, and automate repetitive coding tasks to become a 10x developer.',
   learningObjectives: [
     'Master AI code completion tools like GitHub Copilot.',

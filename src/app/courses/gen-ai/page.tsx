@@ -1,10 +1,21 @@
 'use client';
-import { Bot } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
+
+const GenAiIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
+        <path d="M12 8V4H8"/>
+        <rect width="16" height="12" x="4" y="8" rx="2"/>
+        <path d="M2 14h2"/>
+        <path d="M20 14h2"/>
+        <path d="M15 13v2"/>
+        <path d="M9 13v2"/>
+    </svg>
+);
+
 
 const courseContent = {
   title: 'Generative AI Fundamentals',
-  icon: Bot,
+  svgIcon: <GenAiIcon />,
   description: 'Dive into the fascinating world of Generative AI. Learn the principles behind large language models (LLMs), diffusion models for image generation, and how to build applications with them.',
   learningObjectives: [
     'Understand the core concepts of generative models.',

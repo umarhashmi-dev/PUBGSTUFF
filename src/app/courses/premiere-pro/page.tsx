@@ -1,10 +1,18 @@
 'use client';
-import { Tv } from 'lucide-react';
 import { CourseLayout } from '../CourseLayout';
+
+const PremiereProIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="w-full h-full">
+        <rect width="256" height="256" fill="none"/>
+        <path d="M96,58.5h49.4c18.5,0,32.7,1.8,42.2,5.5s16.7,9.3,21.5,16.8,7.2,16.8,7.2,28.1-2.4,19.9-7.2,27.3-12,13.1-21.5,16.8a67.3,67.3,0,0,1-21,4.5l-2.4.1H123.2v38.9H96Z" fill="currentColor"/>
+        <path d="M123.2,85.7v42.9h14.1c11.3,0,19.3-1.6,24.1-4.8s7.2-7.8,7.2-13.8-2.4-10.8-7.2-14.3-12.9-5.2-24.1-5.2Z" fill="#fff"/>
+    </svg>
+);
+
 
 const courseContent = {
   title: 'Adobe Premiere Pro Fundamentals',
-  icon: Tv,
+  svgIcon: <PremiereProIcon />,
   description: 'Learn professional video editing with Adobe Premiere Pro. This course covers the entire workflow from importing footage and creating sequences to color correction, audio mixing, and exporting.',
   learningObjectives: [
     'Master the Premiere Pro interface and editing tools.',
