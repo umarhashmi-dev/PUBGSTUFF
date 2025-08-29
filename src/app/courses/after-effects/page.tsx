@@ -3,13 +3,6 @@ import { CourseLayout } from '../CourseLayout';
 
 const courseContent = {
   title: 'Adobe After Effects for Beginners',
-  svgIcon: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" className="w-full h-full">
-        <rect width="256" height="256" fill="none"/>
-        <path d="M82.3,196.8,34,58.5h27.2l14.4,42.1a104.9,104.9,0,0,0,4.2,14.9h.5a111.4,111.4,0,0,0,4.2-14.9L99,58.5h27.2L77.9,196.8Z" fill="currentColor"/>
-        <path d="M174.3,196.8,126,58.5h27.2l14.4,42.1a104.9,104.9,0,0,0,4.2,14.9h.5a111.4,111.4,0,0,0,4.2-14.9L191,58.5h27.2L169.9,196.8Z" fill="currentColor"/>
-    </svg>
-  ),
   description: 'Bring your creative ideas to life with Adobe After Effects. This course will teach you the fundamentals of motion graphics and visual effects, from basic animations to complex compositions.',
   learningObjectives: [
     'Navigate the After Effects interface and workflow.',

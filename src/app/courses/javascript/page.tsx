@@ -3,13 +3,6 @@ import { CourseLayout } from '../CourseLayout';
 
 const courseContent = {
   title: 'JavaScript: The Advanced Concepts',
-  svgIcon: (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-        <path d="M10 17a2 2 0 1 0 4 0v-4a2 2 0 1 0-4 0v4Z"/>
-        <path d="M6 6a2 2 0 1 0-4 0v12a2 2 0 1 0 4 0V6Z"/>
-        <path d="M22 14a2 2 0 1 0-4 0v4a2 2 0 1 0 4 0v-4Z"/>
-    </svg>
-  ),
   description: 'Move beyond the fundamentals and master the core concepts of JavaScript. This course dives deep into closures, promises, async/await, prototypes, and modern ES6+ features.',
   learningObjectives: [
     'Gain a deep understanding of the JavaScript event loop.',

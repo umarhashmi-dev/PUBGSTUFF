@@ -18,7 +18,6 @@ interface CourseLayoutProps {
   modules: { title: string; description: string }[];
   bannerUrl: string;
   bannerAiHint: string;
-  svgIcon: React.ReactNode;
 }
 
 export function CourseLayout({
@@ -28,7 +27,6 @@ export function CourseLayout({
   modules,
   bannerUrl,
   bannerAiHint,
-  svgIcon,
 }: CourseLayoutProps) {
   
   return (
@@ -67,9 +65,16 @@ export function CourseLayout({
                      </Button>
                     <hr className="border-gray-200 my-6" />
                     <div className="text-center">
-                        <h3 className="text-3xl font-extrabold">
+                        <TextAnimate
+                            as="h3"
+                            animation={{
+                                hidden: { opacity: 0, filter: "blur(4px)" },
+                                show: { opacity: 1, filter: "blur(0px)" },
+                            }}
+                            className="text-3xl font-extrabold"
+                            >
                             100% FREE
-                        </h3>
+                        </TextAnimate>
                       <p className="text-gray-600 text-sm mt-1">No hidden costs • Lifetime access</p>
                     </div>
                   </div>
@@ -95,21 +100,16 @@ export function CourseLayout({
                       <p className="text-sm text-gray-600">(4.9 stars from 2,150 reviews)</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 text-black">
-                      {svgIcon}
-                    </div>
-                    <TextAnimate
-                        as="h1"
-                        animation={{
-                        hidden: { opacity: 0, filter: "blur(4px)" },
-                        show: { opacity: 1, filter: "blur(0px)" },
-                        }}
-                        className="text-4xl md:text-5xl font-extrabold text-black leading-tight"
-                    >
-                        {title}
-                    </TextAnimate>
-                  </div>
+                  <TextAnimate
+                    as="h1"
+                    animation={{
+                    hidden: { opacity: 0, filter: "blur(4px)" },
+                    show: { opacity: 1, filter: "blur(0px)" },
+                    }}
+                    className="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-6"
+                >
+                    {title}
+                </TextAnimate>
                   <p className="text-lg text-gray-700 mb-8">{description}</p>
                   
                   <div className="flex flex-col sm:flex-row gap-4">
