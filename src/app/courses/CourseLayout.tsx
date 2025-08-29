@@ -251,27 +251,25 @@ export function CourseLayout({
             </div>
           </div>
           
-          {/* Related Courses Section */}
+          {/* CTA Section */}
           <div className="mt-16 md:mt-24">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-extrabold text-black">Related Courses</h2>
-              <p className="mt-4 text-lg text-gray-700">
-                Continue your learning journey with our other courses.
-              </p>
-            </div>
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {relatedCourses.map((course) => (
-                <Link key={course.href} href={course.href}>
-                  <Card className="p-6 flex flex-col items-center text-center bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-2">
-                    <div className="p-4 bg-gray-100 rounded-full mb-4 text-black">
-                      {course.icon}
-                    </div>
-                    <h3 className="text-lg font-bold text-black">{course.title}</h3>
-                  </Card>
-                </Link>
-              ))}
+            <div className="container text-center">
+              <div className="bg-black text-white p-8 md:p-12 rounded-xl shadow-lg">
+                <h2 className="text-2xl md:text-4xl font-extrabold">
+                  Witness The Magic With 50K+ People Like You!
+                </h2>
+                <p className="mt-4 text-base md:text-lg text-white/80 max-w-2xl mx-auto">
+                  Join our community of satisfied gamers and digital enthusiasts. Get instant access to the best products and deals.
+                </p>
+                <div className="mt-8">
+                  <Button asChild size="lg" variant="secondary" className="text-base md:text-lg hover-shimmer-button bg-white text-black hover:bg-gray-200">
+                    <Link href="/products">Get Started Now</Link>
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
+
         </div>
       </main>
       <Footer />
