@@ -145,26 +145,20 @@ export function CourseLayout({
                 </div>
               </div>
 
-               <section className="mt-16 md:mt-24 py-16 bg-gray-50 rounded-2xl">
-                <div className="container mx-auto px-6 md:px-8">
-                    <div className="max-w-3xl mx-auto text-center mb-12">
-                        <h2 className="text-3xl font-extrabold text-black">What you'll learn</h2>
-                        <p className="mt-4 text-lg text-gray-700">
-                            By the end of this course, you will be able to confidently...
-                        </p>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 max-w-4xl mx-auto">
-                        {learningObjectives.map((objective, index) => (
-                        <div key={index} className="flex items-start gap-4 p-4 rounded-lg hover:bg-white transition-colors">
-                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-black text-white flex items-center justify-center mt-1">
-                                <Check className="h-5 w-5" />
-                            </div>
-                            <span className="text-gray-800 text-lg">{objective}</span>
-                        </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+              {/* What you'll learn Section */}
+              <div className="mt-16 md:mt-24">
+                  <div className="border border-gray-200 rounded-lg p-6 md:p-8">
+                      <h2 className="text-3xl font-extrabold text-black mb-6">What you'll learn</h2>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+                          {learningObjectives.map((objective, index) => (
+                          <div key={index} className="flex items-start gap-4">
+                              <Check className="h-6 w-6 text-black mt-1 shrink-0" />
+                              <span className="text-gray-700">{objective}</span>
+                          </div>
+                          ))}
+                      </div>
+                  </div>
+              </div>
 
               {/* Certificate Section */}
               <div className="mt-16 md:mt-24">
