@@ -183,13 +183,13 @@ export default function Header() {
             <NavigationMenuList>
                <NavigationMenuItem>
                   <NavigationMenuLink asChild>
-                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black focus:bg-gray-100")}>
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black")}>
                       Home
                     </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 data-[active]:text-black">Courses</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
                       {courseLinks.map((course) => (
@@ -206,7 +206,7 @@ export default function Header() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 data-[active]:text-black">Pages</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">Pages</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
                       <div className="relative">
@@ -418,5 +418,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
-
-    
