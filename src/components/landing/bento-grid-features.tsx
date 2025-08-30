@@ -117,6 +117,15 @@ const SkeletonOne = () => {
 };
 const SkeletonTwo = () => {
   const isMobile = useIsMobile();
+  const [randomWidths, setRandomWidths] = React.useState<string[]>([]);
+
+  React.useEffect(() => {
+    const widths = Array(6)
+      .fill(0)
+      .map(() => Math.random() * (100 - 40) + 40 + "%");
+    setRandomWidths(widths);
+  }, []);
+
   const variants = {
     initial: {
       width: 0,
@@ -148,7 +157,7 @@ const SkeletonTwo = () => {
           key={"skelenton-two" + i}
           variants={variants}
           style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
+            maxWidth: randomWidths[i] || "100%",
           }}
           className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-neutral-100 dark:bg-black w-full h-4"
         ></motion.div>
