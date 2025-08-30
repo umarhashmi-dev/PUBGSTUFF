@@ -189,7 +189,7 @@ export default function Header() {
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 focus:bg-gray-100">Courses</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[600px] gap-3 p-4 md:grid-cols-2 lg:w-[800px] lg:grid-cols-2 bg-white">
                       {courseLinks.map((course) => (
@@ -206,7 +206,7 @@ export default function Header() {
                   </NavigationMenuContent>
               </NavigationMenuItem>
                <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 focus:bg-gray-100">Pages</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100">Pages</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid w-[600px] grid-cols-[1fr_2fr] gap-4 p-4 bg-white">
                       <div className="relative">
@@ -274,7 +274,7 @@ export default function Header() {
               <NavigationMenuList>
                 {user && (
                   <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100 focus:bg-gray-100">My Account</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100">My Account</NavigationMenuTrigger>
                   <NavigationMenuContent>
                      <ul className="grid w-auto gap-3 p-4 bg-white">
                       {accountLinks.map((component) => (
