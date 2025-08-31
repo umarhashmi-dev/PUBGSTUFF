@@ -64,12 +64,6 @@ const stats = [
     { value: "50+", label: "Happy Clients", icon: <Users className="w-10 h-10 text-primary" /> },
 ];
 
-const teamMembers = [
-    { name: "John Doe", role: "Lead Developer", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop", aiHint: "male portrait" },
-    { name: "Jane Smith", role: "UI/UX Designer", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250&auto=format&fit=crop", aiHint: "female portrait" },
-    { name: "Sam Wilson", role: "DevOps Engineer", image: "https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=250&auto=format&fit=crop", aiHint: "man face" },
-];
-
 export default function AboutPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
@@ -112,7 +106,7 @@ export default function AboutPage() {
         </section>
 
         {/* Image Showcase */}
-         <section className="pb-16 md:pb-24">
+         <section className="pb-16 md:pb-24 -mt-12">
             <div className="container px-4">
                 <motion.div
                     className="relative"
