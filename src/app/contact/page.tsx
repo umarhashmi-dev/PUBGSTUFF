@@ -149,9 +149,6 @@ export default function ContactPage() {
                                 <a href="https://wa.me/923355448505" target="_blank" rel="noopener noreferrer">+92 335 5448505</a>
                             </Button>
                             <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-sm bg-white">
-                                <a href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer">+44 7532 830145</a>
-                            </Button>
-                            <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-sm bg-white">
                                 <a href="https://wa.me/923021550385" target="_blank" rel="noopener noreferrer">+92 302 1550385</a>
                             </Button>
                         </div>
