@@ -23,9 +23,9 @@ const vnhaxProducts = [
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
+            "Best Recoil Control",
             "ESP, Skins & Aimbot",
-            "Integrated Emulator Bypass",
-            "24/7 Dedicated Support",
+            "Integrated emulator bypass",
         ],
     },
     {
@@ -39,9 +39,9 @@ const vnhaxProducts = [
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
+            "Best Recoil Control",
             "ESP, Skins & Aimbot",
-            "Integrated Emulator Bypass",
-            "24/7 Dedicated Support",
+            "Integrated emulator bypass",
         ],
     },
     {
@@ -55,9 +55,9 @@ const vnhaxProducts = [
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
+            "Best Recoil Control",
             "ESP, Skins & Aimbot",
-            "Integrated Emulator Bypass",
-            "24/7 Dedicated Support",
+            "Integrated emulator bypass",
         ],
     },
     {
@@ -71,9 +71,9 @@ const vnhaxProducts = [
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
+            "Best Recoil Control",
             "ESP, Skins & Aimbot",
-            "Integrated Emulator Bypass",
-            "24/7 Dedicated Support",
+            "Integrated emulator bypass",
         ],
     }
 ];
