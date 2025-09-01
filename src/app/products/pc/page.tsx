@@ -100,8 +100,8 @@ const anubisProducts = [
         price: "40",
         priceSuffix: "/ Month",
         description: "Boost Your PUBG Rank | Safe & Secure Gameplay & Rank",
-        badge: null,
-        buttonVariant: "default",
+        badge: "POPULAR!",
+        buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
             "100% Safe & Secure",
@@ -214,8 +214,16 @@ export default function PcProductsPage() {
                         "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                         product.badge && "relative"
                         )}>
+                            {product.badge && (
+                            <div className="absolute top-0 right-6 -translate-y-1/2 z-10">
+                                <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-lg">
+                                    <Shield className="h-4 w-4" />
+                                    {product.badge}
+                                </div>
+                            </div>
+                            )}
                         <div className="flex flex-col flex-grow">
-                        <CardHeader className={cn("p-6 rounded-t-2xl", 'bg-card')}>
+                        <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <span className="text-4xl font-extrabold tracking-tight">${product.price}</span>
@@ -234,7 +242,7 @@ export default function PcProductsPage() {
                             </ul>
                         </CardContent>
                         <CardFooter className="p-6 mt-auto">
-                           <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", 'bg-primary text-primary-foreground')}>
+                           <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
                                 <Link href="#">
                                     <span>{product.buttonText}</span>
                                 </Link>
