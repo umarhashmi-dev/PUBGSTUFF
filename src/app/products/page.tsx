@@ -148,14 +148,14 @@ export default function ProductsPage() {
                 {categoryCards.map((card, i) => (
                     <PinContainer key={i} title={card.href} href={card.href}>
                         <div className="flex basis-full flex-col p-4 tracking-tight text-card-foreground sm:basis-1/2 w-[20rem] h-[20rem] ">
-                            <div className="flex justify-center items-center h-24 text-white">
+                            <div className="flex justify-center items-center h-24 text-primary">
                                 {React.cloneElement(card.icon, {className: "w-8 h-8"})}
                             </div>
-                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center text-white">
+                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center text-card-foreground">
                                 {card.title}
                             </h3>
                             <div className="text-base !m-0 !p-0 font-normal text-center">
-                                <span className="text-slate-400">
+                                <span className="text-muted-foreground">
                                     {card.description}
                                 </span>
                             </div>
