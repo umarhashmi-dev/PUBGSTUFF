@@ -46,7 +46,7 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="relative overflow-hidden rounded-3xl bg-white shadow-lg border border-gray-100"
+                className="relative overflow-hidden rounded-3xl bg-white shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]"
             >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-white opacity-60"></div>
                  <div className="absolute inset-0 bg-[url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png')] bg-repeat opacity-20"></div>
@@ -71,7 +71,7 @@ export default function AboutPage() {
                         </div>
 
                         <div className="relative">
-                           <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-gray-200">
+                           <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                                 <div className="flex items-center mb-4">
                                      <div className="flex -space-x-2">
                                         {teamMembers.map((member) => (
