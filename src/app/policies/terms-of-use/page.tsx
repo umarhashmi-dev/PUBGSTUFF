@@ -11,19 +11,21 @@ export default function TermsOfUsePage() {
       <main className="flex-1 bg-white text-black pt-24">
         <div className="container mx-auto px-4 py-8 md:py-16 lg:py-24">
           <div className="mx-auto max-w-4xl">
-            <TextAnimate
-              as="h1"
-              animation={{
-                hidden: { opacity: 0, filter: "blur(4px)" },
-                show: { opacity: 1, filter: "blur(0px)" },
-              }}
-              className="text-3xl font-bold tracking-tight text-center sm:text-4xl lg:text-5xl"
-            >
-              Terms of Use
-            </TextAnimate>
-            <p className="mt-4 text-center text-sm text-gray-500 md:text-base">
-              Last updated: Friday, 21 February 2025 in I-9, Islamabad
-            </p>
+            <div className="text-center mb-8 md:mb-12">
+              <TextAnimate
+                as="h1"
+                animation={{
+                  hidden: { opacity: 0, filter: "blur(4px)" },
+                  show: { opacity: 1, filter: "blur(0px)" },
+                }}
+                className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+              >
+                Terms of Use
+              </TextAnimate>
+              <p className="mt-4 text-sm text-gray-500 md:text-base">
+                Last updated: Friday, 21 February 2025 in I-9, Islamabad
+              </p>
+            </div>
 
             <div className="mt-8 space-y-6 md:mt-12 md:space-y-8">
               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
@@ -52,6 +54,19 @@ export default function TermsOfUsePage() {
                 <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
                   <li>Notify us immediately of any unauthorized use of your account.</li>
                   <li>Take responsibility for all activities that occur under your account.</li>
+                </ul>
+              </div>
+
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h2 className="text-xl font-bold md:text-2xl">Prohibited Activities</h2>
+                <p className="mt-2 text-gray-700 md:mt-4">
+                  You agree not to engage in any of the following prohibited activities:
+                </p>
+                 <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
+                  <li>Using the service for any unlawful purpose or in violation of any applicable laws or regulations.</li>
+                  <li>Attempting to gain unauthorized access to the service, user accounts, or computer systems or networks connected to the service.</li>
+                  <li>Interfering with the operation of the service or any user’s enjoyment of the service.</li>
+                  <li>Impersonating any person or entity or misrepresenting your affiliation with any person or entity.</li>
                 </ul>
               </div>
 
