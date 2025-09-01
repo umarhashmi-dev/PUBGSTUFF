@@ -76,19 +76,19 @@ export default function ContactPage() {
                                     <p className="mt-1 text-gray-500">Our team is here to help you with any questions.</p>
 
                                     <div className="mt-6 space-y-4">
-                                        <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
+                                        <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-sm sm:text-base">
                                             <a href="mailto:contact@pubgstuff.store">
                                                 <Mail className="mr-3 h-5 w-5" />
                                                 contact@pubgstuff.store
                                             </a>
                                         </Button>
-                                         <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
+                                         <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-sm sm:text-base">
                                             <a href="https://wa.me/923355448505">
                                                 <Phone className="mr-3 h-5 w-5" />
                                                 +92 335 5448505
                                             </a>
                                         </Button>
-                                         <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
+                                         <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-sm sm:text-base">
                                             <a href="https://wa.me/923021550385">
                                                 <Phone className="mr-3 h-5 w-5" />
                                                 +92 302 1550385
