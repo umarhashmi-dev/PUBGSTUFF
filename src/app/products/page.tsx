@@ -92,19 +92,21 @@ export default function ProductsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
-                            OUR DIGITAL PRODUCTS
-                        </span>
-                        <TextAnimate
-                            as="h1"
-                            animation={{
-                            hidden: { opacity: 0, filter: "blur(4px)" },
-                            show: { opacity: 1, filter: "blur(0px)" },
-                            }}
-                            className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
-                        >
-                            Vnhax VIP - Bypass
-                        </TextAnimate>
+                        <div className="flex flex-col items-center text-center">
+                            <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
+                                OUR DIGITAL PRODUCTS
+                            </span>
+                            <TextAnimate
+                                as="h1"
+                                animation={{
+                                hidden: { opacity: 0, filter: "blur(4px)" },
+                                show: { opacity: 1, filter: "blur(0px)" },
+                                }}
+                                className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
+                            >
+                                Vnhax VIP - Bypass
+                            </TextAnimate>
+                        </div>
                         <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                             VNHAX VIP provides exclusive features for advanced gameplay, offering top-tier security, enhanced performance, and priority support for a premium gaming experience.
                         </p>
