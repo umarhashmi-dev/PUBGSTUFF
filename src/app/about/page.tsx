@@ -5,32 +5,31 @@ import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LayoutDashboard, Brush, Server, Zap, HeartHandshake, ArrowRight, Star, Briefcase, Users, CheckCircle } from "lucide-react";
+import { LayoutDashboard, Brush, Server, Zap, ArrowRight, Star, Briefcase, Users, CheckCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { TextAnimate } from "@/components/magicui/text-animate";
 
 const features = [
     {
-        icon: <LayoutDashboard className="w-8 h-8 text-primary" />,
+        icon: <LayoutDashboard className="w-6 h-6 text-primary" />,
         title: "Web Development",
-        description: "We build fast, responsive, and scalable websites tailored to your business needs."
+        description: "Building fast, responsive, and scalable websites tailored to your needs."
     },
     {
-        icon: <Brush className="w-8 h-8 text-primary" />,
-        title: "UI/UX & Graphic Design",
-        description: "Our team crafts intuitive and beautiful user interfaces that elevate your brand."
+        icon: <Brush className="w-6 h-6 text-primary" />,
+        title: "UI/UX Design",
+        description: "Crafting intuitive and beautiful user interfaces that elevate your brand."
     },
     {
-        icon: <Server className="w-8 h-8 text-primary" />,
+        icon: <Server className="w-6 h-6 text-primary" />,
         title: "Reliable RDP Services",
-        description: "Secure and high-performance RDP services for reliable remote access."
+        description: "Secure and high-performance remote access for professionals."
     },
     {
-        icon: <Zap className="w-8 h-8 text-primary" />,
+        icon: <Zap className="w-6 h-6 text-primary" />,
         title: "Driver Booster",
-        description: "Enhance your system's performance with our automatic driver update solutions."
+        description: "Enhancing system performance with automatic driver updates."
     },
 ];
 
@@ -59,148 +58,119 @@ const testimonials = [
 ];
 
 const stats = [
-    { value: "150+", label: "Projects Completed", icon: <Briefcase className="w-10 h-10 text-primary" /> },
-    { value: "98%", label: "Client Satisfaction", icon: <Star className="w-10 h-10 text-primary" /> },
-    { value: "50+", label: "Happy Clients", icon: <Users className="w-10 h-10 text-primary" /> },
+    { value: "150+", label: "Projects Completed" },
+    { value: "98%", label: "Client Satisfaction" },
+    { value: "50+", label: "Happy Clients" },
+    { value: "10+", label: "Years of Experience" },
 ];
+
 
 export default function AboutPage() {
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-background">
+    <div className="flex min-h-[100dvh] flex-col bg-secondary/30">
       <Header />
-      <main className="flex-1 overflow-x-hidden">
-
-        {/* Hero Section */}
-        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-b from-secondary/30 to-background">
-            <div className="container px-4">
-                <div className="max-w-4xl mx-auto text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
-                            ABOUT US
-                        </span>
-                        <TextAnimate
-                            as="h1"
-                            animation={{
-                            hidden: { opacity: 0, filter: "blur(4px)" },
-                            show: { opacity: 1, filter: "blur(0px)" },
-                            }}
-                            className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
-                        >
-                            We're Building the Future of Digital Services.
-                        </TextAnimate>
-                        <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
-                            At PubgStuff, we are a passionate team of developers, designers, and digital experts dedicated to providing top-tier services that drive growth and innovation.
-                        </p>
-                        <div className="mt-10">
-                            <Button size="lg" asChild className="hover-shimmer-button">
-                                <Link href="/contact">Get in Touch <ArrowRight className="ml-2 h-5 w-5" /></Link>
-                            </Button>
-                        </div>
-                    </motion.div>
+      <main className="flex-1">
+        <div className="container py-24 sm:py-32">
+            {/* Hero Section */}
+            <motion.section 
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+            >
+                <div className="text-center lg:text-left">
+                    <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
+                        WHO WE ARE
+                    </span>
+                    <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
+                        Pioneering Digital Excellence
+                    </h1>
+                    <p className="mt-6 text-lg max-w-xl mx-auto lg:mx-0 leading-8 text-muted-foreground">
+                        We are a passionate team of developers, designers, and strategists dedicated to delivering high-quality digital solutions that drive growth and innovation for our clients.
+                    </p>
+                    <div className="mt-10">
+                        <Button size="lg" asChild className="hover-shimmer-button">
+                            <Link href="/contact">Work With Us <ArrowRight className="ml-2 h-5 w-5" /></Link>
+                        </Button>
+                    </div>
                 </div>
-            </div>
-        </section>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-background">
+                    <Image 
+                        src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
+                        alt="Our Team Collaborating"
+                        fill
+                        className="object-cover"
+                        data-ai-hint="team collaboration office"
+                    />
+                </div>
+            </motion.section>
 
-        {/* Image Showcase */}
-         <section className="pb-16 md:pb-24 -mt-12">
-            <div className="container px-4">
+            {/* Stats Section */}
+            <motion.section 
+                className="mt-24"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+            >
+                <Card className="bg-card/80 backdrop-blur-sm border-border/20 shadow-lg">
+                    <CardContent className="p-8">
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                            {stats.map((stat, index) => (
+                                <div key={index}>
+                                    <h3 className="text-4xl font-bold font-headline text-primary">{stat.value}</h3>
+                                    <p className="mt-1 text-muted-foreground">{stat.label}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </CardContent>
+                </Card>
+            </motion.section>
+
+             {/* Mission & Vision Section */}
+            <section className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <motion.div
-                    className="relative"
-                    initial={{ opacity: 0, scale: 0.95, y: 50 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <div className="aspect-video relative rounded-2xl overflow-hidden shadow-2xl border-4 border-background">
-                         <Image 
-                            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
-                            alt="Our Team Collaborating"
+                    <div className="relative aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl">
+                        <Image 
+                            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop"
+                            alt="Team planning"
                             fill
                             className="object-cover"
-                            data-ai-hint="team collaboration office"
+                            data-ai-hint="team planning meeting"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                     </div>
                 </motion.div>
-            </div>
-        </section>
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-center lg:text-left"
+                >
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Vision</h2>
+                    <p className="mt-6 text-lg text-muted-foreground">To empower businesses and individuals with innovative and reliable digital solutions that drive success and foster growth in a connected world.</p>
+                    <ul className="mt-6 space-y-4 inline-block text-left">
+                        <li className="flex items-start gap-3">
+                            <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                            <span className="text-muted-foreground">Commitment to quality and technological excellence.</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+                            <span className="text-muted-foreground">Focus on customer satisfaction and long-term partnerships.</span>
+                        </li>
+                    </ul>
+                </motion.div>
+            </section>
 
-        {/* Stats Section */}
-        <section className="py-16 md:py-24 bg-secondary/30">
-            <div className="container">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {stats.map((stat, index) => (
-                         <motion.div 
-                            key={index} 
-                            className="bg-card p-8 rounded-xl shadow-lg flex items-center gap-6"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: index * 0.15 }}
-                            viewport={{ once: true }}
-                        >
-                            <div className="p-4 bg-primary/10 rounded-full">{stat.icon}</div>
-                            <div>
-                                <h3 className="text-4xl font-bold font-headline text-foreground">{stat.value}</h3>
-                                <p className="mt-1 text-muted-foreground">{stat.label}</p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
-        
-        {/* Mission & Vision Section */}
-        <section className="py-16 md:py-24">
-            <div className="container">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Mission & Vision</h2>
-                        <p className="mt-6 text-lg text-muted-foreground">To empower businesses and individuals with innovative and reliable digital solutions that drive success and foster growth in a connected world.</p>
-                        <ul className="mt-6 space-y-4">
-                            <li className="flex items-start gap-3">
-                                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                                <span className="text-muted-foreground">Commitment to quality and technological excellence.</span>
-                            </li>
-                            <li className="flex items-start gap-3">
-                                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                                <span className="text-muted-foreground">Focus on customer satisfaction and long-term partnerships.</span>
-                            </li>
-                        </ul>
-                    </motion.div>
-                    <motion.div
-                         initial={{ opacity: 0, scale: 0.9 }}
-                         whileInView={{ opacity: 1, scale: 1 }}
-                         transition={{ duration: 0.8 }}
-                         viewport={{ once: true }}
-                    >
-                        <div className="relative aspect-square max-w-md mx-auto rounded-2xl overflow-hidden shadow-xl">
-                            <Image 
-                                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop"
-                                alt="Team planning"
-                                fill
-                                className="object-cover"
-                                data-ai-hint="team planning meeting"
-                            />
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
-        </section>
-
-        {/* Services Section */}
-        <section id="services" className="py-16 md:py-24 bg-secondary/30">
-            <div className="container">
+             {/* Services Section */}
+            <section className="mt-24">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">What We Do Best</h2>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Our Core Services</h2>
                     <p className="mt-4 text-lg text-muted-foreground">We offer a wide range of services to meet your digital needs.</p>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
@@ -212,29 +182,27 @@ export default function AboutPage() {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         viewport={{ once: true }}
                     >
-                        <Card className="bg-card hover:bg-card/90 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl border-border/10 text-center h-full flex flex-col">
-                            <CardHeader className="p-6 items-center">
-                                <div className="p-4 bg-primary/10 rounded-full w-fit mb-4">
+                        <Card className="bg-card hover:bg-card/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl border-border/10 h-full flex flex-col">
+                            <CardHeader className="p-6 flex-row items-center gap-4">
+                                <div className="p-3 bg-primary/10 rounded-lg w-fit">
                                     {feature.icon}
                                 </div>
-                                <CardTitle className="text-xl font-headline">{feature.title}</CardTitle>
+                                <CardTitle className="text-lg font-headline">{feature.title}</CardTitle>
                             </CardHeader>
                             <CardContent className="p-6 pt-0 flex-1">
-                                <p className="text-muted-foreground">{feature.description}</p>
+                                <p className="text-muted-foreground text-sm">{feature.description}</p>
                             </CardContent>
                         </Card>
                     </motion.div>
                 ))}
                 </div>
-            </div>
-        </section>
+            </section>
 
-        {/* Testimonials Section */}
-        <section className="py-16 md:py-24">
-            <div className="container">
+            {/* Testimonials Section */}
+            <section className="mt-24">
                 <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">Trusted by Creatives & Businesses</h2>
-                    <p className="mt-4 text-lg text-muted-foreground">Here's what our happy clients have to say about their experience.</p>
+                    <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl font-headline">What Our Clients Say</h2>
+                    <p className="mt-4 text-lg text-muted-foreground">Real stories from people we've helped succeed.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {testimonials.map((testimonial, index) => (
@@ -245,7 +213,7 @@ export default function AboutPage() {
                           transition={{ duration: 0.5, delay: index * 0.1 }}
                           viewport={{ once: true }}
                         >
-                            <Card className="bg-secondary/30 flex flex-col p-6 h-full border-border/10 shadow-sm">
+                            <Card className="bg-card flex flex-col p-6 h-full border-border/10 shadow-sm">
                                 <CardContent className="p-0 flex-1">
                                     <p className="text-muted-foreground italic">"{testimonial.review}"</p>
                                 </CardContent>
@@ -263,32 +231,25 @@ export default function AboutPage() {
                         </motion.div>
                     ))}
                 </div>
-            </div>
-        </section>
+            </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-24">
-            <div className="container">
-                <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12 text-center overflow-hidden relative">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0%,_rgba(255,255,255,0)_70%)]"></div>
-                    <div className="relative">
-                        <HeartHandshake className="mx-auto h-12 w-12 mb-6" />
-                        <h2 className="text-3xl font-bold font-headline">Ready to Start Your Project?</h2>
-                        <p className="mt-4 max-w-2xl mx-auto text-lg text-primary-foreground/80">
-                            Let's collaborate to bring your ideas to life. Reach out today for a free consultation and let's build something amazing together.
-                        </p>
-                        <div className="mt-8">
-                             <Button asChild size="lg" variant="secondary" className="hover-shimmer-button text-base">
-                                 <Link href="/contact">
-                                    Contact Us <ArrowRight className="ml-2 h-5 w-5" />
-                                 </Link>
-                             </Button>
-                        </div>
+            {/* CTA Section */}
+            <section className="mt-24">
+                <div className="bg-card text-center rounded-2xl p-8 md:p-12 border shadow-lg">
+                    <h2 className="text-3xl font-bold font-headline text-foreground">Ready to Build Your Future?</h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                        Let's collaborate to bring your ideas to life. Reach out today for a free consultation and let's create something amazing together.
+                    </p>
+                    <div className="mt-8">
+                         <Button asChild size="lg" className="hover-shimmer-button text-base">
+                             <Link href="/contact">
+                                Get a Free Quote <ArrowRight className="ml-2 h-5 w-5" />
+                             </Link>
+                         </Button>
                     </div>
                 </div>
-            </div>
-        </section>
-
+            </section>
+        </div>
       </main>
       <Footer />
     </div>
