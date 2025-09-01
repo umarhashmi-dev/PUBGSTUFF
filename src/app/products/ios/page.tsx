@@ -17,7 +17,6 @@ const vnhaxProducts = [
         name: "Vnhax iOS Key",
         price: "5",
         priceSuffix: "/ Day",
-        description: "Premium keys with safe and secure gameplay features for iOS users.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -32,7 +31,6 @@ const vnhaxProducts = [
         name: "Vnhax iOS Key",
         price: "15",
         priceSuffix: "/ Week",
-        description: "Premium keys with safe and secure gameplay features for iOS users.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -48,7 +46,6 @@ const vnhaxProducts = [
         price: "30",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
-        description: "Premium keys with safe and secure gameplay features for iOS users.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -66,7 +63,6 @@ const starProducts = [
         name: "Star iOS Key",
         price: "5",
         priceSuffix: "/ Day",
-        description: "Enhance your gameplay with reliable ESP and aimbot solutions.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -81,7 +77,6 @@ const starProducts = [
         name: "Star iOS Key",
         price: "15",
         priceSuffix: "/ Week",
-        description: "Enhance your gameplay with reliable ESP and aimbot solutions.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -97,7 +92,6 @@ const starProducts = [
         price: "30",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
-        description: "Enhance your gameplay with reliable ESP and aimbot solutions.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -115,7 +109,6 @@ const tornadoProducts = [
         name: "Tornado iOS Key",
         price: "17",
         priceSuffix: "/ Week",
-        description: "Advanced silent aimbot and FOV controls designed for maximum performance.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -132,7 +125,6 @@ const tornadoProducts = [
         price: "35",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
-        description: "Advanced silent aimbot and FOV controls designed for maximum performance.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -186,6 +178,9 @@ export default function IosProductsPage() {
         <section id="vnhax-products" className="container pb-16 md:pb-24 -mt-12">
             <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl font-headline">Vnhax iOS</h2>
+                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                    Premium keys with safe and secure gameplay features for iOS users.
+                </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
                 {vnhaxProducts.map((product) => (
@@ -206,7 +201,6 @@ export default function IosProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
-                             <p className="text-sm text-muted-foreground pt-2 h-12">{product.description}</p>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
                                     <span className="group-hover:hidden">${product.price}</span>
@@ -244,6 +238,9 @@ export default function IosProductsPage() {
         <section id="star-products" className="container pb-16 md:pb-24">
              <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl font-headline">Star iOS</h2>
+                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                    Enhance your gameplay with reliable ESP and aimbot solutions.
+                </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
                 {starProducts.map((product) => (
@@ -263,7 +260,6 @@ export default function IosProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
-                             <p className="text-sm text-muted-foreground pt-2 h-12">{product.description}</p>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
                                     <span className="group-hover:hidden">${product.price}</span>
@@ -301,6 +297,9 @@ export default function IosProductsPage() {
         <section id="tornado-products" className="container pb-16 md:pb-24">
              <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl font-headline">Tornado iOS</h2>
+                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                    Advanced silent aimbot and FOV controls designed for maximum performance.
+                </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
                 {tornadoProducts.map((product) => (
@@ -320,7 +319,6 @@ export default function IosProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
-                             <p className="text-sm text-muted-foreground pt-2 h-12">{product.description}</p>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
                                     <span className="group-hover:hidden">${product.price}</span>

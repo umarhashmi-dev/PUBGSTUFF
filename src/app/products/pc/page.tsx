@@ -17,7 +17,6 @@ const vnhaxProducts = [
         name: "Vnhax Frozen Key",
         price: "5",
         priceSuffix: "/ Day",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -33,7 +32,6 @@ const vnhaxProducts = [
         name: "Vnhax Week Key",
         price: "15",
         priceSuffix: "/ Week",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -49,7 +47,6 @@ const vnhaxProducts = [
         name: "Vnhax Month Key",
         price: "30",
         priceSuffix: "/ Month",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
@@ -65,7 +62,6 @@ const vnhaxProducts = [
         name: "Vnhax Admin Key",
         price: "190",
         priceSuffix: "/ Lifetime",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         badge: "10% Discount",
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -84,7 +80,6 @@ const redeyeProducts = [
         name: "Redeye Frozen Key",
         price: "5",
         priceSuffix: "/ Day",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -100,7 +95,6 @@ const redeyeProducts = [
         name: "Redeye Week Key",
         price: "15",
         priceSuffix: "/ Week",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -116,7 +110,6 @@ const redeyeProducts = [
         name: "Redeye Month Key",
         price: "30",
         priceSuffix: "/ Month",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
@@ -135,7 +128,6 @@ const anubisProducts = [
         name: "Anubis Week Key",
         price: "20",
         priceSuffix: "/ Week",
-        description: "Boost Your PUBG Rank | Safe & Secure Gameplay & Rank",
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -152,7 +144,6 @@ const anubisProducts = [
         name: "Anubis Month Key",
         price: "40",
         priceSuffix: "/ Month",
-        description: "Boost Your PUBG Rank | Safe & Secure Gameplay & Rank",
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
@@ -204,8 +195,14 @@ export default function PcProductsPage() {
             </div>
         </section>
 
-        <section id="products-grid" className="container pb-16 md:pb-24 -mt-12">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch max-w-7xl mx-auto">
+        <section id="vnhax-products" className="container pb-16 md:pb-24 -mt-12">
+            <div className="max-w-4xl mx-auto text-center mb-12">
+                <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl font-headline">Vnhax PC</h2>
+                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                    Boost PUBG Gameplay | Safe & Secure for Top Ranks
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch max-w-7xl mx-auto">
                 {vnhaxProducts.map((product) => (
                     <div key={product.name} className="glowing-card">
                     <Card className={cn(
@@ -233,7 +230,6 @@ export default function PcProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
-                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
@@ -293,7 +289,6 @@ export default function PcProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
-                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
@@ -353,7 +348,6 @@ export default function PcProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
-                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
@@ -383,6 +377,3 @@ export default function PcProductsPage() {
     </div>
   );
 }
-
-    
-    
