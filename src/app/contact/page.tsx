@@ -4,7 +4,7 @@ import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageSquare, Mail, MapPin, Phone, ArrowRight, User, Map } from "lucide-react";
+import { MessageSquare, Mail, MapPin, Phone, ArrowRight, User, Map, Check, Star } from "lucide-react";
 import Faq from "@/components/landing/faq";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { motion } from "framer-motion";
@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 
 export default function ContactPage() {
@@ -51,24 +52,43 @@ export default function ContactPage() {
 
                             <div className="relative">
                                 <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                                    <h3 className="text-2xl font-bold text-gray-800 font-headline mb-4">Send us a message</h3>
-                                    <form className="space-y-4">
-                                        <div>
-                                            <Label htmlFor="name" className="text-gray-700">Full Name</Label>
-                                            <Input id="name" type="text" placeholder="John Doe" className="mt-1 bg-white/50" />
+                                    <div className="flex items-center mb-4">
+                                        <div className="flex -space-x-2">
+                                            <Avatar className="h-10 w-10 border-2 border-white">
+                                                <AvatarImage src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&q=80" alt="Alex Rivera" data-ai-hint="man portrait" />
+                                                <AvatarFallback>AR</AvatarFallback>
+                                            </Avatar>
+                                             <Avatar className="h-10 w-10 border-2 border-white">
+                                                <AvatarImage src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&q=80" alt="Samantha Bee" data-ai-hint="woman portrait" />
+                                                <AvatarFallback>SB</AvatarFallback>
+                                            </Avatar>
+                                             <Avatar className="h-10 w-10 border-2 border-white">
+                                                <AvatarImage src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&q=80" alt="Mike Thompson" data-ai-hint="person portrait" />
+                                                <AvatarFallback>MT</AvatarFallback>
+                                            </Avatar>
                                         </div>
-                                        <div>
-                                            <Label htmlFor="email" className="text-gray-700">Email Address</Label>
-                                            <Input id="email" type="email" placeholder="you@example.com" className="mt-1 bg-white/50" />
+                                        <div className="ml-auto flex items-center gap-2">
+                                            <div className="h-2.5 w-2.5 bg-green-400 rounded-full animate-pulse"></div>
+                                            <p className="text-sm font-medium text-gray-700">We reply within minutes</p>
                                         </div>
-                                        <div>
-                                            <Label htmlFor="message" className="text-gray-700">Message</Label>
-                                            <Textarea id="message" placeholder="How can we help you?" className="mt-1 bg-white/50" rows={4} />
-                                        </div>
-                                        <Button size="lg" className="w-full bg-primary text-primary-foreground hover-shimmer-button rounded-lg text-base">
-                                            Send Message
+                                    </div>
+                                    <h3 className="text-lg font-bold text-gray-800 font-headline">Let's start a conversation</h3>
+                                    <p className="mt-1 text-gray-500">Our team is here to help you with any questions.</p>
+
+                                    <div className="mt-6 space-y-4">
+                                        <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
+                                            <a href="mailto:contact@pubgstuff.store">
+                                                <Mail className="mr-3 h-5 w-5" />
+                                                contact@pubgstuff.store
+                                            </a>
                                         </Button>
-                                    </form>
+                                         <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
+                                            <a href="https://wa.me/447532830145">
+                                                <Phone className="mr-3 h-5 w-5" />
+                                                +44 7532 830145
+                                            </a>
+                                        </Button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
