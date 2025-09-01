@@ -127,7 +127,7 @@ function AnimatedTooltipPreview() {
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-16 md:py-24">
+    <section id="testimonials" className="pt-0 pb-12 md:pb-16">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
           <TextAnimate
