@@ -26,14 +26,14 @@ export default function TermsOfUsePage() {
             </p>
 
             <div className="mt-8 space-y-6 md:mt-12 md:space-y-8">
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Introduction</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   Welcome to PubgStuff! These Terms of Use govern your access to and use of our services, including our website and any related content.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">User Agreement</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   By accessing our services, you agree to comply with these Terms. If you do not agree, please do not use our services.
@@ -44,7 +44,7 @@ export default function TermsOfUsePage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">User Responsibilities</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   You are responsible for maintaining the confidentiality of your account and password. You agree to:
@@ -55,14 +55,14 @@ export default function TermsOfUsePage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Limitations of Liability</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   To the fullest extent permitted by law, PubgStuff will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Contact Us</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   If you have any questions regarding our Cookies Policy, please contact us:
