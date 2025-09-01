@@ -29,8 +29,9 @@ export default function RefundPolicyPage() {
             </div>
 
             <div className="space-y-6 md:space-y-8">
-               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                <p className="mt-2 text-gray-700 md:mt-4">
+               <div className="rounded-lg border border-blue-300 bg-blue-50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <h2 className="text-xl font-bold md:text-2xl text-blue-800">Our No-Refund Policy</h2>
+                <p className="mt-2 text-blue-700 md:mt-4">
                   At PubgStuff, we do not offer any refunds or returns for products purchased. All sales are final.
                 </p>
               </div>
