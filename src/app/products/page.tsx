@@ -144,17 +144,22 @@ export default function ProductsPage() {
         <section className="container pb-16 md:pb-24 -mt-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {categoryCards.map((card) => (
-                    <Link href={card.href} key={card.title} className="block">
-                        <Card className="text-center p-8 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                            <div className="flex justify-center items-center mb-4">
-                                <div className="p-4 bg-primary/10 rounded-full">
-                                    {card.icon}
-                                </div>
+                    <Card key={card.title} className="p-6 flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <div className="flex-1">
+                            <div className="p-4 bg-primary/10 rounded-lg w-fit mb-4">
+                                {card.icon}
                             </div>
                             <h3 className="text-xl font-bold font-headline">{card.title}</h3>
                             <p className="text-muted-foreground mt-2">{card.description}</p>
-                        </Card>
-                    </Link>
+                        </div>
+                        <div className="mt-6">
+                            <Button asChild variant="outline" className="w-full hover-shimmer-button group">
+                                <Link href={card.href}>
+                                    Explore <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                                </Link>
+                            </Button>
+                        </div>
+                    </Card>
                 ))}
             </div>
         </section>
