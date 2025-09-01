@@ -83,6 +83,12 @@ export default function ContactPage() {
                                             </a>
                                         </Button>
                                          <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
+                                            <a href="https://wa.me/923355448505">
+                                                <Phone className="mr-3 h-5 w-5" />
+                                                +92 335 5448505
+                                            </a>
+                                        </Button>
+                                         <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
                                             <a href="https://wa.me/447532830145">
                                                 <Phone className="mr-3 h-5 w-5" />
                                                 +44 7532 830145
@@ -139,6 +145,9 @@ export default function ContactPage() {
                         <h3 className="text-lg font-bold font-headline">Call us</h3>
                         <p className="text-muted-foreground mt-1 mb-4 text-sm flex-1">Mon-Fri from 8am to 5pm.</p>
                         <div className="space-y-2 w-full mt-auto">
+                            <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-sm bg-white">
+                                <a href="https://wa.me/923355448505" target="_blank" rel="noopener noreferrer">+92 335 5448505</a>
+                            </Button>
                             <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-sm bg-white">
                                 <a href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer">+44 7532 830145</a>
                             </Button>
