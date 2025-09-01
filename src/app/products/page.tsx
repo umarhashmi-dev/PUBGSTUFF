@@ -150,19 +150,25 @@ export default function ProductsPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-20 max-w-5xl mx-auto">
                 {categoryCards.map((card, i) => (
                     <PinContainer key={i} title={card.pinTitle} href={card.href}>
-                        <div className="flex basis-full flex-col p-4 tracking-tight text-card-foreground sm:basis-1/2 w-[20rem] h-[20rem] ">
-                            <div className="flex justify-center items-center h-24 text-primary">
-                                {React.cloneElement(card.icon, {className: "w-8 h-8"})}
+                        <div className="flex basis-full flex-col p-4 tracking-tight text-card-foreground sm:basis-1/2 w-[20rem] h-[20rem] justify-between">
+                           <div>
+                             <div className="flex justify-center items-center h-24 text-primary">
+                                 {React.cloneElement(card.icon, {className: "w-8 h-8"})}
+                             </div>
+                             <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center text-card-foreground">
+                                 {card.title}
+                             </h3>
+                             <div className="text-base !m-0 !p-0 font-normal text-center">
+                                 <span className="text-muted-foreground ">
+                                     {card.description}
+                                 </span>
+                             </div>
+                           </div>
+                           <div className="mt-4 flex justify-center">
+                                <Button variant="outline" className="w-full hover-shimmer-button">
+                                    Explore <ArrowRight className="ml-2 h-4 w-4" />
+                                </Button>
                             </div>
-                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center text-card-foreground">
-                                {card.title}
-                            </h3>
-                            <div className="text-base !m-0 !p-0 font-normal text-center">
-                                <span className="text-muted-foreground">
-                                    {card.description}
-                                </span>
-                            </div>
-                            <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
                         </div>
                     </PinContainer>
                 ))}
