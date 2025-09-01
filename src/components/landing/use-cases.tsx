@@ -98,7 +98,7 @@ const Feature = ({
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="py-16 md:py-28">
+    <section id="use-cases" className="py-16 md:py-24">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
           <TextAnimate
