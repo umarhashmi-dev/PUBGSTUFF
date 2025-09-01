@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { ShimmeringText } from "@/components/ui/shimmering-text";
 
 const vnhaxProducts = [
     {
@@ -224,7 +225,12 @@ export default function PcProductsPage() {
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name.replace(' (POPULAR!)', '').replace(' (10% Discount)','')}</h3>
                             <div className="flex items-baseline gap-2 pt-2">
-                                <span className="text-4xl font-extrabold tracking-tight">${product.price}</span>
+                                <div className="text-4xl font-extrabold tracking-tight">
+                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <div className="hidden group-hover:block">
+                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                    </div>
+                                </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
                             <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
@@ -278,8 +284,13 @@ export default function PcProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
-                            <div className="flex items-baseline gap-2 pt-2">
-                                <span className="text-4xl font-extrabold tracking-tight">${product.price}</span>
+                             <div className="flex items-baseline gap-2 pt-2">
+                                <div className="text-4xl font-extrabold tracking-tight">
+                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <div className="hidden group-hover:block">
+                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                    </div>
+                                </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
                             <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
@@ -333,8 +344,13 @@ export default function PcProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
-                            <div className="flex items-baseline gap-2 pt-2">
-                                <span className="text-4xl font-extrabold tracking-tight">${product.price}</span>
+                             <div className="flex items-baseline gap-2 pt-2">
+                                <div className="text-4xl font-extrabold tracking-tight">
+                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <div className="hidden group-hover:block">
+                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                    </div>
+                                </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
                             <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
@@ -367,3 +383,5 @@ export default function PcProductsPage() {
     </div>
   );
 }
+
+    
