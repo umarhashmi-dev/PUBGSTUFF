@@ -144,7 +144,7 @@ export default function ProductsPage() {
         <section className="container pb-16 md:pb-24 -mt-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {categoryCards.map((card) => (
-                    <Card key={card.title} className="p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                    <Card key={card.title} className="p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-card border-border/50">
                         <div className="p-4 bg-primary/10 rounded-lg w-fit mb-4">
                             {card.icon}
                         </div>
