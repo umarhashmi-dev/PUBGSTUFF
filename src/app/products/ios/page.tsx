@@ -17,6 +17,7 @@ const vnhaxProducts = [
         name: "Vnhax iOS Key",
         price: "5",
         priceSuffix: "/ Day",
+        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -31,6 +32,7 @@ const vnhaxProducts = [
         name: "Vnhax iOS Key",
         price: "15",
         priceSuffix: "/ Week",
+        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -46,6 +48,7 @@ const vnhaxProducts = [
         price: "30",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
+        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -63,6 +66,7 @@ const starProducts = [
         name: "Star iOS Key",
         price: "5",
         priceSuffix: "/ Day",
+        description: "Enhance your gameplay with reliable ESP and aimbot features.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -77,6 +81,7 @@ const starProducts = [
         name: "Star iOS Key",
         price: "15",
         priceSuffix: "/ Week",
+        description: "Enhance your gameplay with reliable ESP and aimbot features.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -92,6 +97,7 @@ const starProducts = [
         price: "30",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
+        description: "Enhance your gameplay with reliable ESP and aimbot features.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -109,6 +115,7 @@ const tornadoProducts = [
         name: "Tornado iOS Key",
         price: "17",
         priceSuffix: "/ Week",
+        description: "Dominate the game with advanced silent aimbot and FOV features.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -125,6 +132,7 @@ const tornadoProducts = [
         price: "35",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
+        description: "Dominate the game with advanced silent aimbot and FOV features.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -207,6 +215,7 @@ export default function IosProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
+                             <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
@@ -263,6 +272,7 @@ export default function IosProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
+                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
@@ -319,6 +329,7 @@ export default function IosProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
+                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
