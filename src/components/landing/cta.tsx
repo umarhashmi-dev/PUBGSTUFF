@@ -6,7 +6,7 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function Cta() {
   return (
-    <section id="cta" className="py-16 md:py-24">
+    <section id="cta" className="py-8 md:py-12 bg-white text-black">
       <div className="container text-center">
         <div className="bg-primary text-primary-foreground p-8 md:p-12 rounded-xl shadow-lg">
           <TextAnimate
