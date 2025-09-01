@@ -206,6 +206,7 @@ export default function IosProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
+                             <p className="text-sm text-muted-foreground pt-2 h-12">{product.description}</p>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
                                     <span className="group-hover:hidden">${product.price}</span>
@@ -215,7 +216,6 @@ export default function IosProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
-                             <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
@@ -263,6 +263,7 @@ export default function IosProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
+                             <p className="text-sm text-muted-foreground pt-2 h-12">{product.description}</p>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
                                     <span className="group-hover:hidden">${product.price}</span>
@@ -272,7 +273,6 @@ export default function IosProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
-                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
@@ -320,6 +320,7 @@ export default function IosProductsPage() {
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
+                             <p className="text-sm text-muted-foreground pt-2 h-12">{product.description}</p>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
                                     <span className="group-hover:hidden">${product.price}</span>
@@ -329,7 +330,6 @@ export default function IosProductsPage() {
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
                             </div>
-                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
                         </CardHeader>
                         <CardContent className="p-6 flex-1">
                             <ul className="space-y-3 text-left">
