@@ -144,7 +144,7 @@ export default function ProductsPage() {
         </section>
         
         <section className="container pb-16 md:pb-24 -mt-12">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-20 max-w-5xl mx-auto">
                 {categoryCards.map((card, i) => (
                     <PinContainer key={i} title={card.href} href={card.href}>
                         <div className="flex basis-full flex-col p-4 tracking-tight text-card-foreground sm:basis-1/2 w-[20rem] h-[20rem] ">
