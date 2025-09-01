@@ -3,45 +3,77 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShoppingCart, Gem, Shield, Wand2 } from "lucide-react";
+import { ArrowRight, Check, Shield } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const products = [
     {
-        title: "Glacier M416 Skin",
-        description: "A legendary ice-themed skin for the M416. A must-have for serious collectors.",
-        price: "$29.99",
-        icon: <Gem className="w-8 h-8 text-primary" />,
-        imageUrl: "https://picsum.photos/600/400",
-        aiHint: "ice shards abstract",
+        name: "Vnhax Frozen Key",
+        price: "5",
+        priceSuffix: "/ Day",
+        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
+        badge: null,
+        buttonVariant: "default",
+        buttonText: "Buy Now",
+        features: [
+            "100% Safe & Secure",
+            "Special Kill Effects",
+            "ESP, Skins & Aimbot",
+            "Integrated Emulator Bypass",
+            "24/7 Dedicated Support",
+        ],
     },
     {
-        title: "Golden Pharaoh X-Suit",
-        description: "Unlock the ultimate ancient power with this exclusive and majestic X-Suit.",
-        price: "$99.99",
-        icon: <Shield className="w-8 h-8 text-primary" />,
-        imageUrl: "https://picsum.photos/600/400",
-        aiHint: "gold pharaoh",
+        name: "Vnhax Week Key",
+        price: "15",
+        priceSuffix: "/ Week",
+        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
+        badge: null,
+        buttonVariant: "default",
+        buttonText: "Buy Now",
+        features: [
+            "100% Safe & Secure",
+            "Special Kill Effects",
+            "ESP, Skins & Aimbot",
+            "Integrated Emulator Bypass",
+            "24/7 Dedicated Support",
+        ],
     },
     {
-        title: "UC (Unknown Cash)",
-        description: "Get in-game currency to purchase crates, skins, and other exclusive items.",
-        price: "From $4.99",
-        icon: <ShoppingCart className="w-8 h-8 text-primary" />,
-        imageUrl: "https://picsum.photos/600/400",
-        aiHint: "digital currency",
+        name: "Vnhax Month Key",
+        price: "30",
+        priceSuffix: "/ Month",
+        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
+        badge: "POPULAR!",
+        buttonVariant: "gradient",
+        buttonText: "Buy Now",
+        features: [
+            "100% Safe & Secure",
+            "Special Kill Effects",
+            "ESP, Skins & Aimbot",
+            "Integrated Emulator Bypass",
+            "24/7 Dedicated Support",
+        ],
     },
     {
-        title: "Driver Booster Pro",
-        description: "Enhance your gaming performance by automatically updating your system drivers.",
-        price: "$19.99/year",
-        icon: <Wand2 className="w-8 h-8 text-primary" />,
-        imageUrl: "https://picsum.photos/600/400",
-        aiHint: "computer hardware",
+        name: "Vnhax Admin Key",
+        price: "190",
+        priceSuffix: "/ Lifetime",
+        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
+        badge: "10% Discount",
+        buttonVariant: "default",
+        buttonText: "Buy Now",
+        features: [
+            "100% Safe & Secure",
+            "Special Kill Effects",
+            "ESP, Skins & Aimbot",
+            "Integrated Emulator Bypass",
+            "24/7 Dedicated Support",
+        ],
     }
 ];
 
@@ -86,48 +118,54 @@ export default function ProductsPage() {
             </div>
         </section>
 
-        {/* CAT Section (Products Grid) */}
         <section id="products-grid" className="container pb-16 md:pb-24 -mt-12">
-           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="bg-card hover:bg-card/90 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl border-border/10 text-left h-full flex flex-col group overflow-hidden">
-                    <div className="relative aspect-video">
-                         <Image 
-                            src={product.imageUrl}
-                            alt={product.title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-110"
-                            data-ai-hint={product.aiHint}
-                        />
-                    </div>
-                    <CardHeader className="p-6">
-                        <div className="flex items-center gap-4">
-                             <div className="p-3 bg-primary/10 rounded-lg w-fit">
-                                {product.icon}
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch max-w-7xl mx-auto">
+                {products.map((product) => (
+                    <div key={product.name} className="glowing-card">
+                    <Card className={cn(
+                        "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
+                        product.badge && "relative"
+                        )}>
+                        {product.badge && (
+                        <div className="absolute top-0 right-6 -translate-y-1/2 z-10">
+                            <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white shadow-lg">
+                                <Shield className="h-4 w-4" />
+                                {product.badge}
                             </div>
-                             <CardTitle className="text-xl font-headline flex-1">{product.title}</CardTitle>
                         </div>
-                    </CardHeader>
-                    <CardContent className="p-6 pt-0 flex-1">
-                      <p className="text-muted-foreground">{product.description}</p>
-                    </CardContent>
-                    <CardFooter className="p-6 pt-0 flex items-center justify-between">
-                        <p className="text-lg font-bold font-headline">{product.price}</p>
-                        <Button asChild className="hover-shimmer-button">
-                            <Link href="#">Buy Now</Link>
-                        </Button>
-                    </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                        )}
+
+                        <div className="flex flex-col flex-grow">
+                        <CardHeader className={cn("p-6 rounded-t-2xl", product.name.includes('Month') ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
+                            <h3 className="text-xl font-bold font-headline">{product.name.replace(' (POPULAR!)', '').replace(' (10% Discount)','')}</h3>
+                            <div className="flex items-baseline gap-2 pt-2">
+                                <span className="text-4xl font-extrabold tracking-tight">${product.price}</span>
+                                <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
+                            </div>
+                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
+                        </CardHeader>
+                        <CardContent className="p-6 flex-1">
+                            <ul className="space-y-3 text-left">
+                            {product.features.map((feature, i) => (
+                                <li key={i} className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-white rounded-full bg-black p-1 shrink-0 mt-0.5" />
+                                <span className="text-foreground text-sm sm:text-base">{feature}</span>
+                                </li>
+                            ))}
+                            </ul>
+                        </CardContent>
+                        <CardFooter className="p-6 mt-auto">
+                           <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
+                                <Link href="#">
+                                    <span>{product.buttonText}</span>
+                                </Link>
+                            </Button>
+                        </CardFooter>
+                        </div>
+                    </Card>
+                    </div>
+                ))}
+            </div>
         </section>
 
       </main>
