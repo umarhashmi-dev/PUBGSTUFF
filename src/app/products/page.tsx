@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { PinContainer } from "@/components/ui/3d-pin";
 
 const products = [
     {
@@ -140,24 +141,26 @@ export default function ProductsPage() {
                 </div>
             </div>
         </section>
-
+        
         <section className="container pb-16 md:pb-24 -mt-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                {categoryCards.map((card) => (
-                    <Card key={card.title} className="p-6 flex flex-col items-center text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 bg-card border-border/50">
-                        <div className="p-4 bg-primary/10 rounded-lg w-fit mb-4">
-                            {card.icon}
+                {categoryCards.map((card, i) => (
+                    <PinContainer key={i} title={card.title} href={card.href}>
+                        <div className="flex basis-full flex-col p-4 tracking-tight text-card-foreground sm:basis-1/2 w-[20rem] h-[20rem] ">
+                            <div className="flex justify-center items-center h-24">
+                                {card.icon}
+                            </div>
+                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center">
+                                {card.title}
+                            </h3>
+                            <div className="text-base !m-0 !p-0 font-normal text-center">
+                                <span className="text-muted-foreground">
+                                    {card.description}
+                                </span>
+                            </div>
+                            <div className="flex flex-1 w-full rounded-lg mt-4 bg-gradient-to-br from-violet-500 via-purple-500 to-blue-500" />
                         </div>
-                        <h3 className="text-xl font-bold font-headline">{card.title}</h3>
-                        <p className="text-muted-foreground mt-2 flex-1">{card.description}</p>
-                        <div className="mt-6 w-full">
-                            <Button asChild variant="outline" className="w-full hover-shimmer-button group">
-                                <Link href={card.href}>
-                                    Explore <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                                </Link>
-                            </Button>
-                        </div>
-                    </Card>
+                    </PinContainer>
                 ))}
             </div>
         </section>
