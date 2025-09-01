@@ -17,7 +17,7 @@ const vnhaxProducts = [
         name: "Vnhax iOS Key",
         price: "5",
         priceSuffix: "/ Day",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
+        description: "Premium keys with safe and secure gameplay features for iOS users.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -32,7 +32,7 @@ const vnhaxProducts = [
         name: "Vnhax iOS Key",
         price: "15",
         priceSuffix: "/ Week",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
+        description: "Premium keys with safe and secure gameplay features for iOS users.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -48,7 +48,7 @@ const vnhaxProducts = [
         price: "30",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
-        description: "Boost PUBG Gameplay | Safe & Secure for Top Ranks",
+        description: "Premium keys with safe and secure gameplay features for iOS users.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -66,7 +66,7 @@ const starProducts = [
         name: "Star iOS Key",
         price: "5",
         priceSuffix: "/ Day",
-        description: "Enhance your gameplay with reliable ESP and aimbot features.",
+        description: "Enhance your gameplay with reliable ESP and aimbot solutions.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -81,7 +81,7 @@ const starProducts = [
         name: "Star iOS Key",
         price: "15",
         priceSuffix: "/ Week",
-        description: "Enhance your gameplay with reliable ESP and aimbot features.",
+        description: "Enhance your gameplay with reliable ESP and aimbot solutions.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -97,7 +97,7 @@ const starProducts = [
         price: "30",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
-        description: "Enhance your gameplay with reliable ESP and aimbot features.",
+        description: "Enhance your gameplay with reliable ESP and aimbot solutions.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
@@ -115,7 +115,7 @@ const tornadoProducts = [
         name: "Tornado iOS Key",
         price: "17",
         priceSuffix: "/ Week",
-        description: "Dominate the game with advanced silent aimbot and FOV features.",
+        description: "Advanced silent aimbot and FOV controls designed for maximum performance.",
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
@@ -132,7 +132,7 @@ const tornadoProducts = [
         price: "35",
         priceSuffix: "/ Month",
         badge: "POPULAR!",
-        description: "Dominate the game with advanced silent aimbot and FOV features.",
+        description: "Advanced silent aimbot and FOV controls designed for maximum performance.",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
