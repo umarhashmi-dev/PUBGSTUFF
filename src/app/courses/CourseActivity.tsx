@@ -77,6 +77,27 @@ const allCourses = [
   },
 ];
 
+function RelatedCourses({ currentCourseTitle }: { currentCourseTitle: string }) {
+  const relatedCourses = allCourses.filter(course => course.title !== currentCourseTitle).slice(0, 6);
+  return (
+    <div className="mt-16 md:mt-24">
+      <h2 className="text-3xl font-extrabold text-black text-center mb-8">Related Courses</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {relatedCourses.map((course) => (
+          <Link href={course.href} key={course.href}>
+            <Card className="h-full flex flex-col items-center text-center p-6 border-gray-200 hover:shadow-lg transition-shadow">
+              <div className="p-4 bg-gray-100 rounded-lg w-fit mb-4">
+                  {course.icon}
+              </div>
+              <h3 className="text-lg font-bold font-headline">{course.title}</h3>
+            </Card>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 
 export function CourseLayout({
   title,
@@ -86,8 +107,6 @@ export function CourseLayout({
   bannerUrl,
   bannerAiHint,
 }: CourseLayoutProps) {
-  const relatedCourses = allCourses.filter(course => course.title !== title).slice(0, 6);
-  
   return (
     <div className="flex min-h-[100dvh] flex-col bg-white text-black">
       <Header />
@@ -249,6 +268,8 @@ export function CourseLayout({
               </div>
             </div>
           </div>
+          
+          <RelatedCourses currentCourseTitle={title} />
           
           {/* CTA Section */}
           <div className="mt-16 md:mt-24">
