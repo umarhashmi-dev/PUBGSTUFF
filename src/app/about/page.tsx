@@ -8,6 +8,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import UseCases from "@/components/landing/use-cases";
+import Testimonials from "@/components/landing/testimonials";
 
 const teamMembers = [
   {
@@ -106,6 +107,7 @@ export default function AboutPage() {
             </motion.div>
         </div>
         <UseCases />
+        <Testimonials />
       </main>
       <Footer />
     </div>

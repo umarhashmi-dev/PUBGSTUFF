@@ -7,95 +7,111 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 
 const testimonials = [
   {
-    name: "Alex R.",
+    name: "Robert Fox",
     avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "man portrait",
-    title: "A Game Changer!",
+    title: "Medical Assistant",
     rating: 5,
-    review: "The RDP services are incredibly fast and reliable. My productivity has skyrocketed. Highly recommended for any serious developer or designer."
+    review: "The PubgStuff support team is always responsive and helpful. They resolve issues quickly and make sure everything runs smoothly thank you pubgstuff team."
   },
   {
-    name: "Samantha B.",
+    name: "Courtney Henry",
     avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "woman portrait",
-    title: "Stunning Web Design",
+    title: "Dog Trainer",
     rating: 5,
-    review: "The team at PubgStuff delivered a website that exceeded all my expectations. The design is modern, responsive, and simply beautiful."
+    review: "PubgStuff support is outstanding! Fast response times and helpful solutions make them a reliable partner for any technical issues personally recommended."
   },
   {
-    name: "Mike T.",
+    name: "Cody Fisher",
     avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "person portrait",
-    title: "Driver Booster is a Must-Have",
+    title: "President of Sales",
     rating: 5,
-    review: "My gaming PC was lagging, but after using Driver Booster, it's like I have a new machine. All my games run smoothly now. Thank you!"
+    review: "PubgStuff’s development services are top-notch! They delivered exactly what we needed, with exceptional attention to detail and professionalism."
   },
   {
-    name: "Jessica W.",
+    name: "Annette Black",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "woman portrait",
-    title: "Top-Notch Graphic Design",
+    title: "Web Designer",
     rating: 5,
-    review: "I needed a new logo and branding for my startup, and the graphic design service was phenomenal. The results were creative and professional."
+    review: "Highly recommended! PubgStuff’s development team worked hard, delivering quality results on time while keeping us informed throughout the process."
   },
   {
-    name: "David L.",
+    name: "Robert Fox",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "man portrait",
-    title: "Reliable and Secure",
+    title: "Marketer",
     rating: 5,
-    review: "I've been using their RDP for months without a single issue. It's secure, fast, and the support team is always there to help."
+    review: "PubgStuff’s social media ads are amazing! They create engaging, audience-focused content that boosts brand awareness and engagement significantly."
   },
   {
-    name: "Emily C.",
+    name: "Courtney Henry",
     avatar: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
     aiHint: "person portrait",
-    title: "Effortless Web Development",
+    title: "Sales man",
     rating: 5,
-    review: "Getting my website developed was a breeze. The process was transparent, and the final product was delivered on time and on budget."
+    review: "I saw significant growth in my campaigns with PubgStuff’s ad creative services. Their expertise made a really the difference i am surprised and shocked!"
+  },
+   {
+    name: "Cody Fisher",
+    avatar: "https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
+    aiHint: "man portrait glasses",
+    title: "Gym Adviser",
+    rating: 5,
+    review: "PubgStuff’s video production services are fantastic. Their strategy-driven approach delivered videos that perfectly conveyed our brand’s message to viewers."
+  },
+  {
+    name: "Annette Black",
+    avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=250&q=80",
+    aiHint: "woman portrait smiling",
+    title: "Developer",
+    rating: 5,
+    review: "PubgStuff’s video production team created high-quality, engaging videos that aligned perfectly with our marketing goals and strategy best team ever."
   }
 ];
 
 const people = [
   {
     id: 1,
-    name: "John Doe",
-    designation: "Software Engineer",
+    name: "Robert Fox",
+    designation: "Medical Assistant",
     image:
       "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80",
   },
   {
     id: 2,
-    name: "Robert Johnson",
-    designation: "Product Manager",
-    image:
-      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
-  },
-  {
-    id: 3,
-    name: "Jane Smith",
-    designation: "Data Scientist",
+    name: "Courtney Henry",
+    designation: "Dog Trainer",
     image:
       "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
   },
   {
+    id: 3,
+    name: "Cody Fisher",
+    designation: "President of Sales",
+    image:
+      "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+  },
+  {
     id: 4,
-    name: "Emily Davis",
-    designation: "UX Designer",
+    name: "Annette Black",
+    designation: "Web Designer",
     image:
       "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
   },
   {
     id: 5,
-    name: "Tyler Durden",
-    designation: "Soap Developer",
+    name: "Robert Fox",
+    designation: "Marketer",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
   },
   {
     id: 6,
-    name: "Dora",
-    designation: "The Explorer",
+    name: "Courtney Henry",
+    designation: "Sales man",
     image:
       "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3534&q=80",
   },
