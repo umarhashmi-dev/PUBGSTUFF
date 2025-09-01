@@ -29,7 +29,7 @@ export default function PrivacyPolicyPage() {
             </div>
 
             <div className="space-y-6 md:space-y-8">
-               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <p className="mt-2 text-gray-700 md:mt-4">
                   This Privacy Policy outlines our practices regarding the collection, use, and disclosure of your information when you use our service, along with your privacy rights and legal protections.
                 </p>
@@ -38,7 +38,7 @@ export default function PrivacyPolicyPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Definitions</h2>
                  <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
                   <li><strong>Account:</strong> A unique account created for you to access our service.</li>
@@ -49,7 +49,7 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Data Collection</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">We may collect personal data including:</p>
                 <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Use of Data</h2>
                  <p className="mt-2 text-gray-700 md:mt-4">We may use your personal data for:</p>
                 <ul className="mt-2 list-disc space-y-2 pl-5 text-gray-700 md:mt-4 md:pl-6">
@@ -70,21 +70,21 @@ export default function PrivacyPolicyPage() {
                 </ul>
               </div>
 
-               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Children’s Privacy</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   Our service is not intended for anyone under 18. If you believe we have collected personal data from your child, please contact us.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Changes to This Policy</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   We may update our Privacy Policy periodically. Changes will be posted on this page.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Contact Us</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   If you have any questions regarding our Cookies Policy, please contact us:

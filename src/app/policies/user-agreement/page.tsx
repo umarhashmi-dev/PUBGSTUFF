@@ -26,14 +26,14 @@ export default function UserAgreementPage() {
             </p>
 
             <div className="mt-8 space-y-6 md:mt-12 md:space-y-8">
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Eligibility</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   You must be at least 18 years old or the age of majority in your jurisdiction to use our services. By using our services, you represent that you meet this requirement.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Account Creation</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   To access certain features of our services, you may be required to create an account. You agree to:
@@ -45,14 +45,14 @@ export default function UserAgreementPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Account Security</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   You are responsible for safeguarding your password and for any activities or actions under your account. You must notify us immediately upon becoming aware of any breach of security or unauthorized use of your account.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Prohibited Activities</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   You agree not to engage in any of the following prohibited activities:
@@ -65,14 +65,14 @@ export default function UserAgreementPage() {
                 </ul>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Termination</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   We reserve the right to terminate or suspend your account and access to the service at our discretion, without notice, for conduct that we believe violates this Agreement or is harmful to other users of the service, us, or third parties.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Contact Us</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   If you have any questions regarding our Cookies Policy, please contact us:

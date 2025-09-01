@@ -29,41 +29,41 @@ export default function RefundPolicyPage() {
             </div>
 
             <div className="space-y-6 md:space-y-8">
-               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <p className="mt-2 text-gray-700 md:mt-4">
                   At PubgStuff, we do not offer any refunds or returns for products purchased. All sales are final.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Software Maintenance</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   If you purchase our software and experience any downtime due to maintenance or server issues, we will hold your license key time during the outage. Once services are restored, your time will be unheld, allowing uninterrupted access to your software.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Sale Items</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   Items purchased on sale or at a discount are also not eligible for refunds. All sales of discounted items are final.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Exchanges</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   We do not offer exchanges for any products. All purchases are final and cannot be replaced.
                 </p>
               </div>
 
-               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Important Notice for Virtual Products</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   These are virtual products. Once you activate them on your devices, no refunds are available.
                 </p>
               </div>
 
-              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6">
+              <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl">Contact Us</h2>
                 <p className="mt-2 text-gray-700 md:mt-4">
                   If you have any questions regarding our Refund Policy, please contact us:
