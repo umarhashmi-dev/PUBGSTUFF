@@ -108,7 +108,7 @@ export default function PcProductsPage() {
                             </TextAnimate>
                         </div>
                         <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
-                            Explore our range of premium digital keys and services for PC.
+                            Explore our wide collection of premium PC gaming digital keys and services with PUBGSTUU. From top-rated game activations to reliable digital solutions, we provide everything you need to enhance your gaming journey.
                         </p>
                     </motion.div>
                 </div>
