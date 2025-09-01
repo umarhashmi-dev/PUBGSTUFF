@@ -1,5 +1,5 @@
 
-'use client';
+"use client";
 import React from "react";
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
@@ -84,18 +84,21 @@ const categoryCards = [
         title: "PC Products",
         description: "Explore our range of products for PC.",
         href: "/products/pc",
+        pinTitle: "Only For PC",
         icon: <Monitor className="w-8 h-8 text-primary" />,
     },
     {
         title: "iOS Products",
         description: "Discover exclusive tools for iOS devices.",
         href: "/products/ios",
+        pinTitle: "For iPhone and iPad Only",
         icon: <Smartphone className="w-8 h-8 text-primary" />,
     },
     {
         title: "Android Products",
         description: "Enhance your Android experience with our apps.",
         href: "/products/android",
+        pinTitle: "For Root and Non Root Android",
         icon: <Smartphone className="w-8 h-8 text-primary" />,
     }
 ];
@@ -146,7 +149,7 @@ export default function ProductsPage() {
         <section className="container pb-16 md:pb-24 -mt-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-y-10 md:gap-x-20 max-w-5xl mx-auto">
                 {categoryCards.map((card, i) => (
-                    <PinContainer key={i} title={card.href} href={card.href}>
+                    <PinContainer key={i} title={card.pinTitle} href={card.href}>
                         <div className="flex basis-full flex-col p-4 tracking-tight text-card-foreground sm:basis-1/2 w-[20rem] h-[20rem] ">
                             <div className="flex justify-center items-center h-24 text-primary">
                                 {React.cloneElement(card.icon, {className: "w-8 h-8"})}
