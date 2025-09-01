@@ -1,5 +1,6 @@
 
 'use client';
+import React from "react";
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
