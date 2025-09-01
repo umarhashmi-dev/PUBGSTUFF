@@ -57,7 +57,14 @@ const developers = [
         title: "Full Stack Developer",
         avatar: "https://picsum.photos/200/200",
         aiHint: "male designer",
-        description: "Naveed specializes in crafting pixel-perfect, intuitive user interfaces that bring our designs to life with flair and precision."
+        description: "Naveed specializes in crafting pixel-perfect, intuitive user interfaces that bring our designs to life with flair and precision.",
+        socials: [
+            { href: "https://github.com/naveedalam-dev", icon: <Github className="h-5 w-5" /> },
+            { href: "https://x.com/naveedalam_dev", icon: <Twitter className="h-5 w-5" /> },
+            { href: "https://www.linkedin.com/in/naveedalam-dev", icon: <Linkedin className="h-5 w-5" /> },
+            { href: "https://www.instagram.com/naveedalam.dev", icon: <Instagram className="h-5 w-5" /> },
+            { href: "https://naveedalam.dev", icon: <Globe className="h-5 w-5" /> },
+        ]
     }
 ]
 
