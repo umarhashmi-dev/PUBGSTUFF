@@ -11,7 +11,7 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
-const products = [
+const vnhaxProducts = [
     {
         name: "Vnhax Frozen Key",
         price: "5",
@@ -78,6 +78,41 @@ const products = [
     }
 ];
 
+const anubisProducts = [
+    {
+        name: "Anubis Week Key",
+        price: "20",
+        priceSuffix: "/ Week",
+        description: "Boost Your PUBG Rank | Safe & Secure Gameplay & Rank",
+        badge: null,
+        buttonVariant: "default",
+        buttonText: "Buy Now",
+        features: [
+            "100% Safe & Secure",
+            "Special Kill Effects",
+            "ESP, Skins & Aimbot",
+            "Integrated Emulator Bypass",
+            "24/7 Dedicated Support",
+        ],
+    },
+    {
+        name: "Anubis Month Key",
+        price: "40",
+        priceSuffix: "/ Month",
+        description: "Boost Your PUBG Rank | Safe & Secure Gameplay & Rank",
+        badge: null,
+        buttonVariant: "default",
+        buttonText: "Buy Now",
+        features: [
+            "100% Safe & Secure",
+            "Special Kill Effects",
+            "ESP, Skins & Aimbot",
+            "Integrated Emulator Bypass",
+            "24/7 Dedicated Support",
+        ],
+    },
+]
+
 export default function PcProductsPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
@@ -117,7 +152,7 @@ export default function PcProductsPage() {
 
         <section id="products-grid" className="container pb-16 md:pb-24 -mt-12">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch max-w-7xl mx-auto">
-                {products.map((product) => (
+                {vnhaxProducts.map((product) => (
                     <div key={product.name} className="glowing-card">
                     <Card className={cn(
                         "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
@@ -153,6 +188,53 @@ export default function PcProductsPage() {
                         </CardContent>
                         <CardFooter className="p-6 mt-auto">
                            <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
+                                <Link href="#">
+                                    <span>{product.buttonText}</span>
+                                </Link>
+                            </Button>
+                        </CardFooter>
+                        </div>
+                    </Card>
+                    </div>
+                ))}
+            </div>
+        </section>
+
+        <section id="anubis-products" className="container pb-16 md:pb-24">
+             <div className="max-w-4xl mx-auto text-center mb-12">
+                <h2 className="text-3xl font-extrabold tracking-tight text-foreground md:text-4xl font-headline">Anubis – Bypass</h2>
+                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                    Anubis Boost enhances your PUBG rank with safe and secure gameplay, ensuring a smooth and risk-free experience while climbing the ranks.
+                </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
+                {anubisProducts.map((product) => (
+                    <div key={product.name} className="glowing-card">
+                    <Card className={cn(
+                        "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
+                        product.badge && "relative"
+                        )}>
+                        <div className="flex flex-col flex-grow">
+                        <CardHeader className={cn("p-6 rounded-t-2xl", 'bg-card')}>
+                            <h3 className="text-xl font-bold font-headline">{product.name}</h3>
+                            <div className="flex items-baseline gap-2 pt-2">
+                                <span className="text-4xl font-extrabold tracking-tight">${product.price}</span>
+                                <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
+                            </div>
+                            <p className="text-sm text-muted-foreground pt-2">{product.description}</p>
+                        </CardHeader>
+                        <CardContent className="p-6 flex-1">
+                            <ul className="space-y-3 text-left">
+                            {product.features.map((feature, i) => (
+                                <li key={i} className="flex items-start gap-3">
+                                <Check className="h-5 w-5 text-white rounded-full bg-black p-1 shrink-0 mt-0.5" />
+                                <span className="text-foreground text-sm sm:text-base">{feature}</span>
+                                </li>
+                            ))}
+                            </ul>
+                        </CardContent>
+                        <CardFooter className="p-6 mt-auto">
+                           <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", 'bg-primary text-primary-foreground')}>
                                 <Link href="#">
                                     <span>{product.buttonText}</span>
                                 </Link>
