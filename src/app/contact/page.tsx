@@ -4,88 +4,105 @@ import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { MessageSquare, Mail, MapPin, Phone } from "lucide-react";
+import { MessageSquare, Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 import Faq from "@/components/landing/faq";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 
 export default function ContactPage() {
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-background">
+    <div className="flex min-h-[100dvh] flex-col bg-gray-50">
       <Header />
-      <main className="flex-1 pt-28 md:pt-32">
-        <section className="py-12 md:py-16 text-center">
-          <div className="container">
-            <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-foreground/10 text-foreground">
-              Contact Us
-            </span>
-            <TextAnimate
-              as="h1"
-              animation={{
-                hidden: { opacity: 0, filter: "blur(4px)" },
-                show: { opacity: 1, filter: "blur(0px)" },
-              }}
-              className="mt-4 text-3xl sm:text-4xl font-bold tracking-tight text-foreground md:text-5xl font-headline"
-            >
-              Get in touch with our team
-            </TextAnimate>
-            <p className="mt-4 text-base sm:text-lg max-w-2xl mx-auto text-muted-foreground">
-              We have the team and know-how to help you scale 10x faster.
-            </p>
-          </div>
-        </section>
+      <main className="flex-1">
+        <div className="pt-28 md:pt-32">
+            <div className="container px-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="relative overflow-hidden rounded-3xl bg-white shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:scale-[1.01]"
+                >
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-white opacity-60"></div>
+                    <div className="absolute inset-0 bg-[url('https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png')] bg-repeat opacity-20"></div>
 
-        <section className="container pb-16 md:pb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-            <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
-                    <MessageSquare className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold font-headline">Chat to sales</h3>
-                <p className="text-muted-foreground mt-2 mb-4 text-sm sm:text-base">Speak to our friendly team.</p>
-                <Button asChild variant="outline" className="w-full justify-start mt-auto hover-shimmer-button text-xs sm:text-sm">
-                    <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
-                </Button>
-            </Card>
-            <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
-                    <Mail className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold font-headline">Chat to support</h3>
-                <p className="text-muted-foreground mt-2 mb-4 text-sm sm:text-base">We're here to help.</p>
-                 <Button asChild variant="outline" className="w-full justify-start mt-auto hover-shimmer-button text-xs sm:text-sm">
-                    <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
-                </Button>
-            </Card>
-            <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
-                    <MapPin className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold font-headline">Visit us</h3>
-                <p className="text-muted-foreground mt-2 mb-4 text-sm sm:text-base">Visit our office HQ.</p>
-                <Button variant="outline" asChild className="w-full mt-auto hover-shimmer-button text-xs sm:text-sm">
-                    <a href="https://maps.google.com?q=Shams+Colony+H-13+Islamabad" target="_blank" rel="noopener noreferrer">
-                        View on Google Maps
-                    </a>
-                </Button>
-            </Card>
-             <Card className="text-left p-6 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300">
-                <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-4">
-                    <Phone className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold font-headline">Call us</h3>
-                <p className="text-muted-foreground mt-2 mb-4 text-sm sm:text-base">Mon-Fri from 8am to 5pm.</p>
-                 <div className="space-y-2 w-full mt-auto">
-                    <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-xs sm:text-sm">
-                        <a href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer">+44 7532 830145</a>
-                    </Button>
-                    <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-xs sm:text-sm">
-                         <a href="https://wa.me/923021550385" target="_blank" rel="noopener noreferrer">+92 302 1550385</a>
-                    </Button>
-                 </div>
-            </Card>
-          </div>
-        </section>
+                    <div className="relative z-10 p-8 md:p-12 lg:p-16">
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div className="text-center lg:text-left">
+                                <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 font-headline leading-tight">
+                                    Get in Touch With Our Team
+                                </h1>
+                                <p className="mt-6 text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
+                                   We have the team and know-how to help you scale 10x faster. We're here to help, so reach out with any questions.
+                                </p>
+                                <div className="mt-8">
+                                    <Button asChild size="lg" className="bg-primary text-primary-foreground hover-shimmer-button rounded-full text-base">
+                                        <Link href="/about">
+                                            About Us <ArrowRight className="ml-2 h-5 w-5" />
+                                        </Link>
+                                    </Button>
+                                    <p className="mt-4 text-sm text-gray-500">Learn more about our mission</p>
+                                </div>
+                            </div>
 
+                            <div className="relative">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                     <Card className="text-left p-4 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300 bg-white/70 backdrop-blur-sm border-gray-200">
+                                        <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-3">
+                                            <MessageSquare className="w-5 h-5" />
+                                        </div>
+                                        <h3 className="text-base font-bold font-headline">Chat to sales</h3>
+                                        <p className="text-muted-foreground mt-1 mb-3 text-xs">Speak to our friendly team.</p>
+                                        <Button asChild variant="outline" className="w-full justify-start mt-auto hover-shimmer-button text-xs bg-white">
+                                            <a href="mailto:contact@pubgstuff.store">contact@pubgstuff.store</a>
+                                        </Button>
+                                    </Card>
+                                    <Card className="text-left p-4 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300 bg-white/70 backdrop-blur-sm border-gray-200">
+                                        <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-3">
+                                            <Mail className="w-5 h-5" />
+                                        </div>
+                                        <h3 className="text-base font-bold font-headline">Chat to support</h3>
+                                        <p className="text-muted-foreground mt-1 mb-3 text-xs">We're here to help.</p>
+                                        <Button asChild variant="outline" className="w-full justify-start mt-auto hover-shimmer-button text-xs bg-white">
+                                            <a href="mailto:contact@umarhashmi.dev">contact@umarhashmi.dev</a>
+                                        </Button>
+                                    </Card>
+                                    <Card className="text-left p-4 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300 bg-white/70 backdrop-blur-sm border-gray-200">
+                                        <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-3">
+                                            <MapPin className="w-5 h-5" />
+                                        </div>
+                                        <h3 className="text-base font-bold font-headline">Visit us</h3>
+                                        <p className="text-muted-foreground mt-1 mb-3 text-xs">Visit our office HQ.</p>
+                                        <Button variant="outline" asChild className="w-full mt-auto hover-shimmer-button text-xs bg-white">
+                                            <a href="https://maps.google.com?q=Shams+Colony+H-13+Islamabad" target="_blank" rel="noopener noreferrer">
+                                                View on Google Maps
+                                            </a>
+                                        </Button>
+                                    </Card>
+                                    <Card className="text-left p-4 flex flex-col items-start transform hover:-translate-y-1 transition-transform duration-300 bg-white/70 backdrop-blur-sm border-gray-200">
+                                        <div className="p-3 bg-foreground/10 text-foreground rounded-lg w-fit mb-3">
+                                            <Phone className="w-5 h-5" />
+                                        </div>
+                                        <h3 className="text-base font-bold font-headline">Call us</h3>
+                                        <p className="text-muted-foreground mt-1 mb-3 text-xs">Mon-Fri from 8am to 5pm.</p>
+                                        <div className="space-y-2 w-full mt-auto">
+                                            <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-xs bg-white">
+                                                <a href="https://wa.me/447532830145" target="_blank" rel="noopener noreferrer">+44 7532 830145</a>
+                                            </Button>
+                                            <Button variant="outline" asChild className="w-full justify-start hover-shimmer-button text-xs bg-white">
+                                                <a href="https://wa.me/923021550385" target="_blank" rel="noopener noreferrer">+92 302 1550385</a>
+                                            </Button>
+                                        </div>
+                                    </Card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
+        </div>
+        
         <Faq />
       </main>
       <Footer />
