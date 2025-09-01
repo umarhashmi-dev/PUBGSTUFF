@@ -37,12 +37,29 @@ const teamMembers = [
   }
 ];
 
+const developers = [
+    {
+        name: "Umar Hashmi",
+        title: "Full Stack Developer",
+        avatar: "https://picsum.photos/200/200",
+        aiHint: "male developer",
+        description: "Umar is the architect of our robust backend systems and seamless frontend experiences, ensuring performance and scalability."
+    },
+    {
+        name: "Bilal Hashmi",
+        title: "Frontend Developer",
+        avatar: "https://picsum.photos/200/200",
+        aiHint: "male designer",
+        description: "Bilal specializes in crafting pixel-perfect, intuitive user interfaces that bring our designs to life with flair and precision."
+    }
+]
+
 export default function AboutPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-gray-50">
       <Header />
       <main className="flex-1 pt-28 md:pt-32">
-        <div className="container px-4 pb-16 md:pb-24">
+        <div className="container px-4">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -106,7 +123,28 @@ export default function AboutPage() {
                 </div>
             </motion.div>
         </div>
-        <div className="pb-16 md:pb-24">
+
+        <div className="container px-4 mt-16 md:mt-24">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 font-headline">Meet Our Developers</h2>
+                <p className="mt-4 text-lg text-gray-600">The brilliant minds bringing our ideas to life.</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {developers.map((dev) => (
+                    <div key={dev.name} className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                        <Avatar className="h-24 w-24 border-4 border-gray-200">
+                            <AvatarImage src={dev.avatar} alt={dev.name} data-ai-hint={dev.aiHint} />
+                            <AvatarFallback>{dev.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
+                        <h3 className="mt-6 text-2xl font-bold text-gray-900 font-headline">{dev.name}</h3>
+                        <p className="mt-1 text-base font-medium text-primary">{dev.title}</p>
+                        <p className="mt-4 text-gray-600 flex-1">{dev.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <div className="py-16 md:py-24">
             <UseCases />
         </div>
         <div className="pb-16 md:pb-24">
