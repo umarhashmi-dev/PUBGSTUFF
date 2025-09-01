@@ -89,9 +89,9 @@ export default function ContactPage() {
                                             </a>
                                         </Button>
                                          <Button asChild variant="outline" size="lg" className="w-full justify-start hover-shimmer-button bg-white/50 text-base">
-                                            <a href="https://wa.me/447532830145">
+                                            <a href="https://wa.me/923021550385">
                                                 <Phone className="mr-3 h-5 w-5" />
-                                                +44 7532 830145
+                                                +92 302 1550385
                                             </a>
                                         </Button>
                                     </div>
