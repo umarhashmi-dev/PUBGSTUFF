@@ -3,7 +3,7 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Twitter, Linkedin, Instagram, Globe } from "lucide-react";
+import { ArrowRight, Github, Twitter, Linkedin, Instagram, Globe, Code, Palette } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -41,8 +41,7 @@ const developers = [
     {
         name: "Umar Hashmi",
         title: "Full Stack Developer",
-        avatar: "https://picsum.photos/200/200",
-        aiHint: "male developer",
+        icon: <Code className="h-12 w-12 text-primary" />,
         description: "Umar is the architect of our robust backend systems and seamless frontend experiences, ensuring performance and scalability.",
         socials: [
             { href: "https://github.com/umarhashmi-dev", icon: <Github className="h-5 w-5" /> },
@@ -55,8 +54,7 @@ const developers = [
     {
         name: "Naveed Alam",
         title: "Full Stack Developer",
-        avatar: "https://picsum.photos/200/200",
-        aiHint: "male designer",
+        icon: <Palette className="h-12 w-12 text-primary" />,
         description: "Naveed specializes in crafting pixel-perfect, intuitive user interfaces that bring our designs to life with flair and precision.",
         socials: [
             { href: "https://github.com/naveedalam-dev", icon: <Github className="h-5 w-5" /> },
@@ -146,10 +144,9 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 {developers.map((dev) => (
                     <div key={dev.name} className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-                        <Avatar className="h-24 w-24 border-4 border-gray-200">
-                            <AvatarImage src={dev.avatar} alt={dev.name} data-ai-hint={dev.aiHint} />
-                            <AvatarFallback>{dev.name.charAt(0)}</AvatarFallback>
-                        </Avatar>
+                        <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center border-4 border-primary/20">
+                            {dev.icon}
+                        </div>
                         <h3 className="mt-6 text-2xl font-bold text-gray-900 font-headline">{dev.name}</h3>
                         <p className="mt-1 text-base font-medium text-primary">{dev.title}</p>
                         <p className="mt-4 text-gray-600 flex-1">{dev.description}</p>
