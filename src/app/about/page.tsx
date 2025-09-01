@@ -46,11 +46,11 @@ const developers = [
         description: "Umar is the architect of our robust backend systems and seamless frontend experiences, ensuring performance and scalability."
     },
     {
-        name: "Bilal Hashmi",
-        title: "Frontend Developer",
+        name: "Naveed Alam",
+        title: "Full Stack Developer",
         avatar: "https://picsum.photos/200/200",
         aiHint: "male designer",
-        description: "Bilal specializes in crafting pixel-perfect, intuitive user interfaces that bring our designs to life with flair and precision."
+        description: "Naveed specializes in crafting pixel-perfect, intuitive user interfaces that bring our designs to life with flair and precision."
     }
 ]
 
