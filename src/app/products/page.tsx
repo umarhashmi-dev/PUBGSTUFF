@@ -145,16 +145,16 @@ export default function ProductsPage() {
         <section className="container pb-16 md:pb-24 -mt-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                 {categoryCards.map((card, i) => (
-                    <PinContainer key={i} title={card.title} href={card.href}>
+                    <PinContainer key={i} title={card.href} href={card.href}>
                         <div className="flex basis-full flex-col p-4 tracking-tight text-card-foreground sm:basis-1/2 w-[20rem] h-[20rem] ">
-                            <div className="flex justify-center items-center h-24">
-                                {card.icon}
+                            <div className="flex justify-center items-center h-24 text-white">
+                                {React.cloneElement(card.icon, {className: "w-8 h-8"})}
                             </div>
-                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center">
+                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-base text-center text-white">
                                 {card.title}
                             </h3>
                             <div className="text-base !m-0 !p-0 font-normal text-center">
-                                <span className="text-muted-foreground">
+                                <span className="text-slate-400">
                                     {card.description}
                                 </span>
                             </div>
