@@ -11,19 +11,21 @@ export default function UserAgreementPage() {
       <main className="flex-1 bg-white text-black pt-24">
         <div className="container mx-auto px-4 py-8 md:py-16 lg:py-24">
           <div className="mx-auto max-w-4xl">
-            <TextAnimate
-              as="h1"
-              animation={{
-                hidden: { opacity: 0, filter: "blur(4px)" },
-                show: { opacity: 1, filter: "blur(0px)" },
-              }}
-              className="text-3xl font-bold tracking-tight text-center sm:text-4xl lg:text-5xl"
-            >
-              User Agreement
-            </TextAnimate>
-            <p className="mt-4 text-center text-sm text-gray-500 md:text-base">
-              Last updated: Friday, 21 February 2025 in I-9, Islamabad
-            </p>
+            <div className="text-center mb-8 md:mb-12">
+                <TextAnimate
+                as="h1"
+                animation={{
+                    hidden: { opacity: 0, filter: "blur(4px)" },
+                    show: { opacity: 1, filter: "blur(0px)" },
+                }}
+                className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
+                >
+                User Agreement
+                </TextAnimate>
+                <p className="mt-4 text-sm text-gray-500 md:text-base">
+                Last updated: Friday, 21 February 2025 in I-9, Islamabad
+                </p>
+            </div>
 
             <div className="mt-8 space-y-6 md:mt-12 md:space-y-8">
               <div className="rounded-lg border border-gray-200 bg-gray-50/50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
