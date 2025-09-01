@@ -103,10 +103,10 @@ export default function ProductsPage() {
                             }}
                             className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
                         >
-                            Elevate Your Digital Experience
+                            Vnhax VIP - Bypass
                         </TextAnimate>
                         <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
-                            Browse our curated collection of premium digital goods, from exclusive in-game items to powerful software solutions designed to give you the edge.
+                            VNHAX VIP provides exclusive features for advanced gameplay, offering top-tier security, enhanced performance, and priority support for a premium gaming experience.
                         </p>
                         <div className="mt-10">
                             <Button size="lg" asChild className="hover-shimmer-button">
