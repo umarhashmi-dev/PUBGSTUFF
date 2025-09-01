@@ -223,7 +223,7 @@ export default function PcProductsPage() {
 
                         <div className="flex flex-col flex-grow">
                         <CardHeader className={cn("p-6 rounded-t-2xl", product.buttonVariant === 'gradient' ? 'bg-gradient-to-br from-purple-500/10 to-blue-500/10' : 'bg-card')}>
-                            <h3 className="text-xl font-bold font-headline">{product.name.replace(' (POPULAR!)', '').replace(' (10% Discount)','')}</h3>
+                            <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
                                     <span className="group-hover:hidden">${product.price}</span>
@@ -384,4 +384,5 @@ export default function PcProductsPage() {
   );
 }
 
+    
     
