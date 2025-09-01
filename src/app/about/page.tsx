@@ -42,7 +42,7 @@ export default function AboutPage() {
     <div className="flex min-h-[100dvh] flex-col bg-gray-50">
       <Header />
       <main className="flex-1 pt-28 md:pt-32">
-        <div className="container px-4">
+        <div className="container px-4 pb-16 md:pb-24">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -106,8 +106,12 @@ export default function AboutPage() {
                 </div>
             </motion.div>
         </div>
-        <UseCases />
-        <Testimonials />
+        <div className="pb-16 md:pb-24">
+            <UseCases />
+        </div>
+        <div className="pb-16 md:pb-24">
+            <Testimonials />
+        </div>
       </main>
       <Footer />
     </div>
