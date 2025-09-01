@@ -3,7 +3,7 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Shield } from "lucide-react";
+import { ArrowRight, Check, Shield, Monitor, Smartphone } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { TextAnimate } from "@/components/magicui/text-animate";
@@ -77,6 +77,27 @@ const products = [
     }
 ];
 
+const categoryCards = [
+    {
+        title: "PC Products",
+        description: "Explore our range of products for PC.",
+        href: "/products/pc",
+        icon: <Monitor className="w-8 h-8 text-primary" />,
+    },
+    {
+        title: "iOS Products",
+        description: "Discover exclusive tools for iOS devices.",
+        href: "/products/ios",
+        icon: <Smartphone className="w-8 h-8 text-primary" />,
+    },
+    {
+        title: "Android Products",
+        description: "Enhance your Android experience with our apps.",
+        href: "/products/android",
+        icon: <Smartphone className="w-8 h-8 text-primary" />,
+    }
+];
+
 export default function ProductsPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
@@ -120,7 +141,25 @@ export default function ProductsPage() {
             </div>
         </section>
 
-        <section id="products-grid" className="container pb-16 md:pb-24 -mt-12">
+        <section className="container pb-16 md:pb-24 -mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                {categoryCards.map((card) => (
+                    <Link href={card.href} key={card.title} className="block">
+                        <Card className="text-center p-8 h-full transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+                            <div className="flex justify-center items-center mb-4">
+                                <div className="p-4 bg-primary/10 rounded-full">
+                                    {card.icon}
+                                </div>
+                            </div>
+                            <h3 className="text-xl font-bold font-headline">{card.title}</h3>
+                            <p className="text-muted-foreground mt-2">{card.description}</p>
+                        </Card>
+                    </Link>
+                ))}
+            </div>
+        </section>
+
+        <section id="products-grid" className="container pb-16 md:pb-24">
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-stretch max-w-7xl mx-auto">
                 {products.map((product) => (
                     <div key={product.name} className="glowing-card">
