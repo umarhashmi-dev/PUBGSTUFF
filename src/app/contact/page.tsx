@@ -9,6 +9,9 @@ import Faq from "@/components/landing/faq";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 
 export default function ContactPage() {
@@ -48,27 +51,24 @@ export default function ContactPage() {
 
                             <div className="relative">
                                 <div className="bg-white/70 backdrop-blur-md rounded-2xl shadow-lg p-6 border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                                    <div className="flex items-center mb-4">
-                                        <div className="p-3 bg-primary/10 rounded-lg text-primary">
-                                            <Map className="h-8 w-8" />
+                                    <h3 className="text-2xl font-bold text-gray-800 font-headline mb-4">Send us a message</h3>
+                                    <form className="space-y-4">
+                                        <div>
+                                            <Label htmlFor="name" className="text-gray-700">Full Name</Label>
+                                            <Input id="name" type="text" placeholder="John Doe" className="mt-1 bg-white/50" />
                                         </div>
-                                        <div className="ml-auto">
-                                            <div className="flex items-center gap-2">
-                                                <div className="h-2.5 w-2.5 bg-green-400 rounded-full animate-pulse"></div>
-                                                <p className="text-sm font-medium text-gray-700">Online 24/7</p>
-                                            </div>
+                                        <div>
+                                            <Label htmlFor="email" className="text-gray-700">Email Address</Label>
+                                            <Input id="email" type="email" placeholder="you@example.com" className="mt-1 bg-white/50" />
                                         </div>
-                                    </div>
-                                    <h3 className="text-lg font-bold text-gray-800 font-headline">Let's start a conversation</h3>
-                                    <p className="mt-1 text-gray-500">We're here to help you with any questions.</p>
-
-                                    <div className="mt-6">
-                                         <Button asChild size="lg" className="w-full bg-primary text-primary-foreground hover-shimmer-button rounded-lg text-base">
-                                            <Link href="mailto:contact@pubgstuff.store">
-                                                Contact Sales <ArrowRight className="ml-2 h-5 w-5" />
-                                            </Link>
+                                        <div>
+                                            <Label htmlFor="message" className="text-gray-700">Message</Label>
+                                            <Textarea id="message" placeholder="How can we help you?" className="mt-1 bg-white/50" rows={4} />
+                                        </div>
+                                        <Button size="lg" className="w-full bg-primary text-primary-foreground hover-shimmer-button rounded-lg text-base">
+                                            Send Message
                                         </Button>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
