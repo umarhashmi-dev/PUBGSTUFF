@@ -3,7 +3,7 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Github, Twitter, Linkedin, Instagram, Globe } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -43,7 +43,14 @@ const developers = [
         title: "Full Stack Developer",
         avatar: "https://picsum.photos/200/200",
         aiHint: "male developer",
-        description: "Umar is the architect of our robust backend systems and seamless frontend experiences, ensuring performance and scalability."
+        description: "Umar is the architect of our robust backend systems and seamless frontend experiences, ensuring performance and scalability.",
+        socials: [
+            { href: "https://github.com/umarhashmi-dev", icon: <Github className="h-5 w-5" /> },
+            { href: "https://twitter.com/umarhashmi_dev", icon: <Twitter className="h-5 w-5" /> },
+            { href: "https://linkedin.com/in/umarhashmi-dev", icon: <Linkedin className="h-5 w-5" /> },
+            { href: "https://instagram.com/umarhashmi.dev", icon: <Instagram className="h-5 w-5" /> },
+            { href: "https://umarhashmi.dev", icon: <Globe className="h-5 w-5" /> },
+        ]
     },
     {
         name: "Naveed Alam",
@@ -139,6 +146,15 @@ export default function AboutPage() {
                         <h3 className="mt-6 text-2xl font-bold text-gray-900 font-headline">{dev.name}</h3>
                         <p className="mt-1 text-base font-medium text-primary">{dev.title}</p>
                         <p className="mt-4 text-gray-600 flex-1">{dev.description}</p>
+                        {dev.socials && (
+                            <div className="mt-6 flex gap-4">
+                                {dev.socials.map((social) => (
+                                    <Link key={social.href} href={social.href} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-primary transition-colors">
+                                        {social.icon}
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 ))}
             </div>
