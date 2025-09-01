@@ -66,12 +66,11 @@ const starProducts = [
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
-            "Silent Aimbot",
-            "Aimbot FOV Value",
-            "Draw FOV as Circle",
-            "Show Current Aim Position",
-            "Skip Knocked Enemies",
-            "Draw Line to Target Bone",
+            "Players, Bots & Airdrop ESP",
+            "HWID Spoofer & Emulator Bypass",
+            "Aimbot & Recoil Control",
+            "Radar & Item Visuals",
+            "24/7 Dedicated Support",
         ],
     },
     {
@@ -81,12 +80,11 @@ const starProducts = [
         buttonVariant: "default",
         buttonText: "Buy Now",
         features: [
-            "Silent Aimbot",
-            "Aimbot FOV Value",
-            "Draw FOV as Circle",
-            "Show Current Aim Position",
-            "Skip Knocked Enemies",
-            "Draw Line to Target Bone",
+            "Players, Bots & Airdrop ESP",
+            "HWID Spoofer & Emulator Bypass",
+            "Aimbot & Recoil Control",
+            "Radar & Item Visuals",
+            "24/7 Dedicated Support",
         ],
     },
     {
@@ -97,12 +95,11 @@ const starProducts = [
         buttonVariant: "gradient",
         buttonText: "Buy Now",
         features: [
-            "Silent Aimbot",
-            "Aimbot FOV Value",
-            "Draw FOV as Circle",
-            "Show Current Aim Position",
-            "Skip Knocked Enemies",
-            "Draw Line to Target Bone",
+            "Players, Bots & Airdrop ESP",
+            "HWID Spoofer & Emulator Bypass",
+            "Aimbot & Recoil Control",
+            "Radar & Item Visuals",
+            "24/7 Dedicated Support",
         ],
     }
 ];
