@@ -3,6 +3,7 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import Cta from "@/components/landing/cta";
 
 export default function UserAgreementPage() {
   return (
@@ -89,6 +90,7 @@ export default function UserAgreementPage() {
             </div>
           </div>
         </div>
+        <Cta />
       </main>
       <Footer />
     </div>

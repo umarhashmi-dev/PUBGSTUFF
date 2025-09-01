@@ -4,6 +4,7 @@ import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import Link from "next/link";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import Cta from "@/components/landing/cta";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -99,6 +100,7 @@ export default function PrivacyPolicyPage() {
             </div>
           </div>
         </div>
+        <Cta />
       </main>
       <Footer />
     </div>

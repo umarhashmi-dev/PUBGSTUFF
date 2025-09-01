@@ -4,6 +4,7 @@ import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import Link from "next/link";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import Cta from "@/components/landing/cta";
 
 export default function RefundPolicyPage() {
   return (
@@ -57,7 +58,7 @@ export default function RefundPolicyPage() {
                 </p>
               </div>
 
-               <div className="rounded-lg border border-yellow-300 bg-yellow-50 p-4 md:p-6">
+               <div className="rounded-lg border border-yellow-300 bg-yellow-50 p-4 md:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
                 <h2 className="text-xl font-bold md:text-2xl text-yellow-800">Important Notice for Virtual Products</h2>
                 <p className="mt-2 text-yellow-700 md:mt-4">
                   These are virtual products. Once you activate them on your devices, no refunds are available.
@@ -79,6 +80,7 @@ export default function RefundPolicyPage() {
             </div>
           </div>
         </div>
+        <Cta />
       </main>
       <Footer />
     </div>

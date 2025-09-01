@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import Cta from "@/components/landing/cta";
 
 
 export default function ContactPage() {
@@ -158,6 +159,7 @@ export default function ContactPage() {
         </div>
         
         <Faq />
+        <Cta />
       </main>
       <Footer />
     </div>

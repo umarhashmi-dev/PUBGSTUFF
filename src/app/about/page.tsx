@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import UseCases from "@/components/landing/use-cases";
 import Testimonials from "@/components/landing/testimonials";
+import Cta from "@/components/landing/cta";
 
 const teamMembers = [
   {
@@ -177,6 +178,7 @@ export default function AboutPage() {
         <div className="pb-16 md:pb-24">
             <Testimonials />
         </div>
+        <Cta />
       </main>
       <Footer />
     </div>
