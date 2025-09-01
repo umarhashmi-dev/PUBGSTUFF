@@ -3,124 +3,54 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { TextAnimate } from "@/components/magicui/text-animate";
-
-const IconTerminal2 = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-terminal-2" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-    <path d="M8 9l3 3l-3 3"></path>
-    <path d="M13 15l3 0"></path>
-    <path d="M3 4h18a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1z"></path>
-  </svg>
-);
-
-const IconEaseInOut = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-ease-in-out" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M3 20c8 0 18 -16 18 -16"></path>
-    </svg>
-);
-
-const IconCurrencyDollar = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-currency-dollar" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M16.7 8a3 3 0 0 0 -2.7 -2h-4a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6h-4a3 3 0 0 1 -2.7 -2"></path>
-        <path d="M12 3v3m0 12v3"></path>
-    </svg>
-);
-
-const IconCloud = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-cloud" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M6.657 18c-2.572 0 -4.657 -2.085 -4.657 -4.657c0 -2.348 1.77 -4.312 4.07 -4.593c.662 -2.133 2.652 -3.75 5.01 -3.75c2.27 0 4.232 1.545 4.868 3.633c1.78 .223 3.132 1.63 3.132 3.424c0 1.933 -1.567 3.5 -3.5 3.5h-11.843z"></path>
-    </svg>
-);
-
-const IconRouteAltLeft = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-route-alt-left" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M16 3h-5a2 2 0 0 0 -2 2v5h3a2 2 0 0 1 2 2v8a2 2 0 0 0 2 2h2"></path>
-        <path d="M8 3h-3a2 2 0 0 0 -2 2v5h3a2 2 0 0 1 2 2v8a2 2 0 0 0 2 2h2"></path>
-    </svg>
-);
-
-const IconHelp = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-help" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
-        <path d="M12 17l0 .01"></path>
-        <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4"></path>
-    </svg>
-);
-
-const IconAdjustmentsBolt = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-adjustments-bolt" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M4 10a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-        <path d="M6 4v4"></path>
-        <path d="M6 12v8"></path>
-        <path d="M10 16a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-        <path d="M12 4v10"></path>
-        <path d="M12 18v2"></path>
-        <path d="M16 7a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-        <path d="M18 4v1"></path>
-        <path d="M18 9v2.5"></path>
-        <path d="M19 18l-2 2.5l3 2.5l-2 2.5"></path>
-    </svg>
-);
-
-const IconHeart = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-heart" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
-    </svg>
-);
+import { Code, Palette, Users, Megaphone, Search, FileText, Bot, Heart } from "lucide-react";
 
 
 const features = [
   {
-    title: "Built for developers",
+    title: "Development",
     description:
-      "Built for engineers, developers, dreamers, thinkers and doers.",
-    icon: <IconTerminal2 />,
+      "At PubgStuff, we offer comprehensive web development services to create your web-based product.",
+    icon: <Code className="w-6 h-6" />,
   },
   {
-    title: "Ease of use",
+    title: "Web Design",
     description:
-      "It's as easy as using an Apple, and as expensive as buying one.",
-    icon: <IconEaseInOut />,
+      "At PubgStuff, we offer comprehensive web Designing services to create your online appearance.",
+    icon: <Palette className="w-6 h-6" />,
   },
   {
-    title: "Pricing like no other",
+    title: "SMM Service",
     description:
-      "Our prices are best in the market. No cap, no lock, no credit card required.",
-    icon: <IconCurrencyDollar />,
+      "At PubgStuff, we offer comprehensive SMM services to manage your social appearance.",
+    icon: <Users className="w-6 h-6" />,
   },
   {
-    title: "100% Uptime guarantee",
-    description: "We just cannot be taken down by anyone.",
-    icon: <IconCloud />,
+    title: "Ads & Marketing Tools",
+    description: "At PubgStuff, we offer Ads & Marketing Tools & services to create your achive your social goals.",
+    icon: <Megaphone className="w-6 h-6" />,
   },
   {
-    title: "Multi-tenant Architecture",
-    description: "You can simply share passwords instead of buying new seats",
-    icon: <IconRouteAltLeft />,
+    title: "Website SEO",
+    description: "At PubgStuff, we provide SEO services to boost your SEO score with optimized metadata for social ranking.",
+    icon: <Search className="w-6 h-6" />,
   },
   {
-    title: "24/7 Customer Support",
+    title: "Research Content",
     description:
-      "We are available a 100% of the time. Atleast our AI Agents are.",
-    icon: <IconHelp />,
+      "At PubgStuff, we offer content research tools to enhance your content strategy for university and researches.",
+    icon: <FileText className="w-6 h-6" />,
   },
   {
-    title: "Money back guarantee",
+    title: "AI Automation",
     description:
-      "If you donot like EveryAI, we will convince you to like us.",
-    icon: <IconAdjustmentsBolt />,
+      "We build custom AI agents and automation tools to streamline your business processes.",
+    icon: <Bot className="w-6 h-6" />,
   },
   {
     title: "And everything else",
-    description: "I just ran out of copy ideas. Accept my sincere apologies",
-    icon: <IconHeart />,
+    description: "We are passionate about creating amazing digital experiences. Contact us with your ideas.",
+    icon: <Heart className="w-6 h-6" />,
   },
 ];
 
@@ -179,10 +109,10 @@ export default function UseCases() {
             }}
             className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
           >
-            Why Choose Us
+            Multiple Use Cases Of PubgStuff
           </TextAnimate>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
-            Discover the features that make our platform the best choice for you.
+            A versatile AI Tool with a multitude of use cases
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
