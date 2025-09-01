@@ -1,13 +1,17 @@
-import Cta from "@/components/landing/cta";
-import Faq from "@/components/landing/faq";
-import FeaturedProducts from "@/components/landing/featured-products";
-import Footer from "@/components/landing/footer";
+
+'use client';
+import dynamic from 'next/dynamic';
 import Header from "@/components/landing/header";
 import Hero from "@/components/landing/hero";
+import FeaturedProducts from "@/components/landing/featured-products";
 import HowItWorks from "@/components/landing/how-it-works";
-import Testimonials from "@/components/landing/testimonials";
-import UseCases from "@/components/landing/use-cases";
 import BentoGridFeatures from "@/components/landing/bento-grid-features";
+import UseCases from "@/components/landing/use-cases";
+import Footer from "@/components/landing/footer";
+
+const Testimonials = dynamic(() => import('@/components/landing/testimonials'), { ssr: false });
+const Faq = dynamic(() => import('@/components/landing/faq'), { ssr: false });
+const Cta = dynamic(() => import('@/components/landing/cta'), { ssr: false });
 
 export default function Home() {
   return (
