@@ -104,11 +104,11 @@ export default function ProductsPage() {
                                 }}
                                 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
                             >
-                                Vnhax VIP - Bypass
+                                Choose the Right Plan for You
                             </TextAnimate>
                         </div>
                         <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
-                            VNHAX VIP provides exclusive features for advanced gameplay, offering top-tier security, enhanced performance, and priority support for a premium gaming experience.
+                            Discover our range of premium digital services and keys. Select the plan that suits your needs best and get started instantly with secure and reliable solutions.
                         </p>
                         <div className="mt-10">
                             <Button size="lg" asChild className="hover-shimmer-button">
