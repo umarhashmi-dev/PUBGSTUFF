@@ -3,11 +3,11 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Lightbulb, Users, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import UseCases from "@/components/landing/use-cases";
 
 const teamMembers = [
   {
@@ -105,6 +105,7 @@ export default function AboutPage() {
                 </div>
             </motion.div>
         </div>
+        <UseCases />
       </main>
       <Footer />
     </div>
