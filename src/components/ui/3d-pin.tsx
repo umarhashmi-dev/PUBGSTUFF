@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useState } from "react";
 import { motion, useSpring, useTransform, useMotionValue } from "framer-motion";
@@ -30,7 +29,8 @@ export const PinContainer = ({
   };
 
   return (
-    <div
+    <Link
+      href={href || "/"}
       className={cn(
         "relative group/pin z-50  cursor-pointer",
         containerClassName
@@ -55,7 +55,7 @@ export const PinContainer = ({
         </div>
       </div>
       <PinPerspective title={title} href={href} />
-    </div>
+    </Link>
   );
 };
 
@@ -97,16 +97,16 @@ export const PinPerspective = ({
         transformStyle: "preserve-3d",
         transform: `rotateY(${rotateY.get()}deg) rotateX(${rotateX.get()}deg)`,
       }}
-      className="relative rounded-2xl  transition duration-700 group-hover/pin:border-white/[0.2]"
+      className="relative rounded-2xl  transition duration-700 group-hover/pin:border-white/[0.2] h-full w-full"
     >
         <div
-            className="absolute inset-0 bg-zinc-900/[0.8] rounded-2xl shadow-[0_8px_16px_rgb(0_0_0/0.4)] border border-white/[0.1]"
+            className="absolute inset-0 bg-card rounded-2xl shadow-sm"
         />
         <div
             className="relative flex flex-col items-center justify-center min-h-[20rem] p-4 text-center"
         >
-             <h3 className="font-bold text-white mb-2">{title}</h3>
-            <Pin />
+             {title && <h3 className="font-bold text-card-foreground mb-2">{title}</h3>}
+             <Pin />
         </div>
     </motion.div>
   );
@@ -115,9 +115,9 @@ export const PinPerspective = ({
 
 export const Pin = () => {
     return (
-        <motion.div className="w-8 h-8 rounded-full bg-zinc-800 shadow-lg flex items-center justify-center">
+        <motion.div className="w-8 h-8 rounded-full bg-primary/20 shadow-lg flex items-center justify-center">
             <motion.div
-                className="w-4 h-4 bg-white rounded-full"
+                className="w-4 h-4 bg-primary rounded-full"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.5, ease: "easeInOut" }}
