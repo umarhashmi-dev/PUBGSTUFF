@@ -1,9 +1,10 @@
+
 'use client';
 
 import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, User } from 'lucide-react';
+import { MessageSquare, User, X } from 'lucide-react';
 
 const WhatsAppIcon = () => (
     <svg
@@ -22,59 +23,77 @@ const WhatsAppIcon = () => (
     </svg>
 );
 
+const contacts = [
+    { name: 'Developer', role: 'Technical Support', link: 'http://wa.me/+923021550385' },
+    { name: 'Support Team', role: 'Sales & General Inquiries', link: 'http://wa.me/+923355448505' },
+];
+
 export default function WhatsAppFab() {
-  const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div
-      className="fixed bottom-6 right-6 z-50 group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <div className="fixed bottom-6 right-6 z-50">
       <AnimatePresence>
-        {isHovered && (
+        {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute bottom-full right-0 mb-3 w-64 origin-bottom-right rounded-lg bg-card border border-border shadow-xl p-3"
+            className="absolute bottom-full right-0 mb-3 w-72 origin-bottom-right rounded-2xl bg-card border border-border shadow-2xl"
           >
-            <div className="p-2">
-              <h3 className="font-bold text-card-foreground text-center text-sm font-headline">Need help?</h3>
-              <p className="text-muted-foreground text-xs text-center mt-1">Chat with our team directly on WhatsApp.</p>
+            <div className="p-4 bg-secondary/50 rounded-t-2xl relative">
+              <h3 className="font-bold text-card-foreground font-headline">Hi there!</h3>
+              <p className="text-muted-foreground text-sm mt-1">We are here to help. Chat with us on WhatsApp for any queries.</p>
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="absolute top-3 right-3 p-1 rounded-full text-muted-foreground hover:bg-secondary transition-colors"
+                aria-label="Close chat"
+              >
+                  <X className="h-5 w-5" />
+              </button>
             </div>
-            <ul className="space-y-2 mt-2">
-              <li>
+            <div className="p-4 space-y-3">
+              {contacts.map((contact, index) => (
                 <Link 
-                    href="http://wa.me/+923021550385" 
+                    href={contact.link}
+                    key={index}
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center gap-3 p-2 rounded-md hover:bg-secondary transition-colors"
+                    className="flex items-center gap-4 p-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
                 >
-                    <User className="h-5 w-5 text-primary" />
-                    <span className="text-sm font-medium text-foreground">Chat with Developer</span>
+                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-background border border-border">
+                        <User className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                    <div className="flex-1">
+                        <p className="text-sm font-bold text-foreground">{contact.name}</p>
+                        <p className="text-xs text-muted-foreground">{contact.role}</p>
+                    </div>
+                    <MessageSquare className="h-5 w-5 text-muted-foreground" />
                 </Link>
-              </li>
-              <li>
-                <Link 
-                    href="http://wa.me/+923355448505" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center gap-3 p-2 rounded-md hover:bg-secondary transition-colors"
-                >
-                    <MessageSquare className="h-5 w-5 text-primary" />
-                    <span className="text-sm font-medium text-foreground">Chat with Support</span>
-                </Link>
-              </li>
-            </ul>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="bg-[#25D366] text-white rounded-full p-3 shadow-lg cursor-pointer hover:bg-[#128C7E] transition-all duration-300 group-hover:scale-110">
-        <WhatsAppIcon />
-      </div>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="bg-[#25D366] text-white rounded-full p-3 shadow-lg hover:bg-[#128C7E] transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-[#25D366]/50"
+        aria-label={isOpen ? "Close chat options" : "Open chat options"}
+      >
+        <AnimatePresence mode="wait">
+            <motion.div
+                key={isOpen ? "close" : "whatsapp"}
+                initial={{ opacity: 0, rotate: -45, scale: 0.8 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 45, scale: 0.8 }}
+                transition={{ duration: 0.2 }}
+            >
+                {isOpen ? <X className="h-8 w-8 text-white" /> : <WhatsAppIcon />}
+            </motion.div>
+        </AnimatePresence>
+      </button>
     </div>
   );
 }
