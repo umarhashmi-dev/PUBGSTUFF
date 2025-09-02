@@ -3,20 +3,32 @@
 
 import * as React from "react"
 import { useCurrency } from "@/hooks/use-currency";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
+
 
 export function CurrencySwitcher() {
   const { currency, setCurrency } = useCurrency();
 
   return (
-    <Select value={currency} onValueChange={setCurrency}>
-      <SelectTrigger className="w-[120px] bg-transparent border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-black focus:ring-0 focus:ring-offset-0">
-        <SelectValue placeholder="Select currency" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="USD">USD ($)</SelectItem>
-        <SelectItem value="PKR">PKR (₨)</SelectItem>
-      </SelectContent>
-    </Select>
+    <div className="flex flex-col space-y-1 w-[80px]">
+        <button
+            onClick={() => setCurrency('PKR')}
+            className={cn(
+                "px-4 py-2 text-sm font-medium text-white rounded-md transition-all duration-200",
+                currency === 'PKR' ? 'bg-green-500 shadow-lg' : 'bg-gray-700 hover:bg-green-500/80'
+            )}
+        >
+            PKR
+        </button>
+        <button
+            onClick={() => setCurrency('USD')}
+            className={cn(
+                "px-4 py-2 text-sm font-medium text-white rounded-md transition-all duration-200",
+                currency === 'USD' ? 'bg-blue-500 shadow-lg' : 'bg-gray-700 hover:bg-blue-500/80'
+            )}
+        >
+            USD
+        </button>
+    </div>
   )
 }
