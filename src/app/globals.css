@@ -113,7 +113,7 @@
   }
 
   .glowing-card {
-    @apply relative;
+    @apply relative overflow-hidden rounded-2xl;
   }
   
   .glowing-card::before {
