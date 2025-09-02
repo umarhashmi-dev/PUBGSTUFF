@@ -56,6 +56,8 @@ const features = [
     "ESP, Skins & Aimbot",
     "Integrated emulator bypass",
     "24/7 Dedicated Support",
+    "Aimbot FOV value",
+    "Skip Knocked Enemies",
 ];
 
 
