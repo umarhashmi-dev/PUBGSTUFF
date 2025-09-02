@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider } from '@/components/auth-provider';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import { CurrencyProvider } from '@/context/CurrencyContext';
-import { WhatsAppFabLoader } from '@/components/whatsapp-fab-loader';
+import { ChatFabLoader } from '@/components/chat-fab-loader';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -35,7 +35,7 @@ export default function RootLayout({
           <CurrencyProvider>
             {children}
             <Toaster />
-            <WhatsAppFabLoader />
+            <ChatFabLoader />
           </CurrencyProvider>
         </AuthProvider>
       </body>
