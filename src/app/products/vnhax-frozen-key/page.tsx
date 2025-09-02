@@ -15,6 +15,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { RadioGroupCards, RadioCard } from '@/components/ui/radio-group-cards';
 import { Separator } from '@/components/ui/separator';
+import { Checkbox } from '@/components/ui/checkbox';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -174,20 +175,35 @@ export default function SingleProductPage() {
                                         <p className="text-green-600 font-semibold">{currency === 'PKR' ? 'Rs (Pakistani Rupees)' : '$ (United States Dollar)'}</p>
                                         <div className="mt-4">
                                             <p className="text-sm text-gray-500 mb-2">Add Extra Support</p>
-                                            <RadioGroup defaultValue="extras" className="flex gap-2">
-                                                <div>
-                                                    <RadioGroupItem value="windows" id="windows" className="sr-only" />
-                                                    <Label htmlFor="windows" className="px-3 py-1.5 border rounded-md text-sm cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white data-[state=checked]:border-black">Windows</Label>
+                                            <div className="flex flex-col sm:flex-row gap-4">
+                                                <div className="flex items-center space-x-2">
+                                                    <Checkbox id="windows" />
+                                                    <label
+                                                        htmlFor="windows"
+                                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                                    >
+                                                        Windows
+                                                    </label>
                                                 </div>
-                                                <div>
-                                                    <RadioGroupItem value="drivers" id="drivers" className="sr-only" />
-                                                    <Label htmlFor="drivers" className="px-3 py-1.5 border rounded-md text-sm cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white data-[state=checked]:border-black">Drivers</Label>
+                                                <div className="flex items-center space-x-2">
+                                                    <Checkbox id="drivers" />
+                                                    <label
+                                                        htmlFor="drivers"
+                                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                                    >
+                                                        Drivers
+                                                    </label>
                                                 </div>
-                                                <div>
-                                                    <RadioGroupItem value="extras" id="extras" className="sr-only" />
-                                                    <Label htmlFor="extras" className="px-3 py-1.5 border rounded-md text-sm cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white data-[state=checked]:border-black">Extras</Label>
+                                                <div className="flex items-center space-x-2">
+                                                    <Checkbox id="extras" />
+                                                    <label
+                                                        htmlFor="extras"
+                                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                                    >
+                                                        Extras
+                                                    </label>
                                                 </div>
-                                            </RadioGroup>
+                                            </div>
                                         </div>
                                     </div>
 
