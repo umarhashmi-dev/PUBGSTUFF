@@ -89,9 +89,9 @@ export default function FeaturedProducts() {
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
+        <div className="mt-16 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto pt-4">
           {plans.map((plan) => (
-            <div key={plan.name} className="glowing-card">
+            <div key={plan.name}>
               <Card className={cn(
                   "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                   plan.badge && "relative"
