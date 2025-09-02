@@ -21,7 +21,7 @@ const shieldProducts = [
         buttonText: "Buy Now",
         features: [
             "Players, Bots & Airdrop ESP",
-            "HWID Spoofer & Emulator Bypass",
+            "FOV Circle & Show Aim Position",
             "Aimbot & Recoil Control",
             "Radar & Item Visuals",
             "24/7 Dedicated Support",
@@ -35,7 +35,7 @@ const shieldProducts = [
         buttonText: "Buy Now",
         features: [
             "Players, Bots & Airdrop ESP",
-            "HWID Spoofer & Emulator Bypass",
+            "FOV Circle & Show Aim Position",
             "Aimbot & Recoil Control",
             "Radar & Item Visuals",
             "24/7 Dedicated Support",
@@ -50,7 +50,7 @@ const shieldProducts = [
         buttonText: "Buy Now",
         features: [
             "Players, Bots & Airdrop ESP",
-            "HWID Spoofer & Emulator Bypass",
+            "FOV Circle & Show Aim Position",
             "Aimbot & Recoil Control",
             "Radar & Item Visuals",
             "24/7 Dedicated Support",
