@@ -144,7 +144,7 @@ export default function IosProductsPage() {
       <Header />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-b from-secondary/30 to-background">
+        <section className="relative pt-28 md:pt-40 pb-12 md:pb-24 bg-gradient-to-b from-secondary/30 to-background">
             <div className="container px-4">
                 <div className="max-w-4xl mx-auto text-center">
                     <motion.div
@@ -167,7 +167,7 @@ export default function IosProductsPage() {
                                 iOS Gaming Products
                             </TextAnimate>
                         </div>
-                        <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                        <p className="mt-6 text-base md:text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                             Explore our exclusive range of iOS keys designed to deliver smooth, secure, and enhanced PUBG gameplay. Choose the plan that fits your needs and unlock premium features with ease.
                         </p>
                     </motion.div>
@@ -175,10 +175,10 @@ export default function IosProductsPage() {
             </div>
         </section>
 
-        <section id="vnhax-products" className="container pb-16 md:pb-24">
+        <section id="vnhax-products" className="container pb-12 md:pb-24">
             <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl font-headline">Vnhax iOS</h2>
-                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                <p className="mt-4 text-base md:text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                     Experience the ultimate competitive edge. Our Vnhax iOS keys offer maximum security and game-changing features.
                 </p>
             </div>
@@ -235,10 +235,10 @@ export default function IosProductsPage() {
             </div>
         </section>
 
-        <section id="star-products" className="container pb-16 md:pb-24">
+        <section id="star-products" className="container pb-12 md:pb-24">
              <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl font-headline">Star iOS</h2>
-                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                <p className="mt-4 text-base md:text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                     Enhance your gameplay with reliable ESP and aimbot solutions.
                 </p>
             </div>
@@ -294,10 +294,10 @@ export default function IosProductsPage() {
             </div>
         </section>
 
-        <section id="tornado-products" className="container pb-16 md:pb-24">
+        <section id="tornado-products" className="container pb-12 md:pb-24">
              <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl font-headline">Tornado iOS</h2>
-                <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
+                <p className="mt-4 text-base md:text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                     Advanced silent aimbot and FOV controls designed for maximum performance.
                 </p>
             </div>
