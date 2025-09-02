@@ -74,8 +74,8 @@ export default function Footer() {
                 <Image 
                     src='https://i.postimg.cc/YC16tTst/secure-checkout-badge-hd-text-logo-symbol-potted-plant-transparent-png-1290135-1024x168.webp' 
                     alt='Secure Checkout Badge'
-                    width={512}
-                    height={84}
+                    width={256}
+                    height={42}
                     className="w-auto h-auto"
                 />
             </a>
