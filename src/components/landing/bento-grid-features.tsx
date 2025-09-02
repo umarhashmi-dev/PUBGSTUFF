@@ -230,7 +230,7 @@ const SkeletonFour = () => {
         className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
       >
         <img
-          src="https://picsum.photos/100/100?random=1"
+          src="https://i.postimg.cc/MZDMm4sF/8690c156-f9a4-44ec-a7fc-313bb99f4b09.jpg"
           alt="avatar"
           height="100"
           width="100"
