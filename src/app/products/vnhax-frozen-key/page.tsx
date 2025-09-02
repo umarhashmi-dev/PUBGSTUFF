@@ -75,7 +75,7 @@ export default function SingleProductPage() {
             <Header />
             <main className="flex-1 pt-24 md:pt-32">
                 <div className="container mx-auto px-4 py-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-[6fr,5fr] gap-8 md:gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-[6fr,5fr] gap-8 md:gap-12 max-w-5xl mx-auto">
                         {/* Image Gallery */}
                         <div className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200">
                              <div className="flex justify-between items-start mb-4">
@@ -237,5 +237,4 @@ export default function SingleProductPage() {
             <Footer />
         </div>
     );
-
-    
+}
