@@ -168,7 +168,7 @@ export default function PcProductsPage() {
       <ProductLayout>
         <main className="flex-1">
             {/* Hero Section */}
-            <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-b from-secondary/30 to-background">
+            <section className="relative pt-32 md:pt-40 pb-16 md:pb-24 bg-gradient-to-b from-secondary/30 to-background overflow-hidden">
                 <div className="container px-4">
                     <div className="max-w-4xl mx-auto text-center">
                         <motion.div
