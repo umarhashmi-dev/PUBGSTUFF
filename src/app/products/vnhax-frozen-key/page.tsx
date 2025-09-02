@@ -177,34 +177,19 @@ export default function SingleProductPage() {
                                         <p className="text-green-600 font-semibold">{currency === 'PKR' ? 'Rs (Pakistani Rupees)' : '$ (United States Dollar)'}</p>
                                         <div className="mt-4">
                                             <p className="text-sm text-gray-500 mb-2">Add Extra Support</p>
-                                            <div className="flex flex-col sm:flex-row gap-4">
-                                                <div className="flex items-center space-x-2">
+                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                                <label htmlFor="windows" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
                                                     <Checkbox id="windows" />
-                                                    <label
-                                                        htmlFor="windows"
-                                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                                    >
-                                                        Windows
-                                                    </label>
-                                                </div>
-                                                <div className="flex items-center space-x-2">
+                                                    <span className="text-sm font-medium">Windows</span>
+                                                </label>
+                                                <label htmlFor="drivers" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
                                                     <Checkbox id="drivers" />
-                                                    <label
-                                                        htmlFor="drivers"
-                                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                                    >
-                                                        Drivers
-                                                    </label>
-                                                </div>
-                                                <div className="flex items-center space-x-2">
+                                                    <span className="text-sm font-medium">Drivers</span>
+                                                </label>
+                                                <label htmlFor="extras" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
                                                     <Checkbox id="extras" />
-                                                    <label
-                                                        htmlFor="extras"
-                                                        className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                                    >
-                                                        Extras
-                                                    </label>
-                                                </div>
+                                                    <span className="text-sm font-medium">Extras</span>
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
