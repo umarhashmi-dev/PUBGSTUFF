@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import UseCases from "@/components/landing/use-cases";
 import Testimonials from "@/components/landing/testimonials";
 import Cta from "@/components/landing/cta";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -42,7 +43,7 @@ const developers = [
     {
         name: "Umar Hashmi",
         title: "Full Stack Developer",
-        icon: <Code className="h-12 w-12 text-primary" />,
+        imageUrl: "https://i.postimg.cc/MZDMm4sF/8690c156-f9a4-44ec-a7fc-313bb99f4b09.jpg",
         description: "Umar is the architect of our robust backend systems and seamless frontend experiences, ensuring performance and scalability.",
         socials: [
             { href: "https://github.com/umarhashmi-dev", icon: <Github className="h-5 w-5" /> },
@@ -55,7 +56,7 @@ const developers = [
     {
         name: "Naveed Alam",
         title: "Full Stack Developer",
-        icon: <Palette className="h-12 w-12 text-primary" />,
+        imageUrl: "https://i.postimg.cc/jqz9g6N9/Screenshot-2025-09-02-152656.png",
         description: "Naveed specializes in crafting pixel-perfect, intuitive user interfaces that bring our designs to life with flair and precision.",
         socials: [
             { href: "https://github.com/naveedalam-dev", icon: <Github className="h-5 w-5" /> },
@@ -149,8 +150,8 @@ export default function AboutPage() {
                     {developers.map((dev) => (
                         <div key={dev.name} className="glowing-card">
                            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 text-center flex flex-col items-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 h-full">
-                                <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center border-4 border-primary/20">
-                                    {dev.icon}
+                                <div className="h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center border-4 border-primary/20 overflow-hidden">
+                                    <Image src={dev.imageUrl} alt={dev.name} width={96} height={96} className="rounded-full object-cover w-full h-full" />
                                 </div>
                                 <h3 className="mt-6 text-2xl font-bold text-gray-900 font-headline">{dev.name}</h3>
                                 <p className="mt-1 text-base font-medium text-primary">{dev.title}</p>
