@@ -184,7 +184,7 @@ export default function IosProductsPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
                 {vnhaxProducts.map((product) => (
-                    <div key={product.name + product.price} className="glowing-card">
+                    <div key={product.name + product.price}>
                     <Card className={cn(
                         "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                         product.badge && "relative"
@@ -244,7 +244,7 @@ export default function IosProductsPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
                 {starProducts.map((product) => (
-                    <div key={product.name + product.price} className="glowing-card">
+                    <div key={product.name + product.price}>
                     <Card className={cn(
                         "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                         product.badge && "relative"
@@ -303,7 +303,7 @@ export default function IosProductsPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
                 {tornadoProducts.map((product) => (
-                    <div key={product.name + product.price} className="glowing-card">
+                    <div key={product.name + product.price}>
                     <Card className={cn(
                         "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                         product.badge && "relative"
