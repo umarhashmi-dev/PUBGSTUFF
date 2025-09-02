@@ -3,6 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { AuthProvider } from '@/components/auth-provider';
 import { Inter, Space_Grotesk } from 'next/font/google';
+import { CurrencyProvider } from '@/context/CurrencyContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,8 +31,10 @@ export default function RootLayout({
     <html lang="en" className={`!scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}>
       <body>
         <AuthProvider>
-          {children}
-          <Toaster />
+          <CurrencyProvider>
+            {children}
+            <Toaster />
+          </CurrencyProvider>
         </AuthProvider>
       </body>
     </html>

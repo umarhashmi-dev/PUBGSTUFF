@@ -11,11 +11,12 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ShimmeringText } from "@/components/ui/shimmering-text";
+import { useCurrency } from "@/hooks/use-currency";
 
 const vnhaxProducts = [
     {
         name: "Vnhax iOS Key",
-        price: "5",
+        price: 5,
         priceSuffix: "/ Day",
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -29,7 +30,7 @@ const vnhaxProducts = [
     },
     {
         name: "Vnhax iOS Key",
-        price: "15",
+        price: 15,
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -43,7 +44,7 @@ const vnhaxProducts = [
     },
     {
         name: "Vnhax iOS Key",
-        price: "30",
+        price: 30,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
@@ -61,7 +62,7 @@ const vnhaxProducts = [
 const starProducts = [
     {
         name: "Star iOS Key",
-        price: "5",
+        price: 5,
         priceSuffix: "/ Day",
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -75,7 +76,7 @@ const starProducts = [
     },
     {
         name: "Star iOS Key",
-        price: "15",
+        price: 15,
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -89,7 +90,7 @@ const starProducts = [
     },
     {
         name: "Star iOS Key",
-        price: "30",
+        price: 30,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
@@ -107,7 +108,7 @@ const starProducts = [
 const tornadoProducts = [
     {
         name: "Tornado iOS Key",
-        price: "17",
+        price: 17,
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
@@ -122,7 +123,7 @@ const tornadoProducts = [
     },
     {
         name: "Tornado iOS Key",
-        price: "35",
+        price: 35,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
@@ -139,6 +140,8 @@ const tornadoProducts = [
 ]
 
 export default function IosProductsPage() {
+  const { formatPrice } = useCurrency();
+
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
@@ -203,9 +206,9 @@ export default function IosProductsPage() {
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
-                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <span className="group-hover:hidden">{formatPrice(product.price)}</span>
                                     <div className="hidden group-hover:block">
-                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                        <ShimmeringText text={formatPrice(product.price)} duration={2} />
                                     </div>
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
@@ -262,9 +265,9 @@ export default function IosProductsPage() {
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
-                                    <span className="group-hover:hidden">${product.price}</span>
+                                     <span className="group-hover:hidden">{formatPrice(product.price)}</span>
                                     <div className="hidden group-hover:block">
-                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                        <ShimmeringText text={formatPrice(product.price)} duration={2} />
                                     </div>
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
@@ -321,9 +324,9 @@ export default function IosProductsPage() {
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
-                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <span className="group-hover:hidden">{formatPrice(product.price)}</span>
                                     <div className="hidden group-hover:block">
-                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                        <ShimmeringText text={formatPrice(product.price)} duration={2} />
                                     </div>
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>

@@ -11,11 +11,12 @@ import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ShimmeringText } from "@/components/ui/shimmering-text";
+import { useCurrency } from "@/hooks/use-currency";
 
 const vnhaxProducts = [
     {
         name: "Vnhax Frozen Key",
-        price: "5",
+        price: 5,
         priceSuffix: "/ Day",
         badge: null,
         buttonVariant: "default",
@@ -30,7 +31,7 @@ const vnhaxProducts = [
     },
     {
         name: "Vnhax Week Key",
-        price: "15",
+        price: 15,
         priceSuffix: "/ Week",
         badge: null,
         buttonVariant: "default",
@@ -45,7 +46,7 @@ const vnhaxProducts = [
     },
     {
         name: "Vnhax Month Key",
-        price: "30",
+        price: 30,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
@@ -60,7 +61,7 @@ const vnhaxProducts = [
     },
     {
         name: "Vnhax Admin Key",
-        price: "190",
+        price: 190,
         priceSuffix: "/ Lifetime",
         badge: "10% Discount",
         buttonVariant: "default",
@@ -78,7 +79,7 @@ const vnhaxProducts = [
 const redeyeProducts = [
     {
         name: "Redeye Frozen Key",
-        price: "5",
+        price: 5,
         priceSuffix: "/ Day",
         badge: null,
         buttonVariant: "default",
@@ -93,7 +94,7 @@ const redeyeProducts = [
     },
     {
         name: "Redeye Week Key",
-        price: "15",
+        price: 15,
         priceSuffix: "/ Week",
         badge: null,
         buttonVariant: "default",
@@ -108,7 +109,7 @@ const redeyeProducts = [
     },
     {
         name: "Redeye Month Key",
-        price: "30",
+        price: 30,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
@@ -126,7 +127,7 @@ const redeyeProducts = [
 const anubisProducts = [
     {
         name: "Anubis Week Key",
-        price: "20",
+        price: 20,
         priceSuffix: "/ Week",
         badge: null,
         buttonVariant: "default",
@@ -142,7 +143,7 @@ const anubisProducts = [
     },
     {
         name: "Anubis Month Key",
-        price: "40",
+        price: 40,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
@@ -159,6 +160,7 @@ const anubisProducts = [
 ]
 
 export default function PcProductsPage() {
+  const { formatPrice } = useCurrency();
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
@@ -223,9 +225,9 @@ export default function PcProductsPage() {
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                             <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
-                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <span className="group-hover:hidden">{formatPrice(product.price)}</span>
                                     <div className="hidden group-hover:block">
-                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                        <ShimmeringText text={formatPrice(product.price)} duration={2} />
                                     </div>
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
@@ -282,9 +284,9 @@ export default function PcProductsPage() {
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
-                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <span className="group-hover:hidden">{formatPrice(product.price)}</span>
                                     <div className="hidden group-hover:block">
-                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                        <ShimmeringText text={formatPrice(product.price)} duration={2} />
                                     </div>
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>
@@ -341,9 +343,9 @@ export default function PcProductsPage() {
                             <h3 className="text-xl font-bold font-headline">{product.name}</h3>
                              <div className="flex items-baseline gap-2 pt-2">
                                 <div className="text-4xl font-extrabold tracking-tight">
-                                    <span className="group-hover:hidden">${product.price}</span>
+                                    <span className="group-hover:hidden">{formatPrice(product.price)}</span>
                                     <div className="hidden group-hover:block">
-                                        <ShimmeringText text={`$${product.price}`} duration={2} />
+                                        <ShimmeringText text={formatPrice(product.price)} duration={2} />
                                     </div>
                                 </div>
                                 <span className="text-sm text-muted-foreground">{product.priceSuffix}</span>

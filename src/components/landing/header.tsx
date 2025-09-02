@@ -13,6 +13,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useRouter } from "next/navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
+import { CurrencySwitcher } from "../currency-switcher";
 
 const accountLinks = [
   {
@@ -270,6 +271,7 @@ export default function Header() {
         </div>
 
         <div className="hidden md:flex items-center justify-end gap-4">
+          <CurrencySwitcher />
           <NavigationMenu>
               <NavigationMenuList>
                 {user && (
@@ -355,6 +357,9 @@ export default function Header() {
               >
                 Contact Us
             </Link>
+            <div className="px-3 pt-2">
+                <CurrencySwitcher />
+            </div>
             {!authLoading && user ? (
               <>
                 <Link
