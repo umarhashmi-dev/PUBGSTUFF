@@ -210,9 +210,9 @@ export default function SingleProductPage() {
                                     <div className="border border-gray-200 rounded-lg p-4 mt-4">
                                         <ul className="space-y-3">
                                             {features.map((feature, i) => (
-                                                <li key={i} className="flex items-center gap-3 text-sm">
-                                                    <Check className="h-5 w-5 text-green-500" />
-                                                    <span>{feature}</span>
+                                                <li key={i} className="flex items-start gap-3">
+                                                    <Check className="h-5 w-5 text-white rounded-full bg-black p-1 shrink-0 mt-0.5" />
+                                                    <span className="text-foreground text-sm sm:text-base">{feature}</span>
                                                 </li>
                                             ))}
                                         </ul>
