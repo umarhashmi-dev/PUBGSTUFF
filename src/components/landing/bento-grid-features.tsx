@@ -321,7 +321,7 @@ const SkeletonFive = () => {
         className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
       >
         <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
+          src="https://i.postimg.cc/jqz9g6N9/Screenshot-2025-09-02-152656.png"
           alt="avatar"
           height="100"
           width="100"
