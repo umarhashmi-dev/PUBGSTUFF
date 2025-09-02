@@ -17,7 +17,7 @@ import { RadioGroupCards, RadioCard } from '@/components/ui/radio-group-cards';
 import { Separator } from '@/components/ui/separator';
 
 const images = [
-    { id: 1, src: 'https://i.postimg.cc/0QQKJN90/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
+    { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000?random=1', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
     { id: 3, src: 'https://picsum.photos/1000/1000?random=2', alt: 'Product in-game', aiHint: 'futuristic weapon' },
     { id: 4, src: 'https://picsum.photos/1000/1000?random=3', alt: 'Product details', aiHint: 'glowing abstract' },
@@ -80,7 +80,6 @@ export default function SingleProductPage() {
                         <div className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200">
                              <div className="flex justify-between items-start mb-4">
                                 <div>
-                                    <p className="text-sm text-gray-500">SKU: VN-FRZ-KEY-01</p>
                                     <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 font-headline mt-1">VNHAX Frozen Key</h1>
                                      <div className="mt-2 flex items-center gap-2">
                                         <div className="flex items-center gap-0.5 text-yellow-500">
@@ -144,7 +143,7 @@ export default function SingleProductPage() {
                                 <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
                                     <div className="flex justify-between items-center">
                                        <div>
-                                            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Choose Variant</p>
+                                            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">CHOOSE VARIANT</p>
                                             <p className="font-semibold text-gray-800 mt-1">VNHAX Frozen Key</p>
                                        </div>
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Pencil className="w-4 h-4" /></Button>
@@ -178,10 +177,13 @@ export default function SingleProductPage() {
                                         <AccordionContent className="px-4 pb-4 prose prose-sm max-w-none text-gray-600">
                                            <p>VNHAX Frozen Key is a premium PUBG Mobile booster and ESP tool designed for players who want to gain a professional advantage in every match. With more than 13,000 satisfied users and a 4.9 rating, this product is proven to be safe, secure, and effective.</p>
                                             <h3 className="font-headline font-bold mt-4">Key Features:</h3>
-                                            <ul className="list-disc pl-5">
-                                                <li><strong>100% Safe & Secure</strong> – Advanced Antiban technology keeps your PUBG Mobile main account safe.</li>
-                                                <li><strong>Booster & ESP</strong> – Includes Wall ESP and Loot ESP to detect enemies and items easily.</li>
-                                                <li><strong>Aimbot & Magic</strong> – Improve accuracy and dominate gunfights.</li>
+                                            <ul className="list-disc pl-5 space-y-2">
+                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />100% Safe & Secure – Advanced Antiban technology keeps your PUBG Mobile main account safe.</li>
+                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Booster & ESP – Includes Wall ESP and Loot ESP to detect enemies and items easily.</li>
+                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Aimbot & Magic – Improve accuracy and dominate gunfights.</li>
+                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Special Kill Effects – Unique kill messages and animations.</li>
+                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Best Recoil Control – Shoot with unmatched stability.</li>
+                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Integrated Emulator Bypass – Optimized for smooth PC gameplay.</li>
                                             </ul>
                                         </AccordionContent>
                                     </AccordionItem>
@@ -235,4 +237,5 @@ export default function SingleProductPage() {
             <Footer />
         </div>
     );
-}
+
+    
