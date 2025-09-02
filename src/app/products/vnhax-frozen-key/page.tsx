@@ -13,7 +13,7 @@ import { Card } from '@/components/ui/card';
 import Link from 'next/link';
 
 const images = [
-    { id: 1, src: 'https://picsum.photos/1000/1000', alt: 'Main product image', aiHint: 'gaming character cinematic' },
+    { id: 1, src: 'https://i.postimg.cc/0QQKJN90/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
     { id: 3, src: 'https://picsum.photos/1000/1000', alt: 'Product in-game', aiHint: 'futuristic weapon' },
     { id: 4, src: 'https://picsum.photos/1000/1000', alt: 'Product details', aiHint: 'glowing abstract' },
