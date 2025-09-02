@@ -175,7 +175,7 @@ export default function IosProductsPage() {
             </div>
         </section>
 
-        <section id="vnhax-products" className="container pb-16 md:pb-24 -mt-12">
+        <section id="vnhax-products" className="container pb-16 md:pb-24">
             <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl font-headline">Vnhax iOS</h2>
                 <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
