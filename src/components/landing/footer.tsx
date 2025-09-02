@@ -69,19 +69,8 @@ export default function Footer() {
             </form>
           </div>
         </div>
-        <div className="mt-12 flex justify-center">
-            <a href='https://postimages.org/' target='_blank' rel="noopener noreferrer">
-                <Image 
-                    src='https://i.postimg.cc/YC16tTst/secure-checkout-badge-hd-text-logo-symbol-potted-plant-transparent-png-1290135-1024x168.webp' 
-                    alt='Secure Checkout Badge'
-                    width={256}
-                    height={42}
-                    className="w-auto h-auto"
-                />
-            </a>
-        </div>
-        <div className="mt-12 pt-8 border-t text-center text-muted-foreground text-sm sm:text-base">
-          <p>
+        <div className="mt-12 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-muted-foreground text-sm sm:text-base text-center sm:text-left">
             &copy; {new Date().getFullYear()} PUBGSTUFF. All rights reserved. Developed by{' '}
             <a
               href="https://umarhashmi.dev/"
@@ -92,6 +81,15 @@ export default function Footer() {
               Umar Hashmi
             </a>
           </p>
+          <a href='https://postimages.org/' target='_blank' rel="noopener noreferrer">
+              <Image 
+                  src='https://i.postimg.cc/YC16tTst/secure-checkout-badge-hd-text-logo-symbol-potted-plant-transparent-png-1290135-1024x168.webp' 
+                  alt='Secure Checkout Badge'
+                  width={256}
+                  height={42}
+                  className="w-auto h-auto"
+              />
+          </a>
         </div>
       </div>
     </footer>
