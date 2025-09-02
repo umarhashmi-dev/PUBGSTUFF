@@ -208,7 +208,7 @@ export default function PcProductsPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch max-w-7xl mx-auto">
                     {vnhaxProducts.map((product) => (
-                        <div key={product.name} className="glowing-card overflow-hidden">
+                        <div key={product.name}>
                         <Card className={cn(
                             "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                             product.badge && "relative"
@@ -268,7 +268,7 @@ export default function PcProductsPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
                     {redeyeProducts.map((product) => (
-                        <div key={product.name} className="glowing-card overflow-hidden">
+                        <div key={product.name}>
                         <Card className={cn(
                             "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                             product.badge && "relative"
@@ -327,7 +327,7 @@ export default function PcProductsPage() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
                     {anubisProducts.map((product) => (
-                        <div key={product.name} className="glowing-card overflow-hidden">
+                        <div key={product.name}>
                         <Card className={cn(
                             "flex flex-col rounded-2xl shadow-lg transition-all duration-300 text-left group h-full",
                             product.badge && "relative"
