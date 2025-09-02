@@ -174,11 +174,20 @@ export default function SingleProductPage() {
                                         <p className="text-green-600 font-semibold">{currency === 'PKR' ? 'Rs (Pakistani Rupees)' : '$ (United States Dollar)'}</p>
                                         <div className="mt-4">
                                             <p className="text-sm text-gray-500 mb-2">Add Extra Support</p>
-                                            <div className="flex gap-2">
-                                                <Button variant="outline" size="sm">Windows</Button>
-                                                <Button variant="outline" size="sm">Drivers</Button>
-                                                <Button variant="default" size="sm" className="bg-black text-white hover:bg-gray-800">Extras</Button>
-                                            </div>
+                                            <RadioGroup defaultValue="extras" className="flex gap-2">
+                                                <div>
+                                                    <RadioGroupItem value="windows" id="windows" className="sr-only" />
+                                                    <Label htmlFor="windows" className="px-3 py-1.5 border rounded-md text-sm cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white data-[state=checked]:border-black">Windows</Label>
+                                                </div>
+                                                <div>
+                                                    <RadioGroupItem value="drivers" id="drivers" className="sr-only" />
+                                                    <Label htmlFor="drivers" className="px-3 py-1.5 border rounded-md text-sm cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white data-[state=checked]:border-black">Drivers</Label>
+                                                </div>
+                                                <div>
+                                                    <RadioGroupItem value="extras" id="extras" className="sr-only" />
+                                                    <Label htmlFor="extras" className="px-3 py-1.5 border rounded-md text-sm cursor-pointer data-[state=checked]:bg-black data-[state=checked]:text-white data-[state=checked]:border-black">Extras</Label>
+                                                </div>
+                                            </RadioGroup>
                                         </div>
                                     </div>
 
@@ -186,7 +195,7 @@ export default function SingleProductPage() {
                                         <ul className="space-y-3">
                                             {features.map((feature, i) => (
                                                 <li key={i} className="flex items-center gap-3 text-sm">
-                                                    <Image src="https://i.postimg.cc/PqYp2g6T/image.png" alt="checkmark" width={20} height={20} />
+                                                    <Check className="h-5 w-5 text-green-500" />
                                                     <span>{feature}</span>
                                                 </li>
                                             ))}
@@ -241,4 +250,3 @@ export default function SingleProductPage() {
         </div>
     );
 }
-
