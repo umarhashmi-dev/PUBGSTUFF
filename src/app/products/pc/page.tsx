@@ -22,6 +22,7 @@ const vnhaxProducts = [
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/vnhax-frozen-key",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -37,6 +38,7 @@ const vnhaxProducts = [
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "#",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -52,6 +54,7 @@ const vnhaxProducts = [
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "#",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -67,6 +70,7 @@ const vnhaxProducts = [
         badge: "10% Discount",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "#",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -247,7 +251,7 @@ export default function PcProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
