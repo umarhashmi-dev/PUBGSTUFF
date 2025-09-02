@@ -179,7 +179,7 @@ export default function IosProductsPage() {
             <div className="max-w-4xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl font-headline">Vnhax iOS</h2>
                 <p className="mt-4 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
-                    Premium keys with safe and secure gameplay features for iOS users.
+                    Experience the ultimate competitive edge. Our Vnhax iOS keys offer maximum security and game-changing features.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-5xl mx-auto">
