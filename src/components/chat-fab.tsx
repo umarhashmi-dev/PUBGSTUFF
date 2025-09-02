@@ -5,10 +5,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, User, X } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 const contacts = [
-    { name: 'Developer', role: 'Technical Support', link: 'http://wa.me/+923021550385' },
-    { name: 'Support Team', role: 'Sales & General Inquiries', link: 'http://wa.me/+923355448505' },
+    { name: 'Developer', role: 'Technical Support', link: 'http://wa.me/+923021550385', avatar: 'https://i.postimg.cc/MZDMm4sF/8690c156-f9a4-44ec-a7fc-313bb99f4b09.jpg' },
+    { name: 'Support Team', role: 'Sales & General Inquiries', link: 'http://wa.me/+923355448505', avatar: 'https://i.postimg.cc/7h0f7sWq/vn-logo-monogram-emblem-style-with-crown-shape-design-template-free-vector.jpg' },
 ];
 
 export default function ChatFab() {
@@ -45,8 +46,12 @@ export default function ChatFab() {
                     rel="noopener noreferrer" 
                     className="flex items-center gap-4 p-3 rounded-lg bg-secondary/50 hover:bg-secondary transition-colors"
                 >
-                    <div className="flex items-center justify-center h-10 w-10 rounded-full bg-background border border-border">
-                        <User className="h-5 w-5 text-muted-foreground" />
+                    <div className="relative">
+                        <Avatar className="h-10 w-10">
+                            <AvatarImage src={contact.avatar} alt={contact.name} />
+                            <AvatarFallback>{contact.name.charAt(0)}</AvatarFallback>
+                        </Avatar>
+                        <div className="absolute bottom-0 right-0 h-3 w-3 rounded-full bg-green-500 border-2 border-card animate-pulse"></div>
                     </div>
                     <div className="flex-1">
                         <p className="text-sm font-bold text-foreground">{contact.name}</p>
