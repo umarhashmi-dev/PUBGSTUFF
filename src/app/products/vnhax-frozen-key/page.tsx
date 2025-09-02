@@ -156,7 +156,16 @@ export default function SingleProductPage() {
                                                 <p className="text-xs text-gray-500">Product Name</p>
                                                 <h2 className="text-lg font-bold text-gray-900">Vnhax Frozen Key</h2>
                                             </div>
-                                            <Image src="https://i.postimg.cc/Qd05M02g/image.png" alt="5 star rating" width={60} height={60} />
+                                            <div className="flex items-center gap-2">
+                                                <div className="flex text-yellow-500">
+                                                    <Star className="w-4 h-4 fill-current" />
+                                                    <Star className="w-4 h-4 fill-current" />
+                                                    <Star className="w-4 h-4 fill-current" />
+                                                    <Star className="w-4 h-4 fill-current" />
+                                                    <Star className="w-4 h-4 fill-current" />
+                                                </div>
+                                                <span className="text-xs text-gray-600">(13k+)</span>
+                                            </div>
                                         </div>
                                     </div>
                                     
@@ -192,7 +201,7 @@ export default function SingleProductPage() {
                                             <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
                                             <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
                                         </div>
-                                        <Button size="lg" className="flex-1 hover-shimmer-button bg-gray-100 hover:bg-gray-200 text-black border border-gray-300 rounded-lg">
+                                        <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg">
                                             Buy Now
                                         </Button>
                                     </div>
