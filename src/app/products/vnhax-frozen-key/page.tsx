@@ -48,10 +48,20 @@ const relatedProducts = [
     }
 ]
 
+const features = [
+    "100% Safe & Secure",
+    "Special Kill Effects",
+    "Best Recoil Control",
+    "ESP, Skins & Aimbot",
+    "Integrated emulator bypass",
+    "24/7 Dedicated Support",
+];
+
+
 export default function SingleProductPage() {
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const [quantity, setQuantity] = useState(1);
-    const { formatPrice } = useCurrency();
+    const { formatPrice, currency } = useCurrency();
     const [currentThumbnailPage, setCurrentThumbnailPage] = useState(0);
     const thumbnailsPerPage = 4;
     const thumbnailPages = Math.ceil(images.length / thumbnailsPerPage);
@@ -139,70 +149,54 @@ export default function SingleProductPage() {
                         {/* Product Configuration */}
                         <div className="flex flex-col">
                            <div className="bg-white p-6 rounded-xl border border-gray-200 flex-1 flex flex-col justify-between">
-                             <div>
-                                <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
-                                    <div className="flex justify-between items-center">
-                                       <div>
-                                            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">CHOOSE VARIANT</p>
-                                            <p className="font-semibold text-gray-800 mt-1">VNHAX Frozen Key</p>
-                                       </div>
-                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Pencil className="w-4 h-4" /></Button>
+                                <div>
+                                    <div className="border border-gray-200 rounded-lg p-4">
+                                        <div className="flex justify-between items-center">
+                                            <div>
+                                                <p className="text-xs text-gray-500">Product Name</p>
+                                                <h2 className="text-lg font-bold text-gray-900">Vnhax Frozen Key</h2>
+                                            </div>
+                                            <Image src="https://i.postimg.cc/Qd05M02g/image.png" alt="5 star rating" width={60} height={60} />
+                                        </div>
+                                    </div>
+                                    
+                                    <div className="border border-gray-200 rounded-lg p-4 mt-4">
+                                        <p className="text-2xl font-bold">{formatPrice(5)}/day</p>
+                                        <p className="text-green-600 font-semibold">{currency === 'PKR' ? 'Rs (Pakistani Rupees)' : '$ (United States Dollar)'}</p>
+                                        <div className="mt-4">
+                                            <p className="text-sm text-gray-500 mb-2">Add Extra Support</p>
+                                            <div className="flex gap-2">
+                                                <Button variant="outline" size="sm">Windows</Button>
+                                                <Button variant="outline" size="sm">Drivers</Button>
+                                                <Button variant="default" size="sm" className="bg-black text-white hover:bg-gray-800">Extras</Button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="border border-gray-200 rounded-lg p-4 mt-4">
+                                        <ul className="space-y-3">
+                                            {features.map((feature, i) => (
+                                                <li key={i} className="flex items-center gap-3 text-sm">
+                                                    <Image src="https://i.postimg.cc/PqYp2g6T/image.png" alt="checkmark" width={20} height={20} />
+                                                    <span>{feature}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
                                 </div>
-
-                                <Accordion type="single" collapsible defaultValue="item-1" className="w-full mt-2">
-                                    <AccordionItem value="item-1" className="border rounded-lg">
-                                        <AccordionTrigger className="px-4 py-3 font-semibold hover:no-underline">Choose Options</AccordionTrigger>
-                                        <AccordionContent className="px-4 pb-4">
-                                           <div className="space-y-4">
-                                                <div>
-                                                    <h4 className="text-sm font-medium text-gray-600 mb-2">SUBSCRIPTION</h4>
-                                                    <RadioGroupCards defaultValue="day">
-                                                        <RadioCard value="day" label="1 Day Access" price={formatPrice(5)} />
-                                                        <RadioCard value="week" label="1 Week Access" price={formatPrice(15)} />
-                                                        <RadioCard value="month" label="1 Month Access" price={formatPrice(30)} />
-                                                    </RadioGroupCards>
-                                                </div>
-                                                 <div className="flex items-center p-3 rounded-lg bg-blue-50 border border-blue-200">
-                                                    <Info className="w-5 h-5 text-blue-600 mr-3 shrink-0"/>
-                                                    <p className="text-xs text-blue-800">
-                                                        This is a digital product. An activation key will be delivered to your email instantly after purchase.
-                                                    </p>
-                                                </div>
-                                           </div>
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                    <AccordionItem value="description" className="border rounded-lg mt-2">
-                                        <AccordionTrigger className="px-4 py-3 font-semibold hover:no-underline">Description</AccordionTrigger>
-                                        <AccordionContent className="px-4 pb-4 prose prose-sm max-w-none text-gray-600">
-                                           <p>VNHAX Frozen Key is a premium PUBG Mobile booster and ESP tool designed for players who want to gain a professional advantage in every match. With more than 13,000 satisfied users and a 4.9 rating, this product is proven to be safe, secure, and effective.</p>
-                                            <h3 className="font-headline font-bold mt-4">Key Features:</h3>
-                                            <ul className="list-disc pl-5 space-y-2">
-                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />100% Safe & Secure – Advanced Antiban technology keeps your PUBG Mobile main account safe.</li>
-                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Booster & ESP – Includes Wall ESP and Loot ESP to detect enemies and items easily.</li>
-                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Aimbot & Magic – Improve accuracy and dominate gunfights.</li>
-                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Special Kill Effects – Unique kill messages and animations.</li>
-                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Best Recoil Control – Shoot with unmatched stability.</li>
-                                                <li className="flex items-start gap-3"><Check className="w-4 h-4 mt-1 text-green-500 shrink-0" />Integrated Emulator Bypass – Optimized for smooth PC gameplay.</li>
-                                            </ul>
-                                        </AccordionContent>
-                                    </AccordionItem>
-                                </Accordion>
-
-                             </div>
                                 
-                             <div className="mt-6 border-t pt-4">
-                                <div className="flex justify-between items-center">
-                                    <div className="flex items-center border rounded-md">
-                                        <Button variant="ghost" size="icon" onClick={() => setQuantity(q => Math.max(1, q - 1))} className="h-9 w-9"><Minus className="w-4 h-4" /></Button>
-                                        <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
-                                        <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-9 w-9"><Plus className="w-4 h-4" /></Button>
+                                <div className="mt-6">
+                                    <div className="flex justify-between items-center gap-4">
+                                        <div className="flex items-center border rounded-md p-1">
+                                            <Button variant="ghost" size="icon" onClick={() => setQuantity(q => Math.max(1, q - 1))} className="h-8 w-8"><Minus className="w-4 h-4" /></Button>
+                                            <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
+                                            <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
+                                        </div>
+                                        <Button size="lg" className="flex-1 hover-shimmer-button bg-gray-100 hover:bg-gray-200 text-black border border-gray-300 rounded-lg">
+                                            Buy Now
+                                        </Button>
                                     </div>
-                                    <Button size="lg" className="flex-1 ml-4 hover-shimmer-button bg-gray-800 hover:bg-gray-900 text-white rounded-lg">
-                                        Add to Cart <ArrowRight className="ml-2 h-5 w-5" />
-                                    </Button>
                                 </div>
-                             </div>
                            </div>
                         </div>
                     </div>
@@ -238,3 +232,4 @@ export default function SingleProductPage() {
         </div>
     );
 }
+
