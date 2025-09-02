@@ -14,8 +14,10 @@ export function CurrencySwitcher() {
         <button
             onClick={() => setCurrency('PKR')}
             className={cn(
-                "px-4 py-2 text-sm font-medium text-white rounded-md transition-all duration-200",
-                currency === 'PKR' ? 'bg-green-500 shadow-lg' : 'bg-gray-700 hover:bg-green-500/80'
+                "px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
+                currency === 'PKR' 
+                    ? 'bg-primary text-primary-foreground shadow-lg' 
+                    : 'bg-secondary text-secondary-foreground hover:bg-primary/90 hover:text-primary-foreground'
             )}
         >
             PKR
@@ -23,8 +25,10 @@ export function CurrencySwitcher() {
         <button
             onClick={() => setCurrency('USD')}
             className={cn(
-                "px-4 py-2 text-sm font-medium text-white rounded-md transition-all duration-200",
-                currency === 'USD' ? 'bg-blue-500 shadow-lg' : 'bg-gray-700 hover:bg-blue-500/80'
+                "px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
+                currency === 'USD' 
+                    ? 'bg-primary text-primary-foreground shadow-lg' 
+                    : 'bg-secondary text-secondary-foreground hover:bg-primary/90 hover:text-primary-foreground'
             )}
         >
             USD
