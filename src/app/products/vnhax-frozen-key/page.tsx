@@ -1,21 +1,17 @@
 
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/landing/header';
 import Footer from '@/components/landing/footer';
 import { Button } from '@/components/ui/button';
-import { Star, Check, Minus, Plus, ShoppingCart, Heart, RefreshCw, ChevronLeft, ChevronRight, Share, Info, Maximize, Pencil, ArrowRight } from 'lucide-react';
+import { Star, Check, Minus, Plus, RefreshCw, ChevronLeft, ChevronRight, Share, Heart, Maximize } from 'lucide-react';
 import Image from 'next/image';
 import { useCurrency } from '@/hooks/use-currency';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
 import Link from 'next/link';
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { Label } from "@/components/ui/label"
-import { RadioGroupCards, RadioCard } from '@/components/ui/radio-group-cards';
-import { Separator } from '@/components/ui/separator';
 import { Checkbox } from '@/components/ui/checkbox';
+import { ProductLayout } from '@/components/product-layout';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -60,14 +56,33 @@ const features = [
     "Skip Knocked Enemies",
 ];
 
+const BASE_PRICE = 5;
+const EXTRA_PRICE = 5;
 
 export default function SingleProductPage() {
     const [selectedImage, setSelectedImage] = useState(images[0]);
     const [quantity, setQuantity] = useState(1);
     const { formatPrice, currency } = useCurrency();
     const [currentThumbnailPage, setCurrentThumbnailPage] = useState(0);
+    const [extras, setExtras] = useState({
+        windows: false,
+        drivers: false,
+        extras: false
+    });
+    const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
+
     const thumbnailsPerPage = 4;
     const thumbnailPages = Math.ceil(images.length / thumbnailsPerPage);
+
+    useEffect(() => {
+        const extrasCount = Object.values(extras).filter(Boolean).length;
+        const newTotal = (BASE_PRICE * quantity) + (extrasCount * EXTRA_PRICE);
+        setTotalPrice(newTotal);
+    }, [quantity, extras]);
+
+    const handleExtraChange = (extra: keyof typeof extras) => {
+        setExtras(prev => ({...prev, [extra]: !prev[extra]}));
+    }
 
     const nextThumbnails = () => {
         setCurrentThumbnailPage((prev) => (prev + 1) % thumbnailPages);
@@ -84,172 +99,174 @@ export default function SingleProductPage() {
 
 
     return (
-        <div className="flex min-h-screen flex-col bg-gray-50">
-            <Header />
-            <main className="flex-1 pt-24 md:pt-32">
-                <div className="container mx-auto px-4 py-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-[6fr,5fr] gap-8 md:gap-12 max-w-5xl mx-auto">
-                        {/* Image Gallery */}
-                        <div className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200">
-                             <div className="flex justify-between items-start mb-4">
-                                <div>
-                                    <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 font-headline mt-1">VNHAX Frozen Key</h1>
-                                     <div className="mt-2 flex items-center gap-2">
-                                        <div className="flex items-center gap-0.5 text-yellow-500">
-                                            <Star className="w-5 h-5 fill-current" />
-                                            <Star className="w-5 h-5 fill-current" />
-                                            <Star className="w-5 h-5 fill-current" />
-                                            <Star className="w-5 h-5 fill-current" />
-                                            <Star className="w-5 h-5 fill-current" />
+        <ProductLayout>
+            <div className="flex min-h-screen flex-col bg-gray-50">
+                <Header />
+                <main className="flex-1 pt-24 md:pt-32">
+                    <div className="container mx-auto px-4 py-8">
+                        <div className="grid grid-cols-1 lg:grid-cols-[6fr,5fr] gap-8 md:gap-12 max-w-5xl mx-auto">
+                            {/* Image Gallery */}
+                            <div className="bg-white p-4 sm:p-6 rounded-xl border border-gray-200">
+                                <div className="flex justify-between items-start mb-4">
+                                    <div>
+                                        <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 font-headline mt-1">VNHAX Frozen Key</h1>
+                                        <div className="mt-2 flex items-center gap-2">
+                                            <div className="flex items-center gap-0.5 text-yellow-500">
+                                                <Star className="w-5 h-5 fill-current" />
+                                                <Star className="w-5 h-5 fill-current" />
+                                                <Star className="w-5 h-5 fill-current" />
+                                                <Star className="w-5 h-5 fill-current" />
+                                                <Star className="w-5 h-5 fill-current" />
+                                            </div>
+                                            <p className="text-sm text-gray-600">(4.9/5.0 from 13,000+ ratings)</p>
                                         </div>
-                                        <p className="text-sm text-gray-600">(4.9/5.0 from 13,000+ ratings)</p>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Share className="w-5 h-5" /></Button>
+                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Heart className="w-5 h-5" /></Button>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                     <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Share className="w-5 h-5" /></Button>
-                                     <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Heart className="w-5 h-5" /></Button>
+
+                                <div className="aspect-square relative rounded-xl overflow-hidden shadow-inner bg-gray-50">
+                                    <Image
+                                        src={selectedImage.src}
+                                        alt={selectedImage.alt}
+                                        fill
+                                        className="object-contain transition-transform duration-300"
+                                        data-ai-hint={selectedImage.aiHint}
+                                    />
+                                    <Button variant="ghost" size="icon" className="absolute top-3 left-3 bg-white/50 backdrop-blur-sm hover:bg-white/80 text-gray-700">
+                                        <Maximize className="w-5 h-5"/>
+                                    </Button>
+                                </div>
+                                <div className="mt-4 flex items-center justify-between">
+                                    <Button variant="outline" size="sm" className="bg-white"><RefreshCw className="w-4 h-4 mr-2"/> Reset</Button>
+                                    <div className="flex items-center gap-2">
+                                        <Button variant="outline" size="icon" onClick={prevThumbnails} className="h-8 w-8 bg-white"><ChevronLeft className="w-4 h-4"/></Button>
+                                        <div className="grid grid-cols-4 gap-2">
+                                            {visibleThumbnails.map((image) => (
+                                                <button
+                                                    key={image.id}
+                                                    onClick={() => setSelectedImage(image)}
+                                                    className={`aspect-square w-16 relative rounded-md overflow-hidden border-2 transition-all ${selectedImage.id === image.id ? 'border-primary' : 'border-gray-200 hover:border-primary/50'}`}
+                                                >
+                                                    <Image
+                                                        src={image.src}
+                                                        alt={image.alt}
+                                                        fill
+                                                        className="object-cover"
+                                                        data-ai-hint={image.aiHint}
+                                                    />
+                                                </button>
+                                            ))}
+                                        </div>
+                                        <Button variant="outline" size="icon" onClick={nextThumbnails} className="h-8 w-8 bg-white"><ChevronRight className="w-4 h-4"/></Button>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="aspect-square relative rounded-xl overflow-hidden shadow-inner bg-gray-50">
-                                <Image
-                                    src={selectedImage.src}
-                                    alt={selectedImage.alt}
-                                    fill
-                                    className="object-contain transition-transform duration-300"
-                                    data-ai-hint={selectedImage.aiHint}
-                                />
-                                <Button variant="ghost" size="icon" className="absolute top-3 left-3 bg-white/50 backdrop-blur-sm hover:bg-white/80 text-gray-700">
-                                    <Maximize className="w-5 h-5"/>
-                                </Button>
-                            </div>
-                            <div className="mt-4 flex items-center justify-between">
-                                <Button variant="outline" size="sm" className="bg-white"><RefreshCw className="w-4 h-4 mr-2"/> Reset</Button>
-                                <div className="flex items-center gap-2">
-                                    <Button variant="outline" size="icon" onClick={prevThumbnails} className="h-8 w-8 bg-white"><ChevronLeft className="w-4 h-4"/></Button>
-                                    <div className="grid grid-cols-4 gap-2">
-                                        {visibleThumbnails.map((image) => (
-                                            <button
-                                                key={image.id}
-                                                onClick={() => setSelectedImage(image)}
-                                                className={`aspect-square w-16 relative rounded-md overflow-hidden border-2 transition-all ${selectedImage.id === image.id ? 'border-primary' : 'border-gray-200 hover:border-primary/50'}`}
-                                            >
-                                                <Image
-                                                    src={image.src}
-                                                    alt={image.alt}
-                                                    fill
-                                                    className="object-cover"
-                                                    data-ai-hint={image.aiHint}
-                                                />
-                                            </button>
-                                        ))}
-                                    </div>
-                                    <Button variant="outline" size="icon" onClick={nextThumbnails} className="h-8 w-8 bg-white"><ChevronRight className="w-4 h-4"/></Button>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* Product Configuration */}
-                        <div className="flex flex-col">
-                           <div className="bg-white p-6 rounded-xl border border-gray-200 flex-1 flex flex-col justify-between">
-                                <div>
-                                    <div className="border border-gray-200 rounded-lg p-4">
-                                        <div className="flex justify-between items-center">
-                                            <div>
-                                                <p className="text-xs text-gray-500">Product Name</p>
-                                                <h2 className="text-lg font-bold text-gray-900">Vnhax Frozen Key</h2>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <div className="flex text-yellow-500">
-                                                    <Star className="w-4 h-4 fill-current" />
-                                                    <Star className="w-4 h-4 fill-current" />
-                                                    <Star className="w-4 h-4 fill-current" />
-                                                    <Star className="w-4 h-4 fill-current" />
-                                                    <Star className="w-4 h-4 fill-current" />
+                            {/* Product Configuration */}
+                            <div className="flex flex-col">
+                            <div className="bg-white p-6 rounded-xl border border-gray-200 flex-1 flex flex-col justify-between">
+                                    <div>
+                                        <div className="border border-gray-200 rounded-lg p-4">
+                                            <div className="flex justify-between items-center">
+                                                <div>
+                                                    <p className="text-xs text-gray-500">Product Name</p>
+                                                    <h2 className="text-lg font-bold text-gray-900">Vnhax Frozen Key</h2>
                                                 </div>
-                                                <span className="text-xs text-gray-600">(13k+)</span>
+                                                <div className="flex items-center gap-2">
+                                                    <div className="flex text-yellow-500">
+                                                        <Star className="w-4 h-4 fill-current" />
+                                                        <Star className="w-4 h-4 fill-current" />
+                                                        <Star className="w-4 h-4 fill-current" />
+                                                        <Star className="w-4 h-4 fill-current" />
+                                                        <Star className="w-4 h-4 fill-current" />
+                                                    </div>
+                                                    <span className="text-xs text-gray-600">(13k+)</span>
+                                                </div>
                                             </div>
+                                        </div>
+                                        
+                                        <div className="border border-gray-200 rounded-lg p-4 mt-4">
+                                            <p className="text-2xl font-bold">{formatPrice(totalPrice)}</p>
+                                            <p className="text-green-600 font-semibold">{currency === 'PKR' ? 'Rs (Pakistani Rupees)' : '$ (United States Dollar)'}</p>
+                                            <div className="mt-4">
+                                                <p className="text-sm text-gray-500 mb-2">Add Extra Support ( {formatPrice(EXTRA_PRICE)} each )</p>
+                                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                                                    <label htmlFor="windows" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
+                                                        <Checkbox id="windows" checked={extras.windows} onCheckedChange={() => handleExtraChange('windows')} />
+                                                        <span className="text-sm font-medium">Windows</span>
+                                                    </label>
+                                                    <label htmlFor="drivers" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
+                                                        <Checkbox id="drivers" checked={extras.drivers} onCheckedChange={() => handleExtraChange('drivers')} />
+                                                        <span className="text-sm font-medium">Drivers</span>
+                                                    </label>
+                                                    <label htmlFor="extras" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
+                                                        <Checkbox id="extras" checked={extras.extras} onCheckedChange={() => handleExtraChange('extras')} />
+                                                        <span className="text-sm font-medium">Extras</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="border border-gray-200 rounded-lg p-4 mt-4">
+                                            <ul className="space-y-3">
+                                                {features.map((feature, i) => (
+                                                    <li key={i} className="flex items-start gap-3">
+                                                        <Check className="h-5 w-5 text-white rounded-full bg-black p-1 shrink-0 mt-0.5" />
+                                                        <span className="text-foreground text-sm sm:text-base">{feature}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     </div>
                                     
-                                    <div className="border border-gray-200 rounded-lg p-4 mt-4">
-                                        <p className="text-2xl font-bold">{formatPrice(5)}/day</p>
-                                        <p className="text-green-600 font-semibold">{currency === 'PKR' ? 'Rs (Pakistani Rupees)' : '$ (United States Dollar)'}</p>
-                                        <div className="mt-4">
-                                            <p className="text-sm text-gray-500 mb-2">Add Extra Support</p>
-                                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-                                                <label htmlFor="windows" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
-                                                    <Checkbox id="windows" />
-                                                    <span className="text-sm font-medium">Windows</span>
-                                                </label>
-                                                <label htmlFor="drivers" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
-                                                    <Checkbox id="drivers" />
-                                                    <span className="text-sm font-medium">Drivers</span>
-                                                </label>
-                                                <label htmlFor="extras" className="flex items-center space-x-2 border rounded-md p-2 hover:bg-gray-50 cursor-pointer has-[input:checked]:bg-primary/5 has-[input:checked]:border-primary transition-all">
-                                                    <Checkbox id="extras" />
-                                                    <span className="text-sm font-medium">Extras</span>
-                                                </label>
+                                    <div className="mt-6">
+                                        <div className="flex justify-between items-center gap-4">
+                                            <div className="flex items-center border rounded-md p-1">
+                                                <Button variant="ghost" size="icon" onClick={() => setQuantity(q => Math.max(1, q - 1))} className="h-8 w-8"><Minus className="w-4 h-4" /></Button>
+                                                <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
+                                                <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
                                             </div>
+                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg">
+                                                Buy Now
+                                            </Button>
                                         </div>
                                     </div>
+                            </div>
+                            </div>
+                        </div>
 
-                                    <div className="border border-gray-200 rounded-lg p-4 mt-4">
-                                        <ul className="space-y-3">
-                                            {features.map((feature, i) => (
-                                                <li key={i} className="flex items-start gap-3">
-                                                    <Check className="h-5 w-5 text-white rounded-full bg-black p-1 shrink-0 mt-0.5" />
-                                                    <span className="text-foreground text-sm sm:text-base">{feature}</span>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                </div>
-                                
-                                <div className="mt-6">
-                                    <div className="flex justify-between items-center gap-4">
-                                        <div className="flex items-center border rounded-md p-1">
-                                            <Button variant="ghost" size="icon" onClick={() => setQuantity(q => Math.max(1, q - 1))} className="h-8 w-8"><Minus className="w-4 h-4" /></Button>
-                                            <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
-                                            <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
-                                        </div>
-                                        <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg">
-                                            Buy Now
-                                        </Button>
-                                    </div>
-                                </div>
-                           </div>
+                        {/* Related Products */}
+                        <div className="mt-16 md:mt-24">
+                            <h2 className="text-3xl font-extrabold text-center text-gray-900 font-headline mb-8">You Might Also Like</h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                {relatedProducts.map((product) => (
+                                    <Link href={product.href} key={product.name}>
+                                        <Card className="group overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-all duration-300 bg-white">
+                                            <div className="aspect-square relative">
+                                                <Image
+                                                    src={product.imageUrl}
+                                                    alt={product.name}
+                                                    fill
+                                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                                    data-ai-hint={product.aiHint}
+                                                />
+                                            </div>
+                                            <div className="p-4">
+                                                <h3 className="font-semibold font-headline text-gray-800 group-hover:text-primary transition-colors">{product.name}</h3>
+                                                <p className="mt-2 font-bold text-lg text-gray-900">{formatPrice(product.price)}</p>
+                                            </div>
+                                        </Card>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
                     </div>
-
-                     {/* Related Products */}
-                    <div className="mt-16 md:mt-24">
-                        <h2 className="text-3xl font-extrabold text-center text-gray-900 font-headline mb-8">You Might Also Like</h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {relatedProducts.map((product) => (
-                                <Link href={product.href} key={product.name}>
-                                    <Card className="group overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-all duration-300 bg-white">
-                                        <div className="aspect-square relative">
-                                            <Image
-                                                src={product.imageUrl}
-                                                alt={product.name}
-                                                fill
-                                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                                data-ai-hint={product.aiHint}
-                                            />
-                                        </div>
-                                        <div className="p-4">
-                                            <h3 className="font-semibold font-headline text-gray-800 group-hover:text-primary transition-colors">{product.name}</h3>
-                                            <p className="mt-2 font-bold text-lg text-gray-900">{formatPrice(product.price)}</p>
-                                        </div>
-                                    </Card>
-                                </Link>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </main>
-            <Footer />
-        </div>
+                </main>
+                <Footer />
+            </div>
+        </ProductLayout>
     );
 }
