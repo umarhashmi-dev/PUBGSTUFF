@@ -38,7 +38,7 @@ const vnhaxProducts = [
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
-        href: "#",
+        href: "/products/vnhax-week-key",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -54,7 +54,7 @@ const vnhaxProducts = [
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
-        href: "#",
+        href: "/products/vnhax-month-key",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -70,7 +70,7 @@ const vnhaxProducts = [
         badge: "10% Discount",
         buttonVariant: "default",
         buttonText: "Buy Now",
-        href: "#",
+        href: "/products/vnhax-admin-key",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
