@@ -158,6 +158,25 @@ export default function SingleProductPage() {
             description: `Vnhax Frozen Key has been ${isFavorited ? 'removed from' : 'added to'} your favorites.`,
         });
     };
+    
+    const handleShareClick = () => {
+        const productUrl = window.location.href;
+        navigator.clipboard.writeText(productUrl)
+            .then(() => {
+                toast({
+                    title: "Link Copied!",
+                    description: "Product link has been copied to your clipboard.",
+                });
+            })
+            .catch(err => {
+                console.error('Failed to copy: ', err);
+                toast({
+                    title: "Error",
+                    description: "Failed to copy the link.",
+                    variant: "destructive",
+                });
+            });
+    };
 
     const thumbnailsPerPage = 4;
     const thumbnailPages = Math.ceil(images.length / thumbnailsPerPage);
@@ -221,7 +240,7 @@ export default function SingleProductPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100"><Share className="w-5 h-5" /></Button>
+                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleShareClick}><Share className="w-5 h-5" /></Button>
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleFavoriteClick}>
                                             <Heart className={cn("w-5 h-5", isFavorited && "fill-red-500 text-red-500")} />
                                         </Button>
@@ -547,6 +566,7 @@ export default function SingleProductPage() {
 }
 
     
+
 
 
 
