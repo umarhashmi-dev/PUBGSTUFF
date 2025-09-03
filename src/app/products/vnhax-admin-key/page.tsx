@@ -23,7 +23,7 @@ import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 
 const images = [
-    { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
+    { id: 1, src: 'https://i.postimg.cc/tgWNV4R8/VNHAX-ADMIN-KEY.png', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000?random=1', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
     { id: 3, src: 'https://picsum.photos/1000/1000?random=2', alt: 'Product in-game', aiHint: 'futuristic weapon' },
     { id: 4, src: 'https://picsum.photos/1000/1000?random=3', alt: 'Product details', aiHint: 'glowing abstract' },
@@ -57,35 +57,35 @@ const relatedProducts = [
         price: 5,
         imageUrl: "https://picsum.photos/600/600?random=10",
         aiHint: "abstract dark red",
-        href: "#"
+        href: "/products/redeye-frozen-key"
     },
     {
         name: "Redeye Week Key",
         price: 15,
         imageUrl: "https://picsum.photos/600/600?random=11",
         aiHint: "abstract fire",
-        href: "#"
+        href: "/products/redeye-week-key"
     },
     {
         name: "Redeye Month Key",
         price: 30,
         imageUrl: "https://picsum.photos/600/600?random=5",
         aiHint: "abstract red",
-        href: "#"
+        href: "/products/redeye-month-key"
     },
     {
         name: "Anubis Week Key",
         price: 20,
         imageUrl: "https://picsum.photos/600/600?random=12",
         aiHint: "abstract sand",
-        href: "#"
+        href: "/products/anubis-week-key"
     },
     {
         name: "Anubis Month Key",
         price: 40,
         imageUrl: "https://picsum.photos/600/600?random=6",
         aiHint: "abstract gold",
-        href: "#"
+        href: "/products/anubis-month-key"
     }
 ]
 
@@ -188,7 +188,7 @@ export default function SingleProductPage() {
             .reduce((sum, p) => sum + p.price, 0);
         const newTotal = (BASE_PRICE * quantity) + (extrasCount * EXTRA_PRICE) + addedProductsPrice;
         setTotalPrice(newTotal);
-    }, [quantity, extras, addedProducts]);
+    }, [quantity, extras, addedProducts, relatedProducts]);
 
     const handleExtraChange = (extra: keyof typeof extras) => {
         setExtras(prev => ({...prev, [extra]: !prev[extra]}));
@@ -569,3 +569,4 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
+
