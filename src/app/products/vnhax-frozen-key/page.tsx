@@ -12,6 +12,10 @@ import { Card } from '@/components/ui/card';
 import Link from 'next/link';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ProductLayout } from '@/components/product-layout';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -58,6 +62,30 @@ const features = [
 
 const BASE_PRICE = 5;
 const EXTRA_PRICE = 5;
+
+const reviews = [
+    {
+        name: "Alex Johnson",
+        avatar: "https://picsum.photos/100/100?random=10",
+        aiHint: "man portrait",
+        rating: 5,
+        comment: "Absolutely game-changing! The ESP is flawless and the aimbot is incredibly precise. My K/D ratio has skyrocketed. 100% recommend!"
+    },
+    {
+        name: "Samantha Bee",
+        avatar: "https://picsum.photos/100/100?random=11",
+        aiHint: "woman portrait",
+        rating: 5,
+        comment: "I was skeptical at first, but this is the real deal. The security is top-notch, and I've had zero issues with my main account. The support team is also very responsive."
+    },
+    {
+        name: "Mike Thompson",
+        avatar: "https://picsum.photos/100/100?random=12",
+        aiHint: "person portrait",
+        rating: 4,
+        comment: "Great tool with lots of features. The recoil control is insane. My only suggestion would be to add more customization options for the visuals. Otherwise, it's perfect."
+    }
+]
 
 export default function SingleProductPage() {
     const [selectedImage, setSelectedImage] = useState(images[0]);
@@ -238,37 +266,132 @@ export default function SingleProductPage() {
                             </div>
                         </div>
 
-                        {/* Long Description */}
-                        <div className="mt-16 md:mt-24 max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-xl border border-gray-200">
-                            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 font-headline mb-6">Long Description</h2>
-                            <div className="prose prose-gray max-w-none">
-                                <p>VNHAX Frozen Key is a premium PUBG Mobile booster and ESP tool designed for players who want to gain a professional advantage in every match. With more than 13,000 satisfied users and a 4.9 rating, this product is proven to be safe, secure, and effective.</p>
-                                <p>Built with advanced Antiban protection, VNHAX ensures your main account stays safe while you enjoy features like Wall ESP, Loot ESP, Aimbot, Magic options, special kill effects, and recoil control. It also comes with an integrated emulator bypass for smooth performance on PC.</p>
-                                <p>Whether you want to spot enemies faster, improve shooting precision, or customize your gameplay with skins and kill messages, VNHAX Frozen Key delivers it all. This is the ultimate solution for PUBG Mobile players who want a reliable, secure, and long-term booster.</p>
-                                
-                                <h3 className="font-headline font-bold text-xl mt-6 mb-4">Key Features:</h3>
-                                <ul className="space-y-2">
-                                    <li>100% Safe & Secure – Advanced Antiban technology keeps your PUBG Mobile main account safe.</li>
-                                    <li>Booster & ESP – Includes Wall ESP and Loot ESP to detect enemies and items easily.</li>
-                                    <li>Aimbot & Magic – Improve accuracy and dominate gunfights.</li>
-                                    <li>Special Kill Effects – Unique kill messages and animations.</li>
-                                    <li>Best Recoil Control – Shoot with unmatched stability.</li>
-                                    <li>Integrated Emulator Bypass – Optimized for smooth PC gameplay.</li>
-                                    <li>Trusted Worldwide – Over 13,000 gamers rated it 4.9/5.</li>
-                                </ul>
+                        {/* Tabs Section */}
+                        <div className="mt-16 md:mt-24 max-w-5xl mx-auto">
+                            <Tabs defaultValue="description" className="w-full">
+                                <TabsList className="grid w-full grid-cols-4 bg-gray-100">
+                                    <TabsTrigger value="description">Description</TabsTrigger>
+                                    <TabsTrigger value="reviews">Reviews</TabsTrigger>
+                                    <TabsTrigger value="faqs">FAQs</TabsTrigger>
+                                    <TabsTrigger value="comparison">Comparison</TabsTrigger>
+                                </TabsList>
+                                <TabsContent value="description" className="mt-6 bg-white p-6 md:p-8 rounded-xl border border-gray-200">
+                                    <div className="prose prose-gray max-w-none">
+                                        <p>VNHAX Frozen Key is a premium PUBG Mobile booster and ESP tool designed for players who want to gain a professional advantage in every match. With more than 13,000 satisfied users and a 4.9 rating, this product is proven to be safe, secure, and effective.</p>
+                                        <p>Built with advanced Antiban protection, VNHAX ensures your main account stays safe while you enjoy features like Wall ESP, Loot ESP, Aimbot, Magic options, special kill effects, and recoil control. It also comes with an integrated emulator bypass for smooth performance on PC.</p>
+                                        <p>Whether you want to spot enemies faster, improve shooting precision, or customize your gameplay with skins and kill messages, VNHAX Frozen Key delivers it all. This is the ultimate solution for PUBG Mobile players who want a reliable, secure, and long-term booster.</p>
+                                        
+                                        <h3 className="font-headline font-bold text-xl mt-6 mb-4">Key Features:</h3>
+                                        <ul className="space-y-2">
+                                            <li>100% Safe & Secure – Advanced Antiban technology keeps your PUBG Mobile main account safe.</li>
+                                            <li>Booster & ESP – Includes Wall ESP and Loot ESP to detect enemies and items easily.</li>
+                                            <li>Aimbot & Magic – Improve accuracy and dominate gunfights.</li>
+                                            <li>Special Kill Effects – Unique kill messages and animations.</li>
+                                            <li>Best Recoil Control – Shoot with unmatched stability.</li>
+                                            <li>Integrated Emulator Bypass – Optimized for smooth PC gameplay.</li>
+                                            <li>Trusted Worldwide – Over 13,000 gamers rated it 4.9/5.</li>
+                                        </ul>
 
-                                <h3 className="font-headline font-bold text-xl mt-6 mb-4">Why Choose VNHAX Frozen Key?</h3>
-                                <p>Unlike ordinary cheats or hacks, VNHAX Frozen Key is a professional PUBG Mobile booster built with long-term account safety in mind. It combines powerful features like ESP, Aimbot, recoil control, and skins with a guaranteed Antiban system. For serious players who want to stay safe while improving their gameplay, this is the best choice.</p>
-                                
-                                <p className="font-semibold mt-4">✅ This version is now:</p>
-                                <ul className="space-y-1 text-sm">
-                                    <li>Keyword-optimized for PUBG Mobile, booster, ESP, Aimbot, Antiban, Frozen Key.</li>
-                                    <li>Structured with clear headings for better Google indexing.</li>
-                                    <li>AdSense-safe (no spammy wording, professional tone).</li>
-                                    <li>Ready to rank in search engines.</li>
-                                </ul>
-                            </div>
+                                        <h3 className="font-headline font-bold text-xl mt-6 mb-4">Why Choose VNHAX Frozen Key?</h3>
+                                        <p>Unlike ordinary cheats or hacks, VNHAX Frozen Key is a professional PUBG Mobile booster built with long-term account safety in mind. It combines powerful features like ESP, Aimbot, recoil control, and skins with a guaranteed Antiban system. For serious players who want to stay safe while improving their gameplay, this is the best choice.</p>
+                                        
+                                        <p className="font-semibold mt-4">✅ This version is now:</p>
+                                        <ul className="space-y-1 text-sm">
+                                            <li>Keyword-optimized for PUBG Mobile, booster, ESP, Aimbot, Antiban, Frozen Key.</li>
+                                            <li>Structured with clear headings for better Google indexing.</li>
+                                            <li>AdSense-safe (no spammy wording, professional tone).</li>
+                                            <li>Ready to rank in search engines.</li>
+                                        </ul>
+                                    </div>
+                                </TabsContent>
+                                <TabsContent value="reviews" className="mt-6 bg-white p-6 md:p-8 rounded-xl border border-gray-200">
+                                    <h2 className="text-2xl font-bold mb-6">Customer Reviews</h2>
+                                    <div className="space-y-6">
+                                        {reviews.map((review, index) => (
+                                            <div key={index} className="flex items-start gap-4">
+                                                <Avatar className="h-12 w-12">
+                                                    <AvatarImage src={review.avatar} alt={review.name} data-ai-hint={review.aiHint} />
+                                                    <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>
+                                                </Avatar>
+                                                <div>
+                                                    <div className="flex items-center gap-2">
+                                                        <h3 className="font-semibold">{review.name}</h3>
+                                                        <div className="flex text-yellow-500">
+                                                            {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-gray-600 mt-1">{review.comment}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </TabsContent>
+                                <TabsContent value="faqs" className="mt-6 bg-white p-6 md:p-8 rounded-xl border border-gray-200">
+                                    <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+                                    <Accordion type="single" collapsible className="w-full">
+                                        <AccordionItem value="item-1">
+                                            <AccordionTrigger>Is VNHAX Frozen Key safe to use on my main account?</AccordionTrigger>
+                                            <AccordionContent>
+                                            Yes, it's 100% safe. Our product is equipped with advanced Antiban protection to ensure your main account's security.
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                        <AccordionItem value="item-2">
+                                            <AccordionTrigger>What platforms are supported?</AccordionTrigger>
+                                            <AccordionContent>
+                                            VNHAX Frozen Key is designed for PUBG Mobile and includes an integrated emulator bypass for smooth performance on PC.
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                        <AccordionItem value="item-3">
+                                            <AccordionTrigger>How long does it take to receive the key after purchase?</AccordionTrigger>
+                                            <AccordionContent>
+                                            Delivery is instant. You will receive your key and setup instructions via email immediately after completing your purchase.
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                         <AccordionItem value="item-4">
+                                            <AccordionTrigger>What kind of support do you offer?</AccordionTrigger>
+                                            <AccordionContent>
+                                            We offer 24/7 dedicated support via our Discord server and customer service channels to assist you with any questions or issues.
+                                            </AccordionContent>
+                                        </AccordionItem>
+                                    </Accordion>
+                                </TabsContent>
+                                <TabsContent value="comparison" className="mt-6 bg-white p-6 md:p-8 rounded-xl border border-gray-200">
+                                    <h2 className="text-2xl font-bold mb-6">Product Comparison</h2>
+                                    <Table>
+                                        <TableHeader>
+                                            <TableRow>
+                                                <TableHead>Feature</TableHead>
+                                                <TableHead className="text-center">VNHAX Frozen Key</TableHead>
+                                                <TableHead className="text-center">Other Cheats</TableHead>
+                                            </TableRow>
+                                        </TableHeader>
+                                        <TableBody>
+                                            <TableRow>
+                                                <TableCell className="font-medium">Antiban Protection</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Advanced</TableCell>
+                                                <TableCell className="text-center text-red-600">Basic/None</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell className="font-medium">Emulator Bypass</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Integrated</TableCell>
+                                                <TableCell className="text-center text-yellow-600">Varies</TableCell>
+                                            </TableRow>
+                                             <TableRow>
+                                                <TableCell className="font-medium">24/7 Support</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
+                                                <TableCell className="text-center text-red-600">No</TableCell>
+                                            </TableRow>
+                                             <TableRow>
+                                                <TableCell className="font-medium">Instant Delivery</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
+                                                <TableCell className="text-center text-yellow-600">Maybe</TableCell>
+                                            </TableRow>
+                                        </TableBody>
+                                    </Table>
+                                </TabsContent>
+                            </Tabs>
                         </div>
+
 
                         {/* Related Products */}
                         <div className="mt-16 md:mt-24">
@@ -302,5 +425,7 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
+
+    
 
     
