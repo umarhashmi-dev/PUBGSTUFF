@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "../logo";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { LogOut } from 'lucide-react';
+import { LogOut, Monitor, Smartphone, Bot, FileText, Blocks, Mic } from 'lucide-react';
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
@@ -146,6 +146,48 @@ const courseLinks = [
   },
 ];
 
+const productLinks = [
+    {
+        title: "PC Products",
+        href: "/products/pc",
+        description: "Unlock premium features for PC gaming.",
+        icon: <Monitor />,
+    },
+    {
+        title: "iOS Products",
+        href: "/products/ios",
+        description: "Enhance your gameplay on iOS devices.",
+        icon: <Smartphone />,
+    },
+    {
+        title: "Android Products",
+        href: "/products/android",
+        description: "Get the edge on Android with our tools.",
+        icon: <Smartphone />,
+    }
+]
+
+const aiToolsLinks = [
+    {
+        title: "Content Research",
+        href: "#",
+        description: "AI-powered research for insightful content.",
+        icon: <FileText />,
+    },
+    {
+        title: "Text Summarization",
+        href: "#",
+        description: "Summarize long texts into concise overviews.",
+        icon: <Mic />,
+    },
+    {
+        title: "Content Ideas",
+        href: "#",
+        description: "Generate creative ideas for your next project.",
+        icon: <Blocks />,
+    }
+]
+
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
   const { user, loading: authLoading } = useAuth();
@@ -187,6 +229,42 @@ export default function Header() {
                       Home
                     </Link>
                   </NavigationMenuLink>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">Products</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {productLinks.map((product) => (
+                         <ListItem
+                          key={product.title}
+                          title={product.title}
+                          href={product.href}
+                          icon={product.icon}
+                          className="text-gray-700"
+                        >
+                          {product.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">AI Tools</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      {aiToolsLinks.map((tool) => (
+                         <ListItem
+                          key={tool.title}
+                          title={tool.title}
+                          href={tool.href}
+                          icon={tool.icon}
+                          className="text-gray-700"
+                        >
+                          {tool.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
               <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">Courses</NavigationMenuTrigger>
@@ -330,6 +408,22 @@ export default function Header() {
                 className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
               >
                 Home
+            </Link>
+            <Link
+                href="/products"
+                onClick={() => setExpanded(false)}
+                title="Products"
+                className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
+              >
+                Products
+            </Link>
+             <Link
+                href="#"
+                onClick={() => setExpanded(false)}
+                title="AI Tools"
+                className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
+              >
+                AI Tools
             </Link>
             <Link
                 href="/courses"
