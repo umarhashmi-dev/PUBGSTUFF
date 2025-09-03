@@ -89,6 +89,7 @@ const redeyeProducts = [
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/redeye-frozen-key",
         features: [
             "Players, Bots & Airdrop ESP",
             "HWID Spoofer & Emulator Bypass",
@@ -104,6 +105,7 @@ const redeyeProducts = [
         badge: null,
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/redeye-week-key",
         features: [
             "Players, Bots & Airdrop ESP",
             "HWID Spoofer & Emulator Bypass",
@@ -119,6 +121,7 @@ const redeyeProducts = [
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "/products/redeye-month-key",
         features: [
             "Players, Bots & Airdrop ESP",
             "HWID Spoofer & Emulator Bypass",
@@ -310,7 +313,7 @@ export default function PcProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
