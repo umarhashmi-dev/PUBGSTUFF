@@ -321,7 +321,9 @@ export default function Header() {
                         <NavigationMenuLink asChild>
                             <Link
                                 className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md"
-                                href="/my-account"
+                                href="https://chat.whatsapp.com/BpPeom8JaHvKak8aVx51Vv?mode=ems_copy_t"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
                               <Image 
                                 src="https://i.postimg.cc/2ymc5B4H/White-and-Black-Modern-New-Graduate-Professional-Resume-2.jpg" 
