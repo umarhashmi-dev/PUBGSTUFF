@@ -18,6 +18,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
+import { cn } from '@/lib/utils';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -113,6 +114,7 @@ export default function SingleProductPage() {
         drivers: false,
         extras: false
     });
+    const [addedProducts, setAddedProducts] = useState<string[]>([]);
     const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
 
     const thumbnailsPerPage = 4;
@@ -120,12 +122,23 @@ export default function SingleProductPage() {
 
     useEffect(() => {
         const extrasCount = Object.values(extras).filter(Boolean).length;
-        const newTotal = (BASE_PRICE * quantity) + (extrasCount * EXTRA_PRICE);
+        const addedProductsPrice = relatedProducts
+            .filter(p => addedProducts.includes(p.name))
+            .reduce((sum, p) => sum + p.price, 0);
+        const newTotal = (BASE_PRICE * quantity) + (extrasCount * EXTRA_PRICE) + addedProductsPrice;
         setTotalPrice(newTotal);
-    }, [quantity, extras]);
+    }, [quantity, extras, addedProducts]);
 
     const handleExtraChange = (extra: keyof typeof extras) => {
         setExtras(prev => ({...prev, [extra]: !prev[extra]}));
+    }
+    
+    const handleAddProduct = (productName: string) => {
+        setAddedProducts(prev => 
+            prev.includes(productName) 
+                ? prev.filter(name => name !== productName)
+                : [...prev, productName]
+        );
     }
 
     const nextThumbnails = () => {
@@ -449,8 +462,8 @@ export default function SingleProductPage() {
                                     {relatedProducts.map((product, index) => (
                                         <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                                             <div className="p-1">
-                                                <Link href={product.href}>
-                                                    <Card className="group overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-all duration-300 bg-white">
+                                                <Card className="group overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-all duration-300 bg-white">
+                                                    <Link href={product.href}>
                                                         <div className="aspect-square relative">
                                                             <Image
                                                                 src={product.imageUrl}
@@ -460,12 +473,23 @@ export default function SingleProductPage() {
                                                                 data-ai-hint={product.aiHint}
                                                             />
                                                         </div>
-                                                        <div className="p-4">
-                                                            <h3 className="font-semibold font-headline text-gray-800 group-hover:text-primary transition-colors text-sm">{product.name}</h3>
-                                                            <p className="mt-1 font-bold text-base text-gray-900">{formatPrice(product.price)}</p>
-                                                        </div>
-                                                    </Card>
-                                                </Link>
+                                                    </Link>
+                                                    <div className="p-4 relative">
+                                                        <h3 className="font-semibold font-headline text-gray-800 group-hover:text-primary transition-colors text-sm">{product.name}</h3>
+                                                        <p className="mt-1 font-bold text-base text-gray-900">{formatPrice(product.price)}</p>
+                                                        <Button 
+                                                            size="icon" 
+                                                            variant={addedProducts.includes(product.name) ? 'default' : 'outline'}
+                                                            className={cn(
+                                                                "absolute bottom-2 right-2 h-8 w-8 rounded-full transition-all duration-300",
+                                                                !addedProducts.includes(product.name) && "opacity-0 group-hover:opacity-100"
+                                                            )}
+                                                            onClick={() => handleAddProduct(product.name)}
+                                                        >
+                                                            {addedProducts.includes(product.name) ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
+                                                        </Button>
+                                                    </div>
+                                                </Card>
                                             </div>
                                         </CarouselItem>
                                     ))}
@@ -479,3 +503,5 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
+
+    
