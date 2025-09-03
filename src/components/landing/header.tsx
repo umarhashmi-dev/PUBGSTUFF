@@ -248,7 +248,7 @@ export default function Header() {
                                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md"
                                 >
                                     <Image
-                                        src="https://picsum.photos/800/1000"
+                                        src="https://i.postimg.cc/YS1JRkqm/sasa.jpg"
                                         alt="Products promotion"
                                         fill
                                         className="object-cover rounded-md"
