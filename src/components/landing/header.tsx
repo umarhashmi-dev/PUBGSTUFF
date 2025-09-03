@@ -233,19 +233,42 @@ export default function Header() {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">Products</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
-                      {productLinks.map((product) => (
-                         <ListItem
-                          key={product.title}
-                          title={product.title}
-                          href={product.href}
-                          icon={product.icon}
-                          className="text-gray-700"
-                        >
-                          {product.description}
-                        </ListItem>
-                      ))}
-                    </ul>
+                    <div className="grid grid-cols-[1fr_2fr] w-[600px] lg:w-[700px] p-4">
+                        <div className="relative h-full">
+                            <NavigationMenuLink asChild>
+                                <Link
+                                    href="/products"
+                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md"
+                                >
+                                    <Image
+                                        src="https://picsum.photos/800/1000"
+                                        alt="Products promotion"
+                                        fill
+                                        className="object-cover rounded-md"
+                                        data-ai-hint="gaming abstract"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 rounded-md" />
+                                    <div className="relative p-4 text-white">
+                                        <h3 className="text-lg font-bold font-headline">All Products</h3>
+                                        <p className="text-sm mt-1">Explore our full range of digital keys and services.</p>
+                                    </div>
+                                </Link>
+                            </NavigationMenuLink>
+                        </div>
+                        <ul className="grid grid-cols-2 gap-3 p-2">
+                          {productLinks.map((product) => (
+                             <ListItem
+                              key={product.title}
+                              title={product.title}
+                              href={product.href}
+                              icon={product.icon}
+                              className="text-gray-700"
+                            >
+                              {product.description}
+                            </ListItem>
+                          ))}
+                        </ul>
+                    </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
