@@ -16,6 +16,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -26,6 +28,20 @@ const images = [
 ];
 
 const relatedProducts = [
+    {
+        name: "Vnhax Week Key",
+        price: 15,
+        imageUrl: "https://picsum.photos/600/600?random=8",
+        aiHint: "abstract green",
+        href: "#"
+    },
+    {
+        name: "Vnhax Month Key",
+        price: 30,
+        imageUrl: "https://picsum.photos/600/600?random=9",
+        aiHint: "abstract purple",
+        href: "#"
+    },
     {
         name: "Redeye Month Key",
         price: 30,
@@ -416,27 +432,45 @@ export default function SingleProductPage() {
                         {/* Related Products */}
                         <div className="mt-16 md:mt-24">
                             <h2 className="text-3xl font-extrabold text-center text-gray-900 font-headline mb-8">You Might Also Like</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {relatedProducts.map((product) => (
-                                    <Link href={product.href} key={product.name}>
-                                        <Card className="group overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-all duration-300 bg-white">
-                                            <div className="aspect-square relative">
-                                                <Image
-                                                    src={product.imageUrl}
-                                                    alt={product.name}
-                                                    fill
-                                                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                                    data-ai-hint={product.aiHint}
-                                                />
+                            <Carousel
+                                opts={{
+                                    align: "start",
+                                    loop: true,
+                                }}
+                                plugins={[
+                                    Autoplay({
+                                      delay: 3000,
+                                      stopOnInteraction: true,
+                                    }),
+                                ]}
+                                className="w-full"
+                            >
+                                <CarouselContent>
+                                    {relatedProducts.map((product, index) => (
+                                        <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                                            <div className="p-1">
+                                                <Link href={product.href}>
+                                                    <Card className="group overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-all duration-300 bg-white">
+                                                        <div className="aspect-square relative">
+                                                            <Image
+                                                                src={product.imageUrl}
+                                                                alt={product.name}
+                                                                fill
+                                                                className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                                                data-ai-hint={product.aiHint}
+                                                            />
+                                                        </div>
+                                                        <div className="p-4">
+                                                            <h3 className="font-semibold font-headline text-gray-800 group-hover:text-primary transition-colors text-sm">{product.name}</h3>
+                                                            <p className="mt-1 font-bold text-base text-gray-900">{formatPrice(product.price)}</p>
+                                                        </div>
+                                                    </Card>
+                                                </Link>
                                             </div>
-                                            <div className="p-4">
-                                                <h3 className="font-semibold font-headline text-gray-800 group-hover:text-primary transition-colors">{product.name}</h3>
-                                                <p className="mt-2 font-bold text-lg text-gray-900">{formatPrice(product.price)}</p>
-                                            </div>
-                                        </Card>
-                                    </Link>
-                                ))}
-                            </div>
+                                        </CarouselItem>
+                                    ))}
+                                </CarouselContent>
+                            </Carousel>
                         </div>
                     </div>
                 </main>
@@ -445,7 +479,3 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
-
-    
-
-    
