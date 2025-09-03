@@ -367,24 +367,44 @@ export default function SingleProductPage() {
                                         </TableHeader>
                                         <TableBody>
                                             <TableRow>
-                                                <TableCell className="font-medium">Antiban Protection</TableCell>
-                                                <TableCell className="text-center text-green-600 font-bold">Advanced</TableCell>
-                                                <TableCell className="text-center text-red-600">Basic/None</TableCell>
+                                                <TableCell className="font-medium">100% Safe & Secure</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
+                                                <TableCell className="text-center text-red-600">No</TableCell>
                                             </TableRow>
                                             <TableRow>
-                                                <TableCell className="font-medium">Emulator Bypass</TableCell>
-                                                <TableCell className="text-center text-green-600 font-bold">Integrated</TableCell>
-                                                <TableCell className="text-center text-yellow-600">Varies</TableCell>
-                                            </TableRow>
-                                             <TableRow>
-                                                <TableCell className="font-medium">24/7 Support</TableCell>
+                                                <TableCell className="font-medium">Special Kill Effects</TableCell>
                                                 <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
                                                 <TableCell className="text-center text-red-600">No</TableCell>
                                             </TableRow>
                                              <TableRow>
-                                                <TableCell className="font-medium">Instant Delivery</TableCell>
+                                                <TableCell className="font-medium">Best Recoil Control</TableCell>
                                                 <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
-                                                <TableCell className="text-center text-yellow-600">Maybe</TableCell>
+                                                <TableCell className="text-center text-yellow-600">Basic</TableCell>
+                                            </TableRow>
+                                             <TableRow>
+                                                <TableCell className="font-medium">ESP, Skins & Aimbot</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Advanced</TableCell>
+                                                <TableCell className="text-center text-yellow-600">Limited</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell className="font-medium">Integrated Emulator Bypass</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
+                                                <TableCell className="text-center text-red-600">No</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell className="font-medium">24/7 Dedicated Support</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
+                                                <TableCell className="text-center text-red-600">No</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell className="font-medium">Aimbot FOV Value</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Customizable</TableCell>
+                                                <TableCell className="text-center text-yellow-600">Fixed</TableCell>
+                                            </TableRow>
+                                            <TableRow>
+                                                <TableCell className="font-medium">Skip Knocked Enemies</TableCell>
+                                                <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
+                                                <TableCell className="text-center text-red-600">No</TableCell>
                                             </TableRow>
                                         </TableBody>
                                     </Table>
