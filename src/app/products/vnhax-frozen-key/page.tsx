@@ -259,7 +259,7 @@ export default function SingleProductPage() {
                                         <Maximize className="w-5 h-5"/>
                                     </Button>
                                 </div>
-                                <div className="mt-4 flex items-center justify-between">
+                                <div className="mt-4 hidden md:flex items-center justify-between">
                                     <Button variant="outline" size="sm" className="bg-white"><RefreshCw className="w-4 h-4 mr-2"/> Reset</Button>
                                     <div className="flex items-center gap-2">
                                         <Button variant="outline" size="icon" onClick={prevThumbnails} className="h-8 w-8 bg-white"><ChevronLeft className="w-4 h-4"/></Button>
@@ -571,3 +571,6 @@ export default function SingleProductPage() {
 
 
 
+
+
+    
