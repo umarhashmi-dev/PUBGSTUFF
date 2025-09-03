@@ -164,6 +164,13 @@ const productLinks = [
         href: "/products/android",
         description: "Get the edge on Android with our tools.",
         icon: <Smartphone />,
+    },
+    {
+        title: "More Coming Soon...",
+        href: "#",
+        description: "Exciting new products are on the way. Stay tuned!",
+        icon: <Bot />,
+        disabled: true,
     }
 ]
 
@@ -262,7 +269,7 @@ export default function Header() {
                               title={product.title}
                               href={product.href}
                               icon={product.icon}
-                              className="text-gray-700"
+                              className={cn("text-gray-700", product.disabled && "opacity-50 cursor-not-allowed")}
                             >
                               {product.description}
                             </ListItem>
@@ -319,7 +326,7 @@ export default function Header() {
                               <Image 
                                 src="https://exeyxlrneqxfsxjprrdu.supabase.co/storage/v1/object/public/assets/BUY%20ACCOUNTS_11zon.png" 
                                 alt="Header promotion" 
-                                layout="fill" 
+                                fill
                                 className="object-cover w-full h-full rounded-md"
                                 data-ai-hint="gaming items abstract" 
                               />
