@@ -238,6 +238,38 @@ export default function SingleProductPage() {
                             </div>
                         </div>
 
+                        {/* Long Description */}
+                        <div className="mt-16 md:mt-24 max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-xl border border-gray-200">
+                            <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 font-headline mb-6">Long Description</h2>
+                            <div className="prose prose-gray max-w-none">
+                                <p>VNHAX Frozen Key is a premium PUBG Mobile booster and ESP tool designed for players who want to gain a professional advantage in every match. With more than 13,000 satisfied users and a 4.9 rating, this product is proven to be safe, secure, and effective.</p>
+                                <p>Built with advanced Antiban protection, VNHAX ensures your main account stays safe while you enjoy features like Wall ESP, Loot ESP, Aimbot, Magic options, special kill effects, and recoil control. It also comes with an integrated emulator bypass for smooth performance on PC.</p>
+                                <p>Whether you want to spot enemies faster, improve shooting precision, or customize your gameplay with skins and kill messages, VNHAX Frozen Key delivers it all. This is the ultimate solution for PUBG Mobile players who want a reliable, secure, and long-term booster.</p>
+                                
+                                <h3 className="font-headline font-bold text-xl mt-6 mb-4">Key Features:</h3>
+                                <ul className="space-y-2">
+                                    <li>100% Safe & Secure – Advanced Antiban technology keeps your PUBG Mobile main account safe.</li>
+                                    <li>Booster & ESP – Includes Wall ESP and Loot ESP to detect enemies and items easily.</li>
+                                    <li>Aimbot & Magic – Improve accuracy and dominate gunfights.</li>
+                                    <li>Special Kill Effects – Unique kill messages and animations.</li>
+                                    <li>Best Recoil Control – Shoot with unmatched stability.</li>
+                                    <li>Integrated Emulator Bypass – Optimized for smooth PC gameplay.</li>
+                                    <li>Trusted Worldwide – Over 13,000 gamers rated it 4.9/5.</li>
+                                </ul>
+
+                                <h3 className="font-headline font-bold text-xl mt-6 mb-4">Why Choose VNHAX Frozen Key?</h3>
+                                <p>Unlike ordinary cheats or hacks, VNHAX Frozen Key is a professional PUBG Mobile booster built with long-term account safety in mind. It combines powerful features like ESP, Aimbot, recoil control, and skins with a guaranteed Antiban system. For serious players who want to stay safe while improving their gameplay, this is the best choice.</p>
+                                
+                                <p className="font-semibold mt-4">✅ This version is now:</p>
+                                <ul className="space-y-1 text-sm">
+                                    <li>Keyword-optimized for PUBG Mobile, booster, ESP, Aimbot, Antiban, Frozen Key.</li>
+                                    <li>Structured with clear headings for better Google indexing.</li>
+                                    <li>AdSense-safe (no spammy wording, professional tone).</li>
+                                    <li>Ready to rank in search engines.</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         {/* Related Products */}
                         <div className="mt-16 md:mt-24">
                             <h2 className="text-3xl font-extrabold text-center text-gray-900 font-headline mb-8">You Might Also Like</h2>
@@ -270,3 +302,5 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
+
+    
