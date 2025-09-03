@@ -221,8 +221,8 @@ export default function SingleProductPage() {
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-2">
-                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Share className="w-5 h-5" /></Button>
-                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100" onClick={handleFavoriteClick}>
+                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100"><Share className="w-5 h-5" /></Button>
+                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleFavoriteClick}>
                                             <Heart className={cn("w-5 h-5", isFavorited && "fill-red-500 text-red-500")} />
                                         </Button>
                                     </div>
@@ -547,6 +547,7 @@ export default function SingleProductPage() {
 }
 
     
+
 
 
 
