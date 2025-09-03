@@ -19,6 +19,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { cn } from '@/lib/utils';
+import { useAuth } from '@/hooks/use-auth';
+import { useToast } from '@/hooks/use-toast';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/4KDxDs7Y/Vnhax-Frozen-Key.webp', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -137,6 +139,25 @@ export default function SingleProductPage() {
     });
     const [addedProducts, setAddedProducts] = useState<string[]>([]);
     const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
+    const { user } = useAuth();
+    const { toast } = useToast();
+    const [isFavorited, setIsFavorited] = useState(false);
+
+    const handleFavoriteClick = () => {
+        if (!user) {
+            toast({
+                title: "Login Required",
+                description: "You need to be logged in to favorite products.",
+                variant: "destructive",
+            });
+            return;
+        }
+        setIsFavorited(!isFavorited);
+        toast({
+            title: isFavorited ? "Removed from Favorites" : "Added to Favorites",
+            description: `Vnhax Frozen Key has been ${isFavorited ? 'removed from' : 'added to'} your favorites.`,
+        });
+    };
 
     const thumbnailsPerPage = 4;
     const thumbnailPages = Math.ceil(images.length / thumbnailsPerPage);
@@ -201,7 +222,9 @@ export default function SingleProductPage() {
                                     </div>
                                     <div className="flex items-center gap-2">
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Share className="w-5 h-5" /></Button>
-                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100"><Heart className="w-5 h-5" /></Button>
+                                        <Button variant="ghost" size="icon" className="text-gray-500 hover:bg-gray-100" onClick={handleFavoriteClick}>
+                                            <Heart className={cn("w-5 h-5", isFavorited && "fill-red-500 text-red-500")} />
+                                        </Button>
                                     </div>
                                 </div>
 
@@ -524,5 +547,6 @@ export default function SingleProductPage() {
 }
 
     
+
 
 
