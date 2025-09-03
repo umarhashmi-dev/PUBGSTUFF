@@ -349,14 +349,6 @@ export default function SingleProductPage() {
                                         <div className="bg-[#CDC1FF] p-4 rounded-lg">
                                             <h3 className="font-headline font-bold text-xl mb-4">Why Choose Vnhax Frozen Key?</h3>
                                             <p>Unlike ordinary cheats or hacks, Vnhax Frozen Key is a professional PUBG Mobile booster built with long-term account safety in mind. It combines powerful features like ESP, Aimbot, recoil control, and skins with a guaranteed Antiban system. For serious players who want to stay safe while improving their gameplay, this is the best choice.</p>
-                                            
-                                            <p className="font-semibold mt-4">✅ This version is now:</p>
-                                            <ul className="space-y-1 text-sm list-disc pl-5">
-                                                <li>Keyword-optimized for PUBG Mobile, booster, ESP, Aimbot, Antiban, Frozen Key.</li>
-                                                <li>Structured with clear headings for better Google indexing.</li>
-                                                <li>AdSense-safe (no spammy wording, professional tone).</li>
-                                                <li>Ready to rank in search engines.</li>
-                                            </ul>
                                         </div>
                                     </div>
                                 </TabsContent>
@@ -443,7 +435,7 @@ export default function SingleProductPage() {
                                                 <TableCell className="text-center text-yellow-600">Limited</TableCell>
                                             </TableRow>
                                             <TableRow>
-                                                <TableCell className="font-medium">Integrated Emulator Bypass</TableCell>
+                                                <TableCell className="font-medium">Integrated emulator bypass</TableCell>
                                                 <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
                                                 <TableCell className="text-center text-red-600">No</TableCell>
                                             </TableRow>
@@ -453,7 +445,7 @@ export default function SingleProductPage() {
                                                 <TableCell className="text-center text-red-600">No</TableCell>
                                             </TableRow>
                                             <TableRow>
-                                                <TableCell className="font-medium">Aimbot FOV Value</TableCell>
+                                                <TableCell className="font-medium">Aimbot FOV value</TableCell>
                                                 <TableCell className="text-center text-green-600 font-bold">Customizable</TableCell>
                                                 <TableCell className="text-center text-yellow-600">Fixed</TableCell>
                                             </TableRow>
@@ -532,4 +524,5 @@ export default function SingleProductPage() {
 }
 
     
+
 
