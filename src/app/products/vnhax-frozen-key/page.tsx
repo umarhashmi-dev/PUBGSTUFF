@@ -209,6 +209,11 @@ export default function SingleProductPage() {
     const prevThumbnails = () => {
         setCurrentThumbnailPage((prev) => (prev - 1 + thumbnailPages) % thumbnailPages);
     };
+    
+    const handleResetImage = () => {
+        setSelectedImage(images[0]);
+        setCurrentThumbnailPage(0);
+    };
 
     const visibleThumbnails = images.slice(
         currentThumbnailPage * thumbnailsPerPage,
@@ -260,7 +265,7 @@ export default function SingleProductPage() {
                                     </Button>
                                 </div>
                                 <div className="mt-4 hidden md:flex items-center justify-between">
-                                    <Button variant="outline" size="sm" className="bg-white"><RefreshCw className="w-4 h-4 mr-2"/> Reset</Button>
+                                    <Button variant="outline" size="sm" className="bg-white" onClick={handleResetImage}><RefreshCw className="w-4 h-4 mr-2"/> Reset</Button>
                                     <div className="flex items-center gap-2">
                                         <Button variant="outline" size="icon" onClick={prevThumbnails} className="h-8 w-8 bg-white"><ChevronLeft className="w-4 h-4"/></Button>
                                         <div className="grid grid-cols-4 gap-2">
