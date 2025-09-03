@@ -5,8 +5,47 @@ import Link from "next/link";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { useState } from "react";
+import confetti from "canvas-confetti";
 
 export default function Hero() {
+  const [isCelebrated, setIsCelebrated] = useState(false);
+
+  const handleConfettiClick = () => {
+    if (isCelebrated) return;
+
+    const end = Date.now() + 3 * 1000; // 3 seconds
+    const colors = ["#a786ff", "#fd8bbc", "#eca184", "#f8deb1"];
+
+    const frame = () => {
+      if (Date.now() > end) {
+        setIsCelebrated(true);
+        return;
+      }
+
+      confetti({
+        particleCount: 2,
+        angle: 60,
+        spread: 55,
+        startVelocity: 60,
+        origin: { x: 0, y: 0.5 },
+        colors: colors,
+      });
+      confetti({
+        particleCount: 2,
+        angle: 120,
+        spread: 55,
+        startVelocity: 60,
+        origin: { x: 1, y: 0.5 },
+        colors: colors,
+      });
+
+      requestAnimationFrame(frame);
+    };
+
+    frame();
+  };
+
   return (
     <div className="pt-24 sm:pt-28 lg:pt-32">
       <section className="relative py-12 sm:py-16 lg:pb-20 xl:pb-40">
@@ -36,14 +75,27 @@ export default function Hero() {
               <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 font-inter max-w-xl mx-auto lg:mx-0">
                 Instantly access a massive collection of game skins, currency, and other digital goods. Level up your gaming experience today.
               </p>
-
-              <Button asChild size="lg" className="mt-8 sm:mt-10 bg-gray-900 text-white hover:bg-gray-800 hover-shimmer-button">
-                <Link
-                  href="/products"
-                >
-                  Browse Products
-                </Link>
-              </Button>
+              
+              <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                <Button asChild size="lg" className="bg-gray-900 text-white hover:bg-gray-800 hover-shimmer-button">
+                  <Link
+                    href="/products"
+                  >
+                    Browse Products
+                  </Link>
+                </Button>
+                 {isCelebrated ? (
+                    <Button asChild size="lg" variant="outline" className="hover-shimmer-button">
+                        <Link href="https://discord.gg/PwbEZ7wa3v" target="_blank" rel="noopener noreferrer">
+                            Join Discord
+                        </Link>
+                    </Button>
+                ) : (
+                    <Button size="lg" variant="outline" onClick={handleConfettiClick} className="hover-shimmer-button">
+                        Celebrate New UI
+                    </Button>
+                )}
+              </div>
 
               <div className="mt-12 sm:mt-16 flex flex-col items-center lg:items-start space-y-8">
                 <div className="flex items-center justify-center lg:justify-start">
