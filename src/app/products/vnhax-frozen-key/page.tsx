@@ -44,6 +44,27 @@ const relatedProducts = [
         href: "#"
     },
     {
+        name: "Vnhax Admin Key",
+        price: 190,
+        imageUrl: "https://picsum.photos/600/600?random=7",
+        aiHint: "abstract blue",
+        href: "#"
+    },
+    {
+        name: "Redeye Frozen Key",
+        price: 5,
+        imageUrl: "https://picsum.photos/600/600?random=10",
+        aiHint: "abstract dark red",
+        href: "#"
+    },
+    {
+        name: "Redeye Week Key",
+        price: 15,
+        imageUrl: "https://picsum.photos/600/600?random=11",
+        aiHint: "abstract fire",
+        href: "#"
+    },
+    {
         name: "Redeye Month Key",
         price: 30,
         imageUrl: "https://picsum.photos/600/600?random=5",
@@ -51,17 +72,17 @@ const relatedProducts = [
         href: "#"
     },
     {
+        name: "Anubis Week Key",
+        price: 20,
+        imageUrl: "https://picsum.photos/600/600?random=12",
+        aiHint: "abstract sand",
+        href: "#"
+    },
+    {
         name: "Anubis Month Key",
         price: 40,
         imageUrl: "https://picsum.photos/600/600?random=6",
         aiHint: "abstract gold",
-        href: "#"
-    },
-    {
-        name: "Vnhax Admin Key",
-        price: 190,
-        imageUrl: "https://picsum.photos/600/600?random=7",
-        aiHint: "abstract blue",
         href: "#"
     }
 ]
