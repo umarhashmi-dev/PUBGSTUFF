@@ -324,7 +324,7 @@ export default function Header() {
                                 href="/my-account"
                             >
                               <Image 
-                                src="https://i.postimg.cc/cgY5PQYY/White-and-Black-Modern-New-Graduate-Professional-Resume-1.jpg" 
+                                src="https://i.postimg.cc/76Q8G9ZB/White-and-Black-Modern-New-Graduate-Professional-Resume-1.jpg" 
                                 alt="Header promotion" 
                                 fill
                                 className="object-cover w-full h-full rounded-md"
@@ -542,4 +542,5 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
+
 
