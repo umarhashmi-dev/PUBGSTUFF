@@ -248,7 +248,7 @@ export default function Header() {
                                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted no-underline outline-none focus:shadow-md"
                                 >
                                     <Image
-                                        src="https://i.postimg.cc/CZxPM38F/sasa.jpg"
+                                        src="https://i.postimg.cc/dVWzSn8J/steptodown-com648422.jpg"
                                         alt="Products promotion"
                                         fill
                                         className="object-cover rounded-md"
@@ -544,3 +544,6 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem"
 
 
+
+
+    
