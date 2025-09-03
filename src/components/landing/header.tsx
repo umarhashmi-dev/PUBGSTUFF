@@ -324,7 +324,7 @@ export default function Header() {
                                 href="/my-account"
                             >
                               <Image 
-                                src="https://exeyxlrneqxfsxjprrdu.supabase.co/storage/v1/object/public/assets/BUY%20ACCOUNTS_11zon.png" 
+                                src="https://i.postimg.cc/cgY5PQYY/White-and-Black-Modern-New-Graduate-Professional-Resume-1.jpg" 
                                 alt="Header promotion" 
                                 fill
                                 className="object-cover w-full h-full rounded-md"
@@ -542,3 +542,4 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
+
