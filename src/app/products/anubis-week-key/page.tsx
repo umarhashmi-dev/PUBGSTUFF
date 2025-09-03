@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, 'react';
+import React from 'react';
 import Header from '@/components/landing/header';
 import Footer from '@/components/landing/footer';
 import { Button } from '@/components/ui/button';
@@ -522,5 +522,3 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
-
-    
