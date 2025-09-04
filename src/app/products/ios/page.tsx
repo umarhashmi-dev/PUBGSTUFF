@@ -114,11 +114,12 @@ const starProducts = [
 
 const tornadoProducts = [
     {
-        name: "Tornado iOS Key",
+        name: "Tornado iOS Week Key",
         price: 17,
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/tornado-ios-week-key",
         features: [
             "Silent Aimbot",
             "Aimbot FOV Value",
@@ -129,12 +130,13 @@ const tornadoProducts = [
         ],
     },
     {
-        name: "Tornado iOS Key",
+        name: "Tornado iOS Month Key",
         price: 35,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "/products/tornado-ios-month-key",
         features: [
             "Silent Aimbot",
             "Aimbot FOV Value",
@@ -352,7 +354,7 @@ export default function IosProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
@@ -369,3 +371,6 @@ export default function IosProductsPage() {
     </div>
   );
 }
+
+
+    
