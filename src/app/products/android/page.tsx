@@ -21,6 +21,7 @@ const shieldProducts = [
         priceSuffix: "/ Day",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/shield-android-day-key",
         features: [
             "Players, Bots & Airdrop ESP",
             "FOV Circle & Show Aim Position",
@@ -35,6 +36,7 @@ const shieldProducts = [
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/shield-android-week-key",
         features: [
             "Players, Bots & Airdrop ESP",
             "FOV Circle & Show Aim Position",
@@ -50,6 +52,7 @@ const shieldProducts = [
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "/products/shield-android-month-key",
         features: [
             "Players, Bots & Airdrop ESP",
             "FOV Circle & Show Aim Position",
@@ -231,7 +234,7 @@ export default function AndroidProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
