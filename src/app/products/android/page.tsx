@@ -128,6 +128,7 @@ const kernelProducts = [
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/kernel-android-week-key",
         features: [
             "Silent Aimbot + FOV",
             "FOV Circle & Aim Position",
@@ -144,6 +145,7 @@ const kernelProducts = [
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "/products/kernel-android-month-key",
         features: [
             "Silent Aimbot + FOV",
             "FOV Circle & Aim Position",
@@ -361,7 +363,7 @@ export default function AndroidProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
