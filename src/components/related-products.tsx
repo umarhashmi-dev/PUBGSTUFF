@@ -46,13 +46,17 @@ export function RelatedProducts({ category, currentProduct }: RelatedProductsPro
 
   const relatedProducts = products.filter(p => p.name !== currentProduct);
 
+  if (relatedProducts.length === 0) {
+    return null;
+  }
+  
   return (
     <div className="mt-16 md:mt-24">
       <h2 className="text-3xl font-extrabold text-center text-gray-900 font-headline mb-8">You Might Also Like</h2>
       <Carousel
           opts={{
               align: "start",
-              loop: true,
+              loop: relatedProducts.length > 3,
           }}
           plugins={[
               Autoplay({
