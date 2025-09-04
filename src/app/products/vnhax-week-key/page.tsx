@@ -8,19 +8,16 @@ import { Button } from '@/components/ui/button';
 import { Star, Check, Minus, Plus, RefreshCw, ChevronLeft, ChevronRight, Share, Heart, Maximize } from 'lucide-react';
 import Image from 'next/image';
 import { useCurrency } from '@/hooks/use-currency';
-import { Card } from '@/components/ui/card';
-import Link from 'next/link';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ProductLayout } from '@/components/product-layout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
+import { RelatedProducts } from '@/components/related-products';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/26Mvsmyz/Vnhax-week-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -29,65 +26,6 @@ const images = [
     { id: 4, src: 'https://picsum.photos/1000/1000?random=3', alt: 'Product details', aiHint: 'glowing abstract' },
     { id: 5, src: 'https://picsum.photos/1000/1000?random=4', alt: 'Product usage', aiHint: 'gamer setup' },
 ];
-
-const relatedProducts = [
-    {
-        name: "Vnhax Frozen Key",
-        price: 5,
-        imageUrl: "https://picsum.photos/600/600?random=8",
-        aiHint: "abstract green",
-        href: "/products/vnhax-frozen-key"
-    },
-    {
-        name: "Vnhax Month Key",
-        price: 30,
-        imageUrl: "https://picsum.photos/600/600?random=9",
-        aiHint: "abstract purple",
-        href: "/products/vnhax-month-key"
-    },
-    {
-        name: "Vnhax Admin Key",
-        price: 190,
-        imageUrl: "https://picsum.photos/600/600?random=7",
-        aiHint: "abstract blue",
-        href: "/products/vnhax-admin-key"
-    },
-    {
-        name: "Redeye Frozen Key",
-        price: 5,
-        imageUrl: "https://picsum.photos/600/600?random=10",
-        aiHint: "abstract dark red",
-        href: "/products/redeye-frozen-key"
-    },
-    {
-        name: "Redeye Week Key",
-        price: 15,
-        imageUrl: "https://picsum.photos/600/600?random=11",
-        aiHint: "abstract fire",
-        href: "/products/redeye-week-key"
-    },
-    {
-        name: "Redeye Month Key",
-        price: 30,
-        imageUrl: "https://picsum.photos/600/600?random=5",
-        aiHint: "abstract red",
-        href: "/products/redeye-month-key"
-    },
-    {
-        name: "Anubis Week Key",
-        price: 20,
-        imageUrl: "https://picsum.photos/600/600?random=12",
-        aiHint: "abstract sand",
-        href: "/products/anubis-week-key"
-    },
-    {
-        name: "Anubis Month Key",
-        price: 40,
-        imageUrl: "https://picsum.photos/600/600?random=6",
-        aiHint: "abstract gold",
-        href: "/products/anubis-month-key"
-    }
-]
 
 const features = [
     "100% Safe & Secure",
@@ -137,7 +75,6 @@ export default function SingleProductPage() {
         drivers: false,
         extras: false
     });
-    const [addedProducts, setAddedProducts] = useState<string[]>([]);
     const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
     const { user } = useAuth();
     const { toast } = useToast();
@@ -183,25 +120,14 @@ export default function SingleProductPage() {
 
     useEffect(() => {
         const extrasCount = Object.values(extras).filter(Boolean).length;
-        const addedProductsPrice = relatedProducts
-            .filter(p => addedProducts.includes(p.name))
-            .reduce((sum, p) => sum + p.price, 0);
-        const newTotal = (BASE_PRICE * quantity) + (extrasCount * EXTRA_PRICE) + addedProductsPrice;
+        const newTotal = (BASE_PRICE * quantity) + (extrasCount * EXTRA_PRICE);
         setTotalPrice(newTotal);
-    }, [quantity, extras, addedProducts, relatedProducts]);
+    }, [quantity, extras]);
 
     const handleExtraChange = (extra: keyof typeof extras) => {
         setExtras(prev => ({...prev, [extra]: !prev[extra]}));
     }
     
-    const handleAddProduct = (productName: string) => {
-        setAddedProducts(prev => 
-            prev.includes(productName) 
-                ? prev.filter(name => name !== productName)
-                : [...prev, productName]
-        );
-    }
-
     const nextThumbnails = () => {
         setCurrentThumbnailPage((prev) => (prev + 1) % thumbnailPages);
     };
@@ -507,61 +433,8 @@ export default function SingleProductPage() {
                             </Tabs>
                         </div>
 
-
-                        {/* Related Products */}
-                        <div className="mt-16 md:mt-24">
-                            <h2 className="text-3xl font-extrabold text-center text-gray-900 font-headline mb-8">You Might Also Like</h2>
-                            <Carousel
-                                opts={{
-                                    align: "start",
-                                    loop: true,
-                                }}
-                                plugins={[
-                                    Autoplay({
-                                      delay: 3000,
-                                      stopOnInteraction: true,
-                                    }),
-                                ]}
-                                className="w-full"
-                            >
-                                <CarouselContent>
-                                    {relatedProducts.map((product, index) => (
-                                        <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                                            <div className="p-1">
-                                                <Card className="group overflow-hidden rounded-xl border shadow-sm hover:shadow-lg transition-all duration-300 bg-white">
-                                                    <Link href={product.href}>
-                                                        <div className="aspect-square relative">
-                                                            <Image
-                                                                src={product.imageUrl}
-                                                                alt={product.name}
-                                                                fill
-                                                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                                                data-ai-hint={product.aiHint}
-                                                            />
-                                                        </div>
-                                                    </Link>
-                                                    <div className="p-4 relative">
-                                                        <h3 className="font-semibold font-headline text-gray-800 group-hover:text-primary transition-colors text-sm">{product.name}</h3>
-                                                        <p className="mt-1 font-bold text-base text-gray-900">{formatPrice(product.price)}</p>
-                                                        <Button 
-                                                            size="icon" 
-                                                            variant={addedProducts.includes(product.name) ? 'default' : 'outline'}
-                                                            className={cn(
-                                                                "absolute bottom-2 right-2 h-8 w-8 rounded-full transition-all duration-300",
-                                                                !addedProducts.includes(product.name) && "opacity-0 group-hover:opacity-100"
-                                                            )}
-                                                            onClick={() => handleAddProduct(product.name)}
-                                                        >
-                                                            {addedProducts.includes(product.name) ? <Check className="h-4 w-4" /> : <Plus className="h-4 w-4" />}
-                                                        </Button>
-                                                    </div>
-                                                </Card>
-                                            </div>
-                                        </CarouselItem>
-                                    ))}
-                                </CarouselContent>
-                            </Carousel>
-                        </div>
+                        <RelatedProducts category="pc" currentProduct="Vnhax Week Key" />
+                        
                     </div>
                 </main>
                 <Footer />
@@ -569,5 +442,3 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
-
-

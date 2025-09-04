@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Star, Check, Minus, Plus, RefreshCw, ChevronLeft, ChevronRight, Share, Heart, Maximize } from 'lucide-react';
 import Image from 'next/image';
 import { useCurrency } from '@/hooks/use-currency';
-import Link from 'next/link';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ProductLayout } from '@/components/product-layout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
