@@ -16,11 +16,12 @@ import { ProductLayout } from "@/components/product-layout";
 
 const vnhaxProducts = [
     {
-        name: "Vnhax iOS Key",
+        name: "Vnhax iOS Frozen Key",
         price: 5,
         priceSuffix: "/ Day",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/vnhax-ios-frozen-key",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -30,11 +31,12 @@ const vnhaxProducts = [
         ],
     },
     {
-        name: "Vnhax iOS Key",
+        name: "Vnhax iOS Week Key",
         price: 15,
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/vnhax-ios-week-key",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -44,12 +46,13 @@ const vnhaxProducts = [
         ],
     },
     {
-        name: "Vnhax iOS Key",
+        name: "Vnhax iOS Month Key",
         price: 30,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "/products/vnhax-ios-month-key",
         features: [
             "100% Safe & Secure",
             "Special Kill Effects",
@@ -228,7 +231,7 @@ export default function IosProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
