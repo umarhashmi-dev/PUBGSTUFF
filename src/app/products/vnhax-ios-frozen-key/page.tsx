@@ -66,7 +66,7 @@ const features = [
     "Special Kill Effects",
     "Best Recoil Control",
     "ESP, Skins & Aimbot",
-    "Integrated emulator bypass",
+    "Radar & Item Visuals",
     "24/7 Dedicated Support",
     "Aimbot FOV value",
     "Skip Knocked Enemies",
@@ -360,7 +360,7 @@ export default function SingleProductPage() {
                                                 <li>Aimbot & Magic – Improve accuracy and dominate gunfights.</li>
                                                 <li>Special Kill Effects – Unique kill messages and animations.</li>
                                                 <li>Best Recoil Control – Shoot with unmatched stability.</li>
-                                                <li>Integrated Emulator Bypass – Optimized for smooth PC gameplay.</li>
+                                                <li>Radar & Item Visuals – Optimized for smooth PC gameplay.</li>
                                                 <li>Trusted Worldwide – Over 13,000 gamers rated it 4.9/5.</li>
                                             </ul>
                                         </div>
@@ -454,7 +454,7 @@ export default function SingleProductPage() {
                                                 <TableCell className="text-center text-yellow-600">Limited</TableCell>
                                             </TableRow>
                                             <TableRow>
-                                                <TableCell className="font-medium">Integrated emulator bypass</TableCell>
+                                                <TableCell className="font-medium">Radar & Item Visuals</TableCell>
                                                 <TableCell className="text-center text-green-600 font-bold">Yes</TableCell>
                                                 <TableCell className="text-center text-red-600">No</TableCell>
                                             </TableRow>
@@ -541,3 +541,5 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
+
+    

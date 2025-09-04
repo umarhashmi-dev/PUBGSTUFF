@@ -27,7 +27,7 @@ const vnhaxProducts = [
             "Special Kill Effects",
             "Best Recoil Control",
             "ESP, Skins & Aimbot",
-            "Integrated Emulator Bypass",
+            "Radar & Item Visuals",
         ],
     },
     {
@@ -42,7 +42,7 @@ const vnhaxProducts = [
             "Special Kill Effects",
             "Best Recoil Control",
             "ESP, Skins & Aimbot",
-            "Integrated Emulator Bypass",
+            "Radar & Item Visuals",
         ],
     },
     {
@@ -58,7 +58,7 @@ const vnhaxProducts = [
             "Special Kill Effects",
             "Best Recoil Control",
             "ESP, Skins & Aimbot",
-            "Integrated Emulator Bypass",
+            "Radar & Item Visuals",
         ],
     },
 ];
@@ -373,4 +373,5 @@ export default function IosProductsPage() {
 }
 
 
+    
     
