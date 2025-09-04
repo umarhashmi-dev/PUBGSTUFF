@@ -23,7 +23,7 @@ import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 
 const images = [
-    { id: 1, src: 'https://i.postimg.cc/yY8jrKnS/VNHAX-FROZEN.png', alt: 'Main product image', aiHint: 'gaming character cinematic' },
+    { id: 1, src: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000?random=1', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
     { id: 3, src: 'https://picsum.photos/1000/1000?random=2', alt: 'Product in-game', aiHint: 'futuristic weapon' },
     { id: 4, src: 'https://picsum.photos/1000/1000?random=3', alt: 'Product details', aiHint: 'glowing abstract' },
@@ -579,4 +579,5 @@ export default function SingleProductPage() {
 
 
     
+
 
