@@ -185,7 +185,6 @@ export default function SingleProductPage() {
         (currentThumbnailPage + 1) * thumbnailsPerPage
     );
 
-
     return (
         <ProductLayout>
             <div className="flex min-h-screen flex-col bg-gray-50">
@@ -402,7 +401,7 @@ export default function SingleProductPage() {
                                             </AccordionContent>
                                         </AccordionItem>
                                         <AccordionItem value="item-3">
-                                            <AccordionTrigger>How long does it take to receive the key after purchase?</AccordionContent>
+                                            <AccordionTrigger>How long does it take to receive the key after purchase?</AccordionTrigger>
                                             <AccordionContent>
                                             Delivery is instant. You will receive your key and setup instructions via email immediately after completing your purchase.
                                             </AccordionContent>
@@ -534,5 +533,3 @@ export default function SingleProductPage() {
         </ProductLayout>
     );
 }
-
-    
