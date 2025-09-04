@@ -72,8 +72,6 @@ const zoloProducts = [
         buttonText: "Buy Now",
         href: "/products/zolo-android-day-key",
         features: [
-            "Silent Aimbot",
-            "HWID Spoofer",
             "Radar & Visuals",
             "Aimbot FOV value",
             "Draw FOV as Circle",
@@ -90,8 +88,6 @@ const zoloProducts = [
         buttonText: "Buy Now",
         href: "/products/zolo-android-week-key",
         features: [
-            "Silent Aimbot",
-            "HWID Spoofer",
             "Radar & Visuals",
             "Aimbot FOV value",
             "Draw FOV as Circle",
@@ -109,8 +105,6 @@ const zoloProducts = [
         buttonText: "Buy Now",
         href: "/products/zolo-android-month-key",
         features: [
-            "Silent Aimbot",
-            "HWID Spoofer",
             "Radar & Visuals",
             "Aimbot FOV value",
             "Draw FOV as Circle",
