@@ -70,8 +70,11 @@ const zoloProducts = [
         priceSuffix: "/ Day",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/zolo-android-day-key",
         features: [
             "Silent Aimbot",
+            "HWID Spoofer",
+            "Radar & Visuals",
             "Aimbot FOV value",
             "Draw FOV as Circle",
             "Show Current Aim Position",
@@ -85,8 +88,11 @@ const zoloProducts = [
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/zolo-android-week-key",
         features: [
             "Silent Aimbot",
+            "HWID Spoofer",
+            "Radar & Visuals",
             "Aimbot FOV value",
             "Draw FOV as Circle",
             "Show Current Aim Position",
@@ -101,8 +107,11 @@ const zoloProducts = [
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "/products/zolo-android-month-key",
         features: [
             "Silent Aimbot",
+            "HWID Spoofer",
+            "Radar & Visuals",
             "Aimbot FOV value",
             "Draw FOV as Circle",
             "Show Current Aim Position",
@@ -293,7 +302,7 @@ export default function AndroidProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
