@@ -65,43 +65,46 @@ const vnhaxProducts = [
 
 const starProducts = [
     {
-        name: "Star iOS Key",
+        name: "Star iOS Frozen Key",
         price: 5,
         priceSuffix: "/ Day",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/star-ios-frozen-key",
         features: [
             "Players, Bots & Airdrop ESP",
-            "HWID Spoofer & Emulator Bypass",
+            "HWID Spoofer",
             "Aimbot & Recoil Control",
             "Radar & Item Visuals",
             "24/7 Dedicated Support",
         ],
     },
     {
-        name: "Star iOS Key",
+        name: "Star iOS Week Key",
         price: 15,
         priceSuffix: "/ Week",
         buttonVariant: "default",
         buttonText: "Buy Now",
+        href: "/products/star-ios-week-key",
         features: [
             "Players, Bots & Airdrop ESP",
-            "HWID Spoofer & Emulator Bypass",
+            "HWID Spoofer",
             "Aimbot & Recoil Control",
             "Radar & Item Visuals",
             "24/7 Dedicated Support",
         ],
     },
     {
-        name: "Star iOS Key",
+        name: "Star iOS Month Key",
         price: 30,
         priceSuffix: "/ Month",
         badge: "POPULAR!",
         buttonVariant: "gradient",
         buttonText: "Buy Now",
+        href: "/products/star-ios-month-key",
         features: [
             "Players, Bots & Airdrop ESP",
-            "HWID Spoofer & Emulator Bypass",
+            "HWID Spoofer",
             "Aimbot & Recoil Control",
             "Radar & Item Visuals",
             "24/7 Dedicated Support",
@@ -290,7 +293,7 @@ export default function IosProductsPage() {
                             </CardContent>
                             <CardFooter className="p-6 mt-auto">
                             <Button asChild size="lg" className={cn("w-full text-base rounded-full hover-shimmer-button", product.buttonVariant === 'gradient' ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl transition-shadow' : 'bg-primary text-primary-foreground')}>
-                                    <Link href="#">
+                                    <Link href={product.href || '#'}>
                                         <span>{product.buttonText}</span>
                                     </Link>
                                 </Button>
