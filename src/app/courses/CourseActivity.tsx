@@ -1,3 +1,7 @@
+
+'use client';
+
+import dynamic from 'next/dynamic';
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
 import { Button } from '@/components/ui/button';
@@ -6,7 +10,8 @@ import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { RelatedCourses } from '@/components/related-courses';
+
+const RelatedCourses = dynamic(() => import('@/components/related-courses').then(mod => mod.RelatedCourses), { ssr: false });
 
 interface CourseLayoutProps {
   title: string;
@@ -162,6 +167,7 @@ export function CourseLayout({
                       height={400}
                       className="w-full h-auto"
                       data-ai-hint={bannerAiHint}
+                      priority
                     />
                     <div className="absolute top-4 left-4 bg-black text-white text-xs font-bold px-3 py-1.5 rounded">100% FREE</div>
                     <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm text-black text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">

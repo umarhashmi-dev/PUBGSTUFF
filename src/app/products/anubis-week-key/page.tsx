@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Star, Check, Minus, Plus, RefreshCw, ChevronLeft, ChevronRight, Share, Heart, Maximize } from 'lucide-react';
 import Image from 'next/image';
 import { useCurrency } from '@/hooks/use-currency';
-import Link from 'next/link';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ProductLayout } from '@/components/product-layout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -18,7 +17,9 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
-import { RelatedProducts } from '@/components/related-products';
+import dynamic from 'next/dynamic';
+
+const RelatedProducts = dynamic(() => import('@/components/related-products').then(mod => mod.RelatedProducts), { ssr: false });
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/3N60d0qM/Anubis-week-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -185,6 +186,7 @@ export default function SingleProductPage() {
                                         fill
                                         className="object-contain transition-transform duration-300"
                                         data-ai-hint={selectedImage.aiHint}
+                                        priority
                                     />
                                     <Button variant="ghost" size="icon" className="absolute top-3 left-3 bg-white/50 backdrop-blur-sm hover:bg-white/80 text-gray-700">
                                         <Maximize className="w-5 h-5"/>

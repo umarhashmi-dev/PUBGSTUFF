@@ -1,6 +1,6 @@
 
 'use client';
-
+import dynamic from 'next/dynamic';
 import Footer from '@/components/landing/footer';
 import Header from '@/components/landing/header';
 import { Button } from '@/components/ui/button';
@@ -10,6 +10,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TextAnimate } from "@/components/magicui/text-animate";
+
+const Cta = dynamic(() => import('@/components/landing/cta'), { ssr: false });
 
 interface CourseLayoutProps {
   title: string;
@@ -48,6 +50,7 @@ export function CourseLayout({
                       height={400}
                       className="w-full h-auto"
                       data-ai-hint={bannerAiHint}
+                      priority
                     />
                     <div className="absolute top-4 left-4 bg-black text-white text-xs font-bold px-3 py-1.5 rounded">100% FREE</div>
                     <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm text-black text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1">
@@ -213,21 +216,7 @@ export function CourseLayout({
           
           {/* CTA Section */}
           <div className="mt-16 md:mt-24">
-            <div className="container text-center">
-              <div className="bg-black text-white p-8 md:p-12 rounded-xl shadow-lg">
-                <h2 className="text-2xl md:text-4xl font-extrabold">
-                  Witness The Magic With 50K+ People Like You!
-                </h2>
-                <p className="mt-4 text-base md:text-lg text-white/80 max-w-2xl mx-auto">
-                  Join our community of satisfied gamers and digital enthusiasts. Get instant access to the best products and deals.
-                </p>
-                <div className="mt-8">
-                  <Button asChild size="lg" variant="secondary" className="text-base md:text-lg hover-shimmer-button bg-white text-black hover:bg-gray-200">
-                    <Link href="/products">Get Started Now</Link>
-                  </Button>
-                </div>
-              </div>
-            </div>
+            <Cta />
           </div>
 
         </div>
