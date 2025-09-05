@@ -1,3 +1,4 @@
+
 "use client";
 import React from "react";
 import Link from "next/link";
@@ -67,7 +68,7 @@ export default function SignupFormDemo() {
   };
 
   return (
-    <div className="shadow-input mx-auto w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
+    <div className="shadow-input w-full rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
       <div className="text-center">
         <h2 className="mt-6 text-xl font-bold text-neutral-800 dark:text-neutral-200">
           Welcome to PUBGSTUFF
