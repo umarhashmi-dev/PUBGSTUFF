@@ -4,48 +4,54 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
 
 export default function AccountDetailsPage() {
   return (
       <div>
         <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
-                Account Details
+                Settings
             </h1>
             <p className="mt-2 text-muted-foreground">
-                Update your account details and password below.
+                Manage your account settings and preferences.
             </p>
         </div>
-        <form className="space-y-8">
-            <Card className="bg-gray-50/50 border-gray-200">
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl">Profile Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Separator />
+        
+        <form className="mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="md:col-span-1">
+                    <h3 className="text-lg font-semibold font-headline">Personal Info</h3>
+                    <p className="text-sm text-muted-foreground mt-1">Update your photo and personal details here.</p>
+                </div>
+                <div className="md:col-span-2 space-y-6">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <Label htmlFor="first-name">First Name</Label>
-                            <Input id="first-name" defaultValue="John" />
+                            <Input id="first-name" defaultValue="Julija" />
                         </div>
                         <div className="space-y-2">
                             <Label htmlFor="last-name">Last Name</Label>
-                            <Input id="last-name" defaultValue="Doe" />
+                            <Input id="last-name" defaultValue="Jelicanin" />
                         </div>
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" defaultValue="john.doe@example.com" />
+                        <Input id="email" type="email" defaultValue="julijajelicanin@gmail.com" />
                     </div>
-                </CardContent>
-            </Card>
+                </div>
+            </div>
 
-            <Card className="bg-gray-50/50 border-gray-200">
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl">Password Change</CardTitle>
-                    <CardDescription>Leave fields blank to keep your current password.</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="space-y-2">
+            <Separator className="my-8" />
+            
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="md:col-span-1">
+                    <h3 className="text-lg font-semibold font-headline">Password</h3>
+                    <p className="text-sm text-muted-foreground mt-1">Update your password here. Leave blank to keep the current one.</p>
+                </div>
+                <div className="md:col-span-2 space-y-6">
+                     <div className="space-y-2">
                         <Label htmlFor="current-password">Current password</Label>
                         <Input id="current-password" type="password" />
                     </div>
@@ -57,11 +63,12 @@ export default function AccountDetailsPage() {
                         <Label htmlFor="confirm-password">Confirm new password</Label>
                         <Input id="confirm-password" type="password" />
                     </div>
-                </CardContent>
-            </Card>
+                </div>
+            </div>
 
-            <div>
-                <Button type="submit" className="hover-shimmer-button" size="lg">Save changes</Button>
+            <div className="mt-8 flex justify-end gap-4">
+                <Button type="button" variant="outline" size="lg">Cancel</Button>
+                <Button type="submit" size="lg" className="bg-blue-600 text-white hover:bg-blue-700">Save changes</Button>
             </div>
         </form>
       </div>

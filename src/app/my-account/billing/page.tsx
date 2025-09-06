@@ -1,29 +1,32 @@
 
 'use client';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 
 export default function BillingPage() {
   return (
       <div>
         <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
-                Billing Address
+                Billing
             </h1>
             <p className="mt-2 text-muted-foreground">
-                Update your billing information below.
+                Manage your billing information and address.
             </p>
         </div>
-        <form className="space-y-8">
-            <Card className="bg-gray-50/50 border-gray-200">
-                <CardHeader>
-                    <CardTitle className="font-headline text-xl">Billing Details</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <Separator />
+        
+        <form className="mt-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="md:col-span-1">
+                    <h3 className="text-lg font-semibold font-headline">Billing Address</h3>
+                    <p className="text-sm text-muted-foreground mt-1">Update your billing address here.</p>
+                </div>
+                <div className="md:col-span-2 space-y-6">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-2">
                             <Label htmlFor="first-name">First Name</Label>
                             <Input id="first-name" />
@@ -67,11 +70,12 @@ export default function BillingPage() {
                         <Label htmlFor="phone">Phone</Label>
                         <Input id="phone" type="tel" />
                     </div>
-                </CardContent>
-            </Card>
+                </div>
+            </div>
 
-            <div>
-                <Button type="submit" className="hover-shimmer-button" size="lg">Save address</Button>
+            <div className="mt-8 flex justify-end gap-4">
+                <Button type="button" variant="outline" size="lg">Cancel</Button>
+                <Button type="submit" size="lg" className="bg-blue-600 text-white hover:bg-blue-700">Save changes</Button>
             </div>
         </form>
       </div>

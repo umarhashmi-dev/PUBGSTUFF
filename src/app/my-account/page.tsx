@@ -36,9 +36,9 @@ export default function MyAccountPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {dashboardCards.map((card) => (
                 <Link href={card.href} key={card.title} className="group">
-                    <Card className="h-full transition-all duration-300 hover:shadow-lg hover:border-primary/50">
+                    <Card className="h-full transition-all duration-300 hover:shadow-lg hover:border-primary/20 bg-gray-50/50">
                         <CardHeader className="flex flex-row items-center gap-4 space-y-0">
-                            <div className="p-3 bg-primary/10 rounded-full">
+                            <div className="p-3 bg-primary/10 rounded-lg">
                                 {card.icon}
                             </div>
                             <div className="flex-1">
@@ -52,10 +52,9 @@ export default function MyAccountPage() {
             ))}
         </div>
         
-        {/* Placeholder for "Our Product" section from the design */}
         <div className="mt-12">
             <h2 className="text-2xl font-bold font-headline mb-4">Your Products</h2>
-            <Card>
+            <Card className="bg-gray-50/50">
                 <CardContent className="p-6">
                      <p className="text-muted-foreground">You haven't purchased any products yet.</p>
                 </CardContent>

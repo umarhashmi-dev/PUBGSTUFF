@@ -21,13 +21,14 @@ import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Logo } from "@/components/logo";
 
 const navItems = [
-  { href: "/my-account", label: "Dashboard", icon: <LayoutDashboard className="h-5 w-5" /> },
-  { href: "/my-account/orders", label: "Orders", icon: <ShoppingCart className="h-5 w-5" /> },
-  { href: "/my-account/downloads", label: "Downloads", icon: <Download className="h-5 w-5" /> },
-  { href: "/my-account/account-details", label: "Account Details", icon: <User className="h-5 w-5" /> },
-  { href: "/my-account/billing", label: "Billing Address", icon: <CreditCard className="h-5 w-5" /> },
+  { href: "/my-account", label: "Dashboard", icon: <LayoutDashboard /> },
+  { href: "/my-account/orders", label: "Orders", icon: <ShoppingCart /> },
+  { href: "/my-account/downloads", label: "Downloads", icon: <Download /> },
+  { href: "/my-account/account-details", label: "Account Details", icon: <User /> },
+  { href: "/my-account/billing", label: "Billing Address", icon: <CreditCard /> },
 ];
 
 function SidebarNav() {
@@ -54,33 +55,41 @@ function SidebarNav() {
     };
     
     return (
-        <aside className="hidden md:flex flex-col gap-4 w-64">
-            <div className="bg-white rounded-xl border p-6 flex flex-col items-center text-center">
-                 <Avatar className="h-20 w-20">
-                    <AvatarImage src={user?.user_metadata.avatar_url ?? ""} alt={user?.user_metadata.full_name ?? ""} />
-                    <AvatarFallback>{user?.email?.charAt(0).toUpperCase()}</AvatarFallback>
-                  </Avatar>
-                  <h3 className="mt-4 font-bold font-headline">{user?.user_metadata.full_name || user?.email}</h3>
-                  <Button variant="ghost" size="sm" className="mt-2 text-muted-foreground hover:text-foreground" onClick={handleLogout}>Log Out</Button>
+        <aside className="hidden md:flex flex-col w-64 border-r bg-white">
+            <div className="p-4 border-b">
+                <Logo />
             </div>
-            <div className="bg-white rounded-xl border p-4">
-                <nav className="grid gap-1">
+            <nav className="flex-1 p-4 space-y-2">
                 {navItems.map((item) => (
                     <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                        "flex items-center gap-3 px-3 py-2 rounded-md font-medium transition-colors",
-                        pathname === item.href
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-gray-100 hover:text-foreground"
-                    )}
+                        key={item.href}
+                        href={item.href}
+                        className={cn(
+                            "flex items-center gap-3 px-3 py-2 rounded-md font-medium text-gray-600 transition-colors",
+                             pathname === item.href
+                                ? "bg-primary/10 text-primary"
+                                : "hover:bg-gray-100 hover:text-gray-900"
+                        )}
                     >
-                    {item.icon}
-                    {item.label}
+                        {React.cloneElement(item.icon, { className: "h-5 w-5" })}
+                        <span>{item.label}</span>
                     </Link>
                 ))}
-                </nav>
+            </nav>
+            <div className="p-4 border-t">
+                <div className="flex items-center gap-3">
+                     <Avatar className="h-10 w-10">
+                        <AvatarImage src={user?.user_metadata.avatar_url ?? ""} alt={user?.user_metadata.full_name ?? ""} />
+                        <AvatarFallback>{user?.email?.charAt(0).toUpperCase()}</AvatarFallback>
+                      </Avatar>
+                      <div className="flex-1 truncate">
+                        <p className="font-semibold text-sm text-gray-800 truncate">{user?.user_metadata.full_name || user?.email}</p>
+                        <p className="text-xs text-gray-500 truncate">Logged In</p>
+                      </div>
+                      <Button variant="ghost" size="icon" onClick={handleLogout} className="text-gray-500 hover:text-red-500 hover:bg-red-50">
+                        <LogOut className="h-5 w-5" />
+                      </Button>
+                </div>
             </div>
       </aside>
     )
@@ -117,7 +126,7 @@ export default function AccountLayout({
 
   return (
     <RequireAuth>
-      <div className="flex min-h-[100dvh] flex-col bg-gray-50/50">
+      <div className="flex min-h-[100dvh] flex-col bg-gray-50">
         <Header />
         <main className="flex-1 pt-24 md:pt-32">
           <div className="container py-12">
@@ -149,7 +158,7 @@ export default function AccountLayout({
                                     : "text-muted-foreground hover:bg-gray-200 hover:text-foreground"
                                 )}
                                 >
-                                {item.icon}
+                                {React.cloneElement(item.icon, { className: "h-5 w-5" })}
                                 {item.label}
                                 </Link>
                             ))}
@@ -163,9 +172,9 @@ export default function AccountLayout({
                     </SheetContent>
                 </Sheet>
             </div>
-            <div className="grid md:grid-cols-[256px_1fr] gap-8">
+            <div className="bg-white rounded-xl border flex">
                 <SidebarNav />
-                <div className="bg-white rounded-xl border p-6 md:p-8">
+                <div className="flex-1 p-6 md:p-8">
                     {children}
                 </div>
             </div>
