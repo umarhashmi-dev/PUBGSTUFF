@@ -1,72 +1,67 @@
 
 'use client';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { UploadCloud } from "lucide-react";
 
 export default function AccountDetailsPage() {
   return (
       <div>
         <div className="mb-8">
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
-                Settings
-            </h1>
-            <p className="mt-2 text-muted-foreground">
-                Manage your account settings and preferences.
+            <h2 className="text-xl font-bold tracking-tight text-foreground font-headline">
+                Personal Info
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+                Update your photo and personal details here.
             </p>
         </div>
-        <Separator />
         
-        <form className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="md:col-span-1">
-                    <h3 className="text-lg font-semibold font-headline">Personal Info</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Update your photo and personal details here.</p>
-                </div>
-                <div className="md:col-span-2 space-y-6">
-                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                            <Label htmlFor="first-name">First Name</Label>
-                            <Input id="first-name" defaultValue="Julija" />
-                        </div>
-                        <div className="space-y-2">
-                            <Label htmlFor="last-name">Last Name</Label>
-                            <Input id="last-name" defaultValue="Jelicanin" />
-                        </div>
+        <form>
+            <div className="space-y-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <Label className="md:text-right">Name</Label>
+                    <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <Input id="first-name" defaultValue="Julija" />
+                        <Input id="last-name" defaultValue="Jelicanin" />
                     </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
+                </div>
+
+                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <Label htmlFor="email" className="md:text-right">Email</Label>
+                    <div className="md:col-span-2">
                         <Input id="email" type="email" defaultValue="julijajelicanin@gmail.com" />
                     </div>
                 </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start">
+                    <div className="md:text-right">
+                        <Label>Your Photo</Label>
+                        <p className="text-xs text-muted-foreground mt-1">This will be displayed on your profile.</p>
+                    </div>
+                    <div className="md:col-span-2 flex items-center gap-4">
+                        <Avatar className="h-16 w-16">
+                           <AvatarImage src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=250&q=80" />
+                           <AvatarFallback>JJ</AvatarFallback>
+                        </Avatar>
+                        <div className="flex-1">
+                            <label htmlFor="photo-upload" className="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+                                <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <UploadCloud className="w-6 h-6 mb-2 text-gray-500" />
+                                    <p className="mb-1 text-sm text-gray-500 font-semibold">Click to upload or drag and drop</p>
+                                    <p className="text-xs text-gray-500">SVG, PNG or JPG (max. 800x400px)</p>
+                                </div>
+                                <input id="photo-upload" type="file" className="hidden" />
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <Separator className="my-8" />
-            
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="md:col-span-1">
-                    <h3 className="text-lg font-semibold font-headline">Password</h3>
-                    <p className="text-sm text-muted-foreground mt-1">Update your password here. Leave blank to keep the current one.</p>
-                </div>
-                <div className="md:col-span-2 space-y-6">
-                     <div className="space-y-2">
-                        <Label htmlFor="current-password">Current password</Label>
-                        <Input id="current-password" type="password" />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="new-password">New password</Label>
-                        <Input id="new-password" type="password" />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="confirm-password">Confirm new password</Label>
-                        <Input id="confirm-password" type="password" />
-                    </div>
-                </div>
-            </div>
-
-            <div className="mt-8 flex justify-end gap-4">
+            <div className="mt-8 pt-6 border-t flex justify-end gap-4">
                 <Button type="button" variant="outline" size="lg">Cancel</Button>
                 <Button type="submit" size="lg" className="bg-blue-600 text-white hover:bg-blue-700">Save changes</Button>
             </div>
