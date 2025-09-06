@@ -86,7 +86,8 @@
 
   .hover-shimmer-button:hover::before {
     content: '';
-    @apply absolute inset-0 -translate-x-full;
+    @apply absolute inset-0;
+    transform: translateX(-100%);
     animation: shimmer-button 1.5s infinite;
     background-image: linear-gradient(
       to right,
