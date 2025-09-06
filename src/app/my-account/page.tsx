@@ -1,53 +1,65 @@
 
 'use client';
-import Footer from "@/components/landing/footer";
-import Header from "@/components/landing/header";
-import RequireAuth from "@/components/require-auth";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useAuth } from "@/hooks/use-auth";
 import Link from "next/link";
+import { ShoppingCart, Download, User, ArrowRight } from "lucide-react";
+
+const dashboardCards = [
+    {
+        title: "Orders",
+        description: "Check your order history and status.",
+        href: "/my-account/orders",
+        icon: <ShoppingCart className="h-6 w-6 text-primary" />,
+    },
+    {
+        title: "Downloads",
+        description: "Access your purchased digital products.",
+        href: "/my-account/downloads",
+        icon: <Download className="h-6 w-6 text-primary" />,
+    },
+    {
+        title: "Account Details",
+        description: "Update your personal information.",
+        href: "/my-account/account-details",
+        icon: <User className="h-6 w-6 text-primary" />,
+    }
+]
 
 export default function MyAccountPage() {
+  const { user } = useAuth();
+
   return (
-    <RequireAuth>
-      <div className="flex min-h-[100dvh] flex-col">
-        <Header />
-        <main className="flex-1">
-          <div className="container py-28 md:py-32">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-                My Account
-              </h1>
-              <p className="mt-4 md:mt-6 text-base sm:text-lg leading-8 text-muted-foreground">
-                Manage your account, view orders, and access your downloads.
-              </p>
-            </div>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="text-center p-4">
-                <h2 className="text-xl sm:text-2xl font-bold">Orders</h2>
-                <p className="mt-2 text-muted-foreground text-sm sm:text-base">Check your order history.</p>
-                <Button asChild variant="outline" className="mt-4 hover-shimmer-button">
-                  <Link href="/my-account/orders">View Orders</Link>
-                </Button>
-              </div>
-               <div className="text-center p-4">
-                <h2 className="text-xl sm:text-2xl font-bold">Downloads</h2>
-                <p className="mt-2 text-muted-foreground text-sm sm:text-base">Access your downloads.</p>
-                <Button asChild variant="outline" className="mt-4 hover-shimmer-button">
-                  <Link href="/my-account/downloads">View Downloads</Link>
-                </Button>
-              </div>
-               <div className="text-center p-4">
-                <h2 className="text-xl sm:text-2xl font-bold">Account Details</h2>
-                <p className="mt-2 text-muted-foreground text-sm sm:text-base">Update your information.</p>
-                <Button asChild variant="outline" className="mt-4 hover-shimmer-button">
-                  <Link href="/my-account/account-details">Edit Details</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    </RequireAuth>
+    <div>
+        <div className="mb-8">
+            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
+                Dashboard
+            </h1>
+            <p className="mt-2 text-muted-foreground">
+                Welcome back, {user?.user_metadata.full_name || user?.email}! Here's an overview of your account.
+            </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {dashboardCards.map((card) => (
+                <Link href={card.href} key={card.title} className="group">
+                    <Card className="h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <CardHeader>
+                            <div className="flex items-center justify-between">
+                                <CardTitle className="font-headline">{card.title}</CardTitle>
+                                {card.icon}
+                            </div>
+                            <CardDescription>{card.description}</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-sm font-semibold text-primary inline-flex items-center gap-1">
+                                View {card.title}
+                                <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                            </div>
+                        </CardContent>
+                    </Card>
+                </Link>
+            ))}
+        </div>
+    </div>
   );
 }

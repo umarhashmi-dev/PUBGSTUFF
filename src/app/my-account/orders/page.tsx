@@ -1,7 +1,5 @@
 
 'use client';
-import Footer from "@/components/landing/footer";
-import Header from "@/components/landing/header";
 import RequireAuth from "@/components/require-auth";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -14,19 +12,16 @@ const orders = [
 export default function OrdersPage() {
   return (
     <RequireAuth>
-      <div className="flex min-h-[100dvh] flex-col">
-        <Header />
-        <main className="flex-1">
-          <div className="container py-28 md:py-32">
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Your Orders
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                Here is a list of your past orders.
-              </p>
+        <div>
+            <div className="mb-8">
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
+                    Your Orders
+                </h1>
+                <p className="mt-2 text-muted-foreground">
+                    Here is a list of your past orders.
+                </p>
             </div>
-            <div className="mt-16">
+            <div>
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -48,10 +43,7 @@ export default function OrdersPage() {
                 </TableBody>
               </Table>
             </div>
-          </div>
-        </main>
-        <Footer />
-      </div>
+        </div>
     </RequireAuth>
   );
 }
