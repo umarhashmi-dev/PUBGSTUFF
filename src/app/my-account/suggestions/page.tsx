@@ -44,8 +44,6 @@ export default function SuggestionsPage() {
         title: title, 
         details: details,
         user_id: user.id,
-        username: user.user_metadata.full_name,
-        user_email: user.email,
       });
 
     setLoading(false);

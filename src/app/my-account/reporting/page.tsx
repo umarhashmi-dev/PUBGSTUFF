@@ -44,8 +44,6 @@ export default function ReportingPage() {
         subject, 
         description,
         user_id: user.id,
-        username: user.user_metadata.full_name,
-        user_email: user.email,
       });
 
     setLoading(false);
