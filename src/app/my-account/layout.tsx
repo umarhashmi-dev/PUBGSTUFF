@@ -17,18 +17,24 @@ import {
     User, 
     CreditCard, 
     LogOut,
-    Settings
+    Settings,
+    MessageSquareWarning,
+    Lightbulb,
+    Search
 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Logo } from "@/components/logo";
+import { Input } from '@/components/ui/input';
 
 const navItems = [
   { href: "/my-account", label: "Dashboard", icon: <LayoutDashboard /> },
   { href: "/my-account/orders", label: "Orders", icon: <ShoppingCart /> },
   { href: "/my-account/downloads", label: "Downloads", icon: <Download /> },
+  { href: "/my-account/reporting", label: "Reporting", icon: <MessageSquareWarning /> },
+  { href: "/my-account/suggestions", label: "Suggestions", icon: <Lightbulb /> },
   { href: "/my-account/account-details", label: "Settings", icon: <Settings /> },
 ];
 
@@ -58,7 +64,7 @@ function SidebarNav() {
     const isSettingsActive = pathname.startsWith('/my-account/account-details') || pathname.startsWith('/my-account/billing');
 
     return (
-        <aside className="hidden md:flex flex-col w-64 border-r bg-white shrink-0">
+        <aside className="hidden md:flex flex-col w-72 border-r bg-white shrink-0">
             <div className="p-4 border-b h-16 flex items-center">
                 <Logo />
             </div>
@@ -72,9 +78,19 @@ function SidebarNav() {
                     <p className="text-xs text-gray-500 truncate">{user?.email}</p>
                   </div>
             </div>
-            <nav className="flex-1 p-4 space-y-2">
+
+            <div className="p-4">
+                <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                    <Input placeholder="Search..." className="pl-9 bg-gray-100 border-gray-200 h-9" />
+                </div>
+            </div>
+
+            <nav className="flex-1 px-4 space-y-2">
                 {navItems.map((item) => {
-                    const isActive = item.href === '/my-account/account-details' ? isSettingsActive : pathname === item.href;
+                    const isActive = item.href === '/my-account/account-details' 
+                        ? pathname.startsWith('/my-account/account-details') || pathname === '/my-account/billing'
+                        : pathname === item.href;
                     return (
                         <Link
                             key={item.href}
@@ -82,7 +98,7 @@ function SidebarNav() {
                             className={cn(
                                 "flex items-center gap-3 px-3 py-2 rounded-md font-medium text-gray-600 transition-colors",
                                  isActive
-                                    ? "bg-primary-light text-primary"
+                                    ? "bg-primary/10 text-primary"
                                     : "hover:bg-gray-100 hover:text-gray-900"
                             )}
                         >
@@ -93,7 +109,7 @@ function SidebarNav() {
                 })}
             </nav>
             <div className="p-4 border-t">
-                <Button variant="ghost" className="w-full justify-start gap-3" onClick={handleLogout}>
+                <Button variant="ghost" className="w-full justify-start gap-3 text-gray-600 hover:bg-gray-100 hover:text-gray-900" onClick={handleLogout}>
                     <LogOut className="h-5 w-5" />
                     Log Out
                 </Button>
@@ -106,6 +122,7 @@ const settingsNavItems = [
     { href: "/my-account/account-details", label: "My Profile" },
     { href: "/my-account/account-details/password", label: "Password" },
     { href: "/my-account/billing", label: "Billing" },
+    { href: "/my-account/account-details/notifications", label: "Notifications" },
 ];
 
 
@@ -171,7 +188,7 @@ export default function AccountLayout({
                                 className={cn(
                                     "flex items-center gap-3 px-3 py-2 rounded-md transition-colors text-base",
                                     pathname === item.href
-                                    ? "bg-primary-light text-primary font-semibold"
+                                    ? "bg-primary/10 text-primary font-semibold"
                                     : "text-muted-foreground hover:bg-gray-200 hover:text-foreground"
                                 )}
                                 >

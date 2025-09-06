@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { UploadCloud } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function AccountDetailsPage() {
   return (
@@ -59,11 +60,35 @@ export default function AccountDetailsPage() {
                     </div>
                 </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <Label htmlFor="role" className="md:text-right">Role</Label>
+                    <div className="md:col-span-2">
+                        <Input id="role" defaultValue="Customer" readOnly className="bg-gray-100 cursor-not-allowed" />
+                    </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                    <Label htmlFor="country" className="md:text-right">Country / Region</Label>
+                    <div className="md:col-span-2">
+                        <Select>
+                            <SelectTrigger id="country">
+                                <SelectValue placeholder="Select a country" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="us">United States</SelectItem>
+                                <SelectItem value="ca">Canada</SelectItem>
+                                <SelectItem value="pk">Pakistan</SelectItem>
+                                <SelectItem value="uk">United Kingdom</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                </div>
+
             </div>
 
             <div className="mt-8 pt-6 border-t flex justify-end gap-4">
                 <Button type="button" variant="outline" size="lg">Cancel</Button>
-                <Button type="submit" size="lg" className="bg-blue-600 text-white hover:bg-blue-700">Save changes</Button>
+                <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">Save changes</Button>
             </div>
         </form>
       </div>
