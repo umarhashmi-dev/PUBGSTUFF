@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { CountrySelect } from "@/components/ui/country-select";
 
 export default function BillingPage() {
   return (
@@ -22,17 +22,7 @@ export default function BillingPage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
                     <Label htmlFor="country" className="md:text-right">Country / Region</Label>
                     <div className="md:col-span-2">
-                        <Select>
-                            <SelectTrigger id="country">
-                                <SelectValue placeholder="Select a country" />
-                            </SelectTrigger>
-                            <SelectContent>
-                                <SelectItem value="us">United States</SelectItem>
-                                <SelectItem value="ca">Canada</SelectItem>
-                                <SelectItem value="pk">Pakistan</SelectItem>
-                                <SelectItem value="uk">United Kingdom</SelectItem>
-                            </SelectContent>
-                        </Select>
+                        <CountrySelect />
                     </div>
                 </div>
 
@@ -62,7 +52,7 @@ export default function BillingPage() {
 
             <div className="mt-8 pt-6 border-t flex justify-end gap-4">
                 <Button type="button" variant="outline" size="lg">Cancel</Button>
-                <Button type="submit" size="lg" className="bg-blue-600 text-white hover:bg-blue-700">Save changes</Button>
+                <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">Save changes</Button>
             </div>
         </form>
       </div>
