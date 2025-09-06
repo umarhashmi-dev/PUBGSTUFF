@@ -174,27 +174,6 @@ const productLinks = [
     }
 ]
 
-const aiToolsLinks = [
-    {
-        title: "Content Research",
-        href: "#",
-        description: "AI-powered research for insightful content.",
-        icon: <FileText />,
-    },
-    {
-        title: "Text Summarization",
-        href: "#",
-        description: "Summarize long texts into concise overviews.",
-        icon: <Mic />,
-    },
-    {
-        title: "Content Ideas",
-        href: "#",
-        description: "Generate creative ideas for your next project.",
-        icon: <Blocks />,
-    }
-]
-
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
   const { user, loading: authLoading } = useAuth();
@@ -279,22 +258,11 @@ export default function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">AI Tools</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
-                      {aiToolsLinks.map((tool) => (
-                         <ListItem
-                          key={tool.title}
-                          title={tool.title}
-                          href={tool.href}
-                          icon={tool.icon}
-                          className="text-gray-700"
-                        >
-                          {tool.description}
-                        </ListItem>
-                      ))}
-                    </ul>
-                  </NavigationMenuContent>
+                  <NavigationMenuLink asChild>
+                    <Link href="/ai-tools" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black")}>
+                      AI Tools
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">Courses</NavigationMenuTrigger>
@@ -450,7 +418,7 @@ export default function Header() {
                 Products
             </Link>
              <Link
-                href="#"
+                href="/ai-tools"
                 onClick={() => setExpanded(false)}
                 title="AI Tools"
                 className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
