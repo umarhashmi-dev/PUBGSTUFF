@@ -38,11 +38,11 @@ export default function SuggestionsPage() {
     }
 
     setLoading(true);
-    const { error } = await supabase
+    const { data, error } = await supabase
       .from('suggestions')
       .insert({ 
-        title, 
-        details,
+        title: title, 
+        details: details,
         user_id: user.id,
         username: user.user_metadata.full_name,
         user_email: user.email,
