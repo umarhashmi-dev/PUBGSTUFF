@@ -1,7 +1,7 @@
 
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Phone, AlertTriangle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -15,14 +15,14 @@ const WhatsAppIcon = () => (
 );
 
 export default function NotificationPopup() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const hasBeenDismissed = sessionStorage.getItem('notificationDismissed');
     if (!hasBeenDismissed) {
       const timer = setTimeout(() => {
         setIsOpen(true);
-      }, 1000); // 1-second delay before showing
+      }, 1500); // 1.5-second delay
       return () => clearTimeout(timer);
     }
   }, []);
@@ -36,76 +36,79 @@ export default function NotificationPopup() {
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          initial={{ y: '-100%' }}
-          animate={{ y: '0%' }}
-          exit={{ y: '-100%' }}
-          transition={{ duration: 0.5, ease: [0.25, 1, 0.5, 1] }}
-          className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200 shadow-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+          onClick={handleClose}
         >
-          <div className="container mx-auto max-w-5xl p-4 sm:p-6">
-            <div className="flex justify-between items-start">
-              <div className="flex-1">
-                <div className="flex items-center mb-4">
-                  <Logo />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
-                    <div>
-                        <div className="flex items-center gap-3">
-                            <Phone className="h-5 w-5 text-gray-600" />
-                            <a href="tel:+923355448505" className="text-base font-semibold text-gray-800 hover:text-primary transition-colors">+92 335 5448505</a>
-                        </div>
-                        <div className="flex items-center gap-3 mt-2">
-                            <Phone className="h-5 w-5 text-gray-600" />
-                            <a href="tel:+923021550385" className="text-base font-semibold text-gray-800 hover:text-primary transition-colors">+92 302 1550385</a>
-                        </div>
-                    </div>
-
-                    <div className="bg-yellow-50 border-l-4 border-yellow-400 p-3 rounded-r-lg">
-                        <div className="flex">
-                            <div className="flex-shrink-0">
-                                <AlertTriangle className="h-5 w-5 text-yellow-500" aria-hidden="true" />
-                            </div>
-                            <div className="ml-3">
-                                <p className="text-sm text-yellow-800">
-                                These are our only official numbers. If you communicate, make payments, or purchase products through any other person or number, we will not be responsible in any way.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Button asChild className="bg-[#25D366] hover:bg-[#128C7E] text-white hover-shimmer-button">
-                    <Link href="http://wa.me/+923021550385" target="_blank" rel="noopener noreferrer">
-                        <WhatsAppIcon />
-                        Developer WhatsApp
-                    </Link>
-                  </Button>
-                  <Button asChild className="bg-[#25D366] hover:bg-[#128C7E] text-white hover-shimmer-button">
-                     <Link href="http://wa.me/+923355448505" target="_blank" rel="noopener noreferrer">
-                        <WhatsAppIcon />
-                        Support Team
-                    </Link>
-                  </Button>
-                  <Button asChild className="bg-[#5865F2] hover:bg-[#4752C4] text-white hover-shimmer-button">
-                    <Link href="https://discord.com/invite/PwbEZ7wa3v" target="_blank" rel="noopener noreferrer">
-                      <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-current"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4464.8245-.6667 1.2486a18.657 18.657 0 00-5.485 0 18.18 18.18 0 00-.6667-1.2486.077.077 0 00-.0785-.037 19.719 19.719 0 00-4.8851 1.5152.0699.0699 0 00-.0321.027c-1.8931 3.27-2.92 7.04-3.1385 10.9415.0021.0561.0241.1095.0649.1432a21.2323 21.2323 0 005.1516 2.4439.0751.0751 0 00.081-.0231c.4146-.331.7853-.6992 1.12-1.0964a.0741.0741 0 00-.022-0.1171 16.911 16.911 0 01-1.378-1.539.0729.0729 0 01.004-.1011c.022-.015.045-.028.067-.04A12.5441 12.5441 0 008.232 12.01c0-1.42.39-2.77 1.05-3.96a.0729.0729 0 01.078-.036c.142.046.282.093.422.14a.0741.0741 0 01.042.08c-.24.58-.42 1.2-.54 1.86 0 .64.04 1.28.12 1.9a.0709.0709 0 00.07.06c.2199-.0199.4399-.04.6598-.06a.0741.0741 0 01.082.07c-.02.48-.06.96-.12 1.44a.0729.0729 0 00.06.08c.18.01.36.02.5399.02a12.932 12.932 0 001.3-.02.0729.0729 0 00.06-.08c-.06-.48-.0999-.96-.1199-1.44a.0741.0741 0 01.082-.07c.2199.02.4399.04.6598.06a.0709.0709 0 00.07-.06c.08-.62.12-1.26.12-1.9 0-.66-.18-1.28-.54-1.86a.0741.0741 0 01.042-.08c.14-.047.28-.094.422-.14a.0729.0729 0 01.078.036c.66 1.19 1.05 2.54 1.05 3.96a12.5441 12.5441 0 00-2.2276 4.4079.0729.0729 0 01.004.1011c.022.012.045.024.067.038a16.911 16.911 0 01-1.378 1.539.0741.0741 0 00-.022.1171c.3352.3971.7059.7654 1.12 1.0964a.0751.0751 0 00.081.0231 21.2323 21.2323 0 005.1516-2.4439.0629.0629 0 00.0649-.1432c-.2206-3.9-.96-7.66-3.1385-10.9415a.0678.0678 0 00-.032-.027z" /></svg>
-                      Join Discord
-                    </Link>
-                  </Button>
-                </div>
-
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="relative w-full max-w-lg bg-white rounded-2xl shadow-xl overflow-hidden"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
+          >
+            <div className="p-6 sm:p-8">
+              <div className="flex justify-between items-start">
+                <Logo />
+                <Button variant="ghost" size="icon" onClick={handleClose} className="-mr-2 -mt-2">
+                    <X className="h-5 w-5 text-gray-400" />
+                </Button>
               </div>
-              <button
-                onClick={handleClose}
-                className="p-2 -mt-2 -mr-2 text-gray-400 rounded-full hover:bg-gray-100 hover:text-gray-600 transition-colors"
-                aria-label="Close notification"
-              >
-                <X className="h-6 w-6" />
-              </button>
+
+              <h2 className="font-headline text-2xl font-bold text-gray-900 mt-4">Important Notice</h2>
+              
+              <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg mt-4">
+                  <div className="flex">
+                      <div className="flex-shrink-0">
+                          <AlertTriangle className="h-5 w-5 text-yellow-500" aria-hidden="true" />
+                      </div>
+                      <div className="ml-3">
+                          <p className="text-sm text-yellow-800">
+                          These are our only official numbers. If you communicate, make payments, or purchase products through any other person or number, we will not be responsible in any way.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <div className="mt-6 space-y-3">
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <Phone className="h-5 w-5 text-gray-500" />
+                      <a href="tel:+923355448505" className="text-base font-semibold text-gray-800 hover:text-primary transition-colors">+92 335 5448505</a>
+                  </div>
+                  <div className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                      <Phone className="h-5 w-5 text-gray-500" />
+                      <a href="tel:+923021550385" className="text-base font-semibold text-gray-800 hover:text-primary transition-colors">+92 302 1550385</a>
+                  </div>
+              </div>
+
             </div>
-          </div>
+
+            <div className="bg-gray-50 px-6 py-4 sm:px-8 sm:py-5 border-t">
+                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <Button asChild className="bg-[#25D366] hover:bg-[#128C7E] text-white hover-shimmer-button w-full">
+                        <Link href="http://wa.me/+923021550385" target="_blank" rel="noopener noreferrer">
+                            <WhatsAppIcon />
+                            Developer
+                        </Link>
+                    </Button>
+                    <Button asChild className="bg-[#25D366] hover:bg-[#128C7E] text-white hover-shimmer-button w-full">
+                        <Link href="http://wa.me/+923355448505" target="_blank" rel="noopener noreferrer">
+                            <WhatsAppIcon />
+                            Support Team
+                        </Link>
+                    </Button>
+                     <Button asChild className="bg-[#5865F2] hover:bg-[#4752C4] text-white hover-shimmer-button sm:col-span-2">
+                        <Link href="https://discord.com/invite/PwbEZ7wa3v" target="_blank" rel="noopener noreferrer">
+                        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 fill-current"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4464.8245-.6667 1.2486a18.657 18.657 0 00-5.485 0 18.18 18.18 0 00-.6667-1.2486.077.077 0 00-.0785-.037 19.719 19.719 0 00-4.8851 1.5152.0699.0699 0 00-.0321.027c-1.8931 3.27-2.92 7.04-3.1385 10.9415.0021.0561.0241.1095.0649.1432a21.2323 21.2323 0 005.1516 2.4439.0751.0751 0 00.081-.0231c.4146-.331.7853-.6992 1.12-1.0964a.0741.0741 0 00-.022-0.1171 16.911 16.911 0 01-1.378-1.539.0729.0729 0 01.004-.1011c.022-.015.045-.028.067-.04A12.5441 12.5441 0 008.232 12.01c0-1.42.39-2.77 1.05-3.96a.0729.0729 0 01.078-.036c.142.046.282.093.422.14a.0741.0741 0 01.042.08c-.24.58-.42 1.2-.54 1.86 0 .64.04 1.28.12 1.9a.0709.0709 0 00.07.06c.2199-.0199.4399-.04.6598-.06a.0741.0741 0 01.082.07c-.02.48-.06.96-.12 1.44a.0729.0729 0 00.06.08c.18.01.36.02.5399.02a12.932 12.932 0 001.3-.02.0729.0729 0 00.06-.08c-.06-.48-.0999-.96-.1199-1.44a.0741.0741 0 01.082-.07c.2199.02.4399.04.6598.06a.0709.0709 0 00.07-.06c.08-.62.12-1.26.12-1.9 0-.66-.18-1.28-.54-1.86a.0741.0741 0 01.042-.08c.14-.047.28-.094.422-.14a.0729.0729 0 01.078.036c.66 1.19 1.05 2.54 1.05 3.96a12.5441 12.5441 0 00-2.2276 4.4079.0729.0729 0 01.004.1011c.022.012.045.024.067.038a16.911 16.911 0 01-1.378 1.539.0741.0741 0 00-.022.1171c.3352.3971.7059.7654 1.12 1.0964a.0751.0751 0 00.081.0231 21.2323 21.2323 0 005.1516-2.4439.0629.0629 0 00.0649-.1432c-.2206-3.9-.96-7.66-3.1385-10.9415a.0678.0678 0 00-.032-.027z" /></svg>
+                        Join Discord
+                    </Link>
+                  </Button>
+                </div>
+            </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
