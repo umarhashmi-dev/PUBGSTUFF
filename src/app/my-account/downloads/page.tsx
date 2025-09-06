@@ -3,11 +3,12 @@
 import RequireAuth from "@/components/require-auth";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Download } from "lucide-react";
+import { Download, FileText } from "lucide-react";
 
 const downloads = [
   { id: "1", name: "Glacier M416 Skin", expires: "Never", link: "#" },
   { id: "2", name: "Golden Pharaoh X-Suit", expires: "Never", link: "#" },
+  { id: "3", name: "Vnhax Month Key", expires: "2025-08-15", link: "#" },
 ]
 
 export default function DownloadsPage() {
@@ -22,23 +23,26 @@ export default function DownloadsPage() {
                     Access your purchased digital products here.
                 </p>
             </div>
-            <div>
+            <div className="border rounded-lg">
               <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>Product</TableHead>
                     <TableHead>Expires</TableHead>
-                    <TableHead></TableHead>
+                    <TableHead className="text-right">Action</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {downloads.map((download) => (
                     <TableRow key={download.id}>
-                      <TableCell className="font-medium">{download.name}</TableCell>
+                      <TableCell className="font-medium flex items-center gap-3">
+                        <FileText className="h-5 w-5 text-muted-foreground" />
+                        {download.name}
+                      </TableCell>
                       <TableCell>{download.expires}</TableCell>
                       <TableCell className="text-right">
                          <Button asChild size="sm" className="hover-shimmer-button">
-                          <a href={download.link}><Download className="mr-2" /> Download</a>
+                          <a href={download.link}><Download className="mr-2 h-4 w-4" /> Download</a>
                          </Button>
                       </TableCell>
                     </TableRow>
