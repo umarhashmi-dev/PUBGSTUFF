@@ -79,21 +79,21 @@ export default function SignupFormDemo() {
       <form className="my-8" onSubmit={handleSignup}>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="fullname">Full name</Label>
-          <Input id="fullname" placeholder="John Doe" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+          <Input id="fullname" placeholder="John Doe" type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
         </LabelInputContainer>
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="you@example.com" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <Input id="email" placeholder="you@example.com" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         </LabelInputContainer>
 
         <LabelInputContainer className="mb-4">
             <Label htmlFor="mobile">Mobile Number</Label>
-            <Input id="mobile" placeholder="+1 123 456 7890" type="tel" value={mobileNumber} onChange={(e) => setMobileNumber(e.target.value)} required />
+            <Input id="mobile" placeholder="+1 123 456 7890" type="tel" value={mobileNumber} onChange={(e) => setMobileNumber(e.target.value)} />
         </LabelInputContainer>
 
         <LabelInputContainer className="mb-4">
           <Label htmlFor="password">Password</Label>
-          <Input id="password" placeholder="••••••••" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <Input id="password" placeholder="••••••••" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </LabelInputContainer>
 
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}

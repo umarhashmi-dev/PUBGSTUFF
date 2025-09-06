@@ -258,12 +258,21 @@ export default function Header() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuLink asChild>
-                    <Link href="/ai-tools" className={cn(navigationMenuTriggerStyle(), "bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black")}>
-                      AI Tools
-                    </Link>
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">AI Tools</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] bg-white">
+                      <ListItem href="/ai-tools" title="Content Research" icon={<FileText />}>
+                        Get AI-powered insights and resources for any topic.
+                      </ListItem>
+                      <ListItem href="/ai-tools" title="Text Summarization" icon={<Blocks />}>
+                        Summarize long texts into concise and easy-to-read summaries.
+                      </ListItem>
+                      <ListItem href="/ai-tools" title="Content Ideas" icon={<Mic />}>
+                        Generate creative content ideas for your blog, social media, and more.
+                      </ListItem>
+                    </ul>
+                  </NavigationMenuContent>
+              </NavigationMenuItem>
               <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent text-gray-700 hover:bg-gray-100 hover:text-black data-[state=open]:bg-gray-100 data-[state=open]:text-black focus:bg-gray-100 focus:text-black data-[active]:text-black">Courses</NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -512,8 +521,3 @@ const ListItem = React.forwardRef<
   );
 });
 ListItem.displayName = "ListItem"
-
-
-
-
-    
