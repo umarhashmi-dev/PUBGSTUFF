@@ -8,11 +8,14 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function SignupFormDemo() {
   const [fullName, setFullName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [countryCode, setCountryCode] = React.useState("+92");
+  const [mobileNumber, setMobileNumber] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const router = useRouter();
   const { toast } = useToast();
@@ -20,12 +23,14 @@ export default function SignupFormDemo() {
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
+    const fullMobileNumber = `${countryCode}${mobileNumber}`;
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: {
           full_name: fullName,
+          mobile_number: fullMobileNumber,
         },
       },
     });
@@ -83,6 +88,25 @@ export default function SignupFormDemo() {
           <Label htmlFor="email">Email Address</Label>
           <Input id="email" placeholder="you@example.com" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         </LabelInputContainer>
+
+        <LabelInputContainer className="mb-4">
+            <Label htmlFor="mobile">Mobile Number</Label>
+            <div className="flex gap-2">
+                <Select value={countryCode} onValueChange={setCountryCode}>
+                    <SelectTrigger className="w-[80px]">
+                        <SelectValue placeholder="Code" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectItem value="+92">PK +92</SelectItem>
+                        <SelectItem value="+1">US +1</SelectItem>
+                        <SelectItem value="+44">UK +44</SelectItem>
+                        <SelectItem value="+91">IN +91</SelectItem>
+                    </SelectContent>
+                </Select>
+                <Input id="mobile" placeholder="3001234567" type="tel" value={mobileNumber} onChange={(e) => setMobileNumber(e.target.value)} required />
+            </div>
+        </LabelInputContainer>
+
         <LabelInputContainer className="mb-4">
           <Label htmlFor="password">Password</Label>
           <Input id="password" placeholder="••••••••" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
@@ -91,7 +115,7 @@ export default function SignupFormDemo() {
         {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
         <button
-          className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] hover-shimmer-button"
+          className="group/btn hover-shimmer-button relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
           type="submit"
         >
           Sign up &rarr;
