@@ -13,6 +13,7 @@ import { Logo } from "@/components/logo";
 import Header from "@/components/landing/header";
 import { cn } from "@/lib/utils";
 import { IconBrandGoogle, IconBrandFacebook } from "@tabler/icons-react";
+import { Card } from "@/components/ui/card";
 
 export default function LoginPage() {
   const [email, setEmail] = React.useState("");
@@ -65,84 +66,86 @@ export default function LoginPage() {
     <>
       <Header />
       <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-12 pt-24 sm:pt-12">
-        <div className="shadow-input w-full max-w-md rounded-none bg-white p-4 md:rounded-2xl md:p-8 dark:bg-black">
-            <div className="text-center">
-              <h2 className="mt-6 text-xl font-bold text-neutral-800 dark:text-neutral-200">
-                Welcome Back to PUBGSTUFF
-              </h2>
-              <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
-                Sign in to access your account
-              </p>
-            </div>
-            
-            <form className="my-8" onSubmit={handleLogin}>
-                <LabelInputContainer className="mb-4">
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input 
-                    id="email" 
-                    placeholder="you@example.com" 
-                    type="email" 
-                    value={email} 
-                    onChange={(e) => setEmail(e.target.value)} 
-                    required 
-                  />
-                </LabelInputContainer>
-                <LabelInputContainer className="mb-4">
-                  <Label htmlFor="password">Password</Label>
-                  <Input 
-                    id="password" 
-                    placeholder="••••••••" 
-                    type="password" 
-                    value={password} 
-                    onChange={(e) => setPassword(e.target.value)} 
-                    required 
-                  />
-                </LabelInputContainer>
-
-                {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
-                
-                <button
-                  className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] hover-shimmer-button"
-                  type="submit"
-                >
-                  Sign in &rarr;
-                  <BottomGradient />
-                </button>
-
-                <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
-                
-                <div className="flex flex-col space-y-4">
-                    <button
-                        className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-                        type="button"
-                        onClick={() => handleSocialSignIn("google")}
-                    >
-                        <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-                        <span className="text-sm text-neutral-700 dark:text-neutral-300">
-                        Google
-                        </span>
-                        <BottomGradient />
-                    </button>
-                    <button
-                        className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
-                        type="button"
-                        onClick={() => handleSocialSignIn("facebook")}
-                    >
-                        <IconBrandFacebook className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
-                        <span className="text-sm text-neutral-700 dark:text-neutral-300">
-                        Facebook
-                        </span>
-                        <BottomGradient />
-                    </button>
-                </div>
-                 <p className="mt-8 text-center text-sm text-muted-foreground">
-                    Don't have an account?{" "}
-                    <Link href="/signup" className="font-medium text-foreground hover:underline">
-                        Sign up
-                    </Link>
+        <Card className="w-full max-w-md overflow-hidden">
+          <div className="bg-white p-4 md:p-8 dark:bg-black">
+              <div className="text-center">
+                <h2 className="mt-6 text-xl font-bold text-neutral-800 dark:text-neutral-200">
+                  Welcome Back to PUBGSTUFF
+                </h2>
+                <p className="mt-2 max-w-sm text-sm text-neutral-600 dark:text-neutral-300">
+                  Sign in to access your account
                 </p>
-            </form>
-        </div>
+              </div>
+              
+              <form className="my-8" onSubmit={handleLogin}>
+                  <LabelInputContainer className="mb-4">
+                    <Label htmlFor="email">Email Address</Label>
+                    <Input 
+                      id="email" 
+                      placeholder="you@example.com" 
+                      type="email" 
+                      value={email} 
+                      onChange={(e) => setEmail(e.target.value)} 
+                      required 
+                    />
+                  </LabelInputContainer>
+                  <LabelInputContainer className="mb-4">
+                    <Label htmlFor="password">Password</Label>
+                    <Input 
+                      id="password" 
+                      placeholder="••••••••" 
+                      type="password" 
+                      value={password} 
+                      onChange={(e) => setPassword(e.target.value)} 
+                      required 
+                    />
+                  </LabelInputContainer>
+
+                  {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
+                  
+                  <button
+                    className="group/btn relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] hover-shimmer-button"
+                    type="submit"
+                  >
+                    Sign in &rarr;
+                    <BottomGradient />
+                  </button>
+
+                  <div className="my-8 h-[1px] w-full bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700" />
+                  
+                  <div className="flex flex-col space-y-4">
+                      <button
+                          className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
+                          type="button"
+                          onClick={() => handleSocialSignIn("google")}
+                      >
+                          <IconBrandGoogle className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+                          <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                          Google
+                          </span>
+                          <BottomGradient />
+                      </button>
+                      <button
+                          className="group/btn shadow-input relative flex h-10 w-full items-center justify-start space-x-2 rounded-md bg-gray-50 px-4 font-medium text-black dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_#262626]"
+                          type="button"
+                          onClick={() => handleSocialSignIn("facebook")}
+                      >
+                          <IconBrandFacebook className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+                          <span className="text-sm text-neutral-700 dark:text-neutral-300">
+                          Facebook
+                          </span>
+                          <BottomGradient />
+                      </button>
+                  </div>
+                   <p className="mt-8 text-center text-sm text-muted-foreground">
+                      Don't have an account?{" "}
+                      <Link href="/signup" className="font-medium text-foreground hover:underline">
+                          Sign up
+                      </Link>
+                  </p>
+              </form>
+          </div>
+        </Card>
       </div>
     </>
   );
