@@ -1,3 +1,4 @@
+
 "use client";
 import React from "react";
 import Link from "next/link";
@@ -125,7 +126,9 @@ export default function SignupFormDemo() {
             type="button"
             onClick={() => handleSocialSignIn("facebook")}
           >
-            <IconBrandFacebook className="h-4 w-4 text-neutral-800 dark:text-neutral-300" />
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-4 w-4">
+                <path fill="#1877F2" d="M22.675 0h-21.35c-0.732 0-1.325 0.593-1.325 1.325v21.351c0 0.731 0.593 1.325 1.325 1.325h11.494v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463 0.099 2.795 0.143v3.24l-1.918 0.001c-1.504 0-1.795 0.715-1.795 1.763v2.313h3.587l-0.467 3.622h-3.12v9.293h6.116c0.73 0 1.323-0.593 1.323-1.325v-21.35c0-0.732-0.593-1.325-1.323-1.325z"/>
+            </svg>
             <span className="text-sm text-neutral-700 dark:text-neutral-300">
               Facebook
             </span>
