@@ -18,6 +18,7 @@ const plans = [
     badge: null,
     buttonVariant: "default",
     buttonText: "Try for Free",
+    href: "/ai-tools",
     features: [
       "Subscription Management Tools",
       "Advanced A/B testing capabilities",
@@ -37,6 +38,7 @@ const plans = [
     badge: "Client Choice",
     buttonVariant: "gradient",
     buttonText: "Book a 20-min Call",
+    href: "/signup",
     features: [
         "1:1 Migration And Onboarding",
         "Subscription management tools",
@@ -57,6 +59,7 @@ const plans = [
     badge: null,
     buttonVariant: "default",
     buttonText: "Contact Us",
+    href: "/contact",
     features: [
       "Every feature we offer in Pro plus",
       "1:1 Migration And Onboarding",
@@ -130,14 +133,14 @@ export default function FeaturedProducts() {
                   <CardFooter className="p-6 mt-auto">
                     {plan.buttonVariant === 'gradient' ? (
                       <Button asChild size="lg" className="w-full text-base bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-shadow hover-shimmer-button">
-                          <Link href="/signup">
+                          <Link href={plan.href}>
                             <User className="mr-2 h-5 w-5 rounded-full bg-white/20 p-1" />
                             <span>{plan.buttonText}</span>
                           </Link>
                         </Button>
                     ) : (
                         <Button asChild size="lg" className="w-full text-base bg-gray-800 text-white rounded-full hover:bg-gray-900 hover-shimmer-button">
-                            <Link href="/signup">
+                            <Link href={plan.href}>
                                 <span>{plan.buttonText}</span>
                             </Link>
                         </Button>
