@@ -157,8 +157,6 @@ export default function Header() {
   const { user, loading: authLoading } = useAuth();
   const { toast } = useToast();
   const router = useRouter();
-  const [isAccountMenuOpen, setIsAccountMenuOpen] = React.useState(false);
-  const menuTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
 
   const handleLogout = async () => {
@@ -176,19 +174,6 @@ export default function Header() {
         variant: "destructive",
       });
     }
-  };
-
-  const handleMouseEnter = () => {
-    if (menuTimeoutRef.current) {
-      clearTimeout(menuTimeoutRef.current);
-    }
-    setIsAccountMenuOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    menuTimeoutRef.current = setTimeout(() => {
-      setIsAccountMenuOpen(false);
-    }, 200); // 200ms delay before closing
   };
 
 
@@ -351,13 +336,11 @@ export default function Header() {
             </>
           )}
           {!authLoading && user && (
-            <DropdownMenu open={isAccountMenuOpen} onOpenChange={setIsAccountMenuOpen}>
+            <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button 
                   variant="ghost" 
                   className="relative h-10 w-10 rounded-full"
-                  onMouseEnter={handleMouseEnter}
-                  onMouseLeave={handleMouseLeave}
                 >
                   <Avatar className="h-10 w-10">
                     <AvatarImage src={user.user_metadata.avatar_url ?? ""} alt={user.user_metadata.full_name ?? ""} />
@@ -369,8 +352,6 @@ export default function Header() {
                 className="w-56" 
                 align="end" 
                 forceMount
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
               >
                 <DropdownMenuLabel className="font-normal">
                   <div className="flex flex-col space-y-1">
