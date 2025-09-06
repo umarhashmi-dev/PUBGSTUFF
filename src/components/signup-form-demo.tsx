@@ -8,13 +8,11 @@ import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 export default function SignupFormDemo() {
   const [fullName, setFullName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [countryCode, setCountryCode] = React.useState("+92");
   const [mobileNumber, setMobileNumber] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const router = useRouter();
@@ -23,14 +21,13 @@ export default function SignupFormDemo() {
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
-    const fullMobileNumber = `${countryCode}${mobileNumber}`;
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
         data: {
           full_name: fullName,
-          mobile_number: fullMobileNumber,
+          mobile_number: mobileNumber,
         },
       },
     });
@@ -91,20 +88,7 @@ export default function SignupFormDemo() {
 
         <LabelInputContainer className="mb-4">
             <Label htmlFor="mobile">Mobile Number</Label>
-            <div className="flex gap-2">
-                <Select value={countryCode} onValueChange={setCountryCode}>
-                    <SelectTrigger className="w-[80px]">
-                        <SelectValue placeholder="Code" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="+92">PK +92</SelectItem>
-                        <SelectItem value="+1">US +1</SelectItem>
-                        <SelectItem value="+44">UK +44</SelectItem>
-                        <SelectItem value="+91">IN +91</SelectItem>
-                    </SelectContent>
-                </Select>
-                <Input id="mobile" placeholder="3001234567" type="tel" value={mobileNumber} onChange={(e) => setMobileNumber(e.target.value)} required />
-            </div>
+            <Input id="mobile" placeholder="+1 123 456 7890" type="tel" value={mobileNumber} onChange={(e) => setMobileNumber(e.target.value)} required />
         </LabelInputContainer>
 
         <LabelInputContainer className="mb-4">
