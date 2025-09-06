@@ -1,6 +1,5 @@
 
 'use client';
-import RequireAuth from "@/components/require-auth";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Download, FileText } from "lucide-react";
@@ -13,7 +12,6 @@ const downloads = [
 
 export default function DownloadsPage() {
   return (
-    <RequireAuth>
         <div>
             <div className="mb-8">
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
@@ -23,7 +21,7 @@ export default function DownloadsPage() {
                     Access your purchased digital products here.
                 </p>
             </div>
-            <div className="border rounded-lg">
+            <div className="border rounded-lg bg-gray-50/50">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -51,6 +49,5 @@ export default function DownloadsPage() {
               </Table>
             </div>
         </div>
-    </RequireAuth>
   );
 }

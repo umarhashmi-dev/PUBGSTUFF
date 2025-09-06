@@ -1,14 +1,12 @@
 
 'use client';
-import RequireAuth from "@/components/require-auth";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function AccountDetailsPage() {
   return (
-    <RequireAuth>
       <div>
         <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
@@ -19,10 +17,9 @@ export default function AccountDetailsPage() {
             </p>
         </div>
         <form className="space-y-8">
-            <Card>
+            <Card className="bg-gray-50/50 border-gray-200">
                 <CardHeader>
-                    <CardTitle>Profile Information</CardTitle>
-                    <CardDescription>Update your personal information.</CardDescription>
+                    <CardTitle className="font-headline text-xl">Profile Information</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -42,9 +39,9 @@ export default function AccountDetailsPage() {
                 </CardContent>
             </Card>
 
-            <Card>
+            <Card className="bg-gray-50/50 border-gray-200">
                 <CardHeader>
-                    <CardTitle>Password Change</CardTitle>
+                    <CardTitle className="font-headline text-xl">Password Change</CardTitle>
                     <CardDescription>Leave fields blank to keep your current password.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
@@ -68,6 +65,5 @@ export default function AccountDetailsPage() {
             </div>
         </form>
       </div>
-    </RequireAuth>
   );
 }

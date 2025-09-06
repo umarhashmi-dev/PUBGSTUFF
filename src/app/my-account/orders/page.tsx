@@ -1,6 +1,5 @@
 
 'use client';
-import RequireAuth from "@/components/require-auth";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { cn } from "@/lib/utils";
@@ -15,7 +14,6 @@ const orders = [
 
 export default function OrdersPage() {
   return (
-    <RequireAuth>
         <div>
             <div className="mb-8">
                 <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
@@ -25,7 +23,7 @@ export default function OrdersPage() {
                     Here is a list of your past orders.
                 </p>
             </div>
-            <div className="border rounded-lg">
+            <div className="border rounded-lg bg-gray-50/50">
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -42,6 +40,7 @@ export default function OrdersPage() {
                       <TableCell>{order.date}</TableCell>
                       <TableCell>
                         <Badge variant="outline" className={cn(
+                            "font-semibold",
                             order.status === 'Completed' && 'bg-green-100 text-green-800 border-green-200',
                             order.status === 'Pending' && 'bg-yellow-100 text-yellow-800 border-yellow-200',
                             order.status === 'Cancelled' && 'bg-red-100 text-red-800 border-red-200',
@@ -56,6 +55,5 @@ export default function OrdersPage() {
               </Table>
             </div>
         </div>
-    </RequireAuth>
   );
 }
