@@ -13,6 +13,7 @@ import { Logo } from "@/components/logo";
 import Header from "@/components/landing/header";
 import { cn } from "@/lib/utils";
 import { Card } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export default function LoginPage() {
   const [email, setEmail] = React.useState("");
@@ -99,6 +100,13 @@ export default function LoginPage() {
                       required 
                     />
                   </LabelInputContainer>
+
+                  <div className="flex items-center space-x-2 mb-4">
+                    <Checkbox id="remember-me" />
+                    <Label htmlFor="remember-me" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                      Remember me
+                    </Label>
+                  </div>
 
                   {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
                   
