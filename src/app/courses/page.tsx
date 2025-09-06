@@ -4,7 +4,6 @@ import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Palette, Code, Bot, Film, ShoppingCart, DollarSign, Search, Tv } from "lucide-react";
 import { motion } from "framer-motion";
@@ -95,16 +94,9 @@ export default function CoursesPage() {
                         <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
                             LEARNING PATHS
                         </span>
-                        <TextAnimate
-                            as="h1"
-                            animation={{
-                            hidden: { opacity: 0, filter: "blur(4px)" },
-                            show: { opacity: 1, filter: "blur(0px)" },
-                            }}
-                            className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
-                        >
+                        <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
                             Unlock Your Potential with Our Courses
-                        </TextAnimate>
+                        </h1>
                         <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                             Explore our comprehensive library of free courses designed to help you master new skills and advance your career in tech and creativity.
                         </p>

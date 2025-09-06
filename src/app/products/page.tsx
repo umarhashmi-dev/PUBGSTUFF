@@ -6,7 +6,6 @@ import Header from "@/components/landing/header";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Monitor, Smartphone } from "lucide-react";
 import { motion } from "framer-motion";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { PinContainer } from "@/components/ui/3d-pin";
 
 const categoryCards = [
@@ -52,16 +51,9 @@ export default function ProductsPage() {
                             <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
                                 OUR DIGITAL PRODUCTS
                             </span>
-                            <TextAnimate
-                                as="h1"
-                                animation={{
-                                hidden: { opacity: 0, filter: "blur(4px)" },
-                                show: { opacity: 1, filter: "blur(0px)" },
-                                }}
-                                className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
-                            >
+                            <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
                                 Choose the Right Plan for You
-                            </TextAnimate>
+                            </h1>
                         </div>
                         <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                             Discover our range of premium digital services and keys. Select the plan that suits your needs best and get started instantly with secure and reliable solutions.

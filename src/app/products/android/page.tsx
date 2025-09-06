@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Check, Shield } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ShimmeringText } from "@/components/ui/shimmering-text";
@@ -172,16 +171,9 @@ export default function AndroidProductsPage() {
                                 <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
                                     ANDROID PRODUCTS
                                 </span>
-                                <TextAnimate
-                                    as="h1"
-                                    animation={{
-                                    hidden: { opacity: 0, filter: "blur(4px)" },
-                                    show: { opacity: 1, filter: "blur(0px)" },
-                                    }}
-                                    className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
-                                >
+                                <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
                                     Android Gaming Products
-                                </TextAnimate>
+                                </h1>
                             </div>
                             <p className="mt-6 text-base md:text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                                 Explore our exclusive range of Android keys designed to deliver smooth, secure, and enhanced PUBG gameplay. Choose the plan that fits your needs and unlock premium features with ease.

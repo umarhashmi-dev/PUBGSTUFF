@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Shield } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ShimmeringText } from "@/components/ui/shimmering-text";
@@ -189,16 +188,9 @@ export default function PcProductsPage() {
                                 <span className="inline-block px-3 py-1 text-sm font-semibold rounded-full bg-primary/10 text-primary mb-4">
                                     PC PRODUCTS
                                 </span>
-                                <TextAnimate
-                                    as="h1"
-                                    animation={{
-                                    hidden: { opacity: 0, filter: "blur(4px)" },
-                                    show: { opacity: 1, filter: "blur(0px)" },
-                                    }}
-                                    className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline"
-                                >
+                                <h1 className="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl lg:text-6xl font-headline">
                                     PC Gaming Products
-                                </TextAnimate>
+                                </h1>
                             </div>
                             <p className="mt-6 text-lg max-w-2xl mx-auto leading-8 text-muted-foreground">
                                 Explore our wide collection of premium PC gaming digital keys and services with PUBGSTUU. From top-rated game activations to reliable digital solutions, we provide everything you need to enhance your gaming journey.

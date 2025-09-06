@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageSquare, Mail, MapPin, Phone, ArrowRight, User, Map, Check, Star } from "lucide-react";
 import Faq from "@/components/landing/faq";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Label } from "@/components/ui/label";

@@ -3,7 +3,6 @@
 import Footer from "@/components/landing/footer";
 import Header from "@/components/landing/header";
 import Link from "next/link";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import Cta from "@/components/landing/cta";
 
 export default function RefundPolicyPage() {
@@ -14,16 +13,9 @@ export default function RefundPolicyPage() {
         <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-8 md:mb-12">
-                <TextAnimate
-                    as="h1"
-                    animation={{
-                    hidden: { opacity: 0, filter: "blur(4px)" },
-                    show: { opacity: 1, filter: "blur(0px)" },
-                    }}
-                    className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl"
-                >
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
                     Return and Refund Policy
-                </TextAnimate>
+                </h1>
                 <p className="mt-4 text-sm text-gray-500 md:text-base">
                 Last updated: Friday, 21 February 2025 in I-9, Islamabad
                 </p>

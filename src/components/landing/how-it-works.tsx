@@ -1,7 +1,6 @@
 
 'use client';
 import { Handshake, Search, Zap } from "lucide-react";
-import { TextAnimate } from "@/components/magicui/text-animate";
 
 const steps = [
   {
@@ -26,16 +25,9 @@ export default function HowItWorks() {
     <section id="how-it-works" className="py-16 md:py-28 bg-white">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
-          <TextAnimate
-            as="h2"
-            animation={{
-              hidden: { opacity: 0, filter: "blur(4px)" },
-              show: { opacity: 1, filter: "blur(0px)" },
-            }}
-            className="font-headline text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-          >
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             How It Works
-          </TextAnimate>
+          </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600">
             A simple, three-step process to get your digital goods.
           </p>

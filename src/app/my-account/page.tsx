@@ -5,7 +5,6 @@ import Header from "@/components/landing/header";
 import RequireAuth from "@/components/require-auth";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { TextAnimate } from "@/components/magicui/text-animate";
 
 export default function MyAccountPage() {
   return (
@@ -15,16 +14,9 @@ export default function MyAccountPage() {
         <main className="flex-1">
           <div className="container py-28 md:py-32">
             <div className="mx-auto max-w-3xl text-center">
-              <TextAnimate
-                as="h1"
-                animation={{
-                  hidden: { opacity: 0, filter: "blur(4px)" },
-                  show: { opacity: 1, filter: "blur(0px)" },
-                }}
-                className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground md:text-5xl"
-              >
+              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground md:text-5xl">
                 My Account
-              </TextAnimate>
+              </h1>
               <p className="mt-4 md:mt-6 text-base sm:text-lg leading-8 text-muted-foreground">
                 Manage your account, view orders, and access your downloads.
               </p>

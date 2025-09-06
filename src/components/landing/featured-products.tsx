@@ -6,7 +6,6 @@ import Link from "next/link";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { ShimmeringText } from "@/components/ui/shimmering-text";
-import { TextAnimate } from "@/components/magicui/text-animate";
 
 const plans = [
   {
@@ -74,16 +73,9 @@ export default function FeaturedProducts() {
     <section id="featured-products" className="py-16 md:py-28 bg-white">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
-          <TextAnimate
-            as="h2"
-            animation={{
-              hidden: { opacity: 0, filter: "blur(4px)" },
-              show: { opacity: 1, filter: "blur(0px)" },
-            }}
-            className="font-headline text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-          >
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Choose Your Plan
-          </TextAnimate>
+          </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600">
             Simple, transparent pricing for teams of all sizes.
           </p>

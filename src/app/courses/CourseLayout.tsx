@@ -9,7 +9,6 @@ import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { TextAnimate } from "@/components/magicui/text-animate";
 
 const Cta = dynamic(() => import('@/components/landing/cta'), { ssr: false });
 
@@ -68,16 +67,9 @@ export function CourseLayout({
                      </Button>
                     <hr className="border-gray-200 my-6" />
                     <div className="text-center">
-                        <TextAnimate
-                            as="h3"
-                            animation={{
-                                hidden: { opacity: 0, filter: "blur(4px)" },
-                                show: { opacity: 1, filter: "blur(0px)" },
-                            }}
-                            className="text-3xl font-extrabold"
-                            >
+                        <h3 className="text-3xl font-extrabold">
                             100% FREE
-                        </TextAnimate>
+                        </h3>
                       <p className="text-gray-600 text-sm mt-1">No hidden costs • Lifetime access</p>
                     </div>
                   </div>
@@ -103,16 +95,9 @@ export function CourseLayout({
                       <p className="text-sm text-gray-600">(4.9 stars from 2,150 reviews)</p>
                     </div>
                   </div>
-                  <TextAnimate
-                    as="h1"
-                    animation={{
-                    hidden: { opacity: 0, filter: "blur(4px)" },
-                    show: { opacity: 1, filter: "blur(0px)" },
-                    }}
-                    className="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-6"
-                >
+                  <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight mb-6">
                     {title}
-                </TextAnimate>
+                  </h1>
                   <p className="text-lg text-gray-700 mb-8">{description}</p>
                   
                   <div className="flex flex-col sm:flex-row gap-4">

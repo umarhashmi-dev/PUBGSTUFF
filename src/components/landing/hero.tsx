@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { useState } from "react";
 import confetti from "canvas-confetti";
 
@@ -62,16 +61,9 @@ export default function Hero() {
         <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-y-8 lg:items-center lg:grid-cols-2">
             <div className="text-center lg:text-left xl:col-span-1 md:px-8 lg:px-0 xl:pr-12">
-              <TextAnimate
-                as="h1"
-                animation={{
-                  hidden: { opacity: 0, filter: "blur(4px)" },
-                  show: { opacity: 1, filter: "blur(0px)" },
-                }}
-                className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl lg:text-6xl font-pj"
-              >
+              <h1 className="text-4xl font-bold leading-tight text-gray-900 sm:text-5xl lg:text-6xl font-pj">
                 Your One-Stop Digital Shop
-              </TextAnimate>
+              </h1>
               <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-600 font-inter max-w-xl mx-auto lg:mx-0">
                 Instantly access a massive collection of game skins, currency, and other digital goods. Level up your gaming experience today.
               </p>

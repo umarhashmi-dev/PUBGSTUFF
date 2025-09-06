@@ -3,7 +3,6 @@
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import React from "react";
 import { AnimatedTooltip } from "../ui/animated-tooltip";
-import { TextAnimate } from "@/components/magicui/text-animate";
 
 const testimonials = [
   {
@@ -130,16 +129,9 @@ export default function Testimonials() {
     <section id="testimonials" className="pt-0 pb-12 md:pb-16">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto">
-          <TextAnimate
-            as="h2"
-            animation={{
-              hidden: { opacity: 0, filter: "blur(4px)" },
-              show: { opacity: 1, filter: "blur(0px)" },
-            }}
-            className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             What People Say About Us
-          </TextAnimate>
+          </h2>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
             Real stories from satisfied customers.
           </p>

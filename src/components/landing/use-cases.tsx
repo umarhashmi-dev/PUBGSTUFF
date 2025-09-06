@@ -2,7 +2,6 @@
 'use client';
 import { cn } from "@/lib/utils";
 import React from "react";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Code, Palette, Users, Megaphone, Search, FileText, Bot, Heart } from "lucide-react";
 
 
@@ -101,16 +100,9 @@ export default function UseCases() {
     <section id="use-cases" className="py-12 md:py-16">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
-          <TextAnimate
-            as="h2"
-            animation={{
-              hidden: { opacity: 0, filter: "blur(4px)" },
-              show: { opacity: 1, filter: "blur(0px)" },
-            }}
-            className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl"
-          >
+          <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Multiple Use Cases Of PubgStuff
-          </TextAnimate>
+          </h2>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
             A versatile AI Tool with a multitude of use cases
           </p>
