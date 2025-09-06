@@ -1,6 +1,6 @@
 
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -16,6 +16,15 @@ export default function SuggestionsPage() {
   const [title, setTitle] = useState('');
   const [details, setDetails] = useState('');
   const [loading, setLoading] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+
+  useEffect(() => {
+    if (user) {
+      setFullName(user.user_metadata.full_name || '');
+      setEmail(user.email || '');
+    }
+  }, [user]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,6 +78,29 @@ export default function SuggestionsPage() {
             
             <form onSubmit={handleSubmit}>
                 <div className="space-y-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <Label htmlFor="full-name">Full Name</Label>
+                            <Input 
+                                id="full-name" 
+                                className="mt-2" 
+                                value={fullName}
+                                readOnly
+                                disabled
+                            />
+                        </div>
+                        <div>
+                            <Label htmlFor="email">Email Address</Label>
+                            <Input 
+                                id="email" 
+                                type="email"
+                                className="mt-2" 
+                                value={email}
+                                readOnly
+                                disabled
+                            />
+                        </div>
+                    </div>
                      <div>
                         <Label htmlFor="suggestion-title">Suggestion Title</Label>
                         <Input 
