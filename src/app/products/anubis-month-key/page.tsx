@@ -84,7 +84,7 @@ export default function SingleProductPage() {
     const { toast } = useToast();
     const { addToCart } = useCart();
     const router = useRouter();
-    const { favoriteItems, addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
+    const { addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
 
     const product = {
         id: 10,
@@ -171,7 +171,7 @@ export default function SingleProductPage() {
         setSelectedImage(images[0]);
         setCurrentThumbnailPage(0);
     };
-
+    
     const visibleThumbnails = images.slice(
         currentThumbnailPage * thumbnailsPerPage,
         (currentThumbnailPage + 1) * thumbnailsPerPage
