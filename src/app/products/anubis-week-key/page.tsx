@@ -23,16 +23,6 @@ import { useRouter } from 'next/navigation';
 
 const RelatedProducts = dynamic(() => import('@/components/related-products').then(mod => mod.RelatedProducts), { ssr: false });
 
-const product = {
-    id: 9,
-    name: "Anubis Week Key",
-    category: "PC",
-    price: 20,
-    href: "/products/anubis-week-key",
-    imageUrl: 'https://i.postimg.cc/3N60d0qM/Anubis-week-key.jpg',
-    aiHint: 'gaming character cinematic'
-};
-
 const images = [
     { id: 1, src: 'https://i.postimg.cc/3N60d0qM/Anubis-week-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000?random=1', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
@@ -94,6 +84,16 @@ export default function SingleProductPage() {
     const [isFavorited, setIsFavorited] = React.useState(false);
     const { addToCart } = useCart();
     const router = useRouter();
+
+    const product = {
+        id: 9,
+        name: "Anubis Week Key",
+        category: "PC",
+        price: 20,
+        href: "/products/anubis-week-key",
+        imageUrl: 'https://i.postimg.cc/3N60d0qM/Anubis-week-key.jpg',
+        aiHint: 'gaming character cinematic'
+    };
 
     const handleBuyNow = () => {
         addToCart(product);

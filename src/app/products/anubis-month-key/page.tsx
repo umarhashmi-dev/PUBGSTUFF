@@ -23,16 +23,6 @@ import { useRouter } from 'next/navigation';
 
 const RelatedProducts = dynamic(() => import('@/components/related-products').then(mod => mod.RelatedProducts), { ssr: false });
 
-const product = {
-    id: 10,
-    name: "Anubis Month Key",
-    category: "PC",
-    price: 40,
-    href: "/products/anubis-month-key",
-    imageUrl: 'https://i.postimg.cc/Gh8s6zBb/Anubis-month-key.jpg',
-    aiHint: 'gaming character cinematic'
-};
-
 const images = [
     { id: 1, src: 'https://i.postimg.cc/Gh8s6zBb/Anubis-month-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000?random=1', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
@@ -94,6 +84,16 @@ export default function SingleProductPage() {
     const [isFavorited, setIsFavorited] = React.useState(false);
     const { addToCart } = useCart();
     const router = useRouter();
+
+    const product = {
+        id: 10,
+        name: "Anubis Month Key",
+        category: "PC",
+        price: 40,
+        href: "/products/anubis-month-key",
+        imageUrl: 'https://i.postimg.cc/Gh8s6zBb/Anubis-month-key.jpg',
+        aiHint: 'gaming character cinematic'
+    };
 
     const handleBuyNow = () => {
         addToCart(product);

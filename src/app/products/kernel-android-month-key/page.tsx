@@ -21,16 +21,6 @@ import { RelatedProducts } from '@/components/related-products';
 import { useCart } from '@/hooks/use-cart';
 import { useRouter } from 'next/navigation';
 
-const product = {
-    id: 17,
-    name: "Kernel Root Android Month Key",
-    category: "Android",
-    price: 40,
-    href: "/products/kernel-android-month-key",
-    imageUrl: 'https://i.postimg.cc/C1Jz1LPC/Kernel-Android-month-key.jpg',
-    aiHint: 'gaming character cinematic'
-};
-
 const images = [
     { id: 1, src: 'https://i.postimg.cc/C1Jz1LPC/Kernel-Android-month-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000?random=1', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
@@ -93,6 +83,16 @@ export default function SingleProductPage() {
     const [isFavorited, setIsFavorited] = useState(false);
     const { addToCart } = useCart();
     const router = useRouter();
+
+    const product = {
+        id: 17,
+        name: "Kernel Root Android Month Key",
+        category: "Android",
+        price: 40,
+        href: "/products/kernel-android-month-key",
+        imageUrl: 'https://i.postimg.cc/C1Jz1LPC/Kernel-Android-month-key.jpg',
+        aiHint: 'gaming character cinematic'
+    };
 
     const handleBuyNow = () => {
         addToCart(product);
