@@ -42,10 +42,10 @@ export default function Footer() {
     setLoading(true);
 
     try {
-      // 1. Save the email to the 'subscriptions' table
+      // 1. Save the email to the 'suggestions' table
       const { error: insertError } = await supabase
-        .from('subscriptions')
-        .insert({ email });
+        .from('suggestions')
+        .insert({ title: 'Newsletter Subscription', details: email });
 
       if (insertError) {
         // Handle cases where the email might already exist
@@ -57,19 +57,17 @@ export default function Footer() {
         } else {
           throw insertError;
         }
-      }
+      } else {
+         // 2. Send the welcome/magic link email
+        const { error: emailError } = await supabase.auth.signInWithOtp({
+          email,
+          options: {
+            shouldCreateUser: false, // Don't create a new user from this
+          },
+        });
 
-      // 2. Send the welcome/magic link email
-      const { error: emailError } = await supabase.auth.signInWithOtp({
-        email,
-        options: {
-          shouldCreateUser: false, // Don't create a new user from this
-        },
-      });
+        if (emailError) throw emailError;
 
-      if (emailError) throw emailError;
-
-      if (!insertError) {
         toast({
           title: "Subscription Successful!",
           description: "Thank you for subscribing. Please check your email.",
