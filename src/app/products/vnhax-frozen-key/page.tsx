@@ -21,16 +21,6 @@ import { RelatedProducts } from '@/components/related-products';
 import { useCart } from '@/hooks/use-cart';
 import { useRouter } from 'next/navigation';
 
-const product = {
-    id: 2,
-    name: "Vnhax Frozen Key",
-    category: "PC",
-    price: 5,
-    href: "/products/vnhax-frozen-key",
-    imageUrl: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg',
-    aiHint: 'gaming character cinematic'
-};
-
 const images = [
     { id: 1, src: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
     { id: 2, src: 'https://picsum.photos/1000/1000?random=1', alt: 'Product feature view', aiHint: 'gaming action screenshot' },
@@ -93,6 +83,16 @@ export default function SingleProductPage() {
     const [isFavorited, setIsFavorited] = useState(false);
     const { addToCart } = useCart();
     const router = useRouter();
+
+    const product = {
+        id: 2,
+        name: "Vnhax Frozen Key",
+        category: "PC",
+        price: 5,
+        href: "/products/vnhax-frozen-key",
+        imageUrl: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg',
+        aiHint: 'gaming character cinematic'
+    };
 
     const handleBuyNow = () => {
         addToCart(product);
