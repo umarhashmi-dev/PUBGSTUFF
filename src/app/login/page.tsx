@@ -100,6 +100,15 @@ export default function LoginPage() {
                     />
                   </LabelInputContainer>
 
+                  <div className="mb-4 text-right">
+                    <Link
+                      href="/forgot-password"
+                      className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                    >
+                      Forgot password?
+                    </Link>
+                  </div>
+
                   {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
                   
                   <button
