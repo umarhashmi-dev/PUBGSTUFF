@@ -20,7 +20,8 @@ import {
     Settings,
     MessageSquareWarning,
     Lightbulb,
-    Search
+    Search,
+    Heart
 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
 import { supabase } from "@/lib/supabase";
@@ -33,6 +34,7 @@ const navItems = [
   { href: "/my-account", label: "Dashboard", icon: <LayoutDashboard /> },
   { href: "/my-account/orders", label: "Orders", icon: <ShoppingCart /> },
   { href: "/my-account/downloads", label: "Downloads", icon: <Download /> },
+  { href: "/my-account/favorites", label: "Favorites", icon: <Heart /> },
   { href: "/my-account/reporting", label: "Reporting", icon: <MessageSquareWarning /> },
   { href: "/my-account/suggestions", label: "Suggestions", icon: <Lightbulb /> },
   { href: "/my-account/account-details", label: "Settings", icon: <Settings /> },

@@ -7,6 +7,7 @@ import { CurrencyProvider } from '@/context/CurrencyContext';
 import { ChatFabLoader } from '@/components/chat-fab-loader';
 import Script from 'next/script';
 import { CartProvider } from '@/context/CartContext';
+import { FavoritesProvider } from '@/context/FavoritesContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -188,9 +189,11 @@ export default function RootLayout({
         <AuthProvider>
           <CurrencyProvider>
             <CartProvider>
-              {children}
-              <Toaster />
-              <ChatFabLoader />
+              <FavoritesProvider>
+                {children}
+                <Toaster />
+                <ChatFabLoader />
+              </FavoritesProvider>
             </CartProvider>
           </CurrencyProvider>
         </AuthProvider>
