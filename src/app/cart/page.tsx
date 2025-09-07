@@ -4,17 +4,19 @@ import React, { useState, useMemo } from 'react';
 import Header from '@/components/landing/header';
 import Footer from '@/components/landing/footer';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
 import { X, Minus, Plus, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCurrency } from '@/hooks/use-currency';
 import { useCart } from '@/hooks/use-cart';
+import { useAuth } from '@/hooks/use-auth';
+import { CartAuthForm } from '@/components/auth/cart-auth-form';
 
 const EXTRA_SERVICE_FEE = 5;
 
 export default function CartPage() {
+    const { user, loading: authLoading } = useAuth();
     const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
     const [hasExtraService, setHasExtraService] = useState(false);
     const { formatPrice } = useCurrency();
@@ -128,39 +130,43 @@ export default function CartPage() {
                             </div>
                         </div>
 
-                        {/* Order Summary */}
+                        {/* Order Summary or Auth Form */}
                         <div className="lg:col-span-1">
                             <div className="bg-white p-6 rounded-2xl shadow-sm border sticky top-28">
-                                <h2 className="text-lg font-semibold font-headline text-gray-800">Promo code</h2>
-                                <div className="flex gap-2 mt-4 w-full">
-                                    <Input placeholder="Type here..." className="flex-1" />
-                                    <Button className="bg-black text-white hover:bg-gray-800">Apply</Button>
-                                </div>
-                                <Separator className="my-6" />
-                                <div className="space-y-4">
-                                    <div className="flex justify-between text-gray-600">
-                                        <span>Subtotal</span>
-                                        <span className="font-medium text-gray-900">{formatPrice(subtotal)}</span>
-                                    </div>
-                                    {hasExtraService && (
-                                         <div className="flex justify-between text-gray-600">
-                                            <span>Extra Service</span>
-                                            <span className="font-medium text-gray-900">{formatPrice(EXTRA_SERVICE_FEE)}</span>
+                                {authLoading ? (
+                                    <div className="text-center p-8">Loading...</div>
+                                ) : user ? (
+                                    <>
+                                        <h2 className="text-lg font-semibold font-headline text-gray-800">Order Summary</h2>
+                                        <Separator className="my-6" />
+                                        <div className="space-y-4">
+                                            <div className="flex justify-between text-gray-600">
+                                                <span>Subtotal</span>
+                                                <span className="font-medium text-gray-900">{formatPrice(subtotal)}</span>
+                                            </div>
+                                            {hasExtraService && (
+                                                <div className="flex justify-between text-gray-600">
+                                                    <span>Extra Service</span>
+                                                    <span className="font-medium text-gray-900">{formatPrice(EXTRA_SERVICE_FEE)}</span>
+                                                </div>
+                                            )}
+                                            <div className="flex justify-between text-gray-600">
+                                                <span>Discount</span>
+                                                <span className="font-medium text-green-600">-{formatPrice(0)}</span>
+                                            </div>
+                                            <Separator />
+                                            <div className="flex justify-between text-xl font-bold text-gray-900">
+                                                <span>Total</span>
+                                                <span>{formatPrice(total)}</span>
+                                            </div>
                                         </div>
-                                    )}
-                                    <div className="flex justify-between text-gray-600">
-                                        <span>Discount</span>
-                                        <span className="font-medium text-green-600">-{formatPrice(0)}</span>
-                                    </div>
-                                    <Separator />
-                                    <div className="flex justify-between text-xl font-bold text-gray-900">
-                                        <span>Total</span>
-                                        <span>{formatPrice(total)}</span>
-                                    </div>
-                                </div>
-                                <Button size="lg" className="w-full mt-6 bg-black text-white hover:bg-gray-800 text-base">
-                                    Continue to checkout
-                                </Button>
+                                        <Button size="lg" className="w-full mt-6 bg-black text-white hover:bg-gray-800 text-base">
+                                            Continue to checkout
+                                        </Button>
+                                    </>
+                                ) : (
+                                    <CartAuthForm total={total} />
+                                )}
                             </div>
                         </div>
                     </div>
