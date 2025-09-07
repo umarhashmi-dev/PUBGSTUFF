@@ -20,6 +20,7 @@ import { useToast } from '@/hooks/use-toast';
 import { RelatedProducts } from '@/components/related-products';
 import { useCart } from '@/hooks/use-cart';
 import { useRouter } from 'next/navigation';
+import { useFavorites } from '@/hooks/use-favorites';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/26Mvsmyz/Vnhax-week-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -80,19 +81,21 @@ export default function SingleProductPage() {
     const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
     const { user } = useAuth();
     const { toast } = useToast();
-    const [isFavorited, setIsFavorited] = useState(false);
     const { addToCart } = useCart();
     const router = useRouter();
+    const { addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
 
     const product = {
         id: 4,
         name: "Vnhax Week Key",
-        category: "PC",
+        category: "PC" as "PC",
         price: 15,
         href: "/products/vnhax-week-key",
         imageUrl: 'https://i.postimg.cc/26Mvsmyz/Vnhax-week-key.jpg',
         aiHint: 'gaming character cinematic'
     };
+
+    const isProductFavorited = isFavorited(product.id);
 
     const handleBuyNow = () => {
         addToCart(product);
@@ -108,11 +111,19 @@ export default function SingleProductPage() {
             });
             return;
         }
-        setIsFavorited(!isFavorited);
-        toast({
-            title: isFavorited ? "Removed from Favorites" : "Added to Favorites",
-            description: `Vnhax Week Key has been ${isFavorited ? 'removed from' : 'added to'} your favorites.`,
-        });
+        if (isProductFavorited) {
+            removeFromFavorites(product.id);
+            toast({
+                title: "Removed from Favorites",
+                description: `Vnhax Week Key has been removed from your favorites.`,
+            });
+        } else {
+            addToFavorites(product);
+            toast({
+                title: "Added to Favorites",
+                description: `Vnhax Week Key has been added to your favorites.`,
+            });
+        }
     };
     
     const handleShareClick = () => {
@@ -192,7 +203,7 @@ export default function SingleProductPage() {
                                     <div className="flex items-center gap-2">
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleShareClick}><Share className="w-5 h-5" /></Button>
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleFavoriteClick}>
-                                            <Heart className={cn("w-5 h-5", isFavorited && "fill-red-500 text-red-500")} />
+                                            <Heart className={cn("w-5 h-5", isProductFavorited && "fill-red-500 text-red-500")} />
                                         </Button>
                                     </div>
                                 </div>

@@ -18,6 +18,9 @@ import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 import { RelatedProducts } from '@/components/related-products';
+import { useCart } from '@/hooks/use-cart';
+import { useRouter } from 'next/navigation';
+import { useFavorites } from '@/hooks/use-favorites';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/cJ1bH7mv/Vnhax-month-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -78,7 +81,26 @@ export default function SingleProductPage() {
     const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
     const { user } = useAuth();
     const { toast } = useToast();
-    const [isFavorited, setIsFavorited] = useState(false);
+    const { addToCart } = useCart();
+    const router = useRouter();
+    const { addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
+
+    const product = {
+        id: 1,
+        name: "Vnhax Month Key",
+        category: "PC" as "PC",
+        price: 30,
+        href: "/products/vnhax-month-key",
+        imageUrl: 'https://i.postimg.cc/cJ1bH7mv/Vnhax-month-key.jpg',
+        aiHint: 'gaming character cinematic'
+    };
+
+    const isProductFavorited = isFavorited(product.id);
+
+    const handleBuyNow = () => {
+        addToCart(product);
+        router.push('/cart');
+    };
 
     const handleFavoriteClick = () => {
         if (!user) {
@@ -89,11 +111,19 @@ export default function SingleProductPage() {
             });
             return;
         }
-        setIsFavorited(!isFavorited);
-        toast({
-            title: isFavorited ? "Removed from Favorites" : "Added to Favorites",
-            description: `Vnhax Month Key has been ${isFavorited ? 'removed from' : 'added to'} your favorites.`,
-        });
+        if (isProductFavorited) {
+            removeFromFavorites(product.id);
+            toast({
+                title: "Removed from Favorites",
+                description: `Vnhax Month Key has been removed from your favorites.`,
+            });
+        } else {
+            addToFavorites(product);
+            toast({
+                title: "Added to Favorites",
+                description: `Vnhax Month Key has been added to your favorites.`,
+            });
+        }
     };
     
     const handleShareClick = () => {
@@ -173,7 +203,7 @@ export default function SingleProductPage() {
                                     <div className="flex items-center gap-2">
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleShareClick}><Share className="w-5 h-5" /></Button>
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleFavoriteClick}>
-                                            <Heart className={cn("w-5 h-5", isFavorited && "fill-red-500 text-red-500")} />
+                                            <Heart className={cn("w-5 h-5", isProductFavorited && "fill-red-500 text-red-500")} />
                                         </Button>
                                     </div>
                                 </div>
@@ -280,7 +310,7 @@ export default function SingleProductPage() {
                                                 <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
                                                 <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
                                             </div>
-                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg">
+                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg" onClick={handleBuyNow}>
                                                 Buy Now
                                             </Button>
                                         </div>

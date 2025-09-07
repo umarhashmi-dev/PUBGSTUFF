@@ -82,12 +82,12 @@ export default function SingleProductPage() {
     const { toast } = useToast();
     const { addToCart } = useCart();
     const router = useRouter();
-    const { favoriteItems, addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
+    const { addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
 
     const product = {
         id: 6,
         name: "Redeye Frozen Key",
-        category: "PC",
+        category: "PC" as "PC",
         price: 5,
         href: "/products/redeye-frozen-key",
         imageUrl: 'https://i.postimg.cc/JhTnsWfj/Redeye-frozen-key.jpg',

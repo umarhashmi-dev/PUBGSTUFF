@@ -89,7 +89,7 @@ export default function SingleProductPage() {
     const product = {
         id: 10,
         name: "Anubis Month Key",
-        category: "PC",
+        category: "PC" as "PC",
         price: 40,
         href: "/products/anubis-month-key",
         imageUrl: 'https://i.postimg.cc/Gh8s6zBb/Anubis-month-key.jpg',
