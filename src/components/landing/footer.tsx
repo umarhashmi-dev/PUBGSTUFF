@@ -43,7 +43,6 @@ export default function Footer() {
     setLoading(true);
 
     try {
-      // 1. Save the email to the 'subscriptions' table
       const { error: insertError } = await supabase
         .from('subscriptions')
         .insert({ email: email });
@@ -141,7 +140,7 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={loading}
               />
-              <Button type="submit" className={cn("hover-shimmer-button min-w-[120px]")} disabled={loading}>
+              <Button type="submit" className={cn("hover-shimmer-button", loading ? "w-[140px]" : "w-[120px]")} disabled={loading}>
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {loading ? 'Subscribing...' : 'Subscribe'}
               </Button>
