@@ -8,7 +8,6 @@ import { Button } from '@/components/ui/button';
 import { Star, Check, Minus, Plus, RefreshCw, ChevronLeft, ChevronRight, Share, Heart, Maximize } from 'lucide-react';
 import Image from 'next/image';
 import { useCurrency } from '@/hooks/use-currency';
-import Link from 'next/link';
 import { Checkbox } from '@/components/ui/checkbox';
 import { ProductLayout } from '@/components/product-layout';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -19,6 +18,18 @@ import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 import { RelatedProducts } from '@/components/related-products';
+import { useCart } from '@/hooks/use-cart';
+import { useRouter } from 'next/navigation';
+
+const product = {
+    id: 19,
+    name: "Star iOS Week Key",
+    category: "iOS",
+    price: 15,
+    href: "/products/star-ios-week-key",
+    imageUrl: 'https://i.postimg.cc/6pS0ZTDh/star-ios-week-key.jpg',
+    aiHint: 'gaming character cinematic'
+};
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/6pS0ZTDh/star-ios-week-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -79,6 +90,13 @@ export default function SingleProductPage() {
     const { user } = useAuth();
     const { toast } = useToast();
     const [isFavorited, setIsFavorited] = useState(false);
+    const { addToCart } = useCart();
+    const router = useRouter();
+
+    const handleBuyNow = () => {
+        addToCart(product);
+        router.push('/cart');
+    };
 
     const handleFavoriteClick = () => {
         if (!user) {
@@ -280,7 +298,7 @@ export default function SingleProductPage() {
                                                 <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
                                                 <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
                                             </div>
-                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg">
+                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg" onClick={handleBuyNow}>
                                                 Buy Now
                                             </Button>
                                         </div>

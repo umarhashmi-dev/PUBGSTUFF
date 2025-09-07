@@ -18,8 +18,20 @@ import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 import dynamic from 'next/dynamic';
+import { useCart } from '@/hooks/use-cart';
+import { useRouter } from 'next/navigation';
 
 const RelatedProducts = dynamic(() => import('@/components/related-products').then(mod => mod.RelatedProducts), { ssr: false });
+
+const product = {
+    id: 9,
+    name: "Anubis Week Key",
+    category: "PC",
+    price: 20,
+    href: "/products/anubis-week-key",
+    imageUrl: 'https://i.postimg.cc/3N60d0qM/Anubis-week-key.jpg',
+    aiHint: 'gaming character cinematic'
+};
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/3N60d0qM/Anubis-week-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -80,6 +92,13 @@ export default function SingleProductPage() {
     const { user } = useAuth();
     const { toast } = useToast();
     const [isFavorited, setIsFavorited] = React.useState(false);
+    const { addToCart } = useCart();
+    const router = useRouter();
+
+    const handleBuyNow = () => {
+        addToCart(product);
+        router.push('/cart');
+    };
 
     const handleFavoriteClick = () => {
         if (!user) {
@@ -282,7 +301,7 @@ export default function SingleProductPage() {
                                                 <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
                                                 <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
                                             </div>
-                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg">
+                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg" onClick={handleBuyNow}>
                                                 Buy Now
                                             </Button>
                                         </div>
