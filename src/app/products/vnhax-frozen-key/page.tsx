@@ -21,6 +21,7 @@ import { RelatedProducts } from '@/components/related-products';
 import { useCart } from '@/hooks/use-cart';
 import { useRouter } from 'next/navigation';
 import { useFavorites } from '@/hooks/use-favorites';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -69,16 +70,15 @@ const reviews = [
 ]
 
 export default function SingleProductPage() {
-    const [selectedImage, setSelectedImage] = useState(images[0]);
-    const [quantity, setQuantity] = useState(1);
+    const [selectedImage, setSelectedImage] = React.useState(images[0]);
+    const [quantity, setQuantity] = React.useState(1);
     const { formatPrice, currency } = useCurrency();
-    const [currentThumbnailPage, setCurrentThumbnailPage] = useState(0);
-    const [extras, setExtras] = useState({
+    const [extras, setExtras] = React.useState({
         windows: false,
         drivers: false,
         extras: false
     });
-    const [totalPrice, setTotalPrice] = useState(BASE_PRICE);
+    const [totalPrice, setTotalPrice] = React.useState(BASE_PRICE);
     const { user } = useAuth();
     const { toast } = useToast();
     const { addToCart } = useCart();
@@ -145,10 +145,7 @@ export default function SingleProductPage() {
             });
     };
 
-    const thumbnailsPerPage = 4;
-    const thumbnailPages = Math.ceil(images.length / thumbnailsPerPage);
-
-    useEffect(() => {
+    React.useEffect(() => {
         const extrasCount = Object.values(extras).filter(Boolean).length;
         const newTotal = (BASE_PRICE * quantity) + (extrasCount * EXTRA_PRICE);
         setTotalPrice(newTotal);
@@ -157,25 +154,6 @@ export default function SingleProductPage() {
     const handleExtraChange = (extra: keyof typeof extras) => {
         setExtras(prev => ({...prev, [extra]: !prev[extra]}));
     }
-
-    const nextThumbnails = () => {
-        setCurrentThumbnailPage((prev) => (prev + 1) % thumbnailPages);
-    };
-
-    const prevThumbnails = () => {
-        setCurrentThumbnailPage((prev) => (prev - 1 + thumbnailPages) % thumbnailPages);
-    };
-    
-    const handleResetImage = () => {
-        setSelectedImage(images[0]);
-        setCurrentThumbnailPage(0);
-    };
-
-    const visibleThumbnails = images.slice(
-        currentThumbnailPage * thumbnailsPerPage,
-        (currentThumbnailPage + 1) * thumbnailsPerPage
-    );
-
 
     return (
         <ProductLayout>
@@ -221,16 +199,17 @@ export default function SingleProductPage() {
                                         <Maximize className="w-5 h-5"/>
                                     </Button>
                                 </div>
-                                <div className="mt-4 hidden md:flex items-center justify-between">
-                                    <Button variant="outline" size="sm" className="bg-white" onClick={handleResetImage}><RefreshCw className="w-4 h-4 mr-2"/> Reset</Button>
-                                    <div className="flex items-center gap-2">
-                                        <Button variant="outline" size="icon" onClick={prevThumbnails} className="h-8 w-8 bg-white"><ChevronLeft className="w-4 h-4"/></Button>
-                                        <div className="grid grid-cols-4 gap-2">
-                                            {visibleThumbnails.map((image) => (
+                                <div className="mt-4">
+                                    <ScrollArea>
+                                        <div className="flex items-center gap-2 pb-4">
+                                            {images.map((image) => (
                                                 <button
                                                     key={image.id}
                                                     onClick={() => setSelectedImage(image)}
-                                                    className={`aspect-square w-16 relative rounded-md overflow-hidden border-2 transition-all ${selectedImage.id === image.id ? 'border-primary' : 'border-gray-200 hover:border-primary/50'}`}
+                                                    className={cn(
+                                                        'aspect-square w-16 sm:w-20 relative rounded-md overflow-hidden border-2 transition-all flex-shrink-0',
+                                                        selectedImage.id === image.id ? 'border-primary' : 'border-gray-200 hover:border-primary/50'
+                                                    )}
                                                 >
                                                     <Image
                                                         src={image.src}
@@ -242,8 +221,8 @@ export default function SingleProductPage() {
                                                 </button>
                                             ))}
                                         </div>
-                                        <Button variant="outline" size="icon" onClick={nextThumbnails} className="h-8 w-8 bg-white"><ChevronRight className="w-4 h-4"/></Button>
-                                    </div>
+                                        <ScrollBar orientation="horizontal" />
+                                    </ScrollArea>
                                 </div>
                             </div>
 
@@ -323,12 +302,15 @@ export default function SingleProductPage() {
                         {/* Tabs Section */}
                         <div className="mt-16 md:mt-24 max-w-5xl mx-auto">
                             <Tabs defaultValue="description" className="w-full">
-                                <TabsList className="grid w-full grid-cols-4 bg-gray-100">
-                                    <TabsTrigger value="description">Description</TabsTrigger>
-                                    <TabsTrigger value="reviews">Reviews</TabsTrigger>
-                                    <TabsTrigger value="faqs">FAQs</TabsTrigger>
-                                    <TabsTrigger value="comparison">Comparison</TabsTrigger>
-                                </TabsList>
+                                <ScrollArea>
+                                    <TabsList className="grid w-full grid-cols-4 min-w-[400px]">
+                                        <TabsTrigger value="description">Description</TabsTrigger>
+                                        <TabsTrigger value="reviews">Reviews</TabsTrigger>
+                                        <TabsTrigger value="faqs">FAQs</TabsTrigger>
+                                        <TabsTrigger value="comparison">Comparison</TabsTrigger>
+                                    </TabsList>
+                                    <ScrollBar orientation="horizontal" />
+                                </ScrollArea>
                                 <TabsContent value="description" className="mt-6 bg-white p-6 md:p-8 rounded-xl border border-gray-200">
                                     <div className="prose prose-gray max-w-none space-y-4">
                                         <div className="bg-[#F5EFFF] p-4 rounded-lg">
