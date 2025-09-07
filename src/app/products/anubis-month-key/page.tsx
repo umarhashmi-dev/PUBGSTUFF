@@ -100,6 +100,10 @@ export default function SingleProductPage() {
 
     const handleBuyNow = () => {
         addToCart(product);
+        toast({
+            title: "Added to Cart",
+            description: `${product.name} has been added to your cart.`,
+        });
         router.push('/cart');
     };
 
