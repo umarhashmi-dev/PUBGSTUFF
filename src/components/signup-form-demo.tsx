@@ -21,7 +21,7 @@ export default function SignupFormDemo() {
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null);
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -29,7 +29,6 @@ export default function SignupFormDemo() {
           full_name: fullName,
           mobile_number: mobileNumber,
         },
-        emailRedirectTo: `${window.location.origin}/my-account`,
       },
     });
     if (error) {
@@ -39,11 +38,13 @@ export default function SignupFormDemo() {
         description: error.message,
         variant: "destructive",
       });
-    } else {
+    } else if (data.user) {
+      // This is the new part: Trigger the welcome email after successful signup
+      await supabase.rpc('send_welcome_email', { user_email: data.user.email });
       toast({
         title: "Success!",
         description:
-          "Your account has been created. Please check your email to verify your account.",
+          "Your account has been created. Welcome!",
       });
       router.push("/my-account");
     }
