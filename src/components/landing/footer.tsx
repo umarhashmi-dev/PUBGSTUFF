@@ -49,8 +49,7 @@ export default function Footer() {
         .insert({ email: email });
 
       if (insertError) {
-        // Handle cases where the email might already exist
-        if (insertError.code === '23505') { // Unique constraint violation
+        if (insertError.code === '23505') { 
           toast({
             title: "You're already subscribed!",
             description: "Thank you for being a part of our community.",
@@ -59,11 +58,10 @@ export default function Footer() {
           throw insertError;
         }
       } else {
-         // 2. Send the welcome/magic link email
         const { error: emailError } = await supabase.auth.signInWithOtp({
           email,
           options: {
-            shouldCreateUser: false, // Don't create a new user from this
+            shouldCreateUser: false,
           },
         });
 
@@ -143,7 +141,7 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={loading}
               />
-              <Button type="submit" className={cn("hover-shimmer-button", loading && "w-[130px]")} disabled={loading}>
+              <Button type="submit" className={cn("hover-shimmer-button min-w-[120px]")} disabled={loading}>
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {loading ? 'Subscribing...' : 'Subscribe'}
               </Button>
