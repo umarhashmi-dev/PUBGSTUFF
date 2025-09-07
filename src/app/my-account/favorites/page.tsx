@@ -7,10 +7,40 @@ import { Heart, ShoppingCart, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCurrency } from '@/hooks/use-currency';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export default function FavoritesPage() {
-  const { favoriteItems, removeFromFavorites } = useFavorites();
+  const { favoriteItems, removeFromFavorites, loading } = useFavorites();
   const { formatPrice } = useCurrency();
+
+  if (loading) {
+    return (
+        <div>
+            <div className="mb-8">
+                <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground font-headline">
+                    Your Favorites
+                </h1>
+                <p className="mt-2 text-muted-foreground">
+                    Loading your saved products...
+                </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[...Array(3)].map((_, i) => (
+                    <div key={i} className="bg-gray-50/50 border rounded-lg overflow-hidden flex flex-col">
+                        <Skeleton className="aspect-square w-full" />
+                        <div className="p-4 flex flex-col flex-1">
+                            <Skeleton className="h-5 w-3/4" />
+                            <div className="mt-4 flex items-center justify-between">
+                                <Skeleton className="h-7 w-1/4" />
+                                <Skeleton className="h-10 w-10 rounded-full" />
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    )
+  }
 
   return (
     <div>
