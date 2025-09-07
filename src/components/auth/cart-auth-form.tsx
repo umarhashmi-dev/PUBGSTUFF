@@ -165,7 +165,7 @@ export function CartAuthForm({ total }: CartAuthFormProps) {
                             <Label htmlFor="login-email">Email</Label>
                             <Input id="login-email" type="email" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} required />
                         </div>
-                        <div>
+                        <div className="space-y-2">
                             <div className="flex justify-between items-end">
                                 <Label htmlFor="login-password">Password</Label>
                                 <Link

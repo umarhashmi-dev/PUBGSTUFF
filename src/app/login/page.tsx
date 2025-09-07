@@ -88,8 +88,16 @@ export default function LoginPage() {
                       required 
                     />
                   </LabelInputContainer>
-                  <LabelInputContainer className="mb-4">
-                    <Label htmlFor="password">Password</Label>
+                  <LabelInputContainer className="mb-8">
+                    <div className="flex justify-between items-end">
+                        <Label htmlFor="password">Password</Label>
+                        <Link
+                          href="/forgot-password"
+                          className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                        >
+                          Forgot password?
+                        </Link>
+                    </div>
                     <Input 
                       id="password" 
                       placeholder="••••••••" 
@@ -99,15 +107,6 @@ export default function LoginPage() {
                       required 
                     />
                   </LabelInputContainer>
-
-                  <div className="mb-4 text-right">
-                    <Link
-                      href="/forgot-password"
-                      className="text-sm font-medium text-muted-foreground hover:text-foreground"
-                    >
-                      Forgot password?
-                    </Link>
-                  </div>
 
                   {error && <p className="text-sm text-red-500 mb-4">{error}</p>}
                   
