@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useFavorites } from '@/hooks/use-favorites';
