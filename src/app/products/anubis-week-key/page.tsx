@@ -20,6 +20,7 @@ import { useToast } from '@/hooks/use-toast';
 import dynamic from 'next/dynamic';
 import { useCart } from '@/hooks/use-cart';
 import { useRouter } from 'next/navigation';
+import { useFavorites } from '@/hooks/use-favorites';
 
 const RelatedProducts = dynamic(() => import('@/components/related-products').then(mod => mod.RelatedProducts), { ssr: false });
 
@@ -81,9 +82,9 @@ export default function SingleProductPage() {
     const [totalPrice, setTotalPrice] = React.useState(BASE_PRICE);
     const { user } = useAuth();
     const { toast } = useToast();
-    const [isFavorited, setIsFavorited] = React.useState(false);
     const { addToCart } = useCart();
     const router = useRouter();
+    const { favoriteItems, addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
 
     const product = {
         id: 9,
@@ -94,6 +95,8 @@ export default function SingleProductPage() {
         imageUrl: 'https://i.postimg.cc/3N60d0qM/Anubis-week-key.jpg',
         aiHint: 'gaming character cinematic'
     };
+
+    const isProductFavorited = isFavorited(product.id);
 
     const handleBuyNow = () => {
         addToCart(product);
@@ -109,11 +112,19 @@ export default function SingleProductPage() {
             });
             return;
         }
-        setIsFavorited(!isFavorited);
-        toast({
-            title: isFavorited ? "Removed from Favorites" : "Added to Favorites",
-            description: `Anubis Week Key has been ${isFavorited ? 'removed from' : 'added to'} your favorites.`,
-        });
+        if (isProductFavorited) {
+            removeFromFavorites(product.id);
+            toast({
+                title: "Removed from Favorites",
+                description: `Anubis Week Key has been removed from your favorites.`,
+            });
+        } else {
+            addToFavorites(product);
+            toast({
+                title: "Added to Favorites",
+                description: `Anubis Week Key has been added to your favorites.`,
+            });
+        }
     };
     
     const handleShareClick = () => {
@@ -193,7 +204,7 @@ export default function SingleProductPage() {
                                     <div className="flex items-center gap-2">
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleShareClick}><Share className="w-5 h-5" /></Button>
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleFavoriteClick}>
-                                            <Heart className={cn("w-5 h-5", isFavorited && "fill-red-500 text-red-500")} />
+                                            <Heart className={cn("w-5 h-5", isProductFavorited && "fill-red-500 text-red-500")} />
                                         </Button>
                                     </div>
                                 </div>
