@@ -132,7 +132,7 @@ export default function CartPage() {
                         <div className="lg:col-span-1">
                             <div className="bg-white p-6 rounded-2xl shadow-sm border sticky top-28">
                                 <h2 className="text-lg font-semibold font-headline text-gray-800">Promo code</h2>
-                                <div className="flex gap-2 mt-4 w-full">
+                                <div className="flex gap-2 mt-4">
                                     <Input placeholder="Type here..." className="flex-1" />
                                     <Button className="bg-black text-white hover:bg-gray-800">Apply</Button>
                                 </div>
