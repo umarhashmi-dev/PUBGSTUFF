@@ -142,7 +142,7 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={loading}
               />
-              <Button type="submit" className="hover-shimmer-button min-w-[120px]" disabled={loading}>
+              <Button type="submit" className="hover-shimmer-button min-w-[140px]" disabled={loading}>
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {loading ? 'Subscribing...' : 'Subscribe'}
               </Button>
