@@ -324,7 +324,16 @@ export default function Header() {
           </button>
         </div>
 
-        <div className="hidden md:flex items-center justify-end gap-4">
+        <div className="hidden md:flex items-center justify-end gap-2">
+          {!authLoading && (
+            <Link href="/cart">
+              <Button variant="ghost" size="icon" className="relative text-gray-700 hover:bg-gray-100 hover:text-black">
+                <ShoppingCart className="h-5 w-5" />
+                <span className="sr-only">Cart</span>
+              </Button>
+            </Link>
+          )}
+
           {!authLoading && !user && (
             <>
               <Button asChild variant="ghost" className="text-gray-700 hover:bg-gray-100 hover:text-black hover-shimmer-button">
