@@ -6,6 +6,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import { CurrencyProvider } from '@/context/CurrencyContext';
 import { ChatFabLoader } from '@/components/chat-fab-loader';
 import Script from 'next/script';
+import { CartProvider } from '@/context/CartContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -186,9 +187,11 @@ export default function RootLayout({
       <body>
         <AuthProvider>
           <CurrencyProvider>
-            {children}
-            <Toaster />
-            <ChatFabLoader />
+            <CartProvider>
+              {children}
+              <Toaster />
+              <ChatFabLoader />
+            </CartProvider>
           </CurrencyProvider>
         </AuthProvider>
       </body>

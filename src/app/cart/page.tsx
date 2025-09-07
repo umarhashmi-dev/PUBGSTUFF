@@ -10,61 +10,33 @@ import { X, Minus, Plus, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useCurrency } from '@/hooks/use-currency';
-
-const initialCartItems = [
-    {
-        id: 1,
-        name: 'Vnhax Frozen Key',
-        href: '/products/vnhax-frozen-key',
-        category: 'PC',
-        price: 5,
-        quantity: 1,
-        imageUrl: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg',
-        aiHint: 'gaming character cinematic'
-    },
-    {
-        id: 2,
-        name: 'Redeye Week Key',
-        href: '/products/redeye-week-key',
-        category: 'PC',
-        price: 15,
-        quantity: 1,
-        imageUrl: 'https://i.postimg.cc/rwVMxPCj/Redeye-week-key.jpg',
-        aiHint: 'gaming character cinematic'
-    },
-    {
-        id: 3,
-        name: 'Anubis Month Key',
-        href: '/products/anubis-month-key',
-        category: 'PC',
-        price: 40,
-        quantity: 1,
-        imageUrl: 'https://i.postimg.cc/Gh8s6zBb/Anubis-month-key.jpg',
-        aiHint: 'gaming character cinematic'
-    },
-];
+import { useCart } from '@/hooks/use-cart';
 
 const EXTRA_SERVICE_FEE = 5;
 
 export default function CartPage() {
-    const [cartItems, setCartItems] = useState(initialCartItems);
+    const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
     const [hasExtraService, setHasExtraService] = useState(false);
     const { formatPrice } = useCurrency();
 
     const handleQuantityChange = (id: number, delta: number) => {
-        setCartItems(currentItems =>
-            currentItems.map(item =>
-                item.id === id ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item
-            ).filter(item => item.quantity > 0)
-        );
+        const item = cartItems.find(item => item.id === id);
+        if (item) {
+            const newQuantity = item.quantity + delta;
+            if (newQuantity > 0) {
+                updateQuantity(id, newQuantity);
+            } else {
+                removeFromCart(id);
+            }
+        }
     };
 
     const handleRemoveItem = (id: number) => {
-        setCartItems(currentItems => currentItems.filter(item => item.id !== id));
+        removeFromCart(id);
     };
 
     const handleClearCart = () => {
-        setCartItems([]);
+        clearCart();
     };
     
     const toggleExtraService = () => {
