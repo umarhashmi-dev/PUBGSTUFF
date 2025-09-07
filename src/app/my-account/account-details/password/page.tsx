@@ -40,7 +40,7 @@ export default function PasswordPage() {
 
             <div className="mt-8 pt-6 border-t flex justify-end gap-4">
                 <Button type="button" variant="outline" size="lg">Cancel</Button>
-                <Button type="submit" size="lg" className="bg-blue-600 text-white hover:bg-blue-700">Save changes</Button>
+                <Button type="submit" size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">Save changes</Button>
             </div>
         </form>
       </div>
