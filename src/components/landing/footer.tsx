@@ -42,10 +42,10 @@ export default function Footer() {
     setLoading(true);
 
     try {
-      // 1. Save the email to the 'suggestions' table
+      // 1. Save the email to the 'subscriptions' table
       const { error: insertError } = await supabase
-        .from('suggestions')
-        .insert({ title: 'Newsletter Subscription', details: email });
+        .from('subscriptions')
+        .insert({ email: email });
 
       if (insertError) {
         // Handle cases where the email might already exist
