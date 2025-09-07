@@ -18,7 +18,18 @@ import { cn } from '@/lib/utils';
 import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 import { RelatedProducts } from '@/components/related-products';
-import Link from 'next/link';
+import { useCart } from '@/hooks/use-cart';
+import { useRouter } from 'next/navigation';
+
+const product = {
+    id: 2,
+    name: "Vnhax Frozen Key",
+    category: "PC",
+    price: 5,
+    href: "/products/vnhax-frozen-key",
+    imageUrl: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg',
+    aiHint: 'gaming character cinematic'
+};
 
 const images = [
     { id: 1, src: 'https://i.postimg.cc/j5QRy4fy/Vnhax-frozen-key.jpg', alt: 'Main product image', aiHint: 'gaming character cinematic' },
@@ -80,6 +91,13 @@ export default function SingleProductPage() {
     const { user } = useAuth();
     const { toast } = useToast();
     const [isFavorited, setIsFavorited] = useState(false);
+    const { addToCart } = useCart();
+    const router = useRouter();
+
+    const handleBuyNow = () => {
+        addToCart(product);
+        router.push('/cart');
+    };
 
     const handleFavoriteClick = () => {
         if (!user) {
@@ -186,6 +204,7 @@ export default function SingleProductPage() {
                                         fill
                                         className="object-contain transition-transform duration-300"
                                         data-ai-hint={selectedImage.aiHint}
+                                        priority
                                     />
                                     <Button variant="ghost" size="icon" className="absolute top-3 left-3 bg-white/50 backdrop-blur-sm hover:bg-white/80 text-gray-700">
                                         <Maximize className="w-5 h-5"/>
@@ -281,8 +300,8 @@ export default function SingleProductPage() {
                                                 <span className="w-10 text-center text-sm font-semibold">{quantity}</span>
                                                 <Button variant="ghost" size="icon" onClick={() => setQuantity(q => q + 1)} className="h-8 w-8"><Plus className="w-4 h-4" /></Button>
                                             </div>
-                                            <Button asChild size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg">
-                                                <Link href="/cart">Buy Now</Link>
+                                            <Button size="lg" className="flex-1 hover-shimmer-button bg-black text-white hover:bg-gray-800 rounded-lg" onClick={handleBuyNow}>
+                                                Buy Now
                                             </Button>
                                         </div>
                                     </div>
