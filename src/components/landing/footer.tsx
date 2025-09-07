@@ -1,9 +1,15 @@
+
+'use client';
+
+import React, { useState } from "react";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Github, Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
+import { Github, Twitter, Linkedin, Facebook, Instagram, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { supabase } from "@/lib/supabase";
+import { useToast } from "@/hooks/use-toast";
 
 const quickLinks = [
   { href: "/about", label: "About Us" },
@@ -18,6 +24,72 @@ const policyLinks = [
 ];
 
 export default function Footer() {
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubscription = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) {
+      toast({
+        title: "Error",
+        description: "Please enter your email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      // 1. Save the email to the 'subscriptions' table
+      const { error: insertError } = await supabase
+        .from('subscriptions')
+        .insert({ email });
+
+      if (insertError) {
+        // Handle cases where the email might already exist
+        if (insertError.code === '23505') { // Unique constraint violation
+          toast({
+            title: "You're already subscribed!",
+            description: "Thank you for being a part of our community.",
+          });
+        } else {
+          throw insertError;
+        }
+      }
+
+      // 2. Send the welcome/magic link email
+      const { error: emailError } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          shouldCreateUser: false, // Don't create a new user from this
+        },
+      });
+
+      if (emailError) throw emailError;
+
+      if (!insertError) {
+        toast({
+          title: "Subscription Successful!",
+          description: "Thank you for subscribing. Please check your email.",
+        });
+      }
+      
+      setEmail('');
+
+    } catch (error: any) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Error",
+        description: error.message || "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <footer id="contact" className="bg-card border-t py-12">
       <div className="container">
@@ -63,9 +135,19 @@ export default function Footer() {
             <p className="mt-4 text-muted-foreground text-sm sm:text-base">
               Subscribe to our newsletter for the latest updates.
             </p>
-            <form className="mt-4 flex flex-col sm:flex-row gap-2">
-              <Input type="email" placeholder="Your Email Address" className="flex-1" />
-              <Button type="submit" className="hover-shimmer-button">Subscribe</Button>
+            <form onSubmit={handleSubscription} className="mt-4 flex flex-col sm:flex-row gap-2">
+              <Input 
+                type="email" 
+                placeholder="Your Email Address" 
+                className="flex-1"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={loading}
+              />
+              <Button type="submit" className="hover-shimmer-button" disabled={loading}>
+                {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                {loading ? 'Subscribing...' : 'Subscribe'}
+              </Button>
             </form>
           </div>
         </div>
