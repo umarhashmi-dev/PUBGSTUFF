@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
@@ -5,6 +6,9 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import { CurrencyProvider } from '@/context/CurrencyContext';
 import { ChatFabLoader } from '@/components/chat-fab-loader';
 import Script from 'next/script';
+import { AuthProvider } from '@/components/auth-provider';
+import { CartProvider } from '@/context/CartContext';
+import { FavoritesProvider } from '@/context/FavoritesContext';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -183,11 +187,17 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <CurrencyProvider>
-            {children}
-            <Toaster />
-            <ChatFabLoader />
-        </CurrencyProvider>
+        <AuthProvider>
+          <CurrencyProvider>
+            <CartProvider>
+              <FavoritesProvider>
+                {children}
+                <Toaster />
+                <ChatFabLoader />
+              </FavoritesProvider>
+            </CartProvider>
+          </CurrencyProvider>
+        </AuthProvider>
       </body>
     </html>
   );

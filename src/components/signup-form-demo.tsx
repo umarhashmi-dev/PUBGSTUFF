@@ -1,3 +1,4 @@
+
 "use client";
 import React from "react";
 import Link from "next/link";
@@ -5,65 +6,40 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/lib/supabase";
 import { useRouter } from "next/navigation";
+import { Loader2 } from "lucide-react";
 
 export default function SignupFormDemo() {
   const [fullName, setFullName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [mobileNumber, setMobileNumber] = React.useState("");
-  const [error, setError] = React.useState<string | null>(null);
+  const [loading, setLoading] = React.useState(false);
   const router = useRouter();
   const { toast } = useToast();
 
   const handleSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setError(null);
-    const { data, error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          full_name: fullName,
-          mobile_number: mobileNumber,
-        },
-      },
-    });
-    if (error) {
-      setError(error.message);
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
-    } else if (data.user) {
-      // This is the new part: Trigger the welcome email after successful signup
-      await supabase.rpc('send_welcome_email', { user_email: data.user.email });
-      toast({
-        title: "Success!",
-        description:
-          "Your account has been created. Welcome!",
-      });
-      router.push("/my-account");
-    }
+    setLoading(true);
+    // Placeholder for signup logic
+    console.log("Attempting to sign up with:", { fullName, email, password, mobileNumber });
+    setTimeout(() => {
+        toast({
+            title: "Signup Temporarily Disabled",
+            description: "Please connect to a backend service to enable signup.",
+            variant: "destructive",
+          });
+      setLoading(false);
+    }, 1000);
   };
 
   const handleSocialSignIn = async (provider: "google" | "facebook") => {
-    const { error } = await supabase.auth.signInWithOAuth({
-      provider,
-      options: {
-        redirectTo: `${window.location.origin}/my-account`,
-      },
-    });
-    if (error) {
-      setError(error.message);
-      toast({
-        title: "Error",
-        description: error.message,
+    console.log(`Attempting to sign in with ${provider}`);
+    toast({
+        title: "Social Login Disabled",
+        description: "Please connect to a backend service to enable social login.",
         variant: "destructive",
       });
-    }
   };
 
   return (
@@ -97,13 +73,13 @@ export default function SignupFormDemo() {
           <Input id="password" placeholder="••••••••" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </LabelInputContainer>
 
-        {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-
         <button
-          className="group/btn hover-shimmer-button relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset]"
+          className="group/btn hover-shimmer-button relative block h-10 w-full rounded-md bg-gradient-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] flex items-center justify-center"
           type="submit"
+          disabled={loading}
         >
-          Sign up &rarr;
+          {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          {loading ? 'Creating Account...' : 'Sign up →'}
           <BottomGradient />
         </button>
 

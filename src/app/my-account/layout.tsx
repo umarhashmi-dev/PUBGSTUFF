@@ -14,9 +14,6 @@ import {
     LayoutDashboard, 
     ShoppingCart, 
     Download, 
-    User, 
-    CreditCard, 
-    LogOut,
     Settings,
     MessageSquareWarning,
     Lightbulb,
@@ -24,7 +21,6 @@ import {
     Heart
 } from "lucide-react";
 import { useAuth } from "@/hooks/use-auth";
-import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Logo } from "@/components/logo";
@@ -43,26 +39,7 @@ const navItems = [
 function SidebarNav() {
     const pathname = usePathname();
     const { user } = useAuth();
-    const { toast } = useToast();
-    const router = useRouter();
 
-    const handleLogout = async () => {
-        try {
-          await supabase.auth.signOut();
-          toast({
-            title: "Success!",
-            description: "You have successfully logged out.",
-          });
-          router.push("/");
-        } catch (error: any) {
-          toast({
-            title: "Error",
-            description: error.message,
-            variant: "destructive",
-          });
-        }
-    };
-    
     const isSettingsActive = pathname.startsWith('/my-account/account-details') || pathname.startsWith('/my-account/billing');
 
     return (
@@ -110,12 +87,6 @@ function SidebarNav() {
                     )
                 })}
             </nav>
-            <div className="p-4 border-t">
-                <Button variant="ghost" className="w-full justify-start gap-3 text-gray-600 hover:bg-gray-100 hover:text-gray-900" onClick={handleLogout}>
-                    <LogOut className="h-5 w-5" />
-                    Log Out
-                </Button>
-            </div>
       </aside>
     )
 }
@@ -135,26 +106,7 @@ export default function AccountLayout({
 }) {
   const pathname = usePathname();
   const { user } = useAuth();
-  const { toast } = useToast();
-  const router = useRouter();
-
-  const handleLogout = async () => {
-    try {
-      await supabase.auth.signOut();
-      toast({
-        title: "Success!",
-        description: "You have successfully logged out.",
-      });
-      router.push("/");
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-  };
-
+  
   const isSettingsPage = pathname.startsWith('/my-account/account-details') || pathname.startsWith('/my-account/billing');
 
   return (
@@ -199,12 +151,6 @@ export default function AccountLayout({
                                 </Link>
                             ))}
                         </nav>
-                        <div className="p-4 mt-auto border-t">
-                           <Button variant="ghost" className="w-full justify-start gap-3" onClick={handleLogout}>
-                                <LogOut className="h-5 w-5" />
-                                Log Out
-                           </Button>
-                        </div>
                     </SheetContent>
                 </Sheet>
                 {isSettingsPage && (

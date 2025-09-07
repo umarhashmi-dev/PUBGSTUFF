@@ -9,7 +9,6 @@ import { Github, Twitter, Linkedin, Facebook, Instagram, Loader2 } from "lucide-
 import Link from "next/link";
 import Image from "next/image";
 import { useToast } from "@/hooks/use-toast";
-import { cn } from "@/lib/utils";
 
 const quickLinks = [
   { href: "/about", label: "About Us" },
@@ -40,7 +39,8 @@ export default function Footer() {
 
     setLoading(true);
 
-    // Simulate API call
+    // Placeholder for newsletter subscription
+    console.log("Subscribing with email:", email);
     setTimeout(() => {
         toast({
           title: "Subscription Successful!",
@@ -48,7 +48,7 @@ export default function Footer() {
         });
         setEmail('');
         setLoading(false);
-    }, 1000)
+    }, 1000);
   };
 
   return (
