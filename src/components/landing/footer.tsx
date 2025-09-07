@@ -43,39 +43,26 @@ export default function Footer() {
     setLoading(true);
 
     try {
-      // Use the 'subscriptions' table
-      const { error: insertError } = await supabase
+      const { error } = await supabase
         .from('subscriptions')
         .insert({ email: email });
 
-      if (insertError) {
-        if (insertError.code === '23505') { 
+      if (error) {
+        if (error.code === '23505') { // Unique constraint violation
           toast({
             title: "You're already subscribed!",
             description: "Thank you for being a part of our community.",
           });
         } else {
-          throw insertError;
+          throw error;
         }
       } else {
-        // Trigger the magic link email which we've customized as a welcome email
-        const { error: emailError } = await supabase.auth.signInWithOtp({
-          email,
-          options: {
-            shouldCreateUser: false,
-          },
-        });
-
-        if (emailError) throw emailError;
-
         toast({
           title: "Subscription Successful!",
-          description: "Thank you for subscribing. Please check your email.",
+          description: "Thank you for subscribing to our newsletter.",
         });
+        setEmail('');
       }
-      
-      setEmail('');
-
     } catch (error: any) {
       console.error('Subscription error:', error);
       toast({
