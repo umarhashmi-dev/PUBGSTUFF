@@ -166,7 +166,15 @@ export function CartAuthForm({ total }: CartAuthFormProps) {
                             <Input id="login-email" type="email" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} required />
                         </div>
                         <div>
-                            <Label htmlFor="login-password">Password</Label>
+                            <div className="flex justify-between items-end">
+                                <Label htmlFor="login-password">Password</Label>
+                                <Link
+                                    href="/forgot-password"
+                                    className="text-xs font-medium text-muted-foreground hover:text-foreground"
+                                >
+                                    Forgot password?
+                                </Link>
+                            </div>
                             <Input id="login-password" type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} required />
                         </div>
                         <Button type="submit" size="lg" className="w-full bg-black text-white hover:bg-gray-800 text-base" disabled={loginLoading}>
