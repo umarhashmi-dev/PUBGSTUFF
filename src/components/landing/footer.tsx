@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
+import { cn } from "@/lib/utils";
 
 const quickLinks = [
   { href: "/about", label: "About Us" },
@@ -142,7 +143,7 @@ export default function Footer() {
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={loading}
               />
-              <Button type="submit" className="hover-shimmer-button" disabled={loading}>
+              <Button type="submit" className={cn("hover-shimmer-button", loading && "w-[130px]")} disabled={loading}>
                 {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                 {loading ? 'Subscribing...' : 'Subscribe'}
               </Button>
