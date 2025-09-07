@@ -61,35 +61,43 @@ export default function CartPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                         {/* Cart Items & Banner */}
                         <div className="lg:col-span-2 space-y-8">
-                            <div className="bg-white p-6 rounded-2xl shadow-sm border">
+                            <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border">
                                 <div className="flex justify-between items-center mb-6">
-                                    <h1 className="text-2xl font-bold font-headline text-gray-800">
+                                    <h1 className="text-xl sm:text-2xl font-bold font-headline text-gray-800">
                                         Cart <span className="text-gray-500 font-normal">({cartItems.length} products)</span>
                                     </h1>
-                                    <Button variant="ghost" size="sm" onClick={handleClearCart} className="text-red-500 hover:text-red-600 hover:bg-red-50">
+                                    <Button variant="ghost" size="sm" onClick={handleClearCart} className="text-red-500 hover:text-red-600 hover:bg-red-50 text-xs sm:text-sm">
                                         <X className="mr-1 h-4 w-4" /> Clear cart
                                     </Button>
                                 </div>
                                 <div className="space-y-4">
                                     {cartItems.length > 0 ? (
                                         cartItems.map(item => (
-                                            <div key={item.id} className="grid grid-cols-[auto,1fr,auto,auto,auto] items-center gap-4 border-b pb-4 last:border-b-0">
-                                                <div className="w-20 h-20 bg-gray-100 rounded-lg p-2 relative">
-                                                    <Image src={item.imageUrl} alt={item.name} fill className="object-contain" data-ai-hint={item.aiHint}/>
+                                            <div key={item.id} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b pb-4 last:border-b-0">
+                                                <div className="flex items-start gap-4 w-full">
+                                                    <div className="w-20 h-20 bg-gray-100 rounded-lg p-2 relative shrink-0">
+                                                        <Image src={item.imageUrl} alt={item.name} fill className="object-contain" data-ai-hint={item.aiHint}/>
+                                                    </div>
+                                                    <div className="flex-1">
+                                                        <Link href={item.href} className="font-semibold text-gray-800 hover:text-primary">{item.name}</Link>
+                                                        <p className="text-sm text-gray-500">{item.category}</p>
+                                                        <p className="sm:hidden font-semibold mt-1">{formatPrice(item.price * item.quantity)}</p>
+                                                    </div>
+                                                    <Button variant="ghost" size="icon" onClick={() => handleRemoveItem(item.id)} className="h-8 w-8 text-gray-400 hover:text-red-500 sm:hidden shrink-0">
+                                                        <X className="w-4 w-4" />
+                                                    </Button>
                                                 </div>
-                                                <div>
-                                                    <Link href={item.href} className="font-semibold text-gray-800 hover:text-primary">{item.name}</Link>
-                                                    <p className="text-sm text-gray-500">{item.category}</p>
+                                                <div className="flex items-center justify-between w-full sm:w-auto mt-2 sm:mt-0">
+                                                    <div className="flex items-center border rounded-md">
+                                                        <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.id, -1)} className="h-8 w-8 text-gray-500"><Minus className="w-4 h-4" /></Button>
+                                                        <span className="w-8 text-center text-sm font-semibold">{item.quantity}</span>
+                                                        <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.id, 1)} className="h-8 w-8 text-gray-500"><Plus className="w-4 h-4" /></Button>
+                                                    </div>
+                                                    <p className="hidden sm:block font-semibold w-24 text-center">{formatPrice(item.price * item.quantity)}</p>
+                                                    <Button variant="ghost" size="icon" onClick={() => handleRemoveItem(item.id)} className="h-8 w-8 text-gray-400 hover:text-red-500 hidden sm:inline-flex">
+                                                        <X className="w-4 w-4" />
+                                                    </Button>
                                                 </div>
-                                                <div className="flex items-center border rounded-md">
-                                                    <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.id, -1)} className="h-8 w-8 text-gray-500"><Minus className="w-4 h-4" /></Button>
-                                                    <span className="w-8 text-center text-sm font-semibold">{item.quantity}</span>
-                                                    <Button variant="ghost" size="icon" onClick={() => handleQuantityChange(item.id, 1)} className="h-8 w-8 text-gray-500"><Plus className="w-4 h-4" /></Button>
-                                                </div>
-                                                <p className="font-semibold w-20 text-center">{formatPrice(item.price * item.quantity)}</p>
-                                                <Button variant="ghost" size="icon" onClick={() => handleRemoveItem(item.id)} className="h-8 w-8 text-gray-400 hover:text-red-500">
-                                                    <X className="w-4 w-4" />
-                                                </Button>
                                             </div>
                                         ))
                                     ) : (
@@ -105,10 +113,10 @@ export default function CartPage() {
                                 </div>
                             </div>
 
-                            <div className="bg-gray-800 text-white p-8 rounded-2xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
+                            <div className="bg-gray-800 text-white p-6 sm:p-8 rounded-2xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-6">
                                 <div className="text-center sm:text-left">
-                                    <h3 className="text-xl font-bold font-headline">Need Help?</h3>
-                                    <p className="text-gray-300 mt-1">Add extra setup & personal assistant to your order.</p>
+                                    <h3 className="text-lg sm:text-xl font-bold font-headline">Need Help?</h3>
+                                    <p className="text-gray-300 mt-1 text-sm sm:text-base">Add extra setup & personal assistant to your order.</p>
                                 </div>
                                 <Button 
                                     onClick={toggleExtraService}
