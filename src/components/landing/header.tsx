@@ -5,13 +5,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Logo } from "../logo";
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { LogOut, Monitor, Smartphone, Bot, FileText, Blocks, Mic, User, ShoppingCart, Download, Settings } from 'lucide-react';
-import { useAuth } from "@/hooks/use-auth";
-import { supabase } from "@/lib/supabase";
-import { useToast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
+import { Monitor, Smartphone, Bot, FileText, Blocks, Mic, User, ShoppingCart, Download, Settings } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import Image from "next/image";
 
@@ -154,28 +149,6 @@ const productLinks = [
 
 export default function Header() {
   const [expanded, setExpanded] = React.useState(false);
-  const { user, loading: authLoading } = useAuth();
-  const { toast } = useToast();
-  const router = useRouter();
-
-
-  const handleLogout = async () => {
-    try {
-      await supabase.auth.signOut();
-      toast({
-        title: "Success!",
-        description: "You have successfully logged out.",
-      });
-      router.push("/");
-    } catch (error: any) {
-      toast({
-        title: "Error",
-        description: error.message,
-        variant: "destructive",
-      });
-    }
-  };
-
 
   return (
     <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-6xl px-4">
@@ -325,74 +298,19 @@ export default function Header() {
         </div>
 
         <div className="hidden md:flex items-center justify-end gap-2">
-          {!authLoading && (
             <Link href="/cart">
               <Button variant="ghost" size="icon" className="relative text-gray-700 hover:bg-gray-100 hover:text-black">
                 <ShoppingCart className="h-5 w-5" />
                 <span className="sr-only">Cart</span>
               </Button>
             </Link>
-          )}
-
-          {!authLoading && !user && (
-            <>
-              <Button asChild variant="ghost" className="text-gray-700 hover:bg-gray-100 hover:text-black hover-shimmer-button">
-                <Link href="/login" prefetch={false}>Login</Link>
-              </Button>
-              <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-lg hover-shimmer-button">
-                <Link href="/signup" prefetch={false}>Sign up</Link>
-              </Button>
-            </>
-          )}
-          {!authLoading && user && (
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button 
-                  variant="ghost" 
-                  className="relative h-10 w-10 rounded-full"
-                >
-                  <Avatar className="h-10 w-10">
-                    <AvatarImage src={user.user_metadata.avatar_url ?? ""} alt={user.user_metadata.full_name ?? ""} />
-                    <AvatarFallback>{user.email?.charAt(0).toUpperCase()}</AvatarFallback>
-                  </Avatar>
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent 
-                className="w-56" 
-                align="end" 
-                forceMount
-              >
-                <DropdownMenuLabel className="font-normal">
-                  <div className="flex flex-col space-y-1">
-                    <p className="text-sm font-medium leading-none">{user.user_metadata.full_name}</p>
-                    <p className="text-xs leading-none text-muted-foreground">
-                      {user.email}
-                    </p>
-                  </div>
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link href="/my-account"><User className="mr-2 h-4 w-4" />My Account</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/my-account/orders"><ShoppingCart className="mr-2 h-4 w-4" />Orders</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/my-account/downloads"><Download className="mr-2 h-4 w-4" />Downloads</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/my-account/account-details"><Settings className="mr-2 h-4 w-4" />Account Details</Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={handleLogout}>
-                  <LogOut className="mr-2 h-4 w-4" />
-                  <span>Log out</span>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          )}
+            <Button asChild variant="ghost" className="text-gray-700 hover:bg-gray-100 hover:text-black hover-shimmer-button">
+            <Link href="/contact" prefetch={false}>Login</Link>
+            </Button>
+            <Button asChild className="bg-black text-white hover:bg-gray-800 rounded-lg hover-shimmer-button">
+            <Link href="/contact" prefetch={false}>Sign up</Link>
+            </Button>
         </div>
-
       </div>
       {expanded && (
         <nav className="bg-white/80 backdrop-blur-sm rounded-2xl mt-2 p-4 border">
@@ -445,28 +363,14 @@ export default function Header() {
               >
                 Contact Us
             </Link>
-            {!authLoading && user ? (
-              <>
-                <Link
-                  href="/my-account"
-                  onClick={() => setExpanded(false)}
-                  title="My Account"
-                  className="flex items-center p-3 text-base font-medium transition-all duration-200 rounded-md hover:bg-gray-100 text-gray-700"
-                >
-                  My Account
-                </Link>
-                <Button onClick={() => { handleLogout(); setExpanded(false); }} className="bg-black text-white hover:bg-gray-800 w-full mt-2 hover-shimmer-button">Logout</Button>
-              </>
-            ) : (
               <div className="mt-4 pt-4 border-t border-gray-200 space-y-2">
                  <Button asChild variant="ghost" className="w-full text-gray-700 hover:bg-gray-100 hover:text-black hover-shimmer-button">
-                    <Link href="/login" onClick={() => setExpanded(false)} prefetch={false}>Login</Link>
+                    <Link href="/contact" onClick={() => setExpanded(false)} prefetch={false}>Login</Link>
                  </Button>
                  <Button asChild className="w-full bg-black text-white hover:bg-gray-800 hover-shimmer-button">
-                  <Link href="/signup" onClick={() => setExpanded(false)} prefetch={false}>Sign up</Link>
+                  <Link href="/contact" onClick={() => setExpanded(false)} prefetch={false}>Sign up</Link>
                 </Button>
               </div>
-            )}
 
           </div>
         </nav>

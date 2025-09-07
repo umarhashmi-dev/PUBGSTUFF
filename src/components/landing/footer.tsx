@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState } from "react";
@@ -7,14 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Github, Twitter, Linkedin, Facebook, Instagram, Loader2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { supabase } from "@/lib/supabase";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
 
 const quickLinks = [
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
-  { href: "/my-account", label: "My account" },
 ];
 
 const policyLinks = [
@@ -41,37 +40,15 @@ export default function Footer() {
 
     setLoading(true);
 
-    try {
-      const { error } = await supabase
-        .from('subscriptions')
-        .insert({ email: email });
-
-      if (error) {
-        if (error.code === '23505') { // Unique constraint violation
-          toast({
-            title: "You're already subscribed!",
-            description: "Thank you for being a part of our community.",
-          });
-        } else {
-          throw error;
-        }
-      } else {
+    // Simulate API call
+    setTimeout(() => {
         toast({
           title: "Subscription Successful!",
           description: "Thank you for subscribing to our newsletter.",
         });
         setEmail('');
-      }
-    } catch (error: any) {
-      console.error('Subscription error:', error);
-      toast({
-        title: "Error",
-        description: error.message || "An unexpected error occurred. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setLoading(false);
-    }
+        setLoading(false);
+    }, 1000)
   };
 
   return (

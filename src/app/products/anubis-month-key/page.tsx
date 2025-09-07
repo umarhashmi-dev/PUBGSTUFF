@@ -15,12 +15,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
-import { useAuth } from '@/hooks/use-auth';
 import { useToast } from '@/hooks/use-toast';
 import dynamic from 'next/dynamic';
-import { useCart } from '@/hooks/use-cart';
 import { useRouter } from 'next/navigation';
-import { useFavorites } from '@/hooks/use-favorites';
 
 const RelatedProducts = dynamic(() => import('@/components/related-products').then(mod => mod.RelatedProducts), { ssr: false });
 
@@ -80,55 +77,25 @@ export default function SingleProductPage() {
         extras: false
     });
     const [totalPrice, setTotalPrice] = React.useState(BASE_PRICE);
-    const { user } = useAuth();
     const { toast } = useToast();
-    const { addToCart } = useCart();
     const router = useRouter();
-    const { addToFavorites, removeFromFavorites, isFavorited } = useFavorites();
+    const [isFavorited, setIsFavorited] = React.useState(false);
 
-    const product = {
-        id: 10,
-        name: "Anubis Month Key",
-        category: "PC" as "PC",
-        price: 40,
-        href: "/products/anubis-month-key",
-        imageUrl: 'https://i.postimg.cc/Gh8s6zBb/Anubis-month-key.jpg',
-        aiHint: 'gaming character cinematic'
-    };
-    
-    const isProductFavorited = isFavorited(product.id);
 
     const handleBuyNow = () => {
-        addToCart(product);
         toast({
             title: "Added to Cart",
-            description: `${product.name} has been added to your cart.`,
+            description: `Anubis Month Key has been added to your cart.`,
         });
         router.push('/cart');
     };
 
     const handleFavoriteClick = () => {
-        if (!user) {
-            toast({
-                title: "Login Required",
-                description: "You need to be logged in to favorite products.",
-                variant: "destructive",
-            });
-            return;
-        }
-        if (isProductFavorited) {
-            removeFromFavorites(product.id);
-            toast({
-                title: "Removed from Favorites",
-                description: `Anubis Month Key has been removed from your favorites.`,
-            });
-        } else {
-            addToFavorites(product);
-            toast({
-                title: "Added to Favorites",
-                description: `Anubis Month Key has been added to your favorites.`,
-            });
-        }
+        setIsFavorited(!isFavorited);
+        toast({
+            title: isFavorited ? "Removed from Favorites" : "Added to Favorites",
+            description: `Anubis Month Key has been ${isFavorited ? 'removed from' : 'added to'} your favorites.`,
+        });
     };
     
     const handleShareClick = () => {
@@ -208,7 +175,7 @@ export default function SingleProductPage() {
                                     <div className="flex items-center gap-2">
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleShareClick}><Share className="w-5 h-5" /></Button>
                                         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-black hover:bg-gray-100" onClick={handleFavoriteClick}>
-                                            <Heart className={cn("w-5 h-5", isProductFavorited && "fill-red-500 text-red-500")} />
+                                            <Heart className={cn("w-5 h-5", isFavorited && "fill-red-500 text-red-500")} />
                                         </Button>
                                     </div>
                                 </div>

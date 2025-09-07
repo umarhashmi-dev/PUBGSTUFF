@@ -8,37 +8,54 @@ import { Separator } from '@/components/ui/separator';
 import { X, Minus, Plus, ShoppingCart } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useCurrency } from '@/hooks/use-currency';
-import { useCart } from '@/hooks/use-cart';
-import { useAuth } from '@/hooks/use-auth';
-import { CartAuthForm } from '@/components/auth/cart-auth-form';
 
 const EXTRA_SERVICE_FEE = 5;
 
+// Dummy data for cart items since context is removed
+const dummyCartItems = [
+    {
+        id: 1,
+        name: 'Vnhax Month Key',
+        href: '/products/vnhax-month-key',
+        category: 'PC',
+        price: 30,
+        quantity: 1,
+        imageUrl: 'https://i.postimg.cc/cJ1bH7mv/Vnhax-month-key.jpg',
+        aiHint: 'gaming character cinematic'
+    },
+    {
+        id: 2,
+        name: 'Shield Android Week Key',
+        href: '/products/shield-android-week-key',
+        category: 'Android',
+        price: 15,
+        quantity: 2,
+        imageUrl: 'https://i.postimg.cc/Gptb3mC1/SHIELD-Android-week-key.jpg',
+        aiHint: 'gaming character cinematic'
+    },
+];
+
+
 export default function CartPage() {
-    const { user, loading: authLoading } = useAuth();
-    const { cartItems, updateQuantity, removeFromCart, clearCart } = useCart();
+    const [cartItems, setCartItems] = useState(dummyCartItems);
     const [hasExtraService, setHasExtraService] = useState(false);
-    const { formatPrice } = useCurrency();
+
+    const formatPrice = (price: number) => `$${price.toLocaleString()}`;
 
     const handleQuantityChange = (id: number, delta: number) => {
-        const item = cartItems.find(item => item.id === id);
-        if (item) {
-            const newQuantity = item.quantity + delta;
-            if (newQuantity > 0) {
-                updateQuantity(id, newQuantity);
-            } else {
-                removeFromCart(id);
-            }
-        }
+        setCartItems(items =>
+            items.map(item =>
+                item.id === id ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item
+            )
+        );
     };
 
     const handleRemoveItem = (id: number) => {
-        removeFromCart(id);
+        setCartItems(items => items.filter(item => item.id !== id));
     };
 
     const handleClearCart = () => {
-        clearCart();
+        setCartItems([]);
     };
     
     const toggleExtraService = () => {
@@ -130,43 +147,35 @@ export default function CartPage() {
                             </div>
                         </div>
 
-                        {/* Order Summary or Auth Form */}
+                        {/* Order Summary */}
                         <div className="lg:col-span-1">
                             <div className="bg-white p-6 rounded-2xl shadow-sm border sticky top-28">
-                                {authLoading ? (
-                                    <div className="text-center p-8">Loading...</div>
-                                ) : user ? (
-                                    <>
-                                        <h2 className="text-lg font-semibold font-headline text-gray-800">Order Summary</h2>
-                                        <Separator className="my-6" />
-                                        <div className="space-y-4">
-                                            <div className="flex justify-between text-gray-600">
-                                                <span>Subtotal</span>
-                                                <span className="font-medium text-gray-900">{formatPrice(subtotal)}</span>
-                                            </div>
-                                            {hasExtraService && (
-                                                <div className="flex justify-between text-gray-600">
-                                                    <span>Extra Service</span>
-                                                    <span className="font-medium text-gray-900">{formatPrice(EXTRA_SERVICE_FEE)}</span>
-                                                </div>
-                                            )}
-                                            <div className="flex justify-between text-gray-600">
-                                                <span>Discount</span>
-                                                <span className="font-medium text-green-600">-{formatPrice(0)}</span>
-                                            </div>
-                                            <Separator />
-                                            <div className="flex justify-between text-xl font-bold text-gray-900">
-                                                <span>Total</span>
-                                                <span>{formatPrice(total)}</span>
-                                            </div>
+                                <h2 className="text-lg font-semibold font-headline text-gray-800">Order Summary</h2>
+                                <Separator className="my-6" />
+                                <div className="space-y-4">
+                                    <div className="flex justify-between text-gray-600">
+                                        <span>Subtotal</span>
+                                        <span className="font-medium text-gray-900">{formatPrice(subtotal)}</span>
+                                    </div>
+                                    {hasExtraService && (
+                                        <div className="flex justify-between text-gray-600">
+                                            <span>Extra Service</span>
+                                            <span className="font-medium text-gray-900">{formatPrice(EXTRA_SERVICE_FEE)}</span>
                                         </div>
-                                        <Button size="lg" className="w-full mt-6 bg-black text-white hover:bg-gray-800 text-base">
-                                            Continue to checkout
-                                        </Button>
-                                    </>
-                                ) : (
-                                    <CartAuthForm total={total} />
-                                )}
+                                    )}
+                                    <div className="flex justify-between text-gray-600">
+                                        <span>Discount</span>
+                                        <span className="font-medium text-green-600">-{formatPrice(0)}</span>
+                                    </div>
+                                    <Separator />
+                                    <div className="flex justify-between text-xl font-bold text-gray-900">
+                                        <span>Total</span>
+                                        <span>{formatPrice(total)}</span>
+                                    </div>
+                                </div>
+                                <Button size="lg" className="w-full mt-6 bg-black text-white hover:bg-gray-800 text-base">
+                                    Continue to checkout
+                                </Button>
                             </div>
                         </div>
                     </div>
