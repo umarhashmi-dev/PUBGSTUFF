@@ -29,6 +29,7 @@ export default function SignupFormDemo() {
           full_name: fullName,
           mobile_number: mobileNumber,
         },
+        emailRedirectTo: `${window.location.origin}/my-account`,
       },
     });
     if (error) {
